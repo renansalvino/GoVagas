@@ -5,128 +5,144 @@ USE GoVagas
 
 --Tabela de Tipo de Usuario --
 CREATE TABLE TipoUsuario (
-IdTipoUsuario		INT PRIMARY KEY IDENTITY
-,TipoUsuario		VARCHAR(255)
+IdTipoUsuario			INT PRIMARY KEY IDENTITY 
+,TituloTipoUsuario		VARCHAR(255)
 );
 
 -- Tabela de Usuário --
 CREATE TABLE Usuario (
-IdUsuario			INT PRIMARY KEY IDENTITY
-,Nome				VARCHAR(255)
-,Email				VARCHAR(255)
-,Data_Nascimento	DATETIME2
-,Senha				VARCHAR(255)
-,Telefone			VARCHAR(255)
-,IdTipoUsuario		INT FOREIGN KEY REFERENCES TipoUsuario (IdTipoUsuario)
+IdUsuario				INT PRIMARY KEY IDENTITY 
+,Nome					VARCHAR(255)	NOT NULL
+,Email					VARCHAR(255)	NOT NULL UNIQUE
+,DataNascimento			DATE			NOT NULL
+,Senha					VARCHAR(255)	NOT NULL
+,Telefone				CHAR			NOT NULL 
+,IdTipoUsuario			INT FOREIGN KEY REFERENCES TipoUsuario (IdTipoUsuario) 
 );
 
--- Tabela de Administrador --
-CREATE TABLE Administrador (
-IdAdministrador		INT PRIMARY KEY IDENTITY
-,CPF				CHAR(11)
-,Usuario			INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
+
+
+--Tabela de Candidato --
+CREATE TABLE Candidato (
+IdCandidato				INT PRIMARY KEY IDENTITY 
+-- Sobre Você --
+,NumMatricula			VARCHAR(255)	NOT NULL
+,CPF					CHAR(11)		NOT NULL
+,Sexo					VARCHAR(255)	NOT NULL
+,DataMatricula			DATE			NOT NULL
+,Raca					VARCHAR(255) 
+,Cidade					VARCHAR(255)	NOT NULL
+,NivelCurso				VARCHAR(255)	NOT NULL
+,TipoCurso				VARCHAR(255)	NOT NULL
+,NomeCurso				VARCHAR(255)	NOT NULL
+,Turma					VARCHAR(255)	NOT NULL
+,Turno					VARCHAR(255)	NOT NULL
+,Termo					VARCHAR(255)	NOT NULL
+-- Apresentação --
+,FotoPerfil				VARBINARY(MAX)  
+,TituloPerfil			VARCHAR(255)	
+,CursoFeito				VARCHAR(255)	NOT NULL
+,NivelIngles			VARCHAR(255)	--Foreach--
+,Descricao				TEXT			
+,UrlLinkedin			TEXT			NOT NULL
+,UrlGitHub				TEXT			NOT NULL
+,Curriculo				TEXT			NOT NULL
+,PretensaoSalario		DECIMAL			
+,Personalidade			VARCHAR(255)	NOT NULL
+-- Habilidades--
+,FocoCarreira			VARCHAR(255)	NOT NULL
+,ExperienciaPro			VARCHAR(255)	NOT NULL
+,Habilidade				VARCHAR(255)	NOT NULL --Selecionarno mínimo 3 --
+,JaTrabalhou			BIT				NOT NULL
+-- Experiência profissioal (se não tiver ignorar esses quadros) --
+,NomeEmpresa			VARCHAR(255)	NOT NULL
+,PerfilEmpresa			VARCHAR(255)	NOT NULL
+,CargoEmpresa			VARCHAR(255)	NOT NULL
+,DataInicio				SMALLDATETIME	NOT NULL
+,DataTermino			SMALLDATETIME	NOT NULL
+,TamanhoEmpresa			VARCHAR(255)	NOT NULL
+,TipoContrato			BIT				NOT NULL	
+,TrabalharRemoto		BIT				NOT NULL
+,DeficienteFisico		BIT				NOT NULL
 );
 
 -- Tabela de Empresa --
 CREATE TABLE Empresa (
-IdEmpresa			INT PRIMARY KEY IDENTITY
-,Anexar_Logo		VARBINARY(MAX)
-,Cargo_Area			VARCHAR(255)
-,WebSite			VARCHAR(255)
-,CNPJ				CHAR(14)
-,Tipo_Empresa		VARCHAR(255)
-,Descrição_Empresa	TEXT
-,Localizacao		VARCHAR(255)
-,EncontrouSenai		VARCHAR(255) -- Foreach --
-,IdUsuario			INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
+IdEmpresa				INT PRIMARY KEY IDENTITY 
+,AnexarLogo				VARBINARY(MAX)	NOT NULL
+,CargoArea				VARCHAR(255)	NOT NULL
+,WebSite				VARCHAR(255)
+,NomeEmpresa			VARCHAR(255)	NOT NULL
+,CNPJ					CHAR(14)		NOT NULL
+,TipoEmpresa			VARCHAR(255)	
+,DescriçãoEmpresa		TEXT			NOT NULL
+,LocalizacaoEmpresa		VARCHAR(255)	NOT NULL
+,EncontrouSenai			VARCHAR(255)	-- Foreach --
+,IdUsuario				INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
 );
 
---Tabela de Candidato --
-CREATE TABLE Candidato (
-IdCandidato				INT PRIMARY KEY IDENTITY
--- Sobre Você --
-,CPF				CHAR(11)
-,Cidade				VARCHAR(255)
--- Apresentação --
-,Titulo_Perfil		TEXT
-,Curso				VARCHAR(255)
-,Nivel_Ingles		VARCHAR(255) --Foreach--
-,Descrição			TEXT
-,URL_Linkedin		TEXT
-,URL_GitHub			TEXT
-,Curriculo			VARBINARY(MAX)
--- Habilidades--
-,Foco_Carreira		VARCHAR(255)
-,Habilidade			VARCHAR(255)
-,SoftSkills			VARCHAR(255)
--- Experiência profissioal (se não tiver ignorar esses quadros) --
-,Nome_Empresa		VARCHAR(255)
-,Perfil_Empresa		VARCHAR(255)
-,Cargo_Empresa		VARCHAR(255)
-,Data_Inicio		DATETIME2
-,Data_Termino		DATETIME2
-,Trabalha_Aqui_At	BIT
-,Hab_Contrato		VARCHAR(255) --Selecionarno mínimo 4 --
-,Atividades			VARCHAR(255)
-,Personalidade		VARCHAR(255)
+-- Tabela de Administrador --
+CREATE TABLE Administrador (
+IdAdministrador			INT PRIMARY KEY IDENTITY 
+,CPF					CHAR(11)		NOT NULL
+,Usuario				INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
 );
+
 
 --Tabela de Documentação --
 CREATE TABLE Documentacao (
-IdDocumentacao		INT PRIMARY KEY IDENTITY
-,Resposavel_Vaga	VARCHAR(255)
-,Data_Inicio		DATETIME2
-,Data_Termino_Prev	DATETIME2
-,Data_Termino_Efe	DATETIME2
-,Razao_Termino		TEXT
-,Status_Vaga		TEXT
-,Dias_Contrato		DATETIME2
-,Req_Matricula		VARBINARY(MAX)
-,Tipo_Contrato		BIT
-,Plano_Estagio		VARCHAR(255)
-,Desligamento		VARCHAR(255)
-,Qtd_Avaliacoes		CHAR
-,Prorrogacoes		VARCHAR(255)
-,ProrrogDias_Contr	VARCHAR(255)
-,Avalicoes_Prorrog	VARCHAR(255)
-,Avaliacao1			VARBINARY(MAX)
-,Avaliacao2			VARBINARY(MAX)
-,Avaliacao3			VARBINARY(MAX)
-,Avaliacao4			VARBINARY(MAX)
-,Termo_Egresso		VARCHAR(255)
-,Motivo_Evasao		VARCHAR(255)
-,Modelo_Doc			VARBINARY(MAX)
-,IdEmpresa			INT FOREIGN KEY REFERENCES Empresa (IdEmpresa)
-,IdAdministrador	INT FOREIGN KEY REFERENCES Administrador (IdAdministrador)	
-);
-
---Tabela de Vaga --
-CREATE TABLE Vaga (
-IdVaga				INT PRIMARY KEY IDENTITY
-,Titulo_Vaga		VARCHAR(255)
-,Perfil_Dev			VARCHAR(255)
-,Dias_Contrato		VARCHAR(255)
-,Nivel_Exp			TEXT
-,Hab_Necessaria		VARCHAR(255)
-,Local_Vaga			VARCHAR(255)
-,ReqVaga			VARCHAR(255)
-,Desc_Ativ_Funcoes	TEXT
-,Tipo_Contrato		BIT
-,Expertise_Vaga		VARCHAR(255)
-,Aceita_Trab_Remoto	BIT
-,Cand_Outra_Cid		BIT
-,Valor_Salario		DECIMAL (19,4)
-,Oferta_Extra		VARCHAR(255)
-,IdEmpresa			INT FOREIGN KEY REFERENCES Empresa (IdEmpresa)
+IdDocumentacao			INT PRIMARY KEY IDENTITY
+,ResposavelVaga			VARCHAR(255)	NOT NULL
+,DataInicio				DATE			NOT NULL
+,DataTerminoPrev		DATE			NOT NULL
+,DataTerminoEfe			DATE			NOT NULL
+,StatusDoc				VARCHAR(255)	NOT NULL
+,DiasContrato			DATE			NOT NULL
+,ReqMatricula			VARBINARY(MAX)	NOT NULL
+,TipoContrato			BIT				NOT NULL	
+,PlanoEstagio			BIT	
+,Desligamento			VARCHAR(255)
+,QtdAvaliacoes			VARBINARY(MAX)  NOT NULL
+,Prorrogacoes			VARCHAR(255)
+,ProrrogDiasContrato	VARCHAR(255)
+,AvalicoesProrrog		VARCHAR(255)
+,Avaliacao1				VARBINARY(MAX)	NOT NULL
+,Avaliacao2				VARBINARY(MAX)
+,Avaliacao3				VARBINARY(MAX)
+,Avaliacao4				VARBINARY(MAX)
+,TermoEgresso			BIT				 
+,MotivoEvasao			VARCHAR(255)		
+,ModeloDoc				VARBINARY(MAX)	
+,IdEmpresa				INT FOREIGN KEY REFERENCES Empresa (IdEmpresa)
+,IdCandidato			INT FOREIGN KEY REFERENCES Candidato (IdCandidato)	
 );
 
 -- Tabela de Inscrição --
 CREATE TABLE Inscricao	(
-IdInscricao			INT PRIMARY KEY IDENTITY
-,Nome_Candi			VARCHAR(255)
-,Nome_Vaga			VARCHAR(255)
-,Cadastre_se		VARCHAR(255)
-,Recusar			BIT
-,IdCandidato		INT FOREIGN KEY REFERENCES Candidato (IdCandidato)
-,IdVaga				INT FOREIGN KEY REFERENCES Vaga	(IdVaga)
+IdInscricao				INT PRIMARY KEY IDENTITY
+,DataInscricao			DATETIME		
+,IdCandidato			INT FOREIGN KEY REFERENCES Candidato (IdCandidato)
 );
+
+--Tabela de Vaga --
+CREATE TABLE Vaga (
+IdVaga					INT PRIMARY KEY IDENTITY
+,TituloVaga				VARCHAR(255)	NOT NULL
+,PerfilDev				VARCHAR(255)	NOT NULL
+,DiasContrato			VARCHAR(255)	NOT NULL
+,TempoExp				VARCHAR(255)	NOT NULL
+,HabNecessaria			VARCHAR(255)	NOT NULL
+,LocalVaga				VARCHAR(255)	
+,ReqVaga				VARCHAR(255)	NOT NULL
+,NivelExp				VARCHAR(255)	NOT NULL
+,DescAtivFuncoes		TEXT			NOT NULL
+,TipoContrato			BIT				NOT NULL
+,ExpertiseVaga			VARCHAR(255)	
+,TrabalhoRemoto			BIT				NOT NULL
+,OutraCidade			BIT				
+,ValorSalario			DECIMAL (19,4)	
+,OfertaExtra			VARCHAR(255)	
+,IdInscricao			INT FOREIGN KEY REFERENCES Inscricao (IdInscricao)
+,IdEmpresa				INT FOREIGN KEY REFERENCES Empresa (IdEmpresa)
+);
+
