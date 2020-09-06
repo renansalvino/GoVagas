@@ -17,7 +17,8 @@ INSERT INTO Administrador (CPF, IdUsuario)
 VALUES ('25638717820', 1);
 
 INSERT INTO Inscricao (DataInscricao, IdCandidato) 
-VALUES ('20/02/2020', NULL);
+VALUES ('10/02/2020', NULL), ('20/03/2020', NULL), ('30/04/2020', NULL);
+
 
 INSERT INTO Vaga (TituloVaga,PerfilDev,DiasContrato,TempoExp,HabNecessaria,LocalVaga,ReqVaga,NivelExp,DescAtivFuncoes,TipoContrato,ExpertiseVaga,TrabalhoRemoto,OutraCidade,ValorSalario,OfertaExtra,IdInscricao,IdEmpresa) VALUES
 ('Web Desenveloper Python','Programador Python','12/05/2020','3 meses', 'Pyton, Excel, Git','Rua Dr. Alberto de Oliveira, n75 - São Paulo', 'Comunicação, Proatividade','Média','Definir e manter a estrutura organizacional de um sistema,','1','júnior','1',NULL,NULL,'Planos de Saúde, Vale Refeição',NULL,NULL)
