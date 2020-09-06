@@ -16,9 +16,11 @@ IdUsuario				INT PRIMARY KEY IDENTITY
 ,Email					VARCHAR(255)	NOT NULL UNIQUE
 ,DataNascimento			DATE			NOT NULL
 ,Senha					VARCHAR(255)	NOT NULL
-,Telefone				CHAR(15)		NOT NULL 
+,Telefone				CHAR			NOT NULL 
 ,IdTipoUsuario			INT FOREIGN KEY REFERENCES TipoUsuario (IdTipoUsuario) 
 );
+
+
 
 --Tabela de Candidato --
 CREATE TABLE Candidato (
@@ -62,9 +64,10 @@ IdCandidato				INT PRIMARY KEY IDENTITY
 ,TipoContrato			BIT				NOT NULL	
 ,TrabalharRemoto		BIT				NOT NULL
 ,DeficienteFisico		BIT				NOT NULL
-,IdUsuario				INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
 );
+
 DROP TABLE Empresa;
+
 -- Tabela de Empresa --
 CREATE TABLE Empresa (
 IdEmpresa				INT PRIMARY KEY IDENTITY 
@@ -72,7 +75,7 @@ IdEmpresa				INT PRIMARY KEY IDENTITY
 ,CargoArea				VARCHAR(255)	NOT NULL
 ,WebSite				VARCHAR(255)
 ,NomeEmpresa			VARCHAR(255)	NOT NULL
-,CNPJ					CHAR(20)		
+,CNPJ					CHAR(14)		
 ,TipoEmpresa			VARCHAR(255)	
 ,DescricaoEmpresa		TEXT			NOT NULL
 ,LocalizacaoEmpresa		VARCHAR(255)	NOT NULL
@@ -84,8 +87,9 @@ IdEmpresa				INT PRIMARY KEY IDENTITY
 CREATE TABLE Administrador (
 IdAdministrador			INT PRIMARY KEY IDENTITY 
 ,CPF					CHAR(11)		NOT NULL
-,IdUsuario				INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
+,Usuario				INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
 );
+
 
 --Tabela de Documentação --
 CREATE TABLE Documentacao (

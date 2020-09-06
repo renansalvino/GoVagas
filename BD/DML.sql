@@ -26,3 +26,13 @@ INSERT INTO Vaga (TituloVaga,PerfilDev,DiasContrato,TempoExp,HabNecessaria,Local
 ,('Web Desenveloper C#','Programador Full Stack','23/09/2020','1 ano', 'Html,Css, Bootstrap, SQL Server','Avenida Cruzeiro do Sul, 2630 Prédio I - Santana, São Paulo','Criatividade, Flexibilidade','Alta','Desenvolvimento e manutenção de aplicações web,','FALSE','júnior','0',NULL,'1000','Planos de Saúde, Vale Refeição',NULL,NULL);
 
 
+USE GoVagas
+GO
+
+INSERT INTO Empresa(AnexarLogo,CargoArea,WebSite,NomeEmpresa,CNPJ,TipoEmpresa,DescricaoEmpresa,LocalizacaoEmpresa,EncontrouSenai,IdUsuario) VALUES
+(NULL,'Gerente de projetos','https://www.demeo.com.br/','DE MEO COMERCIAL IMPORTADORA LTDA', '60.872.124/0004-31','Sociedade Empresária Limitada', 'Todas as lojas De Meo trabalham com uma grande linha de produtos atendendo os mais diversos segmentos do mercado.','RUA FLORENCIO DE ABREU, 271','Parceria',1),
+(NULL,'Gerente de projetos','https://www.automatsmart.com/site/site/portugues','AUTOMATSMART TECH LTDA - ME', '24.809.668/0001-42','Sociedade Empresária Limitada ', 'Garantimos o melhor Desempenho Industrial com tecnologias inovadoras para aumentar a Eficiência e evitar perdas de Produtividade.','SENAI-SCS - RUA SANTO ANDRÉ, 680','Parceria',5),
+(NULL,'Gerente de projetos','https://www.creditas.com/','CREDITAS SOLUÇÕES FINANCEIRAS LTDA', '17.770.708/0002-05','Sociedade Empresária Limitada', 'A Creditas é uma plataforma digital que atua como correspondente Bancário e Sociedade de Crédito Direto para facilitar o processo de contratação de empréstimos.','AV. ENGº LUIS CARLOS BERRINI, 105 - 12º AND','Parceria',6),
+(NULL,'Gerente de projetos','https://www.spaceneedle.com.br/','SPACE NEEDLE TECNOLOGIA LTDA - EPP', '18.381.466/0001-40','Sociedade Empresária Limitada', 'Nosso propósito, valores, princípios e boas práticas são o resultado de mais de seis anos de experimentação e melhorias contínuas em todos os aspectos profissionais e pessoais.','ALAMEDA RIO NEGRO, 500, SALA 215A - ALPHAVILLE','Parceria',7);
+
+SELECT * FROM Empresa;
