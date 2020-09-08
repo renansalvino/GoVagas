@@ -39,7 +39,6 @@ IdCandidato				INT PRIMARY KEY IDENTITY
 -- Apresentação --
 ,FotoPerfil				VARBINARY(MAX)  
 ,TituloPerfil			VARCHAR(255)	
-,CursoFeito				VARCHAR(255)	NOT NULL
 ,NivelIngles			VARCHAR(255)	--Foreach--
 ,Descricao				TEXT			
 ,UrlLinkedin			TEXT			NOT NULL
@@ -64,17 +63,17 @@ IdCandidato				INT PRIMARY KEY IDENTITY
 ,DeficienteFisico		BIT				NOT NULL
 ,IdUsuario				INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
 );
-DROP TABLE Empresa;
+
 -- Tabela de Empresa --
 CREATE TABLE Empresa (
 IdEmpresa				INT PRIMARY KEY IDENTITY 
-,AnexarLogo				VARBINARY(MAX)	
+,AnexarLogo				VARBINARY(MAX)	NOT NULL
 ,CargoArea				VARCHAR(255)	NOT NULL
 ,WebSite				VARCHAR(255)
 ,NomeEmpresa			VARCHAR(255)	NOT NULL
-,CNPJ					CHAR(20)		
+,CNPJ					CHAR(14)		NOT NULL
 ,TipoEmpresa			VARCHAR(255)	
-,DescricaoEmpresa		TEXT			NOT NULL
+,DescriçãoEmpresa		TEXT			NOT NULL
 ,LocalizacaoEmpresa		VARCHAR(255)	NOT NULL
 ,EncontrouSenai			VARCHAR(255)	-- Foreach --
 ,IdUsuario				INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
