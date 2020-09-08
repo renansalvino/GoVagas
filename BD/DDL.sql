@@ -23,7 +23,7 @@ IdUsuario				INT PRIMARY KEY IDENTITY
 --Tabela de Candidato --
 CREATE TABLE Candidato (
 IdCandidato				INT PRIMARY KEY IDENTITY 
--- Sobre Você --
+-- Sobre Você -- 
 ,NumMatricula			VARCHAR(255)	NOT NULL
 ,CPF					CHAR(11)		NOT NULL
 ,Sexo					VARCHAR(255)	NOT NULL
@@ -39,7 +39,6 @@ IdCandidato				INT PRIMARY KEY IDENTITY
 -- Apresentação --
 ,FotoPerfil				VARBINARY(MAX)  
 ,TituloPerfil			VARCHAR(255)	
-,CursoFeito				VARCHAR(255)	NOT NULL
 ,NivelIngles			VARCHAR(255)	--Foreach--
 ,Descricao				TEXT			
 ,UrlLinkedin			TEXT			NOT NULL
@@ -58,13 +57,12 @@ IdCandidato				INT PRIMARY KEY IDENTITY
 ,CargoEmpresa			VARCHAR(255)	NOT NULL
 ,DataInicio				SMALLDATETIME	NOT NULL
 ,DataTermino			SMALLDATETIME	NOT NULL
-,TamanhoEmpresa			VARCHAR(255)	NOT NULL
 ,TipoContrato			BIT				NOT NULL	
 ,TrabalharRemoto		BIT				NOT NULL
 ,DeficienteFisico		BIT				NOT NULL
 ,IdUsuario				INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
 );
-DROP TABLE Empresa;
+
 -- Tabela de Empresa --
 CREATE TABLE Empresa (
 IdEmpresa				INT PRIMARY KEY IDENTITY 
@@ -144,3 +142,4 @@ IdVaga					INT PRIMARY KEY IDENTITY
 ,IdEmpresa				INT FOREIGN KEY REFERENCES Empresa (IdEmpresa)
 );
 
+drop database GoVagas
