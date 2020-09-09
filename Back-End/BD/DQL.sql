@@ -27,6 +27,7 @@ SELECT
 FROM Candidato C
 INNER JOIN Usuario U
 ON C.IdUsuario = U.IdUsuario
+WHERE IdCandidato = 1;
 
 
 -- 2. (RF02) Listar dados (completo) do Aluno (Adm)
@@ -50,7 +51,7 @@ SELECT
 		-- Apresentação --
 		,C.FotoPerfil				 
 		,C.TituloPerfil			
-		,C.CursoFeito				
+		,C.Habilidade				
 		,C.NivelIngles			
 		,C.Descricao				
 		,C.UrlLinkedin			
@@ -58,12 +59,9 @@ SELECT
 		,C.Curriculo				
 		,C.PretensaoSalario		
 		,C.Personalidade			
-		-- Habilidades--
 		,C.FocoCarreira			
-		,C.ExperienciaPro			
-		,C.Habilidade				
-		,C.JaTrabalhou			
-
+		,C.ExpertiseCandidato			
+		,C.ExperienciaPro						
 		,C.NomeEmpresa			
 		,C.PerfilEmpresa			
 		,C.CargoEmpresa			
@@ -102,7 +100,7 @@ SELECT
 		
 FROM Vaga
 
--- 4. (RF02) Listar dados (completo) da Empresa (Adm) vulgo ERICK
+-- 4. (RF02) Listar dados (completo) da Empresa (Adm) 
 
 SELECT 
 		E.AnexarLogo AS Logo			
@@ -113,8 +111,8 @@ SELECT
 		,E.WebSite				
 		,U.DataNascimento AS DataFundação					
 		,E.CNPJ					
-		,E.TipoEmpresa			
-		,E.DescriçãoEmpresa		
+		,E.RamoEmpresa			
+		,E.DescricaoEmpresa		
 		,E.LocalizacaoEmpresa AS Localização	
 		,E.EncontrouSenai AS ComoEncontrouSenai
 		
@@ -125,8 +123,9 @@ ON E.IdUsuario = U.IdUsuario
 		
 -- 5. (RF04) Listar vagas publicadas (Empresa) 
 		
-SELECT 
-		V.TituloVaga				
+SELECT
+		E.NomeEmpresa
+		,V.TituloVaga				
 		,V.PerfilDev				
 		,V.DiasContrato			
 		,V.TempoExp				
@@ -141,14 +140,13 @@ SELECT
 		,V.OutraCidade			
 		,V.ValorSalario			
 		,V.OfertaExtra AS Benefícios
-		,E.NomeEmpresa
 		
 
 		
 FROM Vaga V
 INNER JOIN Empresa E
 ON V.IdEmpresa = E.IdEmpresa
-WHERE NomeEmpresa = 'SpaceNeedle';
+WHERE IdInscricao = 3;
 		
 
 -- 6. (RF04) Listar candidatos às vagas (Empresa) 
@@ -221,6 +219,7 @@ SELECT
 		,V.OutraCidade			
 		,V.ValorSalario			
 		,V.OfertaExtra AS Benefícios
+		,I.DataInscricao
 		
 
 		
@@ -229,7 +228,7 @@ INNER JOIN Inscricao I
 ON V.IdInscricao = I.IdInscricao
 
 
--- 8. (RF10) Listar vagas candidatadas (Candidato) 
+-- 8. (RF08) Listar vagas filtro (Candidato) 
 
 SELECT 
 		V.TituloVaga				
@@ -247,8 +246,35 @@ SELECT
 		,V.OutraCidade			
 		,V.ValorSalario			
 		,V.OfertaExtra AS Benefícios
+		,I.DataInscricao
+	
+	
+	
+FROM Vaga V
+INNER JOIN Inscricao I
+ON V.IdInscricao = I.IdInscricao
+ORDER BY DataInscricao DESC	
+
+-- 9. (RF10) Listar vagas candidatadas (Candidato) 
+
+SELECT 
+		U.Nome AS NomeCandidato					
+		,V.TituloVaga				
+		,V.PerfilDev				
+		,V.DiasContrato			
+		,V.TempoExp				
+		,V.HabNecessaria			
+		,V.LocalVaga				
+		,V.ReqVaga				
+		,V.NivelExp				
+		,V.DescAtivFuncoes		
+		,V.TipoContrato			
+		,V.ExpertiseVaga			
+		,V.TrabalhoRemoto			
+		,V.OutraCidade			
+		,V.ValorSalario			
+		,V.OfertaExtra AS Benefícios
 		-- Info Candidato --
-		,U.Nome AS NomeCandidato					
 		,U.Email					
 		,U.DataNascimento							
 		,U.Telefone																	
@@ -278,36 +304,46 @@ INNER JOIN Candidato C
 ON I.IdCandidato = C.IdCandidato
 INNER JOIN Usuario U
 ON C.IdUsuario = U.IdUsuario
-WHERE Nome = 'EriqueHenrique';
+WHERE Nome = 'Ilda de Suza Castro';
 
--- à fazer --
+-- 10. (RF15) Visualizar documentacao (Candidato) 
 SELECT 					
-		V.TituloVaga				
-		,V.PerfilDev				
-		,V.DiasContrato			
-		,V.TempoExp				
-		,V.HabNecessaria			
-		,V.LocalVaga				
-		,V.ReqVaga				
-		,V.NivelExp				
-		,V.DescAtivFuncoes		
-		,V.TipoContrato			
-		,V.ExpertiseVaga				
-		,V.TrabalhoRemoto			
-		,V.OutraCidade					
-		,V.ValorSalario			
-		,V.OfertaExtra
-		,E.CargoArea				
-		,E.WebSite				
-		,E.NomeEmpresa			
-		,E.CNPJ					
-		,E.TipoEmpresa			
-		,E.DescriçãoEmpresa		
-		,E.LocalizacaoEmpresa
 	
-FROM Vaga V
-INNER JOIN Empresa E
-ON V.IdEmpresa = E.IdEmpresa
-WHERE E.IdEmpresa = 1;
+		-- Info Doc --
+		U.Nome AS NomeCandidato											
+		,C.NomeCurso AS Cursando				
+		,C.Turma										
+		,C.Termo					
+		 ,D.ResposavelVaga			
+		,D.DataInicio				
+		,D.DataTerminoPrev		
+		,D.DataTerminoEfe			
+		,D.StatusDoc				
+		,D.DiasContrato			
+		,D.ReqMatricula			
+		,D.TipoContrato				
+		,D.PlanoEstagio				
+		,D.Desligamento			
+		,D.QtdAvaliacoes			
+		,D.Prorrogacoes			
+		,D.ProrrogDiasContrato	
+		,D.AvalicoesProrrog	
+		,D.DataAvaliacao1
+		,D.Avaliacao1
+		,D.DataAvaliacao2
+		,D.Avaliacao2
+		,D.DataAvaliacao3
+		,D.Avaliacao3
+		,D.DataAvaliacao4
+		,D.Avaliacao4				
+		,D.TermoEgresso							 
+		,D.MotivoEvasao			
+		,D.ModeloDoc				
+		
 
-GO
+
+FROM Documentacao D
+INNER JOIN Candidato C
+ON D.IdCandidato = C.IdCandidato
+INNER JOIN Usuario U
+ON C.IdUsuario = U.IdUsuario
