@@ -26,7 +26,7 @@ GO
 --Tabela de Candidato --
 CREATE TABLE Candidato (
 IdCandidato				INT PRIMARY KEY IDENTITY 
--- Sobre Você -- 
+-- Sobre Você --
 ,NumMatricula			VARCHAR(255)	NOT NULL
 ,CPF					CHAR(11)		NOT NULL
 ,Sexo					VARCHAR(255)	NOT NULL
@@ -51,7 +51,6 @@ IdCandidato				INT PRIMARY KEY IDENTITY
 ,PretensaoSalario		MONEY			
 ,Personalidade			VARCHAR(255)	
 ,FocoCarreira			VARCHAR(255)	NOT NULL
-<<<<<<< HEAD
 ,ExpertiseCandidato	    VARCHAR(255)
 ,ExperienciaPro			VARCHAR(255)	NOT NULL -- Se sim = tabela abaixo --
 -- Experiência profissional
@@ -62,18 +61,6 @@ IdCandidato				INT PRIMARY KEY IDENTITY
 ,DataTermino			DATE			
 ,TamanhoEmpresa			VARCHAR(255)	
 ,TipoContrato			VARCHAR(255)					
-=======
-,ExperienciaPro			VARCHAR(255)	NOT NULL
-,Habilidade				VARCHAR(255)	NOT NULL --Selecionarno mínimo 3 --
-,JaTrabalhou			BIT				NOT NULL
--- Experiência profissioal (se não tiver ignorar esses quadros) --
-,NomeEmpresa			VARCHAR(255)	NOT NULL
-,PerfilEmpresa			VARCHAR(255)	NOT NULL
-,CargoEmpresa			VARCHAR(255)	NOT NULL
-,DataInicio				SMALLDATETIME	NOT NULL
-,DataTermino			SMALLDATETIME	NOT NULL
-,TipoContrato			BIT				NOT NULL	
->>>>>>> cb0c1d6efa785d39d381e88becaa75719f9e0cd6
 ,TrabalharRemoto		BIT				NOT NULL
 ,DeficienteFisico		BIT				NOT NULL
 ,IdUsuario				INT FOREIGN KEY REFERENCES Usuario (IdUsuario)
@@ -167,4 +154,3 @@ IdVaga					INT PRIMARY KEY IDENTITY
 ,IdEmpresa				INT FOREIGN KEY REFERENCES Empresa (IdEmpresa)
 );
 
-drop database GoVagas
