@@ -153,4 +153,3 @@ IdVaga					INT PRIMARY KEY IDENTITY
 ,IdInscricao			INT FOREIGN KEY REFERENCES Inscricao (IdInscricao)
 ,IdEmpresa				INT FOREIGN KEY REFERENCES Empresa (IdEmpresa)
 );
-
