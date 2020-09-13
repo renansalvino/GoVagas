@@ -77,7 +77,7 @@ namespace GoVagas.Controllers
                     return BadRequest(erro);
                 }
             }
-
+ 
             return StatusCode(404);
         }
         /// <summary>
