@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using GoVagas.Domains;
+﻿using GoVagas.Domains;
 using GoVagas.Interfaces;
 using GoVagas.Repositories;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
 
 namespace GoVagas.Controllers
 {
@@ -14,62 +13,62 @@ namespace GoVagas.Controllers
     [Route("api/[controller]")]
     [ApiController]
 
-    public class CandidatoController : ControllerBase
+    public class InscricaoController : ControllerBase
     {
-        private ICandidatoRepository _CandidatoRepository;
+        private IInscricaoRepository _InscricaoRepository;
 
-        public CandidatoController()
+        public InscricaoController()
         {
-            _CandidatoRepository = new CandidatoRepository();
+            _InscricaoRepository = new InscricaoRepository();
         }
 
         /// <summary>
-        ///  Lista os Candidatos
+        ///  Lista os Inscricaos
         /// </summary>
-        /// <returns>Retorna uma lisa de candidatos</returns>
+        /// <returns>Retorna uma lisa de Inscricaos</returns>
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_CandidatoRepository.ListarTodos());
+            return Ok(_InscricaoRepository.ListarTodos());
         }
         /// <summary>
-        /// Lista um candidato passando seu respectivo ID na URL
+        /// Lista um Inscricao passando seu respectivo ID na URL
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Retorna um Status Code 200</returns>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            return StatusCode(200, _CandidatoRepository.BuscarPorId(id));
+            return StatusCode(200, _InscricaoRepository.BuscarPorId(id));
         }
         /// <summary>
-        /// Cadastra um novo Candidato
+        /// Cadastra um novo Inscricao
         /// </summary>
-        /// <param name="novoCandidato"></param>
+        /// <param name="novoInscricao"></param>
         /// <returns> Status Code 201</returns>
         [HttpPost]
-        public IActionResult Post(Candidato novoCandidato)
+        public IActionResult Post(Inscricao novoInscricao)
         {
-            _CandidatoRepository.Cadastrar(novoCandidato);
+            _InscricaoRepository.Cadastrar(novoInscricao);
 
             return StatusCode(201);
         }
         /// <summary>
-        /// Atualiza os candidatos passando o ID pela URL
+        /// Atualiza os Inscricaos passando o ID pela URL
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="CandidatoAtualizado"></param>
+        /// <param name="InscricaoAtualizado"></param>
         /// <returns> Status Cdoe 404</returns>
         [HttpPut("{id}")]
-        public IActionResult Put(int id, Candidato CandidatoAtualizado)
+        public IActionResult Put(int id, Inscricao InscricaoAtualizado)
         {
-            Candidato CandidatoBuscado = _CandidatoRepository.BuscarPorId(id);
+            Inscricao InscricaoBuscado = _InscricaoRepository.BuscarPorId(id);
 
-            if (CandidatoBuscado != null)
+            if (InscricaoBuscado != null)
             {
                 try
                 {
-                    _CandidatoRepository.Atualizar(id, CandidatoAtualizado);
+                    _InscricaoRepository.Atualizar(id, InscricaoAtualizado);
 
                     return StatusCode(200);
                 }
@@ -78,7 +77,7 @@ namespace GoVagas.Controllers
                     return BadRequest(erro);
                 }
             }
- 
+
             return StatusCode(404);
         }
         /// <summary>
@@ -89,17 +88,16 @@ namespace GoVagas.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            Candidato CandidatoBuscado = _CandidatoRepository.BuscarPorId(id);
+            Inscricao InscricaoBuscado = _InscricaoRepository.BuscarPorId(id);
 
-            if (CandidatoBuscado == null)
+            if (InscricaoBuscado == null)
             {
                 return NotFound();
             }
 
-            _CandidatoRepository.Deletar(id);
+            _InscricaoRepository.Deletar(id);
 
             return StatusCode(202);
         }
     }
 }
-

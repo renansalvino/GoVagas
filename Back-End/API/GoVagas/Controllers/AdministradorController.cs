@@ -7,69 +7,68 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-
 namespace GoVagas.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
 
-    public class CandidatoController : ControllerBase
+    public class AdministradorController : ControllerBase
     {
-        private ICandidatoRepository _CandidatoRepository;
+        private IAdministradorRepository _AdministradorRepository;
 
-        public CandidatoController()
+        public AdministradorController()
         {
-            _CandidatoRepository = new CandidatoRepository();
+            _AdministradorRepository = new AdministradorRepository();
         }
 
         /// <summary>
-        ///  Lista os Candidatos
+        ///  Lista os Administradors
         /// </summary>
-        /// <returns>Retorna uma lisa de candidatos</returns>
+        /// <returns>Retorna uma lisa de Administradors</returns>
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_CandidatoRepository.ListarTodos());
+            return Ok(_AdministradorRepository.ListarTodos());
         }
         /// <summary>
-        /// Lista um candidato passando seu respectivo ID na URL
+        /// Lista um Administrador passando seu respectivo ID na URL
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Retorna um Status Code 200</returns>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            return StatusCode(200, _CandidatoRepository.BuscarPorId(id));
+            return StatusCode(200, _AdministradorRepository.BuscarPorId(id));
         }
         /// <summary>
-        /// Cadastra um novo Candidato
+        /// Cadastra um novo Administrador
         /// </summary>
-        /// <param name="novoCandidato"></param>
+        /// <param name="novoAdministrador"></param>
         /// <returns> Status Code 201</returns>
         [HttpPost]
-        public IActionResult Post(Candidato novoCandidato)
+        public IActionResult Post(Administrador novoAdministrador)
         {
-            _CandidatoRepository.Cadastrar(novoCandidato);
+            _AdministradorRepository.Cadastrar(novoAdministrador);
 
             return StatusCode(201);
         }
         /// <summary>
-        /// Atualiza os candidatos passando o ID pela URL
+        /// Atualiza os Administradors passando o ID pela URL
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="CandidatoAtualizado"></param>
+        /// <param name="AdministradorAtualizado"></param>
         /// <returns> Status Cdoe 404</returns>
         [HttpPut("{id}")]
-        public IActionResult Put(int id, Candidato CandidatoAtualizado)
+        public IActionResult Put(int id, Administrador AdministradorAtualizado)
         {
-            Candidato CandidatoBuscado = _CandidatoRepository.BuscarPorId(id);
+            Administrador AdministradorBuscado = _AdministradorRepository.BuscarPorId(id);
 
-            if (CandidatoBuscado != null)
+            if (AdministradorBuscado != null)
             {
                 try
                 {
-                    _CandidatoRepository.Atualizar(id, CandidatoAtualizado);
+                    _AdministradorRepository.Atualizar(id, AdministradorAtualizado);
 
                     return StatusCode(200);
                 }
@@ -78,7 +77,7 @@ namespace GoVagas.Controllers
                     return BadRequest(erro);
                 }
             }
- 
+
             return StatusCode(404);
         }
         /// <summary>
@@ -89,17 +88,16 @@ namespace GoVagas.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            Candidato CandidatoBuscado = _CandidatoRepository.BuscarPorId(id);
+            Administrador AdministradorBuscado = _AdministradorRepository.BuscarPorId(id);
 
-            if (CandidatoBuscado == null)
+            if (AdministradorBuscado == null)
             {
                 return NotFound();
             }
 
-            _CandidatoRepository.Deletar(id);
+            _AdministradorRepository.Deletar(id);
 
             return StatusCode(202);
         }
     }
 }
-
