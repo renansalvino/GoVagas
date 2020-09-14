@@ -81,7 +81,7 @@ namespace GoVagas.Controllers
             return StatusCode(404);
         }
         /// <summary>
-        /// Deleta um usuário passando um ID pela solução
+        /// Deleta um usuário passando seu respectivo ID pela solução
         /// </summary>
         /// <param name="id"></param>
         /// <returns> Stattus Code 200</returns>
