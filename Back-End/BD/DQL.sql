@@ -146,7 +146,7 @@ SELECT
 FROM Vaga V
 INNER JOIN Empresa E
 ON V.IdEmpresa = E.IdEmpresa
-WHERE IdInscricao = 3;
+WHERE E.IdEmpresa = 1;
 		
 
 -- 6. (RF04) Listar candidatos às vagas (Empresa) 
@@ -192,13 +192,13 @@ SELECT
 
 		
 FROM Vaga V
-INNER JOIN Inscricao I
-ON V.IdInscricao = I.IdInscricao
 INNER JOIN Candidato C
-ON I.IdCandidato = C.IdCandidato
+ON IdCandidato = C.IdCandidato
 INNER JOIN Usuario U
 ON C.IdUsuario = U.IdUsuario
-WHERE IdVaga = 1;			
+INNER JOIN Inscricao I
+ON IdInscricao = I.IdInscricao
+WHERE IdEmpresa = 2;			
 				
 
 -- 7. (RF07) Listar vagas (Candidato) 
@@ -219,13 +219,10 @@ SELECT
 		,V.OutraCidade			
 		,V.ValorSalario			
 		,V.OfertaExtra AS Benefícios
-		,I.DataInscricao
 		
 
 		
 FROM Vaga V
-INNER JOIN Inscricao I
-ON V.IdInscricao = I.IdInscricao
 
 
 -- 8. (RF08) Listar vagas filtro (Candidato) 
@@ -252,7 +249,7 @@ SELECT
 	
 FROM Vaga V
 INNER JOIN Inscricao I
-ON V.IdInscricao = I.IdInscricao
+ON IdInscricao = I.IdInscricao
 ORDER BY DataInscricao DESC	
 
 -- 9. (RF10) Listar vagas candidatadas (Candidato) 
@@ -299,12 +296,12 @@ SELECT
 		
 FROM Vaga V
 INNER JOIN Inscricao I
-ON V.IdInscricao = I.IdInscricao
+ON IdInscricao = I.IdInscricao
 INNER JOIN Candidato C
 ON I.IdCandidato = C.IdCandidato
 INNER JOIN Usuario U
 ON C.IdUsuario = U.IdUsuario
-WHERE Nome = 'Ilda de Suza Castro';
+WHERE Nome = 'Gabriela Possarle';
 
 -- 10. (RF15) Visualizar documentacao (Candidato) 
 SELECT 					

@@ -32,7 +32,7 @@ namespace GoVagas.Controllers
             return Ok(_EmpresaRepository.ListarTodos());
         }
         /// <summary>
-        /// Lista uma Empresa passando seu respectivo ID na URL
+        /// Lista um Empresa passando seu respectivo ID na URL
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Retorna um Status Code 200</returns>
@@ -42,7 +42,7 @@ namespace GoVagas.Controllers
             return StatusCode(200, _EmpresaRepository.BuscarPorId(id));
         }
         /// <summary>
-        /// Cadastra uma nova Empresa
+        /// Cadastra um novo Empresa
         /// </summary>
         /// <param name="novoEmpresa"></param>
         /// <returns> Status Code 201</returns>
@@ -54,7 +54,7 @@ namespace GoVagas.Controllers
             return StatusCode(201);
         }
         /// <summary>
-        /// Atualiza a Empresas passando o ID pela URL
+        /// Atualiza os Empresas passando o ID pela URL
         /// </summary>
         /// <param name="id"></param>
         /// <param name="EmpresaAtualizado"></param>
@@ -81,7 +81,7 @@ namespace GoVagas.Controllers
             return StatusCode(404);
         }
         /// <summary>
-        /// Deleta uma empresa passando um ID pela solução
+        /// Deleta um usuário passando um ID pela solução
         /// </summary>
         /// <param name="id"></param>
         /// <returns> Stattus Code 200</returns>

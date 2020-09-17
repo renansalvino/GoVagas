@@ -124,13 +124,6 @@ IdDocumentacao			INT PRIMARY KEY IDENTITY
 );
 GO
 
--- Tabela de Inscrição --
-CREATE TABLE Inscricao	(
-IdInscricao				INT PRIMARY KEY IDENTITY
-,DataInscricao			DATETIME		
-,IdCandidato			INT FOREIGN KEY REFERENCES Candidato (IdCandidato)
-);
-GO
 
 --Tabela de Vaga --
 CREATE TABLE Vaga (
@@ -150,6 +143,14 @@ IdVaga					INT PRIMARY KEY IDENTITY
 ,OutraCidade			BIT				
 ,ValorSalario			MONEY	
 ,OfertaExtra			VARCHAR(255)	
-,IdInscricao			INT FOREIGN KEY REFERENCES Inscricao (IdInscricao)
 ,IdEmpresa				INT FOREIGN KEY REFERENCES Empresa (IdEmpresa)
+);
+GO
+
+-- Tabela de Inscrição --
+CREATE TABLE Inscricao	(
+IdInscricao				INT PRIMARY KEY IDENTITY
+,DataInscricao			DATETIME		
+,IdCandidato			INT FOREIGN KEY REFERENCES Candidato (IdCandidato)
+,IdVaga					INT FOREIGN KEY REFERENCES Vaga (IdVaga)
 );

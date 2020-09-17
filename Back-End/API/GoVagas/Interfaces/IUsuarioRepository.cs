@@ -13,5 +13,6 @@ namespace GoVagas.Interfaces
         void Cadastrar(Usuario novoUsuario);
         void Atualizar(int id, Usuario UsuarioAtualizado);
         void Deletar(int id);
+        Usuario BuscarPorEmailSenha(string email, string senha);
     }
 }

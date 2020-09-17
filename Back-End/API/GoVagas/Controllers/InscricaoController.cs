@@ -23,7 +23,7 @@ namespace GoVagas.Controllers
         }
 
         /// <summary>
-        ///  Lista as Incrições
+        ///  Lista os Inscricaos
         /// </summary>
         /// <returns>Retorna uma lisa de Inscricaos</returns>
         [HttpGet]
@@ -32,7 +32,7 @@ namespace GoVagas.Controllers
             return Ok(_InscricaoRepository.ListarTodos());
         }
         /// <summary>
-        /// Lista uma Inscricão passando seu respectivo ID na URL
+        /// Lista um Inscricao passando seu respectivo ID na URL
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Retorna um Status Code 200</returns>
@@ -42,7 +42,7 @@ namespace GoVagas.Controllers
             return StatusCode(200, _InscricaoRepository.BuscarPorId(id));
         }
         /// <summary>
-        /// Cadastra um novo Inscricão
+        /// Cadastra um novo Inscricao
         /// </summary>
         /// <param name="novoInscricao"></param>
         /// <returns> Status Code 201</returns>
@@ -54,11 +54,11 @@ namespace GoVagas.Controllers
             return StatusCode(201);
         }
         /// <summary>
-        /// Atualiza as Inscricões passando o ID pela URL
+        /// Atualiza os Inscricaos passando o ID pela URL
         /// </summary>
         /// <param name="id"></param>
         /// <param name="InscricaoAtualizado"></param>
-        /// <returns> Status Code 404</returns>
+        /// <returns> Status Cdoe 404</returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, Inscricao InscricaoAtualizado)
         {
@@ -81,7 +81,7 @@ namespace GoVagas.Controllers
             return StatusCode(404);
         }
         /// <summary>
-        /// Deleta um usuário passando seu respectivo ID pela solução
+        /// Deleta um usuário passando um ID pela solução
         /// </summary>
         /// <param name="id"></param>
         /// <returns> Stattus Code 200</returns>

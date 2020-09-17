@@ -15,7 +15,8 @@ namespace GoVagas.Repositories
         public void Atualizar(int id, TipoUsuario TipoUsuarioAtualizado)
         {
             TipoUsuario TipoUsuarioBuscado = ctx.TipoUsuario.Find(id);
-            ctx.TipoUsuario.Update(TipoUsuarioBuscado);
+            ctx.TipoUsuario.Update(TipoUsuarioAtualizado);
+            ctx.TipoUsuario.Find(TipoUsuarioBuscado);
             ctx.SaveChanges();
 
         }

@@ -5,6 +5,11 @@ namespace GoVagas.Domains
 {
     public partial class Vaga
     {
+        public Vaga()
+        {
+            Inscricao = new HashSet<Inscricao>();
+        }
+
         public int IdVaga { get; set; }
         public string TituloVaga { get; set; }
         public string PerfilDev { get; set; }
@@ -21,10 +26,9 @@ namespace GoVagas.Domains
         public bool? OutraCidade { get; set; }
         public decimal? ValorSalario { get; set; }
         public string OfertaExtra { get; set; }
-        public int? IdInscricao { get; set; }
         public int? IdEmpresa { get; set; }
 
         public virtual Empresa IdEmpresaNavigation { get; set; }
-        public virtual Inscricao IdInscricaoNavigation { get; set; }
+        public virtual ICollection<Inscricao> Inscricao { get; set; }
     }
 }

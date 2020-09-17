@@ -10,12 +10,47 @@ namespace GoVagas.Repositories
 {
     public class UsuarioRepository : IUsuarioRepository
     {
-         GoVagasContext ctx = new GoVagasContext();
+        GoVagasContext ctx = new GoVagasContext();
 
         public void Atualizar(int id, Usuario UsuarioAtualizado)
         {
             Usuario UsuarioBuscado =  ctx.Usuario.Find(id);
+
+            if (UsuarioBuscado !=  null)
+            { 
+                if (UsuarioAtualizado.Nome != null)
+                {
+                UsuarioBuscado.Nome = UsuarioAtualizado.Nome;
+                }
+
+                if (UsuarioAtualizado.Nome != null)
+                {
+                    UsuarioBuscado.Email = UsuarioAtualizado.Email;
+                }
+
+                if (UsuarioAtualizado.Nome != null)
+                {
+                    UsuarioBuscado.DataNascimento = UsuarioAtualizado.DataNascimento;
+                }
+
+                if (UsuarioAtualizado.Nome != null)
+                {
+                    UsuarioBuscado.Senha = UsuarioAtualizado.Senha;
+                }
+
+                if (UsuarioAtualizado.Nome != null)
+                {
+                    UsuarioBuscado.Telefone = UsuarioAtualizado.Telefone;
+                }
+
+                if (UsuarioAtualizado.Nome != null)
+                {
+                    UsuarioBuscado.IdTipoUsuario = UsuarioAtualizado.IdTipoUsuario;
+                }
+            }
+
             ctx.Usuario.Update(UsuarioBuscado);
+
             ctx.SaveChanges();
 
         }
@@ -38,9 +73,17 @@ namespace GoVagas.Repositories
             ctx.Usuario.Remove(UsuarioBuscado);
             ctx.SaveChanges();
         }
-
-
-       
+        
+        /// <summary>
+        /// Valida o usuário
+        /// </summary>
+        /// <param name="email">E-mail do usuário</param>
+        /// <param name="senha">Senha do usuário</param>
+        /// <returns>Retorna um usuário validado</returns>
+        public Usuario BuscarPorEmailSenha(string email, string senha)
+        {
+            return ctx.Usuario.FirstOrDefault(e => e.Email == email && e.Senha == senha);
+        }
 
         public List<Usuario> ListarTodos()
         {

@@ -11,9 +11,10 @@ GO
 
 INSERT INTO Usuario (Nome, Email, DataNascimento, Senha, Telefone, IdTipoUsuario)
 VALUES ('Roberto Possari', 'possari@email.com', '23/12/1967', 'P0ss4r1', '89224002', 1),
-('Intelitrader', 'novosclientes@intelitrader.com.br', '18/08/2018', 'Intelitrader123', '1130423046', 2),
-('BRQ', 'brq@brq.com', '18/01/2016', 'BRQ123', '(11)2526-0600', 2),
-('SpaceNeedle', 'spaceneedle@eusouspace.com', '10/05/2013', 'SpaceNeedle123', '11934285367', 2),	
+('Alberto Salvino', 'novosclientes@demeo.com.br', '18/08/2018', 'Demeo123', '1130423046', 2),
+('Eduardo Costa', 'edu@automatsmart.com', '18/01/2016', 'Automatsmart123', '(11)2526-0600', 2),
+('Matheus Pandolfi', 'mat@creditas.com', '05/07/2015', 'creditas123', '(11)3231-0800', 2),
+('Alex Paixão', 'apaixao@eusouspace.com', '10/05/2013', 'SpaceNeedle123', '11934285367', 2),	
 ('Gabriela Possarle', 'Gabizinhalokinha@email.com', '18/05/2001', 'P0ss4rle', '40029822', 3),
 ('Erique Henrique', 'erique.henrique.bvl@email.com', '16/09/1996', '123cuy', '08007778', 3),
 ('Davi Alencarr', 'davi-vidaloka@email.com', '18/02/2002', 'perdao', '70707070', 3),
@@ -23,10 +24,7 @@ VALUES ('Roberto Possari', 'possari@email.com', '23/12/1967', 'P0ss4r1', '892240
 ('Antonio Francisco Silva Filho','antoniofsfilho@hotmail.com','05/05/1998','uTmjJCuE','79 81008-9518',3),
 ('Felipe Moretim Castellanos','fmCastellanos@outlook.com','01/10/1999','WwytzTqV','63 72066-5426',3),
 ('João Vitor Santana Alves','JOAO.ALVES9598@OUTLOOK.COM','09/05/1998','bVXMrmrM','68 57963-1071',3),
-('Lucas Nogueira da Silva','lucasnogueira_silva@yahoo.com.br','11/12/1998','ypRPjRTr','54 14933-2101',3),
-('Matheus Francisco da Silva Costa','matheusfsc01@yahoo.com.br','06/10/1999','MFPvERwd','42 52188-7976',3),
-('Vinícius Alves Pacheco Nascimento','janpacheco@ig.com.br','17/04/1999','xSPQmcwW','89 50716-0366',3),
-('Luana Jesus de Fontes','Luanafoontes@gmail.com','27/03/2000','KaQSVzHp','61 75462-1688',3);
+('Lucas Nogueira da Silva','lucasnogueira_silva@yahoo.com.br','11/12/1998','ypRPjRTr','54 14933-2101',3)
 GO
 
 -- Popular CANDIDATO --
@@ -60,10 +58,10 @@ GO
 -- Popular TIPO EMPRESA --
 
 INSERT INTO Empresa(AnexarLogo,CargoArea,WebSite,NomeEmpresa,CNPJ,RamoEmpresa,DescricaoEmpresa,LocalizacaoEmpresa,EncontrouSenai,IdUsuario) VALUES
-( NULL,'Gerente de projetos','https://www.demeo.com.br/','DE MEO COMERCIAL IMPORTADORA LTDA', '60872124000431','Sociedade Empresária Limitada', 'Todas as lojas De Meo trabalham com uma grande linha de produtos atendendo os mais diversos segmentos do mercado.','RUA FLORENCIO DE ABREU, 271','Parceria',5),
-( NULL,'Gerente de projetos','https://www.automatsmart.com/site/site/portugues','AUTOMATSMART TECH LTDA - ME', '24809668000142','Sociedade Empresária Limitada ', 'Garantimos o melhor Desempenho Industrial com tecnologias inovadoras para aumentar a Eficiência e evitar perdas de Produtividade.','SENAI-SCS - RUA SANTO ANDRÉ, 680','Parceria',6),
-( NULL,'Gerente de projetos','https://www.creditas.com/','CREDITAS SOLUÇÕES FINANCEIRAS LTDA', '17770708000205','Sociedade Empresária Limitada', 'A Creditas é uma plataforma digital que atua como correspondente Bancário e Sociedade de Crédito Direto para facilitar o processo de contratação de empréstimos.','AV. ENGº LUIS CARLOS BERRINI, 105 - 12º AND','Parceria',7),
-( NULL,'Gerente de projetos','https://www.spaceneedle.com.br/','SPACE NEEDLE TECNOLOGIA LTDA - EPP', '18381466000140','Sociedade Empresária Limitada', 'Nosso propósito, valores, princípios e boas práticas são o resultado de mais de seis anos de experimentação e melhorias contínuas em todos os aspectos profissionais e pessoais.','ALAMEDA RIO NEGRO, 500, SALA 215A - ALPHAVILLE','Parceria',8);
+( NULL,'Gerente de projetos','https://www.demeo.com.br/','DE MEO COMERCIAL IMPORTADORA LTDA', '60872124000431','Sociedade Empresária Limitada', 'Todas as lojas De Meo trabalham com uma grande linha de produtos atendendo os mais diversos segmentos do mercado.','RUA FLORENCIO DE ABREU, 271','Parceria',2),
+( NULL,'Gerente de projetos','https://www.automatsmart.com/site/site/portugues','AUTOMATSMART TECH LTDA - ME', '24809668000142','Sociedade Empresária Limitada ', 'Garantimos o melhor Desempenho Industrial com tecnologias inovadoras para aumentar a Eficiência e evitar perdas de Produtividade.','SENAI-SCS - RUA SANTO ANDRÉ, 680','Parceria',3),
+( NULL,'Gerente de projetos','https://www.creditas.com/','CREDITAS SOLUÇÕES FINANCEIRAS LTDA', '17770708000205','Sociedade Empresária Limitada', 'A Creditas é uma plataforma digital que atua como correspondente Bancário e Sociedade de Crédito Direto para facilitar o processo de contratação de empréstimos.','AV. ENGº LUIS CARLOS BERRINI, 105 - 12º AND','Parceria',4),
+( NULL,'Gerente de projetos','https://www.spaceneedle.com.br/','SPACE NEEDLE TECNOLOGIA LTDA - EPP', '18381466000140','Sociedade Empresária Limitada', 'Nosso propósito, valores, princípios e boas práticas são o resultado de mais de seis anos de experimentação e melhorias contínuas em todos os aspectos profissionais e pessoais.','ALAMEDA RIO NEGRO, 500, SALA 215A - ALPHAVILLE','Parceria',5);
 GO
 
 -- Popular TIPO DOCUMENTACAO --
@@ -74,17 +72,18 @@ INSERT INTO Documentacao (ResposavelVaga,DataInicio,DataTerminoPrev,DataTerminoE
 ,('Saulo dos Santos','16/03/2017','13/09/2018','13/09/2018', 'CONCLUÍDO','546','Sim','1','1','1','2',NULL,NULL,NULL,'20/02/2017',NULL,'10/03/2017',NULL,NULL,NULL,NULL,NULL,'0','Aluno não entregou o contrato na empresa',NULL, 3,3);
 GO
 
--- Popular TIPO INSCRICAO --
-
-INSERT INTO Inscricao (DataInscricao, IdCandidato) 
-VALUES ('10/02/2020', 1), ('20/03/2020', 2), ('30/04/2020', 3);
-GO
-
 -- Popular VAGA --
 
-INSERT INTO Vaga (TituloVaga,PerfilDev,DiasContrato,TempoExp,HabNecessaria,LocalVaga,ReqVaga,NivelExp,DescAtivFuncoes,TipoContrato,ExpertiseVaga,TrabalhoRemoto,OutraCidade,ValorSalario,OfertaExtra,IdInscricao,IdEmpresa) VALUES
-('Web Desenveloper Python','Programador Python','12/05/2020','3 meses', 'Pyton, Excel, Git','Rua Dr. Alberto de Oliveira, n75 - São Paulo', 'Comunicação, Proatividade','Média','Definir e manter a estrutura organizacional de um sistema,','1','júnior','1',NULL,NULL,'Planos de Saúde, Vale Refeição',1,1)
-,('Web Desenveloper Java','Web Desenveloper Java','06/01/2019','5 meses', 'Banck-end, Java, Javascript','Alameda Barão de Limeira, 539 - Santa Cecilia, São Paulo','Empatia, Liderança','Média','Realizar a manutenção e criação de novas funcionalidades,','TRUE','júnior','TRUE',NULL,'880','Planos de Saúde, Vale Refeição',2,2)
-,('Web Desenveloper C#','Programador Full Stack','23/09/2020','1 ano', 'Html,Css, Bootstrap, SQL Server','Avenida Cruzeiro do Sul, 2630 Prédio I - Santana, São Paulo','Criatividade, Flexibilidade','Alta','Desenvolvimento e manutenção de aplicações web,','FALSE','júnior','0',NULL,'1000','Planos de Saúde, Vale Refeição',3,3);
+INSERT INTO Vaga (TituloVaga,PerfilDev,DiasContrato,TempoExp,HabNecessaria,LocalVaga,ReqVaga,NivelExp,DescAtivFuncoes,TipoContrato,ExpertiseVaga,TrabalhoRemoto,OutraCidade,ValorSalario,OfertaExtra,IdEmpresa) VALUES
+('Web Desenveloper Python','Programador Python','12/05/2020','3 meses', 'Pyton, Excel, Git','Rua Dr. Alberto de Oliveira, n75 - São Paulo', 'Comunicação, Proatividade','Média','Definir e manter a estrutura organizacional de um sistema,','1','júnior','1',NULL,NULL,'Planos de Saúde, Vale Refeição',1)
+,('Web Desenveloper Java','Web Desenveloper Java','06/01/2019','5 meses', 'Banck-end, Java, Javascript','Alameda Barão de Limeira, 539 - Santa Cecilia, São Paulo','Empatia, Liderança','Média','Realizar a manutenção e criação de novas funcionalidades,','TRUE','júnior','TRUE',NULL,'880','Planos de Saúde, Vale Refeição',2)
+,('Web Desenveloper C#','Programador Full Stack','23/09/2020','1 ano', 'Html,Css, Bootstrap, SQL Server','Avenida Cruzeiro do Sul, 2630 Prédio I - Santana, São Paulo','Criatividade, Flexibilidade','Alta','Desenvolvimento e manutenção de aplicações web,','FALSE','júnior','0',NULL,'1000','Planos de Saúde, Vale Refeição',3);
 GO
+
+-- Popular TIPO INSCRICAO --
+
+INSERT INTO Inscricao (DataInscricao, IdCandidato, IdVaga) 
+VALUES ('10/06/2020', 1,1), ('06/02/2020', 2,2), ('30/09/2020', 3,3);
+GO
+
 

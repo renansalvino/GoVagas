@@ -39,7 +39,7 @@ namespace GoVagas.Contexts
             modelBuilder.Entity<Administrador>(entity =>
             {
                 entity.HasKey(e => e.IdAdministrador)
-                    .HasName("PK__Administ__2B3E34A8C470D7A0");
+                    .HasName("PK__Administ__2B3E34A86701D370");
 
                 entity.Property(e => e.Cpf)
                     .IsRequired()
@@ -51,13 +51,13 @@ namespace GoVagas.Contexts
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Administrador)
                     .HasForeignKey(d => d.IdUsuario)
-                    .HasConstraintName("FK__Administr__IdUsu__4316F928");
+                    .HasConstraintName("FK__Administr__IdUsu__5535A963");
             });
 
             modelBuilder.Entity<Candidato>(entity =>
             {
                 entity.HasKey(e => e.IdCandidato)
-                    .HasName("PK__Candidat__D55989056AC7C995");
+                    .HasName("PK__Candidat__D55989051EEC76EB");
 
                 entity.Property(e => e.CargoEmpresa)
                     .HasMaxLength(255)
@@ -188,13 +188,13 @@ namespace GoVagas.Contexts
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Candidato)
                     .HasForeignKey(d => d.IdUsuario)
-                    .HasConstraintName("FK__Candidato__IdUsu__3D5E1FD2");
+                    .HasConstraintName("FK__Candidato__IdUsu__4F7CD00D");
             });
 
             modelBuilder.Entity<Documentacao>(entity =>
             {
                 entity.HasKey(e => e.IdDocumentacao)
-                    .HasName("PK__Document__7F91479A5753C909");
+                    .HasName("PK__Document__7F91479AC2C51B40");
 
                 entity.Property(e => e.AvalicoesProrrog)
                     .HasMaxLength(1)
@@ -254,18 +254,18 @@ namespace GoVagas.Contexts
                 entity.HasOne(d => d.IdCandidatoNavigation)
                     .WithMany(p => p.Documentacao)
                     .HasForeignKey(d => d.IdCandidato)
-                    .HasConstraintName("FK__Documenta__IdCan__46E78A0C");
+                    .HasConstraintName("FK__Documenta__IdCan__59063A47");
 
                 entity.HasOne(d => d.IdEmpresaNavigation)
                     .WithMany(p => p.Documentacao)
                     .HasForeignKey(d => d.IdEmpresa)
-                    .HasConstraintName("FK__Documenta__IdEmp__45F365D3");
+                    .HasConstraintName("FK__Documenta__IdEmp__5812160E");
             });
 
             modelBuilder.Entity<Empresa>(entity =>
             {
                 entity.HasKey(e => e.IdEmpresa)
-                    .HasName("PK__Empresa__5EF4033EE65FD73B");
+                    .HasName("PK__Empresa__5EF4033E1565C85A");
 
                 entity.Property(e => e.CargoArea)
                     .IsRequired()
@@ -308,26 +308,31 @@ namespace GoVagas.Contexts
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Empresa)
                     .HasForeignKey(d => d.IdUsuario)
-                    .HasConstraintName("FK__Empresa__IdUsuar__403A8C7D");
+                    .HasConstraintName("FK__Empresa__IdUsuar__52593CB8");
             });
 
             modelBuilder.Entity<Inscricao>(entity =>
             {
                 entity.HasKey(e => e.IdInscricao)
-                    .HasName("PK__Inscrica__6209444BD84C16D3");
+                    .HasName("PK__Inscrica__6209444BDCCC5EFD");
 
                 entity.Property(e => e.DataInscricao).HasColumnType("datetime");
 
                 entity.HasOne(d => d.IdCandidatoNavigation)
                     .WithMany(p => p.Inscricao)
                     .HasForeignKey(d => d.IdCandidato)
-                    .HasConstraintName("FK__Inscricao__IdCan__49C3F6B7");
+                    .HasConstraintName("FK__Inscricao__IdCan__5EBF139D");
+
+                entity.HasOne(d => d.IdVagaNavigation)
+                    .WithMany(p => p.Inscricao)
+                    .HasForeignKey(d => d.IdVaga)
+                    .HasConstraintName("FK__Inscricao__IdVag__5FB337D6");
             });
 
             modelBuilder.Entity<TipoUsuario>(entity =>
             {
                 entity.HasKey(e => e.IdTipoUsuario)
-                    .HasName("PK__TipoUsua__CA04062B30F96787");
+                    .HasName("PK__TipoUsua__CA04062B0E127A33");
 
                 entity.Property(e => e.TituloTipoUsuario)
                     .HasMaxLength(255)
@@ -337,10 +342,10 @@ namespace GoVagas.Contexts
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__Usuario__5B65BF97213EB3E7");
+                    .HasName("PK__Usuario__5B65BF9764F20DE7");
 
                 entity.HasIndex(e => e.Email)
-                    .HasName("UQ__Usuario__A9D10534576160E1")
+                    .HasName("UQ__Usuario__A9D10534272C4537")
                     .IsUnique();
 
                 entity.Property(e => e.DataNascimento).HasColumnType("date");
@@ -369,13 +374,13 @@ namespace GoVagas.Contexts
                 entity.HasOne(d => d.IdTipoUsuarioNavigation)
                     .WithMany(p => p.Usuario)
                     .HasForeignKey(d => d.IdTipoUsuario)
-                    .HasConstraintName("FK__Usuario__IdTipoU__3A81B327");
+                    .HasConstraintName("FK__Usuario__IdTipoU__4CA06362");
             });
 
             modelBuilder.Entity<Vaga>(entity =>
             {
                 entity.HasKey(e => e.IdVaga)
-                    .HasName("PK__Vaga__A848DC3E9B354CDC");
+                    .HasName("PK__Vaga__A848DC3E93FC1E51");
 
                 entity.Property(e => e.DescAtivFuncoes)
                     .IsRequired()
@@ -433,12 +438,7 @@ namespace GoVagas.Contexts
                 entity.HasOne(d => d.IdEmpresaNavigation)
                     .WithMany(p => p.Vaga)
                     .HasForeignKey(d => d.IdEmpresa)
-                    .HasConstraintName("FK__Vaga__IdEmpresa__4D94879B");
-
-                entity.HasOne(d => d.IdInscricaoNavigation)
-                    .WithMany(p => p.Vaga)
-                    .HasForeignKey(d => d.IdInscricao)
-                    .HasConstraintName("FK__Vaga__IdInscrica__4CA06362");
+                    .HasConstraintName("FK__Vaga__IdEmpresa__5BE2A6F2");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -1,6 +1,7 @@
 ﻿using GoVagas.Contexts;
 using GoVagas.Domains;
 using GoVagas.Interfaces;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,9 @@ namespace GoVagas.Repositories
 
         public void Atualizar(int id, Inscricao InscricaoAtualizado)
         {
-            Inscricao InscricaoBuscado = ctx.Inscricao.Find(id);
-            ctx.Inscricao.Update(InscricaoBuscado);
+            Inscricao inscricaoBuscado = ctx.Inscricao.Find(id);
+            ctx.Inscricao.Update(inscricaoBuscado);
             ctx.SaveChanges();
-
         }
 
         public Inscricao BuscarPorId(int id)
@@ -38,9 +38,6 @@ namespace GoVagas.Repositories
             ctx.Inscricao.Remove(InscricaoBuscado);
             ctx.SaveChanges();
         }
-
-
-
 
         public List<Inscricao> ListarTodos()
         {
