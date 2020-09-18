@@ -1,0 +1,872 @@
+{
+	"info": {
+		"_postman_id": "7e9eb78d-182a-45a2-832d-3a1d03dab2ff",
+		"name": "GoVagas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Administrador",
+			"item": [
+				{
+					"name": "Lista os Administradors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Administrador",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Administrador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista os Administradores por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Administrador/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Administrador",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastra um novo Administrador",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"cpf\": \"23516467800\",\r\n        \"idUsuarioNavigation\": {\r\n\r\n            \"nome\": \"Teste\",\r\n            \"email\": \"Teste@email.com\",\r\n            \"dataNascimento\": \"1967-12-23T00:00:00\",\r\n            \"senha\": \"012\",\r\n            \"telefone\": \"99924002       \",\r\n            \"idTipoUsuario\": 1,\r\n            \"idTipoUsuarioNavigation\": null,\r\n            \"administrador\": [],\r\n            \"candidato\": [],\r\n            \"empresa\": []\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Administrador",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Administrador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar os Administradors por ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"cpf\": \"88816467888\",\r\n        \"idUsuarioNavigation\": {\r\n            \"nome\": \"Davi\",\r\n            \"email\": \"Demonio@email.com\",\r\n            \"dataNascimento\": \"1967-12-23T00:00:00\",\r\n            \"senha\": \"0000000000000000\",\r\n            \"telefone\": \"99924002       \",\r\n            \"idTipoUsuario\": 1,\r\n            \"idTipoUsuarioNavigation\": null,\r\n            \"administrador\": [],\r\n            \"candidato\": [],\r\n            \"empresa\": []\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Administrador/3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Administrador",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta um Administrador por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Administrador/4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Administrador",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Candidato",
+			"item": [
+				{
+					"name": "Lista os  Candidatos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Candidato",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Candidato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista os Candidatos por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Candidato/11",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Candidato",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar um novo Candidatos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"numMatricula\": \"66666600\",\r\n        \"cpf\": \"12345633333\",\r\n        \"sexo\": \"DOR DE CABECA\",\r\n        \"dataMatricula\": \"2019-07-17T00:00:00\",\r\n        \"raca\": \"PITT\", \r\n        \"cidade\": \"PE\",\r\n        \"nivelCurso\": \"VWVSFVSFV\",\r\n        \"tipoCurso\": \"Aprendizagem Industrial\",\r\n        \"nomeCurso\": \"Assistente Administrativo - Programa Meu Novo Mundo\",\r\n        \"turma\": \"T1 - NOVO MUNDO\",\r\n        \"turno\": \"MADRUGADA\",\r\n        \"termo\": \"1\",\r\n        \"fotoPerfil\": null,\r\n        \"tituloPerfil\": \"Gestora de RH\",\r\n        \"habilidade\": \"Trabalho em Equipe/ Resolução de problemas\",\r\n        \"nivelIngles\": \"Intermediário\",\r\n        \"descricao\": \"Assistente administrativa | Estudante na Escola SENAI\",\r\n        \"urlLinkedin\": \"www.Linkedin.com/0\",\r\n        \"urlGitHub\": \"www.GitHub.com/0\",\r\n        \"curriculo\": null,\r\n        \"pretensaoSalario\": 1234.0000,\r\n        \"personalidade\": \"PORCO\",\r\n        \"focoCarreira\": \"Gestão de RH\",\r\n        \"expertiseCandidato\": \"Júnior\",\r\n        \"experienciaPro\": \"Sim\",\r\n        \"nomeEmpresa\": \"Avanade\",\r\n        \"perfilEmpresa\": \"Consultoria de TI\",\r\n        \"cargoEmpresa\": \"Gestor de Recursos Humanos\",\r\n        \"dataInicio\": \"2019-09-16T00:00:00\",\r\n        \"dataTermino\": \"2020-12-18T00:00:00\",\r\n        \"tamanhoEmpresa\": \"Grande Porte\",\r\n        \"tipoContrato\": \"CLT\",\r\n        \"trabalharRemoto\": true,\r\n        \"deficienteFisico\": true,\r\n        \"idUsuarioNavigation\": {\r\n            \"nome\": \"LULA\",\r\n            \"email\": \"LULAEBOLSO@email.com\",\r\n            \"dataNascimento\": \"2002-02-18T00:00:00\",\r\n            \"senha\": \"01010101010101010101010\",\r\n            \"telefone\": \"70707070       \",\r\n            \"idTipoUsuario\": 3,\r\n            \"idTipoUsuarioNavigation\": null,\r\n            \"administrador\": [],\r\n            \"candidato\": [],\r\n            \"empresa\": []\r\n        },\r\n        \"documentacao\": [],\r\n        \"inscricao\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Candidato",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Candidato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar os Candidatos por ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"numMatricula\": \"77777777\",\r\n        \"cpf\": \"00000033333\",\r\n        \"sexo\": \"FEM\",\r\n        \"dataMatricula\": \"2020-09-17T00:00:00\",\r\n        \"raca\": \"BRANCO\",\r\n        \"cidade\": \"AC\",\r\n        \"nivelCurso\": \"Aprendizagem\",\r\n        \"tipoCurso\": \"Aprendizagem Industrial\",\r\n        \"nomeCurso\": \"Assistente Administrativo - Programa Meu Novo Mundo\",\r\n        \"turma\": \"T1 - NOVO MUNDO\",\r\n        \"turno\": \"NOITE\",\r\n        \"termo\": \"1\",\r\n        \"fotoPerfil\": null,\r\n        \"tituloPerfil\": \"VAGABUNDO\",\r\n        \"habilidade\": \"DORMIR, COMER, CACAR\",\r\n        \"nivelIngles\": \"BAIXA\",\r\n        \"descricao\": \"SÓ DORMIR\",\r\n        \"urlLinkedin\": \"www.Linkedin.com/99\",\r\n        \"urlGitHub\": \"www.GitHub.com/99\",\r\n        \"curriculo\": null,\r\n        \"pretensaoSalario\": 30.0000,\r\n        \"personalidade\": \"CORNO\",\r\n        \"focoCarreira\": \"Gestão de RH\",\r\n        \"expertiseCandidato\": \"Júnior\",\r\n        \"experienciaPro\": \"NAO\",\r\n        \"nomeEmpresa\": \"PINGO\",\r\n        \"perfilEmpresa\": \"Consultoria de TI\",\r\n        \"cargoEmpresa\": \"Gestor de Recursos Humanos\",\r\n        \"dataInicio\": \"2019-09-16T00:00:00\",\r\n        \"dataTermino\": \"2020-12-18T00:00:00\",\r\n        \"tamanhoEmpresa\": \"Grande Porte\",\r\n        \"tipoContrato\": \"CLT\",\r\n        \"trabalharRemoto\": true,\r\n        \"deficienteFisico\": true,\r\n        \"idUsuarioNavigation\": {\r\n            \"nome\": \"PINGO\",\r\n            \"email\": \"PINGO@email.com\",\r\n            \"dataNascimento\": \"2002-02-18T00:00:00\",\r\n            \"senha\": \"10000\",\r\n            \"telefone\": \"70707070       \",\r\n            \"idTipoUsuario\": 3,\r\n            \"idTipoUsuarioNavigation\": null,\r\n            \"administrador\": [],\r\n            \"candidato\": [],\r\n            \"empresa\": []\r\n        },\r\n        \"documentacao\": [],\r\n        \"inscricao\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Candidato/35",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Candidato",
+								"35"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta um Candidatos por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Candidato/36",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Candidato",
+								"36"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Documentacao",
+			"item": [
+				{
+					"name": "Lista os  Documentos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Documentacao",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Documentacao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista os Documentos por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Documentacao/4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Documentacao",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastra um novo Documento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"resposavelVaga\": \"Erick Henry A. C\",\r\n        \"dataInicio\": \"2019-09-17T00:00:00\",\r\n        \"dataTerminoPrev\": \"2020-12-18T00:00:00\",\r\n        \"dataTerminoEfe\": null,\r\n        \"statusDoc\": \"Ja enviado\",\r\n        \"diasContrato\": \"470\",\r\n        \"reqMatricula\": \"Sim\",\r\n        \"tipoContrato\": false,\r\n        \"planoEstagio\": true,\r\n        \"desligamento\": true,\r\n        \"qtdAvaliacoes\": \"2\",\r\n        \"prorrogacoes\": \"2021-12-18T00:00:00\",\r\n        \"prorrogDiasContrato\": \"824\",\r\n        \"avalicoesProrrog\": \"4\",\r\n        \"dataAvaliacao1\": \"2019-08-10T00:00:00\",\r\n        \"avaliacao1\": null,\r\n        \"dataAvaliacao2\": \"2019-08-20T00:00:00\",\r\n        \"avaliacao2\": null,\r\n        \"dataAvaliacao3\": \"2019-08-30T00:00:00\",\r\n        \"avaliacao3\": null,\r\n        \"dataAvaliacao4\": \"2019-09-10T00:00:00\",\r\n        \"avaliacao4\": null,\r\n        \"termoEgresso\": false,\r\n        \"motivoEvasao\": null,\r\n        \"modeloDoc\": null,\r\n        \"idEmpresa\": 1,\r\n        \"idCandidatoNavigation\": null,\r\n        \"idEmpresaNavigation\": null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Documentacao",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Documentacao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar os Documentacaos por ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"resposavelVaga\": \"Jair I. A. C\",\r\n        \"dataInicio\": \"2019-09-17T00:00:00\",\r\n        \"dataTerminoPrev\": \"2020-12-18T00:00:00\",\r\n        \"dataTerminoEfe\": null,\r\n        \"statusDoc\": \"Ja enviado\",\r\n        \"diasContrato\": \"470\",\r\n        \"reqMatricula\": \"Sim\",\r\n        \"tipoContrato\": false,\r\n        \"planoEstagio\": true,\r\n        \"desligamento\": true,\r\n        \"qtdAvaliacoes\": \"2\",\r\n        \"prorrogacoes\": \"2021-12-18T00:00:00\",\r\n        \"prorrogDiasContrato\": \"824\",\r\n        \"avalicoesProrrog\": \"4\",\r\n        \"dataAvaliacao1\": \"2019-08-10T00:00:00\",\r\n        \"avaliacao1\": null,\r\n        \"dataAvaliacao2\": \"2019-08-20T00:00:00\",\r\n        \"avaliacao2\": null,\r\n        \"dataAvaliacao3\": \"2019-08-30T00:00:00\",\r\n        \"avaliacao3\": null,\r\n        \"dataAvaliacao4\": \"2019-09-10T00:00:00\",\r\n        \"avaliacao4\": null,\r\n        \"termoEgresso\": false,\r\n        \"motivoEvasao\": null,\r\n        \"modeloDoc\": null,\r\n        \"idEmpresa\": 1,\r\n        \"idCandidatoNavigation\": null,\r\n        \"idEmpresaNavigation\": null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Documentacao/10",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Documentacao",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta Documentacao",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Documentacao/10",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Documentacao",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Empresa",
+			"item": [
+				{
+					"name": "Lista os  Empresa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idEmpresa\": 6,\r\n        \"anexarLogo\": null,\r\n        \"cargoArea\": \"Administração de Redes\",\r\n        \"webSite\": \"https://www.BRQ.com.br/\",\r\n        \"nomeEmpresa\": \"BRQ\",\r\n        \"cnpj\": \"00081466000000\",\r\n        \"ramoEmpresa\": \"Sociedade Empresária Limitada\",\r\n        \"descricaoEmpresa\": \"Nosso propósito, valores, princípios e boas práticas são o resultado de mais de seis anos de experimentação.\",\r\n        \"localizacaoEmpresa\": \"ALAMEDA RIO NEGRO, 500, SALA 215A - ALPHAVILLE\",\r\n        \"encontrouSenai\": \"Parceria\",\r\n        \"idUsuario\": null,\r\n        \"idUsuarioNavigation\": {\r\n            \"idUsuario\": 25,\r\n            \"nome\": \"Capeta\",\r\n            \"email\": \"69@gmail.com\",\r\n            \"dataNascimento\": \"1956-06-14T00:00:00\",\r\n            \"senha\": \"12345678\",\r\n            \"telefone\": \"11 97700-6213  \",\r\n            \"idTipoUsuario\": 3,\r\n            \"idTipoUsuarioNavigation\": null,\r\n            \"administrador\": [],\r\n            \"candidato\": [],\r\n            \"empresa\": []\r\n        },\r\n        \"documentacao\": [],\r\n        \"vaga\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Empresa",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Empresa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista os Candidatos por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Empresa/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Empresa",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar um novo Empresa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"anexarLogo\": null,\r\n        \"cargoArea\": \"Gerente de projetos\",\r\n        \"webSite\": \"https://www.CCE.com.br/\",\r\n        \"nomeEmpresa\": \"IMPORTACULISMO LTDA\",\r\n        \"cnpj\": \"0000012300001\",\r\n        \"ramoEmpresa\": \"Sociedade Empresária Limitada\",\r\n        \"descricaoEmpresa\": \"ME VALE UN CULO LO WUE PIENSAS DE MI, PERO FELICIDAD NO ES NEGOCIABLE.\",\r\n        \"localizacaoEmpresa\": \"RUA OLIMPO, 271\",\r\n        \"encontrouSenai\": \"Parceria\",\r\n        \"idUsuarioNavigation\": {\r\n            \"nome\": \"JUAN\",\r\n            \"email\": \"JUAN@demeo.com.br\",\r\n            \"dataNascimento\": \"2018-08-18T00:00:00\",\r\n            \"senha\": \"123\",\r\n            \"telefone\": \"1130423046     \",\r\n            \"idTipoUsuario\": 2,\r\n            \"idTipoUsuarioNavigation\": null,\r\n            \"administrador\": [],\r\n            \"candidato\": [],\r\n            \"empresa\": []\r\n        },\r\n        \"documentacao\": [],\r\n        \"vaga\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Empresa",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Empresa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar os Empresa por ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"anexarLogo\": null,\r\n        \"cargoArea\": \"Administração de negocios\",\r\n        \"webSite\": \"https://www.Gooogle.com.br/\",\r\n        \"nomeEmpresa\": \"Gooogle\",\r\n        \"cnpj\": \"10099999000001\",\r\n        \"ramoEmpresa\": \"Sociedade Empresária Limitada\",\r\n        \"descricaoEmpresa\": \"Nosso propósito, valores, princípios e boas práticas são o resultado de mais de seis anos de experimentação.\",\r\n        \"localizacaoEmpresa\": \"Aqui na esquina de casa, SALA 215A - ALPHAVILLE\",\r\n        \"encontrouSenai\": \"Parceria\",\r\n        \"idUsuario\": null,\r\n        \"idUsuarioNavigation\": {\r\n            \"nome\": \"Capeta\",\r\n            \"email\": \"lascou@gmail.com\",\r\n            \"dataNascimento\": \"1956-06-14T00:00:00\",\r\n            \"senha\": \"123\",\r\n            \"telefone\": \"11 47170-4259  \",\r\n            \"idTipoUsuario\": 3,\r\n            \"idTipoUsuarioNavigation\": null,\r\n            \"administrador\": [],\r\n            \"candidato\": [],\r\n            \"empresa\": []\r\n        },\r\n        \"documentacao\": [],\r\n        \"vaga\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Empresa/8",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Empresa",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta um Empresa por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Empresa/9",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Empresa",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Fazer Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBvc3NhcmlAZW1haWwuY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE2MDAzODc1MDgsImlzcyI6IkdvVmFnYXMiLCJhdWQiOiJHb1ZhZ2FzIn0.RX3rOn5ROSJMUeioqtYeIb6rHdCevkqdS2qVeKS0l3I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"Email\" : \"possari@email.com\" , \r\n\t\"Senha\" : \"P0ss4r1\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "TipoUsuario",
+			"item": [
+				{
+					"name": "Lista TopoUsuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/TipoUsuario",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"TipoUsuario"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Listar os Usuario",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Usuario",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista os Usuario por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Usuario/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastra um novo Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"RENANNNNN\",\r\n        \"email\": \"RENNNNNNN@email.com\",\r\n        \"dataNascimento\": \"1996-12-23T00:00:00\",\r\n        \"senha\": \"22222222222222222\",\r\n        \"telefone\": \"99224002       \",\r\n        \"idTipoUsuario\": 1,\r\n        \"idTipoUsuarioNavigation\": null,\r\n        \"administrador\": [],\r\n        \"candidato\": [],\r\n        \"empresa\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Usuario/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Usuario",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar os Usuario por ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"RENAN\",\r\n        \"email\": \"RENAN@email.com\",\r\n        \"dataNascimento\": \"1996-12-23T00:00:00\",\r\n        \"senha\": \"22222222222222222\",\r\n        \"telefone\": \"99224002       \",\r\n        \"idTipoUsuario\": 1,\r\n        \"idTipoUsuarioNavigation\": null,\r\n        \"administrador\": [],\r\n        \"candidato\": [],\r\n        \"empresa\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Usuario/23",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Usuario",
+								"23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta um Usuario por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Usuario/23",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Usuario",
+								"23"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Vaga",
+			"item": [
+				{
+					"name": "Lista os Vaga",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Vaga",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Vaga"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista os Vaga por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Vaga/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Vaga",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastra um novo Vaga",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tituloVaga\": \"TESTE\",\r\n    \"perfilDev\": \"TESTE\",\r\n    \"diasContrato\": \"12/05/2020\",\r\n    \"tempoExp\": \"69 meses\",\r\n    \"habNecessaria\": \"Git\",\r\n    \"localVaga\": \"Rua Dr., n00 - São Paulo\",\r\n    \"reqVaga\": \"Comun\",\r\n    \"nivelExp\": \"MEDIANO\",\r\n    \"descAtivFuncoes\": \"Definir e manter a estrutura organizacional de um sistema,\",\r\n    \"tipoContrato\": true,\r\n    \"expertiseVaga\": \"júnior\",\r\n    \"trabalhoRemoto\": true,\r\n    \"outraCidade\": null,\r\n    \"valorSalario\": null,\r\n    \"ofertaExtra\": \"Planos de Saúde, Vale Refeição\",\r\n    \"idEmpresa\": 1,\r\n    \"idEmpresaNavigation\": null,\r\n    \"inscricao\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Vaga",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Vaga"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar os Vaga por ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tituloVaga\": \"NOVOTESTE\",\r\n    \"perfilDev\": \"NOVOTESTE\",\r\n    \"diasContrato\": \"12/05/2020\",\r\n    \"tempoExp\": \"69 meses\",\r\n    \"habNecessaria\": \"Git\",\r\n    \"localVaga\": \"Rua Dr., n00 - São Paulo\",\r\n    \"reqVaga\": \"Comun\",\r\n    \"nivelExp\": \"MEDIANO\",\r\n    \"descAtivFuncoes\": \"Definir e manter a estrutura organizacional de um sistema,\",\r\n    \"tipoContrato\": true,\r\n    \"expertiseVaga\": \"júnior\",\r\n    \"trabalhoRemoto\": true,\r\n    \"outraCidade\": null,\r\n    \"valorSalario\": null,\r\n    \"ofertaExtra\": \"Planos de Saúde, Vale Refeição\",\r\n    \"idEmpresa\": 1,\r\n    \"idEmpresaNavigation\": null,\r\n    \"inscricao\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/Vaga/7",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Vaga",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deleta um Administrador por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/Vaga/7",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"Vaga",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
