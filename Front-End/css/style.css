@@ -19,6 +19,7 @@ nav {
     justify-content: space-between;
     background-color: white;
     padding: 15px 30px 15px 90px;
+    box-shadow: 0 2px rgba(156, 155, 155, 0.53);
 }
 
 nav img {
@@ -67,10 +68,11 @@ footer {
     padding: 50px;
 }
 
-footer img {
-    width: 240px;
-    height: 60px;
-}
+    footer img {
+        width: 240px;
+        height: 60px;
+        padding-right: 100px;
+    }
 
 div#rodape {
     display: flex;
