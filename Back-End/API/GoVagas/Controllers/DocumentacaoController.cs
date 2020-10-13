@@ -48,7 +48,7 @@ namespace GoVagas.Controllers
         /// <param name="documentoAtualizado"></param>
         /// <returns></returns>
         [HttpPut("{id}")]
-        public IActionResult Put(int id, Documentacao documentoAtualizado)
+        public IActionResult Put(int id, Documentacao documentoAtualizado) 
         {
             Documentacao documentoBuscado = _DocumentacaoRepository.BuscarPorId(id);
             if (documentoAtualizado != null)

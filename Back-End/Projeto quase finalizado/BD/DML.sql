@@ -86,4 +86,4 @@ INSERT INTO Inscricao (DataInscricao, IdCandidato, IdVaga)
 VALUES ('10/06/2020', 11,1), ('06/02/2020', 12,2), ('30/09/2020', 13,3);
 GO
 
-SELECT * FROM Inscricao
+SELECT *FROM Candidato

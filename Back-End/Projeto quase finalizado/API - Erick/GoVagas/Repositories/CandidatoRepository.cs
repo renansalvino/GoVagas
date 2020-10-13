@@ -20,7 +20,6 @@ namespace GoVagas.Repositories
 
             Usuario UsuarioBuscado = ctx.Usuario.FirstOrDefault(u => u.IdUsuario == CandidatoBuscado.IdUsuario);
 
-            //Gambiarra do matheus
             CandidatoBuscado.IdUsuarioNavigation = UsuarioBuscado;
 
 

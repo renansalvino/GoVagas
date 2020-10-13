@@ -43,7 +43,12 @@ namespace GoVagas.Repositories
 
         public List<Administrador> ListarTodos()
         {
-            return ctx.Administrador.ToList();
+            return ctx.Administrador.Select(e => new Administrador()
+            {
+                IdAdministrador = e.IdAdministrador,
+
+
+            }); 
         }
     }
 }

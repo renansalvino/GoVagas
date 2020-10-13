@@ -344,3 +344,5 @@ INNER JOIN Candidato C
 ON D.IdCandidato = C.IdCandidato
 INNER JOIN Usuario U
 ON C.IdUsuario = U.IdUsuario
+
+SELECT*FROM Administrador
