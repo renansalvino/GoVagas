@@ -46,9 +46,26 @@ namespace GoVagas.Repositories
             return ctx.Administrador.Select(e => new Administrador()
             {
                 IdAdministrador = e.IdAdministrador,
+                Cpf = e.Cpf,
+
+                IdUsuarioNavigation = new Usuario()
+                {
+                    IdUsuario = e.IdUsuarioNavigation.IdUsuario,
+                    Nome = e.IdUsuarioNavigation.Nome,
+                    Email = e.IdUsuarioNavigation.Email,
+                    DataNascimento = e.IdUsuarioNavigation.DataNascimento,
+                    Senha = e.IdUsuarioNavigation.Senha,
+                    Telefone = e.IdUsuarioNavigation.Senha,
 
 
-            }); 
-        }
+                    IdTipoUsuarioNavigation = new TipoUsuario()
+                    {
+                        IdTipoUsuario = e.IdUsuarioNavigation.IdTipoUsuarioNavigation.IdTipoUsuario,
+                        TituloTipoUsuario = e.IdUsuarioNavigation.IdTipoUsuarioNavigation.TituloTipoUsuario,
+                    }
+                }
+            })
+                .ToList();      
+         }
     }
 }

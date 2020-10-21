@@ -264,7 +264,12 @@ namespace GoVagas.Repositories
                         Email = e.IdUsuarioNavigation.Email,
                         DataNascimento = e.IdUsuarioNavigation.DataNascimento,
                         Telefone = e.IdUsuarioNavigation.Telefone,
-                        IdTipoUsuario = e.IdUsuarioNavigation.IdTipoUsuario
+
+                        IdTipoUsuarioNavigation = new TipoUsuario()
+                        {
+                            IdTipoUsuario = e.IdUsuarioNavigation.IdTipoUsuarioNavigation.IdTipoUsuario,
+                            TituloTipoUsuario = e.IdUsuarioNavigation.IdTipoUsuarioNavigation.TituloTipoUsuario,
+                        }
                     }
                 })
                 .ToList();

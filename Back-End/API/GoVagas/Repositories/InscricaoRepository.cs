@@ -41,7 +41,101 @@ namespace GoVagas.Repositories
 
         public List<Inscricao> ListarTodos()
         {
-            return ctx.Inscricao.ToList();
+            return ctx.Inscricao.Select(e => new Inscricao()
+            {
+                IdInscricao = e.IdInscricao,
+                DataInscricao = e.DataInscricao,
+
+                IdVagaNavigation = new Vaga()
+                {
+                    IdVaga = e.IdVagaNavigation.IdVaga,
+                    TituloVaga = e.IdVagaNavigation.TituloVaga,
+                    PerfilDev = e.IdVagaNavigation.PerfilDev,
+                    DiasContrato = e.IdVagaNavigation.DiasContrato,
+                    TempoExp = e.IdVagaNavigation.TempoExp,
+                    HabNecessaria = e.IdVagaNavigation.HabNecessaria,
+                    LocalVaga = e.IdVagaNavigation.LocalVaga,
+                    ReqVaga = e.IdVagaNavigation.ReqVaga,
+                    NivelExp = e.IdVagaNavigation.NivelExp,
+                    DescAtivFuncoes = e.IdVagaNavigation.DescAtivFuncoes,
+                    TipoContrato = e.IdVagaNavigation.TipoContrato,
+                    ExpertiseVaga = e.IdVagaNavigation.ExpertiseVaga,
+                    TrabalhoRemoto = e.IdVagaNavigation.TrabalhoRemoto,
+                    OutraCidade = e.IdVagaNavigation.OutraCidade,
+                    ValorSalario =  e.IdVagaNavigation.ValorSalario,
+                    OfertaExtra = e.IdVagaNavigation.OfertaExtra,
+                    
+                    IdEmpresaNavigation = new Empresa()
+                    {
+                        IdEmpresa = e.IdVagaNavigation.IdEmpresaNavigation.IdEmpresa,
+                        AnexarLogo = e.IdVagaNavigation.IdEmpresaNavigation.AnexarLogo,
+                        CargoArea = e.IdVagaNavigation.IdEmpresaNavigation.CargoArea,
+                        WebSite = e.IdVagaNavigation.IdEmpresaNavigation.WebSite,
+                        NomeEmpresa = e.IdVagaNavigation.IdEmpresaNavigation.NomeEmpresa,
+                        Cnpj = e.IdVagaNavigation.IdEmpresaNavigation.Cnpj,
+                        RamoEmpresa = e.IdVagaNavigation.IdEmpresaNavigation.RamoEmpresa,
+                        DescricaoEmpresa = e.IdVagaNavigation.IdEmpresaNavigation.DescricaoEmpresa,
+                        LocalizacaoEmpresa = e.IdVagaNavigation.IdEmpresaNavigation.LocalizacaoEmpresa,
+                        EncontrouSenai = e.IdVagaNavigation.IdEmpresaNavigation.EncontrouSenai,
+                    }
+                },
+
+                IdCandidatoNavigation = new Candidato()
+                {
+                    NumMatricula = e.IdCandidatoNavigation.NumMatricula,
+                    Cpf = e.IdCandidatoNavigation.Cpf,
+                    Sexo = e.IdCandidatoNavigation.Sexo,
+                    DataMatricula = e.IdCandidatoNavigation.DataMatricula,
+                    Raca = e.IdCandidatoNavigation.Raca,
+                    Cidade = e.IdCandidatoNavigation.Cidade,
+                    NivelCurso = e.IdCandidatoNavigation.NivelCurso,
+                    TipoCurso = e.IdCandidatoNavigation.TipoCurso,
+                    NomeCurso = e.IdCandidatoNavigation.NomeCurso,
+                    Turma = e.IdCandidatoNavigation.Turma,
+                    Turno = e.IdCandidatoNavigation.Turno,
+                    Termo = e.IdCandidatoNavigation.Termo,
+                    FotoPerfil = e.IdCandidatoNavigation.FotoPerfil,
+                    TituloPerfil = e.IdCandidatoNavigation.TituloPerfil,
+                    Habilidade = e.IdCandidatoNavigation.Habilidade,
+                    NivelIngles = e.IdCandidatoNavigation.NivelIngles,
+                    Descricao = e.IdCandidatoNavigation.Descricao,
+                    UrlLinkedin = e.IdCandidatoNavigation.UrlLinkedin,
+                    UrlGitHub = e.IdCandidatoNavigation.UrlGitHub,
+                    Curriculo = e.IdCandidatoNavigation.Curriculo,
+                    PretensaoSalario = e.IdCandidatoNavigation.PretensaoSalario,
+                    Personalidade = e.IdCandidatoNavigation.Personalidade,
+                    FocoCarreira = e.IdCandidatoNavigation.FocoCarreira,
+                    ExpertiseCandidato = e.IdCandidatoNavigation.ExpertiseCandidato,
+                    ExperienciaPro  = e.IdCandidatoNavigation.ExperienciaPro,
+                    NomeEmpresa = e.IdCandidatoNavigation.NomeEmpresa,
+                    PerfilEmpresa = e.IdCandidatoNavigation.PerfilEmpresa,
+                    CargoEmpresa = e.IdCandidatoNavigation.CargoEmpresa,
+                    DataInicio = e.IdCandidatoNavigation.DataInicio,
+                    DataTermino = e.IdCandidatoNavigation.DataTermino,
+                    TamanhoEmpresa = e.IdCandidatoNavigation.TamanhoEmpresa,
+                    TipoContrato = e.IdCandidatoNavigation.TipoContrato,
+                    TrabalharRemoto = e.IdCandidatoNavigation.TrabalharRemoto,
+                    DeficienteFisico = e.IdCandidatoNavigation.DeficienteFisico,
+
+                    IdUsuarioNavigation = new Usuario()
+                    {
+                        IdUsuario = e.IdCandidatoNavigation.IdUsuarioNavigation.IdUsuario,
+                        Nome = e.IdCandidatoNavigation.IdUsuarioNavigation.Nome,
+                        Email = e.IdCandidatoNavigation.IdUsuarioNavigation.Email,
+                        DataNascimento = e.IdCandidatoNavigation.IdUsuarioNavigation.DataNascimento,
+                        Senha = e.IdCandidatoNavigation.IdUsuarioNavigation.Senha,
+                        Telefone = e.IdCandidatoNavigation.IdUsuarioNavigation.Telefone,
+                        
+
+                        IdTipoUsuarioNavigation = new TipoUsuario()
+                        {
+                            IdTipoUsuario = e.IdCandidatoNavigation.IdUsuarioNavigation.IdTipoUsuarioNavigation.IdTipoUsuario,
+                            TituloTipoUsuario = e.IdCandidatoNavigation.IdUsuarioNavigation.IdTipoUsuarioNavigation.TituloTipoUsuario,
+                        }
+                    }
+                }
+            })
+                .ToList();        
         }
     }
 }

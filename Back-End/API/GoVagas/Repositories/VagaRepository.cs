@@ -125,7 +125,56 @@ namespace GoVagas.Repositories
 
         public List<Vaga> ListarTodos()
         {
-            return ctx.Vaga.ToList();
+            return ctx.Vaga.Select(e => new Vaga()
+            {
+                IdVaga = e.IdVaga,
+                TituloVaga = e.TituloVaga,
+                PerfilDev = e.PerfilDev,
+                DiasContrato = e.DiasContrato,
+                TempoExp = e.TempoExp,
+                HabNecessaria = e.HabNecessaria,
+                LocalVaga = e.LocalVaga,
+                ReqVaga = e.ReqVaga,
+                NivelExp = e.NivelExp,
+                DescAtivFuncoes = e.DescAtivFuncoes,
+                TipoContrato = e.TipoContrato,
+                ExpertiseVaga = e.ExpertiseVaga,
+                TrabalhoRemoto = e.TrabalhoRemoto,
+                OutraCidade = e.OutraCidade,
+                ValorSalario = e.ValorSalario,
+                OfertaExtra = e.OfertaExtra,
+
+                IdEmpresaNavigation = new Empresa()
+                {
+                    IdEmpresa = e.IdEmpresaNavigation.IdEmpresa,
+                    AnexarLogo = e.IdEmpresaNavigation.AnexarLogo,
+                    CargoArea = e.IdEmpresaNavigation.CargoArea,
+                    WebSite = e.IdEmpresaNavigation.WebSite,
+                    NomeEmpresa = e.IdEmpresaNavigation.NomeEmpresa,
+                    Cnpj = e.IdEmpresaNavigation.Cnpj,
+                    RamoEmpresa = e.IdEmpresaNavigation.RamoEmpresa,
+                    DescricaoEmpresa = e.IdEmpresaNavigation.DescricaoEmpresa,
+                    LocalizacaoEmpresa = e.IdEmpresaNavigation.LocalizacaoEmpresa,
+                    EncontrouSenai = e.IdEmpresaNavigation.EncontrouSenai,
+
+                    IdUsuarioNavigation = new Usuario()
+                    {
+                        IdTipoUsuario = e.IdEmpresaNavigation.IdUsuarioNavigation.IdTipoUsuario,
+                        Nome = e.IdEmpresaNavigation.IdUsuarioNavigation.Nome,
+                        Email = e.IdEmpresaNavigation.IdUsuarioNavigation.Email,
+                        DataNascimento = e.IdEmpresaNavigation.IdUsuarioNavigation.DataNascimento,
+                        Senha = e.IdEmpresaNavigation.IdUsuarioNavigation.Senha,
+                        Telefone = e.IdEmpresaNavigation.IdUsuarioNavigation.Telefone,
+
+                        IdTipoUsuarioNavigation = new TipoUsuario()
+                        {
+                            IdTipoUsuario = e.IdEmpresaNavigation.IdUsuarioNavigation.IdTipoUsuarioNavigation.IdTipoUsuario,
+                            TituloTipoUsuario = e.IdEmpresaNavigation.IdUsuarioNavigation.IdTipoUsuarioNavigation.TituloTipoUsuario,
+                        }
+                    }
+                }
+            })
+            .ToList();
         }
     }
 }

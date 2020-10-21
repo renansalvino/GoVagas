@@ -87,7 +87,21 @@ namespace GoVagas.Repositories
 
         public List<Usuario> ListarTodos()
         {
-            return ctx.Usuario.ToList();
+            return ctx.Usuario.Select(e => new Usuario()
+            {
+                IdUsuario = e.IdUsuario,
+                Nome = e.Nome,
+                Senha = e.Senha,
+                Telefone = e.Telefone,
+
+                IdTipoUsuarioNavigation = new TipoUsuario()
+                {
+                    IdTipoUsuario = e.IdTipoUsuarioNavigation.IdTipoUsuario,
+                    TituloTipoUsuario = e.IdTipoUsuarioNavigation.TituloTipoUsuario,
+                }
+
+            })
+                .ToList();
         }
     }
 }
