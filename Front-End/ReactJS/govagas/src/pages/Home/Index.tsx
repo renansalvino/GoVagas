@@ -5,6 +5,8 @@ import Footer from '../../components/footer/index';
 import Header from '../../components/header/index'
 import Button from '../../components/button/index';
 import Input from '../../components/input/index';
+import Sselect from '../../components/select/index'
+import Select from '../../components/select/index';
 
 function Home() {
     return (
@@ -26,9 +28,16 @@ function Home() {
                         <Button onClick="" value="Sair" name="btn3" />
                     </div>
                     <div className="Input">
-                        <Input type="password" name="input" label="Input" placeholder="Máximo sua tia" minLength={8} maxLength={100}/>
+                        <Input type="password" name="input" label="Input" placeholder="Máximo 8 linhas" minLength={8} maxLength={100} />
                     </div>
-                    <br/>
+                    <br />
+                    <label htmlFor="Exemplo de select"/>
+                    <Select type="Select" name="Nao sei" id="nao_sei">
+                        <option value="Erick"></option>
+                        <option value="Renan"></option>
+                        <option value="Gabi"></option>
+                        <option value="Czar"></option>
+                    </Select>
                 </div>
             </div>
             <Footer />

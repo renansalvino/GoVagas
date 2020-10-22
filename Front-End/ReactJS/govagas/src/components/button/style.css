@@ -11,6 +11,7 @@
     background-color: #DB324A;
     border: none;
     border-radius: 15px;
+    margin-left: 10px;
 }
 
 #btn1:hover {
@@ -20,8 +21,9 @@
 }
 
 #btn1:active {
-    box-shadow: 0 5px #999;
+    /* box-shadow: 0 5px #999; */
     transform: translateY(4px);
+    box-shadow: 0px 0px 0px 4px #000;
 }
 
 /*TODO Botão secundário*/
