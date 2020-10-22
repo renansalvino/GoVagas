@@ -1,73 +1,29 @@
-.Principal div {
+.centro div {
     display: grid;
     justify-content: center;
     margin-top: 50px;
 }
 
-.Principal h1 {
+.centro h1 {
     display: flex;
     justify-content: center;
+    font-family: 'Roboto', sans-serif;
 }
 
-.Principal {
-    margin-top: 50px;
+.centro {
+    margin-top: 200px;
 }
 
-/* Botões do figma */
-
-.figma1 {
-    display: inline-block;
-    padding: 15px 25px;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #DB324A;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px rgb(240, 234, 234);
-    ;
+.davi{
     margin-bottom: 20px;
 }
 
-.figma1:hover {
-    background-color: #DB324A;
+nav #btn1{    
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size:17px;
 }
 
-.figma1:active {
-    box-shadow: 0 5px rgb(240, 235, 235);
-    transform: translateY(4px);
-}
-
-.figma2 {
-    display: inline-block;
-    padding: 15px 25px;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #000;
-    background-color: white;
-    border: none;
-    border-radius: 15px;
-}
-
-.figma2:hover {
-    border: 3px solid #DB324A;
-    border-style: solid;
-    border-color: #DB324A;
-    color: #DB324A;
-    box-shadow: 0 5px #999;
-}
-
-.figma2:active {
-    box-shadow: 0 5px #999;
-    transform: translateY(4px);
-}
-
-.btn>btn btn-info {
-    padding: 0px;
+nav{
+    font-size: 17px;
 }
