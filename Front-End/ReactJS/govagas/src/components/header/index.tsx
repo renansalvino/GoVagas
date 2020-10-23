@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css'
-import ImgLogo from '../../assets/Images/logoGO.png'
+import ImgLogo from '../../assets/images/logoGO.png'
 import Button from '../../components/button/index'
 
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
-import '../../assets/Styles/global.css';
-import ImgLogoSenai from '../../assets/Images/LogoSENAI_Branco.png';
+import '../../assets/styles/global.css';
+import ImgLogoSenai from '../../assets/images/LogoSENAI_Branco.png';
 
 function Footer() {
     return (
