@@ -1,0 +1,167 @@
+.centro-empresa .centro-empresa2 h1 {
+    justify-content: center;
+    font-size: 30px;
+    margin-top: 100px;
+    margin-left: 400px;
+}
+
+.centro-empresa2 {
+    display: flex;
+}
+
+/* CSS Side Bar*/
+
+#sidebar {
+    width: 279px;
+    height: 556px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    margin-top: 100px;
+    margin-left: 84px;
+}
+
+#sidebar #imgNomeEmpresa {
+    margin-left: 75px;
+    margin-top: 20px;
+}
+
+#sidebar h2 {
+    font-size: 20px;
+    margin-left: 60px;
+}
+
+#sidebar #p {
+    font-size: 16px;
+    color: #817D7D;
+    width: 148px;
+    height: 49px;
+    margin-left: 55px;
+    text-align: center;
+}
+
+#cinza-component {
+    width: 279px;
+    height: 30px;
+    background: rgba(196, 196, 196, 0.6);
+}
+
+#cinza-component h3 {
+    font-size: 20px;
+    display: flex;
+    text-align: center;
+    margin-left: 15px;
+    padding-top: 5px;
+}
+
+.options-sidebar {
+    display: grid;
+    margin-top: 30px;
+}
+
+.options-sidebar p {
+    color: #868686;
+    margin-left: 15px
+}
+
+.optionsInOptions {
+    display: flex;
+}
+
+.options-sidebar img {
+    width: 22px;
+    height: 22px;
+    margin-left: 10px;
+}
+
+.options-sidebar .optionsInOptions {
+    margin-bottom: 20px;
+}
+
+/*deixa em baixo do h1*/
+
+/*Não colocar flex  */
+
+.options-box1 {
+    display: flex;
+    width: 195px;
+    height: 116px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.18);
+    border-radius: 20px;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.options-box1 p {
+    margin-top: 30px;
+    margin-left: 10px;
+    text-align: center;
+    width: 89px;
+    height: 37px;
+}
+
+.options-box2 {
+    display: flex;
+    width: 195px;
+    height: 116px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.18);
+    border-radius: 20px;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.options-box3 {
+    display: flex;
+    width: 207px;
+    height: 116px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.18);
+    border-radius: 20px;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.options-box2 p {
+    margin-top: 30px;
+    margin-left: 5px;
+}
+
+.options-box3 p {
+    margin-top: 30px;
+    margin-left: 5px;
+}
+
+#num3 {
+    font-size: 40px;
+    left: 794px;
+    top: 301px;
+}
+
+/*Imagens do Options-Box*/
+
+#Icon {
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+    margin-top: 30px;
+}
+
+#joinha {
+    width: 66px;
+    height: 66px;
+    margin-left: 5px;
+    margin-top: 30px;
+}
+
+#candidatos {
+    width: 69px;
+    height: 72px;
+    margin-left: 10px;
+    margin-top: 25px;
+}
+
+#options-2 {
+    display: flex;
+}

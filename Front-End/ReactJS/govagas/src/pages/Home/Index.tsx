@@ -1,11 +1,10 @@
 import React from 'react';
 import './style.css';
-import '../../assets/Styles/global.css';
+import '../../assets/styles/global.css';
 import Footer from '../../components/footer/index';
 import Header from '../../components/header/index'
 import Button from '../../components/button/index';
 import Input from '../../components/input/index';
-import Sselect from '../../components/select/index'
 import Select from '../../components/select/index';
 
 function Home() {
