@@ -1,6 +1,9 @@
 #default {
     Width: 316px;
-    Height: 40px;
+    Height: 45px;
+    padding-left: 10px;
+    margin-bottom: 80px;
+    color: #8a8a8a;
     border: 1px solid #868686;
     box-sizing: border-box;
     border-radius: 7px;

@@ -7,12 +7,11 @@ interface SelectProps extends InputHTMLAttributes<HTMLInputElement> {
 const Select: React.FC<SelectProps> = ({ name, ...rest }) => {
     return (
         <div>
-            <label htmlFor={name}></label>
             <select name="cars" id="default">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+            <option value="Erick">Selecione uma Altura para Gabi:</option>
+                        <option value="Renan">1,50m</option>
+                        <option value="Gabi">1,50m</option>
+                        <option value="Czar">1,50m</option>
             </select>
         </div>
     )

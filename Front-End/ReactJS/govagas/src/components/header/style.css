@@ -13,6 +13,7 @@ nav img {
 
 div#ul_flex ul {
     width: 500px;
+    margin-top: 15px;
     display: flex;
     justify-content: space-evenly;
     justify-items: flex-end;
@@ -31,6 +32,7 @@ a {
 a:hover {
     color: rgb(19, 18, 18);
 }
+
 
 /* .centro-home button {
     padding: 7px;
