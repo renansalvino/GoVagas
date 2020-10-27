@@ -1,0 +1,5 @@
+rotas =dashadm,
+
+assets = imgs novas, p=17px h2=25px h1=30px, table
+
+components = header(alinhar 3 btns), sidebar

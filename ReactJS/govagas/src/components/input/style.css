@@ -1,0 +1,24 @@
+#input1 {
+    display: flex;
+    Width: 680px;
+    Height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: 1px solid #868686;
+    box-sizing: border-box;
+}
+
+#input2 {
+    display: flex;
+    Width: 340px;
+    Height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    box-sizing: content-box;
+    border-radius: 7px;
+    border: 1px solid #868686;
+}
