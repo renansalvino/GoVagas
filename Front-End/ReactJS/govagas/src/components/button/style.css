@@ -1,7 +1,8 @@
 /* TODO botão primário*/
+
 #btn1 {
     display: inline-block;
-    padding: 5px 15px;
+    padding: 10px 15px;
     font-size: 17px;
     cursor: pointer;
     text-align: center;
@@ -15,8 +16,7 @@
 }
 
 #btn1:hover {
-
-    color:white;
+    color: white;
     box-shadow: 0 3px rgb(211, 211, 211), 178;
     background-color: #e4415a;
 }
@@ -28,10 +28,12 @@
     box-shadow: none;
 }
 
+
 /*TODO Botão secundário*/
+
 #btn2 {
     display: inline-block;
-    padding: 5px 15px;
+    padding: 10px 15px;
     font-size: 17px;
     cursor: pointer;
     text-align: center;
@@ -41,7 +43,7 @@
     border: none;
     border-radius: 7px;
     border: 3px solid;
-    border-color: #999 ;
+    border-color: #999;
     background-color: white;
     color: #999;
 }
@@ -50,7 +52,6 @@
     color: #DB324A;
     box-shadow: 0 4px #999;
     border-color: #DB324A;
-
 }
 
 #btn2:active {
@@ -58,11 +59,12 @@
     transform: translateY(3px);
 }
 
+
 /* TODO Botão terciário */
 
 #btn3 {
     display: inline-block;
-    padding: 5px 15px;
+    padding: 10px 15px;
     font-size: 17px;
     cursor: pointer;
     text-align: center;
@@ -88,5 +90,3 @@
 #btn>btn btn-info {
     padding: 0px;
 }
-
-
