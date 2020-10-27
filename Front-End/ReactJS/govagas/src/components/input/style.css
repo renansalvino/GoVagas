@@ -1,7 +1,7 @@
 #input {
     display: flex;
     Width: 680px;
-    Height: 40px;
+    Height: 45px;
     margin-top: 10px;
     margin-bottom: 20px;
     padding-left: 10px;
@@ -14,7 +14,7 @@
 #input2 {
     display: flex;
     Width: 340px;
-    Height: 40px;
+    Height: 45px;
     margin-top: 10px;
     margin-bottom: 20px;
     padding-left: 10px;
