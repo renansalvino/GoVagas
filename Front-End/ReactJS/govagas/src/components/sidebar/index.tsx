@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
-import imgUsuario from '../../assets/images/img.jpg'
-import imgIcone from '../../assets/images/icon.jpg'
+import imgUsuario from '../../assets/images/empresa/NomeEmpresa.png'
+import imgIcone from '../../assets/images/empresa/sidebar-img-1.png'
 
 function Sidebar() {
     return (

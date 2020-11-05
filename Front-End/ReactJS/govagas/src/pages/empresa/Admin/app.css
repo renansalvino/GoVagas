@@ -1,0 +1,34 @@
+.content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.charts {
+    display: flex;
+    flex-direction: row;
+}
+
+.chart {
+    width: 50%;
+    margin: 2em 0;
+}
+
+@media(max-width: 1000px) {
+    .charts {
+        flex-direction: column;
+        align-items: center;
+    }
+    .chart {
+        width: 90%;
+    }
+}
+
+.chartjs-render-monitor {
+    margin-left: 75px;
+}
+
+.chart {
+    width: 900px;
+    height: 400px;
+}

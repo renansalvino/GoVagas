@@ -1,0 +1,61 @@
+.publi-options_vaga2 {
+    margin-left: 150px;
+}
+
+.publi_vaga2_2 {
+    display: flex;
+}
+
+.publi-options_vaga2 {
+    margin-top: 150px;
+}
+
+.publi-options_vaga2 #publih2 {
+    margin-left: 250px;
+}
+
+.publi-options_2>.BarraProgresso {
+    width: 800px;
+}
+
+#forms2 {
+    width: 753px;
+    height: 950px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+    margin-bottom: 100px;
+}
+
+.alignSelect {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.alignPrincipal {
+    padding-top: 50px;
+}
+
+.alignPrincipal Input {
+    margin-left: 37.5px;
+}
+
+.alignPrincipal label {
+    margin-left: 37.5px;
+}
+
+#inpustyle {
+    width: 679px;
+    height: 145px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    box-sizing: content-box;
+    border-radius: 7px;
+    border: 1px solid #868686;
+}
+
+#forms2 #btn1{
+    margin-top: 25px;
+    margin-left: 275px;
+}

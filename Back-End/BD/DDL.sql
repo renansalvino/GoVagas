@@ -154,3 +154,5 @@ IdInscricao				INT PRIMARY KEY IDENTITY
 ,IdCandidato			INT FOREIGN KEY REFERENCES Candidato (IdCandidato)
 ,IdVaga					INT FOREIGN KEY REFERENCES Vaga (IdVaga)
 );
+
+select*from Vaga
