@@ -92,12 +92,10 @@
 }
 
 #pre-visu {
-    position: absolute;
     width: 641px;
     height: 189px;
     background: white;
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);
     border-radius: 7px;
-    left: 575px;
-    top: 534px;
+
 }

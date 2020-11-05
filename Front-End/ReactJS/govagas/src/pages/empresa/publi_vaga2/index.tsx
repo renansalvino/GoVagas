@@ -7,6 +7,8 @@ import Sidebar from '../../../components/sidebar/index';
 import Select from '../../../components/select';
 import Button from '../../../components/button/index';
 
+
+
 function Publi_Vaga_2() {
     return (
         <div className="pricnipal">
@@ -57,7 +59,6 @@ function Publi_Vaga_2() {
                                         </div>
                                     </div>
                                     <Input type="Name" name="input" label="Valor Salarial" placeholder="Ex: Front-End, GIT, C# ..." />
-                                    <Input type="Name" name="input" label="Local da vaga" placeholder="Ex: Rua Dr. Alberto de Oliveira, n75 - São Paulo - Brasil" />
                                     <Input type="Name" name="inpustyle" label="Ofertas extras" placeholder="Ex: Cursando Análise e Desenvolvimento de Sistemas" />
                                 </div>
                                 <Button name="btn1" onClick="" value="Próxima etapa"/>

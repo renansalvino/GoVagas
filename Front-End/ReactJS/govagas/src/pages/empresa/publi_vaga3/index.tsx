@@ -7,7 +7,6 @@ import Sidebar from '../../../components/sidebar/index';
 import Select from '../../../components/select';
 import Button from '../../../components/button/index';
 
-
 function Publicar_Vaga_3() {
     return (
         <div className="principal">
@@ -33,8 +32,9 @@ function Publicar_Vaga_3() {
                                     </ul>
                                 </form>
                             </div>
-                            <div className="forms3" />
+                            <div className="forms3" >
                             <div id="pre-visu"/>
+                            </div>
                         </div>
                     </div>
                 </div>
