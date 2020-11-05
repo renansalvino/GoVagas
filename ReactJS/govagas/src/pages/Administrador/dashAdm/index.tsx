@@ -1,12 +1,44 @@
 import React from 'react';
 import './style.css';
-import '../../assets/styles/global.css';
+import '../../../assets/styles/global.css';
+import imgIcone from '../../../assets/images/palm-tree.svg'
 import imgSnoopy from '../../assets/images/snoopy.png'
-import Sidebar from '../../components/sidebar/index';
-import Footer from '../../components/footer/index';
-import Header from '../../components/header/index'
+import Sidebar from '../../../components/sidebar/index';
+import Footer from '../../../components/footer/index';
+import Header from '../../../components/header/index'
+import { useEffect, useState } from 'react';
+import { MessageChannel } from 'worker_threads';
+
+
+
+
 
 function DashAdm() {
+
+    const [idInscricao, setIdInscricao] = useState(0);
+    const [inscricao, setInscricao] = useState('');
+    const [inscricaos, setInscricaos] = useState([]);
+
+
+    useEffect(() => {
+        ListarCandidatosContratados();
+    }, []);
+
+    const ListarCandidatosContratados = () => {
+
+        fetch("https://localhost:5001/api/Inscricao", {
+            // authorization: 'Bearer ' + localStorage.getItem('token-tal')
+            method: 'GET'
+        })
+            .then(response => response.json())
+            .then(dados => {
+                setInscricaos(dados);
+                console.log('Seus dados ' + inscricao)
+            })
+            .catch(err => console.error(err))
+    }
+
+
     return (
         <div>
             <Header />
@@ -19,19 +51,35 @@ function DashAdm() {
                     <div className="itensDados">
 
                         <div className="dado">
-                            <h2>Dado1</h2>
+                            <img src={imgIcone} alt="" />
+                            <div className="flexDadoTxt">
+                                <h1>35%</h1>
+                                <p>Meta Mensal Concluída</p>
+                            </div>
                         </div>
 
                         <div className="dado">
-                            <h2>Dado2</h2>
+                            <img src={imgIcone} alt="" />
+                            <div className="flexDadoTxt">
+                                <h1>25</h1>
+                                <p>Novas Empresas</p>
+                            </div>
                         </div>
 
                         <div className="dado">
-                            <h2>Dado3</h2>
+                            <img src={imgIcone} alt="" />
+                            <div className="flexDadoTxt">
+                                <h1>144</h1>
+                                <p>Novos Alunos</p>
+                            </div>
                         </div>
 
                         <div className="dado">
-                            <h2>Dado4</h2>
+                            <img src={imgIcone} alt="" />
+                            <div className="flexDadoTxt">
+                                <h1>13</h1>
+                                <p>Situações Pendentes</p>
+                            </div>
                         </div>
 
                     </div>
@@ -53,7 +101,7 @@ function DashAdm() {
 
                     </div>
 
-                   
+
 
                     <div className="flexTable">
                         <table className="tabelaAdm">
@@ -68,6 +116,20 @@ function DashAdm() {
                             </thead>
 
                             <tbody>
+                                {
+
+                                    inscricaos.map((atributo: any) => {
+                                        return (
+                                            <tr key={atributo.idInscricao}>
+                                                <td>{atributo.idCandidatoNavigation.idUsuarioNavigation.nome}</td>
+                                                <td>{atributo.idCandidatoNavigation.tituloPerfil} {}</td>
+                                                <td>{atributo.idVagaNavigation.idEmpresaNavigation.nomeEmpresa}</td>
+                                                <td>{atributo.idVagaNavigation.tipoContrato}</td>
+                                                <td>Pendente</td>
+                                            </tr>
+                                        )
+                                    })
+                                }
                                 <tr>
                                     <td>Gabriela Oliveira Possuui</td>
                                     <td>Desenvovedor(a) Front-End React Native/Js</td>

@@ -1,7 +1,10 @@
-#default {
+.default {
     Width: 316px;
-    Height: 40px;
+    Height: 45px;
+    padding-left: 10px;
+    color: #8a8a8a;
     border: 1px solid #868686;
+    margin-bottom: 10px;
     box-sizing: border-box;
     border-radius: 7px;
 }

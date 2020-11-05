@@ -2,17 +2,15 @@ import React, { InputHTMLAttributes, SelectHTMLAttributes } from 'react';
 import './style.css';
 interface SelectProps extends InputHTMLAttributes<HTMLInputElement> {
     name: any;
+    label: string;
 }
 
-const Select: React.FC<SelectProps> = ({ name, ...rest }) => {
+const Select: React.FC<SelectProps> = ({ label, name, ...rest }) => {
     return (
         <div>
-            <label htmlFor={name}></label>
+            <label htmlFor={name}>{label}</label>
             <select name="cars" id="default">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+              
             </select>
         </div>
     )
