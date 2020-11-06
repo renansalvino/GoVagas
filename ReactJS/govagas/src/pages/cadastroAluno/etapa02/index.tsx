@@ -14,18 +14,25 @@ function CadastroCandidatoDois() {
 
     const [idCandidato, setIdCandidato] = useState(0);
     const [candidato, setCandidato] = useState('');
+    const [nomecurso, setNomecurso] = useState('')
+    const [cidade, setCidade] = useState('')
     const [habilidade, setHabilidade] = useState('');
     const [expertisecandidato, setExpertisecandidato] = useState('');
     const [candidatos, setCandidatos] = useState([]);
 
     const [idUsuario, setIdUsuario] = useState(0)
     const [usuario, setUsuario] = useState('')
+    const [telefone, setTelefone] = useState('')
     const [usuarios, setUsuarios] = useState([])
 
 
     const Post = () => {
 
         const form = {
+            nome: usuario,
+            telefone: telefone,
+            nomeCurso: nomecurso,
+            cidade: cidade,
             habilidade: habilidade,
             expertiseCandidato: expertisecandidato
 
@@ -33,11 +40,12 @@ function CadastroCandidatoDois() {
         fetch('https://localhost:5001/api/Candidato', {
             method: 'POST',
             body: JSON.stringify(form),
+            headers: {
+                'Content-Type': 'application/json',
+              }
         })
             .then(() => {
                 alert('Candidato cadastrado');
-                setIdUsuario(0);
-                setIdCandidato(0);
                 setHabilidade('');
                 setExpertisecandidato('');
             })

@@ -6,7 +6,11 @@ import Header from '../../../components/header/index'
 import Button from '../../../components/button/index';
 import Input from '../../../components/input/index';
 import '../../../components/barraProgresso/style.css';
-function cadastroEmpresa02() {
+function CadastroEmpresaDois() {
+
+    
+
+
     return (
         <div className="etapa2empresa">
             <Header />
@@ -86,7 +90,7 @@ function cadastroEmpresa02() {
                                                 </div>
                                                 <div className="nivelingles">
                                                     <label htmlFor="Ingles">Como você encontrou a Go Vagas?</label>
-                                                    <select className="input" name="Ingles" >
+                                                    <select className="default" name="Ingles" >
                                                         <option selected>Escolher...</option>
                                                         <option>SENAI</option>
                                                         <option>WhatsApp</option>
@@ -111,4 +115,4 @@ function cadastroEmpresa02() {
         </div>
     )
 }
-export default cadastroEmpresa02;
+export default CadastroEmpresaDois;

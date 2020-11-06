@@ -1,13 +1,72 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Footer from '../../components/footer/index';
 import Header from '../../components/header/index';
 import Button from '../../components/button/index';
+import Input from '../../components/input/index';
 import ImgBahia from '../../assets/images/empresa/joia.png';
-function loginCandidato(
+function LoginCandidato() {
 
-) {
+  let history = useHistory();
+
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [dataNascimento, setDataNascimento] = useState('');
+  const [telefone, setTelefone] = useState('');
+
+
+  const logar = () => {
+    const logarCom = {
+      email: email,
+      senha: senha
+
+    }
+    history.push('/cadastroAluno')
+    localStorage.setItem('email-cadastro', email)
+    localStorage.setItem('senha-cadastro', senha)
+    localStorage.setItem('dataNascimento-cadastro', dataNascimento)
+    localStorage.setItem('telefone-cadastro', telefone)
+
+    // fetch('http://localhost:5001/api​/Login', {
+    //   method: 'POST',
+    //   body: JSON.stringify(logarCom),
+    //   headers: {
+    //     'content-type': 'application/json'
+    //   }
+    // })
+    //   .then(response => response.json())
+    //   .then(dados => {
+    //     if (dados.token != undefined) {
+    //       localStorage.setItem('tokengovagas', dados.token)
+    //       history.push('/');
+    //     } else {
+    //       alert("Algo de errado não está certo")
+    //     }
+    //   })
+    //   .catch(error => console.error(error))
+
+    fetch('https://localhost:5001/api/Login', {
+            method: 'POST',
+            body: JSON.stringify(logarCom),
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(dados => {
+                if (dados.token != undefined) {
+                    localStorage.setItem('tokengovagas', dados.token)
+
+                    history.push('/');
+                }
+                else {
+                    alert('Senha ou Email invalidos');
+                }
+            })
+            .catch(error => console.error(error));
+    }
+
   return (
     <div className="loginCandidato">
       <Header />
@@ -55,77 +114,86 @@ function loginCandidato(
             </a>
           </div>
         </div>
+
         <div className="login">
-        <ul className="nav nav-tabs" id="myTab" role="tablist">
+          <ul className="nav nav-tabs" id="myTab" role="tablist">
             <li className="nav-item">
-              <a className="nav-link active" id="nav-home-tab" data-toggle="tab"  href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Login</a>
+              <a className="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Login</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" id="nav-profile-tab" data-toggle="tab"  href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Cadastrar-se</a>
+              <a className="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Cadastrar-se</a>
             </li>
           </ul>
           <div className="tab-content" id="nav-tabContent">
             <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
-              <div className="login-login">
-                <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" >
-                  <div className="login-inputs">
-                    <input type="text" name="input2" placeholder="E-mail" minLength={8} maxLength={100} />
-                    <tr />
-                  </div>
-                  <div className="login-inputs">
-                    <input type="password" name="input2" placeholder="Senha" minLength={8} maxLength={100} />
-                    <tr />
-                    <p>Esqueceu sua senha?</p>
-                  </div>
-                  <div className="btn-criarconta">
-                    <Button onClick="" name="btn1" value="Criar Conta" />
-                  </div>
-                  <div className="login-inputs">
-                    <tr className="tr-empresa" />
-                    <h1 className="h1-empresa1">Eu sou uma empresa</h1>
+              <form onSubmit={event => {
+                event.preventDefault()
+                logar()
+              }}>
+                <div className="login-login">
+                  <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" >
+                    <div className="login-inputs">
+                      <Input label="" type="text" name="input22" placeholder="E-mail" minLength={8} maxLength={100} value={email} onChange={a => setEmail(a.target.value)} />
+                      <tr />
+                    </div>
+                    <div className="login-inputs">
+                      <Input label="" type="password" name="input22" placeholder="Senha" minLength={4} maxLength={100} value={senha} onChange={a => setSenha(a.target.value)} />
+                      <tr />
+                      <p>Esqueceu sua senha?</p>
+                    </div>
+                    <div className="btn-criarconta">
+                      <Button onClick="" name="btn1" value="Login" />
+                    </div>
+                    <div className="login-inputs">
+                      <tr className="tr-empresa" />
+                      <h1 className="h1-empresa1">Eu sou uma empresa</h1>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </form>
 
 
 
 
             </div>
+
+
             <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <form>
 
 
-              <div className="login-login">
-                <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" >
-                  <div className="login-inputs">
-                    <input type="text" name="input2" placeholder="E-mail" minLength={8} maxLength={100} />
-                    <tr />
-                  </div>
-                  <div className="login-inputs">
-                    <input type="text" name="input2" placeholder="Matrícula do Aluno / CPF" minLength={8} maxLength={100} />
-                    <tr />
-                  </div>
-                  <div className="login-inputs">
-                    <input type="password" name="input2" placeholder="Senha" minLength={8} maxLength={100} />
-                    <tr />
-                  </div>
-                  <div className="login-inputs">
-                    <input type="password" name="input2" placeholder="Confirmar Senha" minLength={8} maxLength={100} />
-                    <tr />
-                  </div>
-                  <div className="btn-criarconta">
-                  <Link to="/cadastroAluno"> <Button onClick="" name="btn1" value="Criar Conta" /> </Link>
-                  </div>
-                  <div className="login-inputs">
-                    <tr className="tr-empresa" />
-                    <h1 className="h1-empresa2">Eu sou uma empresa</h1>
+                <div className="login-login">
+                  <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" >
+                    <div className="login-inputs">
+                      <Input label="" type="text" name="input22" placeholder="E-mail" minLength={8} maxLength={100} value={email} onChange={a => setEmail(a.target.value)} />
+                      <tr />
+                    </div>
+                    <div className="login-inputs">
+                      <Input label="" type="text" name="input22" placeholder="Data Nascimento" minLength={8} maxLength={100} value={dataNascimento} onChange={a => setDataNascimento(a.target.value)} />
+                      <tr />
+                    </div>
+                    <div className="login-inputs">
+                      <Input label="" type="password" name="input22" placeholder="Senha" minLength={8} maxLength={100} value={senha} onChange={a => setSenha(a.target.value)} />
+                      <tr />
+                    </div>
+                    <div className="login-inputs">
+                      <Input label="" type="text" name="input22" placeholder="Telefone" minLength={8} maxLength={100} value={telefone} onChange={a => setTelefone(a.target.value)}/>
+                      <tr />
+                    </div>
+                    <div className="btn-criarconta">
+                      <Link to="/cadastroAluno"> <Button onClick="" name="btn1" value="Criar Conta" /> </Link>
+                    </div>
+                    <div className="login-inputs">
+                      <tr className="tr-empresa" />
+                      <h1 className="h1-empresa2">Eu sou uma empresa</h1>
+                    </div>
                   </div>
                 </div>
-              </div>
 
 
+              </form>
             </div>
-            <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">.jjjjjjjjjjjjjjjj..</div>
           </div>
 
 
@@ -139,4 +207,4 @@ function loginCandidato(
     </div>
   )
 }
-export default loginCandidato;
+export default LoginCandidato;

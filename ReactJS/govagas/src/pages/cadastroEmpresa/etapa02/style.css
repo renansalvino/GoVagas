@@ -1,19 +1,46 @@
+.cadastro #input {
+    display: flex;
+    Width: 680px;
+    Height: 45px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: 1px solid #868686;
+    box-sizing: border-box;
+}
+
+.cadastro #input2 {
+    display: flex;
+    Width: 340px;
+    Height: 45px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: 1px solid #868686;
+    box-sizing: border-box;
+}
+
 .etapa2empresa .grupo {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     padding-right: 25px;
+}
 
-}
 .etapa2empresa .cadastro {
-    width: 755px;  
-    height: 835px;   
-    background: #FFFFFF;  
-    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);  
-    border-radius: 7px;  
+    width: 755px;
+    height: 835px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
     margin-bottom: 120px;
-     
 }
+
 .etapa1empresa .titulo h1 {
     /* Cadastrar como candidato */
     position: absolute;
@@ -48,6 +75,7 @@
     display: flex;
     justify-content: center;
 }
+
 .etapa2empresa .btn-proximo {
     display: flex;
     justify-content: center;
@@ -55,16 +83,19 @@
     padding-top: 55px;
     margin-bottom: 20px;
 }
+
 .etapa2empresa .cadastro-form {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.etapa2empresa  .cadastro form {
+
+.etapa2empresa .cadastro form {
     padding-left: 35px;
     padding-top: 55px;
 }
-.etapa2empresa  .descricao {
+
+.etapa2empresa .descricao {
     width: 700px;
     margin-bottom: 90px;
 }

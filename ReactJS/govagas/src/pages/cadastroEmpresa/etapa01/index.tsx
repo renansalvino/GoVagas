@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../etapa01/style.css';
 import { Link } from 'react-router-dom';
 import Footer from '../../../components/footer/index';
@@ -6,7 +6,60 @@ import Header from '../../../components/header/index'
 import Button from '../../../components/button/index';
 import Input from '../../../components/input/index';
 import '../../../components/barraProgresso/style.css';
-function cadastroEmpresa01() {
+function CadastroEmpresa() {
+    
+    const [idEmpresa, setIdEmpresa] = useState(0);
+    const [empresa, setEmpresa] = useState('');
+    const [cargoempresa, setCargoempresa] = useState('')
+    const [areaempresa, setAreaempresa] = useState('')
+    const [cnpj, setCnpj] = useState('')
+    const [tamanhoempresa, setTamanhoempresa] = useState('');
+    const [sobreempresa, setSobreempresa] = useState('');
+    const [urlvideo, seturlVideo] = useState('');
+    const [encontrousite, setEncontrousite] = useState('');
+    const [candidatos, setCandidatos] = useState([]);
+
+    const [idUsuario, setIdUsuario] = useState(0)
+    const [usuario, setUsuario] = useState('')
+    const [telefone, setTelefone] = useState('')
+    const [usuarios, setUsuarios] = useState([])
+
+    const Post = () => {
+
+        const form = {
+            nome: usuario,
+            cargoEmpresa: usuario,
+            areaEmpresa: usuario,
+            telefone: telefone,
+            empresa: usuario,
+            webSite: usuario,
+            cnpj: usuario,
+            // nomeCurso: nomecurso,
+            // cidade: cidade,
+            // habilidade: habilidade,
+            // expertiseCandidato: expertisecandidato
+        }
+        fetch('https://localhost:5001/api/Candidato', {
+            method: 'POST',
+            body: JSON.stringify(form),
+            headers: {
+                'Content-Type': 'application/json',
+              }
+        })
+            .then(() => {
+                alert('Próxima etapa');
+                setIdUsuario(0);
+                // setIdCandidato(0);
+                // setUsuario('');
+                // setTelefone('');
+                // setCidade('');
+                // setNomecurso('');
+                
+            })
+            .catch(err => console.error(err));
+
+    }
+
     return (
         <div className="etapa1empresa">
             <Header />
@@ -69,4 +122,4 @@ function cadastroEmpresa01() {
         </div>
     )
 }
-export default cadastroEmpresa01;
+export default CadastroEmpresa;

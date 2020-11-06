@@ -1,6 +1,6 @@
 import React from 'react';
-import {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import './styles.css';
 import Footer from '../../../components/footer/index';
 import Header from '../../../components/header/index'
@@ -10,10 +10,15 @@ import '../../../components/barraProgresso/style.css';
 
 function CadastroCandidatoUm() {
 
-    const [idCandidato, setIdCandidato] = useState(0)
+    let history = useHistory();
+
+    const [idCandidato, setIdCandidato] = useState(0);
+    const [candidato, setCandidato] = useState('');
     const [nomecurso, setNomecurso] = useState('')
     const [cidade, setCidade] = useState('')
-    const [candidatos, setCandidatos] = useState([])
+    const [habilidade, setHabilidade] = useState('');
+    const [expertisecandidato, setExpertisecandidato] = useState('');
+    const [candidatos, setCandidatos] = useState([]);
 
     const [idUsuario, setIdUsuario] = useState(0)
     const [usuario, setUsuario] = useState('')
@@ -21,29 +26,33 @@ function CadastroCandidatoUm() {
     const [usuarios, setUsuarios] = useState([])
 
 
-    const Post = () => {
 
+    const Post = () => {
         const form = {
             nome: usuario,
+            email: localStorage.getItem("email-candidato"),
+            dataNascimento: usuario,
+            senha: localStorage.getItem("senha-candidato"),
             telefone: telefone,
-            nomeCurso: nomecurso,
-            cidade: cidade
-
+            idTipoUsuario: telefone
         }
-        fetch('https://localhost:5001/api/Candidato', {
+        fetch('https://localhost:5001/api/Usuario', {
             method: 'POST',
             body: JSON.stringify(form),
+            headers: {
+                'Content-Type': 'application/json',
+            }
         })
-            .then(() => {
-                alert('Próxima etapa');
-                setUsuario('');
-                setTelefone('');
-                setCidade('');
-                setNomecurso('');
-                
+            .then(Response => Response.json())
+            .then(dados => {
+                console.log(dados)
+                localStorage.setItem("idUsuario", dados.id)
+                localStorage.removeItem("email-candidato")
+                localStorage.removeItem("senha-candidato")
+                history.push("/cadastroAluno2")
             })
             .catch(err => console.error(err));
-
+        
     }
 
 
@@ -75,11 +84,11 @@ function CadastroCandidatoUm() {
                                 <main>
 
                                     <p>Sobre</p>
-                                    <div className="cadastro">
-                                        <form onSubmit={event => {
-                                            event.preventDefault();
-                                            Post();
-                                        }}>
+                                    <form onSubmit={event => {
+                                        event.preventDefault();
+                                        Post();
+                                    }}>
+                                        <div className="cadastro">
                                             <div className="grupofoto">
                                                 <div id="foto" className="foto">
                                                     <div className="imagem">
@@ -89,25 +98,33 @@ function CadastroCandidatoUm() {
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Nome completo:" placeholder="Nome Completo" value={usuario} onChange={a=>setUsuario(a.target.value)}/>
+                                                    <Input type="text" name="input2" label="Nome completo:" placeholder="Nome Completo" value={usuario} onChange={a => setUsuario(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="number" name="input2" label="Número de Telefone:" placeholder="Número de Telefone" value={telefone} onChange={a=>setTelefone(a.target.value)} />
+                                                    <Input type="number" name="input2" label="Número de Telefone:" placeholder="Número de Telefone" value={telefone} onChange={a => setTelefone(a.target.value)} />
                                                 </div>
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Curso:" placeholder="Curso" value={nomecurso} onChange={a=>setNomecurso(a.target.value)}/>
+                                                    <Input type="text" name="input2" label="Curso:" placeholder="Curso" value={nomecurso} onChange={a => setNomecurso(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Cidade:" placeholder="Cidade" value={cidade} onChange={a=>setCidade(a.target.value)}/>
+                                                    <Input type="text" name="input2" label="Cidade:" placeholder="Cidade" value={cidade} onChange={a => setCidade(a.target.value)} />
                                                 </div>
                                             </div>
-                                        </form>
+                                            <div className="grupo">
+                                                <div className="form-group">
+                                                    <Input type="text" name="input2" label="Data Nascimento:" placeholder="Curso" value={nomecurso} onChange={a => setNomecurso(a.target.value)} />
+                                                </div>
+                                                <div className="form-group">
+                                                    <Input type="text" name="input2" label="Matricula:" placeholder="Cidade" value={cidade} onChange={a => setCidade(a.target.value)} />
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div className="btn-proximo">
                                             <Link to="/cadastroAluno2"> <Button onClick="" name="btn1" value="Próximo" /> </Link>
                                         </div>
-                                    </div>
+                                    </form>
                                 </main>
                             </fieldset>
                         </div>
