@@ -25,8 +25,11 @@ namespace GoVagas.Repositories
             return ctx.Inscricao.FirstOrDefault(ca => ca.IdInscricao == id);
         }
 
+
         public void Cadastrar(Inscricao novoInscricao)
         {
+            //modificacao 06/11
+            novoInscricao.DataInscricao = DateTime.Now;
             ctx.Inscricao.Add(novoInscricao);
             ctx.SaveChanges();
         }

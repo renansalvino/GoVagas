@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useEffect, useState } from 'react'; import './style.css';
+import React, { useState } from 'react'; import './style.css';
+import { useHistory } from 'react-router-dom';
 import Header from '../../../components/header/index'
 import { Link } from 'react-router-dom';
 import Footer from '../../../components/footer/index';
@@ -8,40 +9,49 @@ import Button from '../../../components/button/index';
 import Sidebar from "../../../components/sidebar";
 
 
+function PubliVaga() {
 
-function Publi_Vaga() {
+    let ctx = useHistory();
+
+
     const [idVaga, setIdVaga] = useState(0)
     const [vaga, setVaga] = useState('')
-    const [vagas, setVagas] = useState([])
-    const [localvaga, setLocalvaga] = useState=('')
+    //Váriaveis
+    const [tituloVaga, setTituloVaga] = useState('')
+    const [perfilDev, setPerfilDev] = useState('')
+    const [diasContrato, setDiasContrato] = useState('')
+    const [nivelExp, setNivelExp] = useState('')
+    const [habNecessaria, setHabNecessaria] = useState('')
+    const [localVaga, setLocalVaga] = useState('')
+    const [reqVaga, setReqVaga] = useState('')
+    const [tempoExp, setTempoExp] = useState('')
+    const [descAtivFuncoes, setDescAtivFuncoes] = useState('')
+
+
 
     const Cadastrar = () => {
         const form = {
-            TituloVaga: vaga,
-            PerfilDev: vaga,
-            DiasContrato: vaga,
-            NivelExp: vaga,
-            HabNecessaria: vaga,
-            LocalVaga: localvaga,
-            ReqVaga: vaga,
-            TempoExp: vaga,
-            DescAtivFuncoes: vaga
-
+            TituloVaga: tituloVaga,
+            PerfilDev: perfilDev,
+            DiasContrato: diasContrato,
+            NivelExp: nivelExp,
+            HabNecessaria: habNecessaria,
+            LocalVaga: localVaga,
+            ReqVaga: reqVaga,
+            TempoExp: tempoExp,
+            DescAtivFuncoes: descAtivFuncoes
         }
 
-        fetch('https://localhost:5001/api/Candidato',
-            {
-                method: 'POST',
-                body: JSON.stringify(form),
-            })
-            .then(() => {
-                alert('Vaga cadastrada');
-                setIdVaga(0);
-                setVaga('');
-            })
-
-            .catch(err => console.error(err));
-
+        localStorage.setItem('Titulo da Vaga', tituloVaga)
+        localStorage.setItem('Perfil do desenvolvedor', perfilDev)
+        localStorage.setItem('Dias de contrato', diasContrato)
+        localStorage.setItem('Nivel de experiência', nivelExp)
+        localStorage.setItem('HabNec', habNecessaria)
+        localStorage.setItem('Local da Vaga', localVaga)
+        localStorage.setItem('Requerimento da vaga', reqVaga)
+        localStorage.setItem('Tempo de Experiência', tempoExp)
+        localStorage.setItem('Descrição das atividades e funções', descAtivFuncoes)
+        ctx.push('/PublicarVagaDois')
     }
 
 
@@ -72,31 +82,32 @@ function Publi_Vaga() {
                             </div>
                         </div>
 
-                        <div className="form-vaga">
-                            <form onSubmit={event => {
-                                event.preventDefault();
-                                Cadastrar();
-                            }}>
-                                <Input type="Name" name="input" label="Titulo da Vaga" placeholder="Ex: Web Desenveloper Jr." value={vaga} onChange={a => setVaga(a.target.value)} />
-                                <Input type="Name" name="input" label="Perfil do desenvolvedor" placeholder="Programador Phyton" value={vaga} onChange={a => setVaga(a.target.value)} />
-                                <div className="align-input">
-                                    <Input type="Name" name="input2" label="Nível de experiência" placeholder="Ex:Sênior" value={vaga} onChange={a => setVaga(a.target.value)} />
-                                    <Input type="number" name="inputpersonalizado" label="Dias de contrato" placeholder="366 dias" value={vaga} onChange={a => setVaga(a.target.value)} />
-                                </div>
-                            </form>
-                        </div>
-                        <h2 id="sobrevaga">Sobre a Vaga</h2>
                         <form onSubmit={event => {
                             event.preventDefault();
                             Cadastrar();
                         }}>
+                            <div className="form-vaga">
+                                <Input type="text" name="input" label="Titulo da Vaga" value={tituloVaga} onChange={a => setTituloVaga(a.target.value)} />
+                                <Input type="name" name="input" label="Perfil do desenvolvedor" placeholder="Programador Phyton" value={perfilDev} onChange={a => setPerfilDev(a.target.value)} />
+                                <div className="align-input">
+                                    <label htmlFor="nivelExp">Nivel de Experiência</label>
+                                    <select name="nivelExp" id="default" value={nivelExp} onChange={a => setNivelExp(a.target.value)}>
+                                        <option>Seleciona sua opção:</option>
+                                        <option>Junior</option>
+                                        <option>Pleno</option>
+                                        <option>Sênior</option>
+                                    </select>
+                                    <Input type="number" name="inputpersonalizado" label="Dias de contrato" placeholder="366 dias" value={diasContrato} onChange={a => setDiasContrato(a.target.value)} />
+                                </div>
+                            </div>
+                            <h2 id="sobrevaga">Sobre a Vaga</h2>
                             <div className="form-sobrevaga">
-                                <Input type="Name" name="input" label="Habilidades necessárias" placeholder="Ex: Front-End, GIT, C# ..." value={vaga} onChange={a => setVaga(a.target.value)} />
-                                <Input type="Name" name="input" label="Local da vaga" placeholder="Ex: Rua Dr. Alberto de Oliveira, n75 - São Paulo - Brasil" value={vaga} onChange={a => setVaga(a.target.value)} />
-                                <Input type="Name" name="input" label="Requisitos para Vaga" placeholder="Ex: Cursando Análise e Desenvolvimento de Sistemas" value={vaga} onChange={a => setVaga(a.target.value)} />
-                                <Input type="Name" name="input" label="Tempo de experiência" placeholder="Ex: Cursando Análise e Desenvolvimento de Sistemas" value={vaga} onChange={a => setVaga(a.target.value)} />
-                                <Input type="Name" name="inputpersonalizado2" label="Descrição das Atividades e Funções" placeholder="Ex: - Ser Auto-gerenciável; - Aplicar treinamentos para a equipe. - Inglês intermediário / Fluente" value={vaga} onChange={a => setVaga(a.target.value)} />
-                                <Link to="/Publicar_Vaga_2"> <Button name="btn1" onClick="" value="Próxima etapa" /></Link>
+                                <Input type="name" name="input" label="Habilidades necessárias" placeholder="Ex: Front-End, GIT, C# ..." value={habNecessaria} onChange={a => setHabNecessaria(a.target.value)} />
+                                <Input type="name" name="input" label="Local da vaga" placeholder="Ex: Rua Dr. Alberto de Oliveira, n75 - São Paulo - Brasil" value={localVaga} onChange={a => setLocalVaga(a.target.value)} />
+                                <Input type="name" name="input" label="Requisitos para Vaga" placeholder="Ex: Cursando Análise e Desenvolvimento de Sistemas" value={reqVaga} onChange={a => setReqVaga(a.target.value)} />
+                                <Input type="name" name="input" label="Tempo de experiência" placeholder="Ex: Cursando Análise e Desenvolvimento de Sistemas" value={tempoExp} onChange={a => setTempoExp(a.target.value)} />
+                                <Input type="name" name="inputpersonalizado2" label="Descrição das Atividades e Funções" placeholder="Ex: - Ser Auto-gerenciável; - Aplicar treinamentos para a equipe. - Inglês intermediário / Fluente" value={descAtivFuncoes} onChange={a => setDescAtivFuncoes(a.target.value)} />
+                                <Button name="btn1" onClick="" value="Próxima etapa" />
                             </div>
                         </form>
                     </div>
@@ -106,4 +117,4 @@ function Publi_Vaga() {
         </div>
     )
 }
-export default Publi_Vaga;
+export default PubliVaga;

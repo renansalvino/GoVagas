@@ -74,7 +74,8 @@ namespace GoVagas
 
             app.UseStaticFiles();
             app.UseRouting();
-            app.UseCors();
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            //MODIFICADO 06/11
 
             app.UseEndpoints(endpoints =>
             {
