@@ -35,11 +35,11 @@ function PubliVagaDois() {
         // let ganchocorno = useHistory();
 
         const form2 = {
-            TipoContrato:parseInt(tipoContrato),//
+            TipoContrato: parseInt(tipoContrato),
             ExpertiseVaga: expertiseVaga,
-            TrabalhoRemoto: parseInt(trabalhoRemoto),//
-            OutraCidade: parseInt(outraCidade),//
-            ValorSlario: parseInt(valorSalario),//
+            TrabalhoRemoto: parseInt(trabalhoRemoto),
+            OutraCidade: parseInt(outraCidade),
+            ValorSlario: parseInt(valorSalario),
             OfertaExtra: ofertaExtra,
             TituloVaga: localStorage.getItem('Titulo da Vaga'),
             PerfilDev: localStorage.getItem('Perfil do desenvolvedor'),
@@ -50,7 +50,7 @@ function PubliVagaDois() {
             ReqVaga: localStorage.getItem('Requerimento da vaga'),
             TempoExp: localStorage.getItem('Tempo de Experiência'),
             DescAtivFuncoes: localStorage.getItem('Descrição das atividades e funções'),
-            idEmpresaNavigation:{
+            idEmpresaNavigation: {
                 idEmpresa: idEmpresa,
             }
 
@@ -134,7 +134,7 @@ function PubliVagaDois() {
                                         <div id="alignSelect">
                                             <label htmlFor="expertisevaga">Expertise vaga</label>
                                             <select name="expertisevaga" id="default" placeholder="Selecione seu nivel de experiência" value={expertiseVaga} onChange={a => setExpertiseVaga(a.target.value)}>
-                                            <option>Seleciona sua opção:</option>
+                                                <option>Seleciona sua opção:</option>
                                                 <option>Júnior</option>
                                                 <option>Pleno</option>
                                                 <option>Sênior</option>
@@ -145,7 +145,7 @@ function PubliVagaDois() {
                                         <div id="alignSelect">
                                             <label htmlFor="trabremoto">Trabalhar remoto?</label>
                                             <select name="trabremoto" id="default" placeholder="Selecione seu nível de experiência" value={trabalhoRemoto} onChange={a => setTrabalhoRemoto(a.target.value)}>
-                                            <option>Seleciona sua opção:</option>
+                                                <option>Seleciona sua opção:</option>
                                                 <option value="0">Sim</option>
                                                 <option value="1">Não</option>
                                             </select>
@@ -153,7 +153,7 @@ function PubliVagaDois() {
                                         <div id="alignSelect">
                                             <label htmlFor="candoutracid">Candidatos de outra cidade?</label>
                                             <select name="candoutracid" id="default" placeholder="Aceitaria trabalhar em outra cidade" value={outraCidade} onChange={a => setOutraCidade(a.target.value)}>
-                                            <option>Seleciona sua opção:</option>
+                                                <option>Seleciona sua opção:</option>
                                                 <option value="0">Sim</option>
                                                 <option value="1">Não</option>
                                             </select>
