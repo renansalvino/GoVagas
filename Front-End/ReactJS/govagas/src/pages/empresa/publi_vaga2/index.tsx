@@ -6,18 +6,20 @@ import Input from '../../../components/input/index';
 import Sidebar from '../../../components/sidebar/index';
 import Button from '../../../components/button/index';
 import { useHistory } from 'react-router-dom';
+import { parseJwt } from '../../../auth';
 
 
 
 function PubliVagaDois() {
 
     const [idVaga, setIdVaga] = useState(0)
+    const [idUsuario, setIdUsuario] = useState()
     const [vaga, setVaga] = useState('')
     const [tipoContrato, setTipoContrato] = useState('')
     const [expertiseVaga, setExpertiseVaga] = useState('')
     const [trabalhoRemoto, setTrabalhoRemoto] = useState('')
     const [outraCidade, setOutraCidade] = useState('')
-    const [valorSalario, setValorSlario] = useState('')
+    const [valorSalario, setValorSalario] = useState('')
     const [ofertaExtra, setOfertaExtra] = useState('')
     const [tituloVaga, setTituloVaga] = useState('')
     const [perfilDev, setPerfilDev] = useState('')
@@ -28,18 +30,21 @@ function PubliVagaDois() {
     const [reqVaga, setReqVaga] = useState('')
     const [tempoExp, setTempoExp] = useState('')
     const [descAtivFuncoes, setDescAtivFuncoes] = useState('')
-    const [idEmpresa, setIdEmrpesa] = useState(1)
+    const [idEmpresa, setIdEmrpesa] = useState(parseJwt().jti)
 
     const Cadastrar2 = () => {
 
         // let ganchocorno = useHistory();
+        
+
+
 
         const form2 = {
-            TipoContrato:parseInt(tipoContrato),//
+            TipoContrato: tipoContrato === 'true'? true : false,//
             ExpertiseVaga: expertiseVaga,
-            TrabalhoRemoto: parseInt(trabalhoRemoto),//
-            OutraCidade: parseInt(outraCidade),//
-            ValorSlario: parseInt(valorSalario),//
+            TrabalhoRemoto: trabalhoRemoto === 'true'? true : false,//
+            OutraCidade: outraCidade === 'true'? true : false,//
+            ValorSalario: parseFloat(valorSalario),//
             OfertaExtra: ofertaExtra,
             TituloVaga: localStorage.getItem('Titulo da Vaga'),
             PerfilDev: localStorage.getItem('Perfil do desenvolvedor'),
@@ -50,10 +55,7 @@ function PubliVagaDois() {
             ReqVaga: localStorage.getItem('Requerimento da vaga'),
             TempoExp: localStorage.getItem('Tempo de Experiência'),
             DescAtivFuncoes: localStorage.getItem('Descrição das atividades e funções'),
-            idEmpresaNavigation:{
-                idEmpresa: idEmpresa,
-            }
-
+            idEmpresa: idEmpresa
         }
         console.log(form2)
 
@@ -65,6 +67,7 @@ function PubliVagaDois() {
                     'Content-Type': 'application/json',
                 }
             })
+            .then(response => response.json())
             .then(() => {
                 alert('Vaga cadastrada');
                 setIdVaga(0);
@@ -73,7 +76,7 @@ function PubliVagaDois() {
                 setExpertiseVaga('');
                 setTrabalhoRemoto('');
                 setOutraCidade('');
-                setValorSlario('');
+                setValorSalario('');
                 setOfertaExtra('');
                 setTituloVaga('');
                 setPerfilDev('');
@@ -127,8 +130,8 @@ function PubliVagaDois() {
                                             <label htmlFor="tipocontrato">Tipos de contrato</label>
                                             <select name="tipocontrato" id="default" placeholder="Selecione seu tipo de contrato" value={tipoContrato} onChange={a => setTipoContrato(a.target.value)}>
                                                 <option>Seleciona sua opção:</option>
-                                                <option value="0">Estagiário</option>
-                                                <option value="1">Jovem Aprendiz</option>
+                                                <option value="true">Estagiário</option>
+                                                <option value="false">Jovem Aprendiz</option>
                                             </select>
                                         </div>
                                         <div id="alignSelect">
@@ -146,20 +149,20 @@ function PubliVagaDois() {
                                             <label htmlFor="trabremoto">Trabalhar remoto?</label>
                                             <select name="trabremoto" id="default" placeholder="Selecione seu nível de experiência" value={trabalhoRemoto} onChange={a => setTrabalhoRemoto(a.target.value)}>
                                             <option>Seleciona sua opção:</option>
-                                                <option value="0">Sim</option>
-                                                <option value="1">Não</option>
+                                                <option value="true">Sim</option>
+                                                <option value="false">Não</option>
                                             </select>
                                         </div>
                                         <div id="alignSelect">
                                             <label htmlFor="candoutracid">Candidatos de outra cidade?</label>
                                             <select name="candoutracid" id="default" placeholder="Aceitaria trabalhar em outra cidade" value={outraCidade} onChange={a => setOutraCidade(a.target.value)}>
                                             <option>Seleciona sua opção:</option>
-                                                <option value="0">Sim</option>
-                                                <option value="1">Não</option>
+                                                <option value="true">Sim</option>
+                                                <option value="false">Não</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <Input type="money" name="input" label="Valor Salarial" placeholder="Ex: Front-End, GIT, C# ..." value={valorSalario} onChange={a => setValorSlario(a.target.value)} />
+                                    <Input type="money" name="input" label="Valor Salarial" placeholder="Ex: Front-End, GIT, C# ..." value={valorSalario} onChange={a => setValorSalario(a.target.value)} />
                                     <Input type="Name" name="inpustyle" label="Ofertas extras" placeholder="Ex: Cursando Análise e Desenvolvimento de Sistemas" value={ofertaExtra} onChange={a => setOfertaExtra(a.target.value)} />
                                 </div>
                                 <Button name="btn1" onClick="" value="Próxima etapa" />
