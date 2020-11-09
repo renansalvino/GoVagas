@@ -1,0 +1,38 @@
+.areaPesquisa {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.pesquisaTC {
+    margin-right: 20px;
+}
+
+.itensDadosTC {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 930px;
+}
+
+.dadot {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 770px;
+    height: auto;
+    margin: 20px;
+    padding: 20px 0px 20px 0px;
+    border-radius: 7px;
+    background-color: white;
+    box-shadow: 0px 2px 2px 2px rgba(156, 155, 155, 0.53);
+}
+
+.dadot h1 {
+    display: flex;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-top: 10px;
+    margin-bottom: -5px;
+}

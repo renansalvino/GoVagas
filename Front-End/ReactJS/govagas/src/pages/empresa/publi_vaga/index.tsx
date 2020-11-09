@@ -1,8 +1,6 @@
-/* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from 'react'; import './style.css';
 import { useHistory } from 'react-router-dom';
 import Header from '../../../components/header/index'
-import { Link } from 'react-router-dom';
 import Footer from '../../../components/footer/index';
 import Input from '../../../components/input/index';
 import Button from '../../../components/button/index';
@@ -13,10 +11,8 @@ function PubliVaga() {
 
     let ctx = useHistory();
 
-
     const [idVaga, setIdVaga] = useState(0)
     const [vaga, setVaga] = useState('')
-    //Váriaveis
     const [tituloVaga, setTituloVaga] = useState('')
     const [perfilDev, setPerfilDev] = useState('')
     const [diasContrato, setDiasContrato] = useState('')
@@ -55,7 +51,6 @@ function PubliVaga() {
     }
 
 
-
     return (
         <div className="principal">
             <Header />
@@ -89,15 +84,15 @@ function PubliVaga() {
                             <div className="form-vaga">
                                 <Input type="text" name="input" label="Titulo da Vaga" value={tituloVaga} onChange={a => setTituloVaga(a.target.value)} />
                                 <Input type="name" name="input" label="Perfil do desenvolvedor" placeholder="Programador Phyton" value={perfilDev} onChange={a => setPerfilDev(a.target.value)} />
-                                <div className="align-input">
                                     <label htmlFor="nivelExp">Nivel de Experiência</label>
-                                    <select name="nivelExp" id="default" value={nivelExp} onChange={a => setNivelExp(a.target.value)}>
+                                <div className="align-input">
+                                    <select id="default-style"  value={nivelExp} onChange={a => setNivelExp(a.target.value)}>
                                         <option>Seleciona sua opção:</option>
-                                        <option>Junior</option>
-                                        <option>Pleno</option>
-                                        <option>Sênior</option>
+                                        <option>Baixo</option>
+                                        <option>Médio</option>
+                                        <option>Alto</option>
                                     </select>
-                                    <Input type="number" name="inputpersonalizado" label="Dias de contrato" placeholder="366 dias" value={diasContrato} onChange={a => setDiasContrato(a.target.value)} />
+                                    <Input type="number" name="input2" id="input_maneiro"  label="Dias de contrato" placeholder="366 dias" value={diasContrato} onChange={a => setDiasContrato(a.target.value)} />
                                 </div>
                             </div>
                             <h2 id="sobrevaga">Sobre a Vaga</h2>

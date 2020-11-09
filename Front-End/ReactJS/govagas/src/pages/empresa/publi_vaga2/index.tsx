@@ -11,7 +11,6 @@ import { parseJwt } from '../../../auth';
 
 
 function PubliVagaDois() {
-
     const [idVaga, setIdVaga] = useState(0)
     const [idUsuario, setIdUsuario] = useState()
     const [vaga, setVaga] = useState('')
@@ -30,29 +29,16 @@ function PubliVagaDois() {
     const [reqVaga, setReqVaga] = useState('')
     const [tempoExp, setTempoExp] = useState('')
     const [descAtivFuncoes, setDescAtivFuncoes] = useState('')
-    const [idEmpresa, setIdEmrpesa] = useState(parseJwt().jti)
+    const [idEmpresa, setIdEmrpesa] = useState(1)
 
-    const Cadastrar2 = () => {
-
-        // let ganchocorno = useHistory();
-        
-
-
+    const Cadastrar2 = () => {        
 
         const form2 = {
-<<<<<<< HEAD
-            TipoContrato: parseInt(tipoContrato),
-            ExpertiseVaga: expertiseVaga,
-            TrabalhoRemoto: parseInt(trabalhoRemoto),
-            OutraCidade: parseInt(outraCidade),
-            ValorSlario: parseInt(valorSalario),
-=======
             TipoContrato: tipoContrato === 'true'? true : false,//
             ExpertiseVaga: expertiseVaga,
             TrabalhoRemoto: trabalhoRemoto === 'true'? true : false,//
             OutraCidade: outraCidade === 'true'? true : false,//
             ValorSalario: parseFloat(valorSalario),//
->>>>>>> c60d71ad8f08f418a447375448c857ca8c5cc569
             OfertaExtra: ofertaExtra,
             TituloVaga: localStorage.getItem('Titulo da Vaga'),
             PerfilDev: localStorage.getItem('Perfil do desenvolvedor'),
@@ -63,14 +49,7 @@ function PubliVagaDois() {
             ReqVaga: localStorage.getItem('Requerimento da vaga'),
             TempoExp: localStorage.getItem('Tempo de Experiência'),
             DescAtivFuncoes: localStorage.getItem('Descrição das atividades e funções'),
-<<<<<<< HEAD
-            idEmpresaNavigation: {
-                idEmpresa: idEmpresa,
-            }
-
-=======
             idEmpresa: idEmpresa
->>>>>>> c60d71ad8f08f418a447375448c857ca8c5cc569
         }
         console.log(form2)
 
@@ -103,12 +82,10 @@ function PubliVagaDois() {
                 setTempoExp('');
                 setDescAtivFuncoes('');
                 setIdEmrpesa(1);
-                // ganchocorno.push('/publicarvagatres')
             })
-
             .catch(err => console.error(err));
     }
-
+    
     return (
         <div className="pricnipal">
             <Header />
@@ -152,7 +129,7 @@ function PubliVagaDois() {
                                         <div id="alignSelect">
                                             <label htmlFor="expertisevaga">Expertise vaga</label>
                                             <select name="expertisevaga" id="default" placeholder="Selecione seu nivel de experiência" value={expertiseVaga} onChange={a => setExpertiseVaga(a.target.value)}>
-                                                <option>Seleciona sua opção:</option>
+                                            <option>Seleciona sua opção:</option>
                                                 <option>Júnior</option>
                                                 <option>Pleno</option>
                                                 <option>Sênior</option>
@@ -163,29 +140,17 @@ function PubliVagaDois() {
                                         <div id="alignSelect">
                                             <label htmlFor="trabremoto">Trabalhar remoto?</label>
                                             <select name="trabremoto" id="default" placeholder="Selecione seu nível de experiência" value={trabalhoRemoto} onChange={a => setTrabalhoRemoto(a.target.value)}>
-<<<<<<< HEAD
-                                                <option>Seleciona sua opção:</option>
-                                                <option value="0">Sim</option>
-                                                <option value="1">Não</option>
-=======
                                             <option>Seleciona sua opção:</option>
                                                 <option value="true">Sim</option>
                                                 <option value="false">Não</option>
->>>>>>> c60d71ad8f08f418a447375448c857ca8c5cc569
                                             </select>
                                         </div>
                                         <div id="alignSelect">
                                             <label htmlFor="candoutracid">Candidatos de outra cidade?</label>
                                             <select name="candoutracid" id="default" placeholder="Aceitaria trabalhar em outra cidade" value={outraCidade} onChange={a => setOutraCidade(a.target.value)}>
-<<<<<<< HEAD
-                                                <option>Seleciona sua opção:</option>
-                                                <option value="0">Sim</option>
-                                                <option value="1">Não</option>
-=======
                                             <option>Seleciona sua opção:</option>
                                                 <option value="true">Sim</option>
                                                 <option value="false">Não</option>
->>>>>>> c60d71ad8f08f418a447375448c857ca8c5cc569
                                             </select>
                                         </div>
                                     </div>

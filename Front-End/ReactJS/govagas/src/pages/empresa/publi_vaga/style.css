@@ -3,6 +3,7 @@
     font-size: 30px;
     margin-top: 150px;
     display: flex;
+    margin-left: 200px;
 }
 
 .centro-publi_vaga2 {
@@ -11,6 +12,10 @@
 
 .publi-options2 .BarraProgresso {
     margin-left: 20px;
+}
+
+.publi-options2 {
+    margin-left: 200px;
 }
 
 
@@ -93,6 +98,20 @@
 
 .align-input {
     display: flex;
+}
+
+#default-style{
+    Width: 316px;
+    Height: 45px;
+    padding-left: 10px;
+    margin-bottom: 80px;
+    color: #8a8a8a;
+    border: 1px solid #868686;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+.align-input Input{
+    margin-top: -150px;
 }
 
 .align-input Input {
