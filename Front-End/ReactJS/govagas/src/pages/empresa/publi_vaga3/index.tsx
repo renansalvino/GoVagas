@@ -143,7 +143,6 @@ function PubliVagaTres() {
                         {/* PARTE IV */}
                         <div className="options-box07">
                             <div className="textdis">
-
                                 <div className="text05">
                                     <div className="textinf6">
                                         <p id="Desc">

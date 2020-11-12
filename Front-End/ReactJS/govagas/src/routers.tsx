@@ -23,7 +23,7 @@ function Routers() {
 	return (
 		<BrowserRouter>
 			<Route path='/' exact component={Home} />
-			<Route path='/Admin' component={Admin} /> /**/
+			<Route path='/Admin' component={Admin} />
 			<Route path="/publicarvaga" component={PublicarVaga} />
 			<Route path="/publicarvagadois" component={PublicarVagaDois} />
 			<Route path="/publicarvagatres" component={PublicarVagaTres} />

@@ -92,7 +92,9 @@ function PubliVaga() {
                                         <option>Médio</option>
                                         <option>Alto</option>
                                     </select>
-                                    <Input type="number" name="input2" id="input_maneiro"  label="Dias de contrato" placeholder="366 dias" value={diasContrato} onChange={a => setDiasContrato(a.target.value)} />
+                                    <div id="align-input_style">
+                                    <Input type="date" name="input2" id="input_maneiro"  label="Dias de contrato" placeholder="366 dias" value={diasContrato} onChange={a => setDiasContrato(a.target.value)} />
+                                    </div>
                                 </div>
                             </div>
                             <h2 id="sobrevaga">Sobre a Vaga</h2>

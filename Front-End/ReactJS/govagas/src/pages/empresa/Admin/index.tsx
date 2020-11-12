@@ -21,18 +21,18 @@ function Empresa() {
                     <section className="options">
                         <h1>Dashboard</h1>
                         <div id="options-2">
-                            <div className="options-box1">
+                            <div className="options-box_admin_1">
                                 <img src={Imgiconmais} id="Icon" />
                                 <p>Publicar Vagas</p>
                             </div>
-                            <div className="options-box2" >
+                            <div className="options-box_admin_2" >
                                 <img src={ImgJoinha} id="joinha" />
                                 <div className="num-3div">
                                     <p id="num3">3</p>
                                     <p id="vaga-publi">Vagas Publicadas</p>
                                 </div>
                             </div>
-                            <div className="options-box3">
+                            <div className="options-box_admin_3">
                                 <img src={ImgCandidatos} id="candidatos" />
                                 <div className="num-3div2">
                                     <p id="num3">3</p>

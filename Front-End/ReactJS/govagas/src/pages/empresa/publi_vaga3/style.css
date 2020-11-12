@@ -16,8 +16,6 @@
   margin-top: 40px;
 }
 
-/* Box1 (START) */
-
 .options-box05 {
   /* display: flex; */
   width: auto;
@@ -47,8 +45,8 @@
 
 .options-box2 {
   display: flex;
-  width: 195px;
-  height: 116px;
+  width: auto;
+  height: auto;
   background: #ffffff;
   box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.18);
   border-radius: 7px;
@@ -56,12 +54,6 @@
   flex-direction: column;
   margin-right: 50px;
 }
-
-/* junta as box */
-
-/* #options-2 {
-        display: flex;
-    } */
 
 .row-perfil {
   padding: 1px 60px;
@@ -166,8 +158,8 @@
 
 .options-box3 {
   display: flex;
-  width: 195px;
-  height: 116px;
+  width: auto;
+  height: auto;
   background: #ffffff;
   box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.18);
   border-radius: 7px;
@@ -184,7 +176,7 @@
 
 .textdis1 {
   width: 641px;
-  height: 189px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -233,8 +225,8 @@
 
 .texthab2 {
   display: flex;
-  width: 280px;
-  height: 90px;
+  width: auto;
+  height: auto;
   justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 20px;
@@ -253,8 +245,8 @@
 /* textoinfo */
 
 .options-box06 {
-  width: 850px;
-  height: 210px;
+  width: auto;
+  height: auto;
   background: #ffffff;
   box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.18);
   border-radius: 7px;
@@ -267,8 +259,8 @@
   line-height: 30px;
   margin-top: 35px;
   margin-left: 50px;
-  width: 730px;
-  height: 76px;
+  width: auto;
+  height: auto;
 }
 
 .textinf5 p {
@@ -286,17 +278,9 @@
   flex-direction: column;
 }
 
-/* cod david */
-
 .item {
   flex-grow: 1;
 }
-
-/* definiar o tamanha */
-
-/* .item-wide {
-      flex-grow: 3;
-    } */
 
 .break {
   flex-basis: 100%;
@@ -328,4 +312,9 @@
 .break-column {
   flex-basis: 100%;
   width: 0;
+}
+
+.options-box07{
+  width: auto;
+  height: auto;
 }

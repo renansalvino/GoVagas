@@ -30,6 +30,11 @@
 .alignSelect {
     display: flex;
     justify-content: space-evenly;
+    margin-left: 37.5px;
+}
+
+#alignSelect_2{
+    margin-right:55px
 }
 
 .alignPrincipal {
@@ -58,4 +63,15 @@
 #forms2 #btn1{
     margin-top: 25px;
     margin-left: 275px;
+}
+
+#style-input{
+    Width: 316px;
+    Height: 45px;
+    padding-left: 10px;
+    margin-bottom: 80px;
+    color: #8a8a8a;
+    border: 1px solid #868686;
+    box-sizing: border-box;
+    border-radius: 7px;
 }
