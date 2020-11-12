@@ -1,0 +1,73 @@
+#input1 {
+    display: flex;
+    Width: 720px;
+    Height: 45px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: 1px solid #868686;
+    box-sizing: border-box;
+}
+
+#input2 {
+    display: flex;
+    Width: 340px;
+    Height: 45px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    box-sizing: content-box;
+    border-radius: 7px;
+    border: 1px solid #868686;
+}
+
+#input3 {
+    display: flex;
+    Width: 218px;
+    Height: 45px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    box-sizing: content-box;
+    border-radius: 7px;
+    border: 1px solid #868686;
+}
+
+#input4 {
+    display: flex;
+    Width: 710px;
+    max-width: 710px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px 0px 200px 10px;
+    box-sizing: content-box;
+    border-radius: 7px;
+    border: 1px solid #868686;
+}
+
+#pesquisa {
+    display: flex;
+    Width: 600px;
+    Height: 45px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: 1px solid #868686;
+    box-sizing: border-box;
+}
+
+.flexMetade {
+    display: flex;
+    justify-content: space-evenly;
+    width: 750px
+}
+
+.flex1Terco {
+    display: flex;
+    justify-content: space-evenly;
+    width: 750px
+}
