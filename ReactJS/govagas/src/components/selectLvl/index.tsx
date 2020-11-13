@@ -10,9 +10,9 @@ const SelectLvl: React.FC<SelectProps> = ({ name, ...rest }) => {
             <label htmlFor="nivel">Nivel:</label>
             <select className="default" name="nivel" >
                 <option selected>Escolher...</option>
-                <option>Básico</option>
-                <option>Intermediário</option>
-                <option>Avançado</option>
+                <option value="Básico">Básico</option>
+                <option value="Intermediário">Intermediário</option>
+                <option value="Avançado">Avançado</option>
             </select>
         </div>
     )

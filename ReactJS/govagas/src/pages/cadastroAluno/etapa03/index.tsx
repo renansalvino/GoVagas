@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Footer from '../../../components/footer/index';
 import Header from '../../../components/header/index'
 import Button from '../../../components/button/index';
@@ -12,51 +12,50 @@ import SelectLvl from '../../../components/selectLvl';
 
 function CadastroCandidatoTres() {
 
+    let history = useHistory();
+
     const [idCandidato, setIdCandidato] = useState(0);
     const [candidato, setCandidato] = useState('');
-    const [nomecurso, setNomecurso] = useState('')
-    const [cidade, setCidade] = useState('')
-    const [habilidade, setHabilidade] = useState('');
-    const [expertisecandidato, setExpertisecandidato] = useState('');
+    const [nomeempresa, setNomeempresa] = useState('')
+    const [perfilempresa, setPerfilempresa] = useState('')
+    const [cargoempresa, setCargoempresa] = useState('')
+    const [datainicio, setDatainicio] = useState('')
+    const [datatermino, setDatatermino] = useState('')
     const [candidatos, setCandidatos] = useState([]);
 
     const [idUsuario, setIdUsuario] = useState(0)
-    const [usuario, setUsuario] = useState('')
-    const [telefone, setTelefone] = useState('')
     const [usuarios, setUsuarios] = useState([])
 
-    const Frasecadastro = habilidade + '/' + expertisecandidato + '';
+    
 
 
     const Post3 = () => {
 
         const form = {
-            nome: usuario,
-            telefone: telefone,
-            nomeCurso: nomecurso,
-            cidade: cidade,
-            habilidade: Frasecadastro,
-
-
+            nomeEmpresa: nomeempresa,
+            perfilEmpresa: perfilempresa,
+            cargoEmpresa: cargoempresa,
+            dataInicio: datainicio,
+            dataTermino: datatermino
         }
-        // localStorage.setItem('email-cadastro', email)
-        // localStorage.setItem('senha-cadastro', senha)
-        // localStorage.setItem('dataNascimento-cadastro', dataNascimento)
-        // localStorage.setItem('telefone-cadastro', telefone)
-        // history.push('/cadastroAluno')
-        fetch('https://localhost:5001/api/Candidato', {
-            method: 'POST',
-            body: JSON.stringify(form),
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        })
-            .then(() => {
-                alert('Candidato cadastrado');
-                setHabilidade('');
-                setExpertisecandidato('');
-            })
-            .catch(err => console.error(err));
+        localStorage.setItem('nomeempresa-cadastro', nomeempresa)
+        localStorage.setItem('perfilempresa-cadastro', perfilempresa)
+        localStorage.setItem('cargoempresa-cadastro', cargoempresa)
+        localStorage.setItem('datatermino-cadastro', datatermino)
+        history.push('/cadastroAluno4')
+        // fetch('https://localhost:5001/api/Candidato', {
+        //     method: 'POST',
+        //     body: JSON.stringify(form),
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     }
+        // })
+        //     .then(() => {
+        //         alert('Candidato cadastrado');
+        //         setHabilidade('');
+        //         setExpertisecandidato('');
+        //     })
+        //     .catch(err => console.error(err));
 
     }
 
@@ -112,23 +111,23 @@ function CadastroCandidatoTres() {
 
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input1" label="Nome da Empresa:" placeholder="Desenvolvedor Front/Back-End /Fullstack" value={usuario} onChange={a => setUsuario(a.target.value)} />
+                                                    <Input type="text" name="input1" label="Nome da Empresa:" placeholder="Desenvolvedor Front/Back-End /Fullstack" value={nomeempresa} onChange={a => setNomeempresa(a.target.value)} />
                                                 </div>
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Perfil da Empresa:" placeholder="https://www.linkedin.com/NomePerfil" value={cidade} onChange={a => setCidade(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Perfil da Empresa:" placeholder="https://www.linkedin.com/NomePerfil" value={perfilempresa} onChange={a => setPerfilempresa(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Seu cargo nesta Empresa:" placeholder="https://github.com/NomePerfil" value={cidade} onChange={a => setCidade(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Seu cargo nesta Empresa:" placeholder="https://github.com/NomePerfil" value={cargoempresa} onChange={a => setCargoempresa(a.target.value)} />
                                                 </div>
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="date" name="input2" label="Data de Início:" placeholder="Ex: 000.000.000.00" value={telefone} onChange={a => setTelefone(a.target.value)} />
+                                                    <Input type="date" name="input2" label="Data de Início:" placeholder="Ex: 000.000.000.00" value={datainicio} onChange={a => setDatainicio(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="date" name="input2" label="Data de Término:" placeholder="Cidade" value={cidade} onChange={a => setCidade(a.target.value)} />
+                                                    <Input type="date" name="input2" label="Data de Término:" placeholder="Cidade" value={datatermino} onChange={a => setDatatermino(a.target.value)} />
                                                 </div>
                                             </div>
                                         </div>

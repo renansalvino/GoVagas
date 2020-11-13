@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Footer from '../../../components/footer/index';
 import Header from '../../../components/header/index'
 import Button from '../../../components/button/index';
@@ -12,51 +12,47 @@ import SelectLvl from '../../../components/selectLvl';
 
 function CadastroCandidatoDois() {
 
+    let history = useHistory();
+
     const [idCandidato, setIdCandidato] = useState(0);
     const [candidato, setCandidato] = useState('');
-    const [nomecurso, setNomecurso] = useState('')
-    const [cidade, setCidade] = useState('')
+    const [candidatos, setCandidatos] = useState([])
+    const [tituloperfil, setTituloperfil] = useState('');
+    const [nivelingles, setNivelingles] = useState('');
+    const [urllinkedin, setUrllinkedin] = useState('');
+    const [urlgithub, setUrlgithub] = useState('');
+    const [descricao, setDescricao] = useState('');
+    const [curriculo, setCurriculo] = useState('');
     const [habilidade, setHabilidade] = useState('');
     const [expertisecandidato, setExpertisecandidato] = useState('');
-    const [candidatos, setCandidatos] = useState([]);
 
     const [idUsuario, setIdUsuario] = useState(0)
-    const [usuario, setUsuario] = useState('')
-    const [telefone, setTelefone] = useState('')
     const [usuarios, setUsuarios] = useState([])
 
+    const Nomehab = habilidade;
+    const Nomeex = expertisecandidato;
+    // const Frasecadastro = Nomehab + '/' + Nomeex + '';
     const Frasecadastro = habilidade + '/' + expertisecandidato + '';
 
 
     const Post2 = () => {
 
         const form = {
-            nome: usuario,
-            telefone: telefone,
-            nomeCurso: nomecurso,
-            cidade: cidade,
-            habilidade: Frasecadastro,
-
-
+            tituloPerfil: tituloperfil,
+            nivelIngles: nivelingles,
+            urlLinkedin: urllinkedin,
+            urlGithub: urlgithub,
+            descricao: descricao,
+            curriculo: curriculo,
+            habilidade: Frasecadastro
         }
-        // localStorage.setItem('email-cadastro', email)
-        // localStorage.setItem('senha-cadastro', senha)
-        // localStorage.setItem('dataNascimento-cadastro', dataNascimento)
-        // localStorage.setItem('telefone-cadastro', telefone)
-        // history.push('/cadastroAluno')
-        fetch('https://localhost:5001/api/Candidato', {
-            method: 'POST',
-            body: JSON.stringify(form),
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        })
-            .then(() => {
-                alert('Candidato cadastrado');
-                setHabilidade('');
-                setExpertisecandidato('');
-            })
-            .catch(err => console.error(err));
+        localStorage.setItem('tituloperfil-cadastro', tituloperfil)
+        localStorage.setItem('nivelingles-cadastro', nivelingles)
+        localStorage.setItem('urllinkedin-cadastro', urllinkedin)
+        localStorage.setItem('urlgithub-cadastro', urlgithub)
+        localStorage.setItem('descricao-cadastro', descricao)
+        localStorage.setItem('habilidade-cadastro', Frasecadastro)
+        history.push('/cadastroAluno3')
 
     }
 
@@ -105,27 +101,27 @@ function CadastroCandidatoDois() {
 
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Título de Perfil:" placeholder="Desenvolvedor Front-End ReactJs." value={usuario} onChange={a => setUsuario(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Título de Perfil:" placeholder="Desenvolvedor Front-End ReactJs." value={tituloperfil} onChange={a => setTituloperfil(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Nível de Inglês:" placeholder="Escolher..." value={nomecurso} onChange={a => setNomecurso(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Nível de Inglês:" placeholder="Escolher..." value={nivelingles} onChange={a => setNivelingles(a.target.value)} />
                                                 </div>
 
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Url Linkedin:" placeholder="https://www.linkedin.com/NomePerfil" value={cidade} onChange={a => setCidade(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Url Linkedin:" placeholder="https://www.linkedin.com/NomePerfil" value={urllinkedin} onChange={a => setUrllinkedin(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Url GitHub:" placeholder="https://github.com/NomePerfil" value={cidade} onChange={a => setCidade(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Url GitHub:" placeholder="https://github.com/NomePerfil" value={urlgithub} onChange={a => setUrlgithub(a.target.value)} />
                                                 </div>
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Descrição:" placeholder="Ex: 000.000.000.00" value={telefone} onChange={a => setTelefone(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Descrição:" placeholder="Ex: 000.000.000.00" value={descricao} onChange={a => setDescricao(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Currículo:" placeholder="Cidade" value={cidade} onChange={a => setCidade(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Currículo:" placeholder="Cidade" value={curriculo} onChange={a => setCurriculo(a.target.value)} />
                                                 </div>
                                             </div>
                                         </div>
@@ -134,6 +130,48 @@ function CadastroCandidatoDois() {
                                     <p>Habilidades</p>
 
                                     <div className="cadastro">
+                                        <div className="form">
+
+                                            <p>Informe suas habilidades (mínimo 3) e indique  qual experiência você possui em cada uma</p>
+
+                                            <div className="select">
+                                                <div className="grupo">
+                                                    <div className="habilidades">
+                                                        <Input name="input2" label="Habilidades:" placeholder="CosmoDB" value={habilidade} onChange={a => setHabilidade(a.target.value)} />
+                                                    </div>
+
+                                                    <div className="nivel">
+                                                        <Input name="input2" label="Nível:"placeholder="Júnior" value={expertisecandidato} onChange={a => setExpertisecandidato(a.target.value)} />
+                                                    </div>
+                                                </div>
+                                                <div className="grupo">
+                                                    <div className="habilidades">
+                                                        <Select name="hab" value={habilidade} onChange={a => setHabilidade(a.target.value)} />
+                                                    </div>
+
+                                                    <div className="nivel">
+                                                        <SelectLvl name="hab" value={expertisecandidato} onChange={a => setExpertisecandidato(a.target.value)} />
+                                                    </div>
+                                                </div>
+                                                <div className="grupo">
+                                                    <div className="habilidades">
+                                                        <Select name="hab" value={habilidade} onChange={a => setHabilidade(a.target.value)} />
+                                                    </div>
+
+                                                    <div className="nivel">
+                                                        <SelectLvl name="hab" value={expertisecandidato} onChange={a => setExpertisecandidato(a.target.value)} />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div className="btn-proximo-hab">
+                                                <button name="btn1" >ADICIONAR HABILIDADES</button>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    {/* <div className="cadastro">
                                         <div className="form">
 
                                             <p>Informe suas habilidades (mínimo 3) e indique  qual experiência você possui em cada uma</p>
@@ -169,12 +207,12 @@ function CadastroCandidatoDois() {
 
                                             </div>
                                             <div className="btn-proximo-hab">
-                                                <Button onClick="" name="btn1" value="Adicionar Habilidades" />
+                                                <button name="btn1" >ADICIONAR HABILIDADES</button>
                                             </div>
 
                                         </div>
 
-                                    </div>
+                                    </div> */}
                                     <div className="btn-proximo">
                                         <Link to="/cadastroAluno"> <Button onClick="" name="btn2" value="Voltar" /> </Link>
                                         <Button onClick="" name="btn1" value="Próximo" />
