@@ -8,3 +8,7 @@
     box-sizing: border-box;
     border-radius: 7px;
 }
+
+.form-group select {
+    color: #8a8a8a;
+}

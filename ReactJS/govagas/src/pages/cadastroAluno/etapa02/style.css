@@ -6,6 +6,11 @@
     border-radius: 7px;
 }
 
+.cadastroHab .cadastro {
+    padding-top: 25px;
+    margin-bottom: 50px;
+}
+
 .habilidades {
     display: flex;
     flex-direction: column;
@@ -25,6 +30,10 @@
     flex-direction: row;
     justify-content: space-evenly;
     padding: 25px;
+}
+
+.cadastroHab .grupo {
+    padding: 0;
 }
 
 .etapa2candidato .cadastro p {

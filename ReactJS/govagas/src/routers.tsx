@@ -4,6 +4,9 @@ import Home from './pages/home/index'
 import DashAdm from './pages/Administrador/dashAdm/index'
 import TabelaCandidatos from './pages/Administrador/tabelaCandidatos/index'
 import CadastroCandidatoUm from './pages/cadastroAluno/etapa01';
+import CadastroCandidatoDois from './pages/cadastroAluno/etapa02';
+import CadastroCandidatoTres from './pages/cadastroAluno/etapa03';
+import CadastroCandidatoQuatro from './pages/cadastroAluno/etapa04';
 import completarcadastro_01 from './pages/completarCadastroAluno/Etapa01';
 import completarcadastro_02 from './pages/completarCadastroAluno/Etapa02';
 import completarcadastro_03 from './pages/completarCadastroAluno/Etapa03';
@@ -21,6 +24,9 @@ function Routers() {
 			<Route path='/dashadm' exact component={DashAdm}/>
 			<Route path='/tabelacandidatos' exact component={TabelaCandidatos}/>
 			<Route path='/cadastroAluno' component={CadastroCandidatoUm}/>
+			<Route path='/cadastroAluno2' component={CadastroCandidatoDois}/>
+			<Route path='/cadastroAluno3' component={CadastroCandidatoTres}/>
+			<Route path='/cadastroAluno4' component={CadastroCandidatoQuatro}/>
 			<Route path='/completarCadastroAluno' component={completarcadastro_01}/>
 			<Route path='/completarCadastroAluno2' component={completarcadastro_02}/>
 			<Route path='/completarCadastroAluno3' component={completarcadastro_03}/>

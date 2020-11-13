@@ -1,6 +1,6 @@
 #input1 {
     display: flex;
-    Width: 720px;
+    Width: 710px;
     Height: 45px;
     margin-top: 10px;
     margin-bottom: 20px;
@@ -21,6 +21,7 @@
     box-sizing: content-box;
     border-radius: 7px;
     border: 1px solid #868686;
+    box-sizing: border-box;
 }
 
 #input3 {

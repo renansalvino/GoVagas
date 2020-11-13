@@ -3,6 +3,7 @@ import {Link, useHistory} from 'react-router-dom';
 import './style.css'
 import ImgLogo from '../../assets/images/logoGO.png'
 import Button from '../../components/button/index'
+import {parseJwt} from '../../auth'
 
 
 function Header() {
@@ -20,25 +21,51 @@ function Header() {
         if (token === undefined || token === null) {
             return (
                 <ul className="menuNav">
-                    <li><Link className="link" to="/">Home</Link></li>
-                    <li><Link className="link" to="/listarFilme">Filmes</Link></li>
-                    <li><Link className="link" to="/login">Login</Link></li>
-                    <li><Link className="link" to="/cadastro">Cadastro</Link></li>
+                    <ul className="menuNav">
+                    <li><Link className="link" to="/">VER VAGAS</Link></li>
+                    <li><Link className="link" to="/loginCandidato">LOGIN</Link></li>
+                    <li><Link to="" className="Link"><Button onClick="" name="btn1" value="CADASTRE-SE"/></Link></li>
+                </ul>
                 </ul>
             );
         } else {
-            return (
-                <ul className="menuNav">
-                <li><Link className="link" to="/">Home</Link></li>
-                <li><Link className="link" to="/filme">Filmes</Link></li>
-                <li><Link className="link" to="/genero">Generos</Link></li>
-                <li><Link className="link" to="/perfil">Perfil</Link></li>
-                <li><Link to="" className="Link" onClick={event => {
-                    event.preventDefault();
-                    Logout();
-                }}>Logout</Link></li>
-            </ul>
-            );
+            if(parseJwt().Role === "3") {
+                return (  
+                    <ul className="menuNav">
+                    <li><Link className="link" to="/filme">DASHBOARD</Link></li>
+                    <li><Link className="link" to="/">VER VAGAS</Link></li>
+                    <li><Link to="" className="Link" onClick={event => {
+                        event.preventDefault();
+                        Logout();
+                    }}><Button onClick="" name="btn1" value="LOGOFF"/></Link></li>
+                </ul>
+                );
+            }
+            if(parseJwt().Role === "2") {
+                return (  
+                    <ul className="menuNav">
+                    <li><Link className="link" to="/filme">DASHBOARD</Link></li>
+                    <li><Link className="link" to="/">PUBLICAR VAGA</Link></li>
+                    <li><Link to="" className="Link" onClick={event => {
+                        event.preventDefault();
+                        Logout();
+                    }}><Button onClick="" name="btn1" value="LOGOFF"/></Link></li>
+                </ul>
+                );
+            }
+            if(parseJwt().Role === "1") {
+                return (  
+                    <ul className="menuNav">
+                    <li><Link className="link" to="/filme">DASHBOARD</Link></li>
+                    <li><Link className="link" to="/">PERFIL</Link></li>
+                    <li><Link to="" className="Link" onClick={event => {
+                        event.preventDefault();
+                        Logout();
+                    }}><Button onClick="" name="btn1" value="LOGOFF"/></Link></li>
+                </ul>
+                );
+            }
+            
 
         }
     }
@@ -49,11 +76,7 @@ function Header() {
                 <nav>
                     <img src={ImgLogo} alt="logo go vagas" title="GoVagas" />
                     <div id="ul_flex">
-                        <ul>
-                            <li><a href="#">VER VAGAS</a></li>
-                            <li><a href="#">LOGIN</a></li>
-                            <li><Button onClick="" name="btn1" value="CADASTRAR-SE"/></li>
-                        </ul>
+                        {Menu()}
                     </div>
                 </nav>
             </div>

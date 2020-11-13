@@ -10,7 +10,7 @@ import '../../../components/barraProgresso/style.css';
 import Select from '../../../components/selectHab';
 import SelectLvl from '../../../components/selectLvl';
 
-function CadastroCandidatoDois() {
+function CadastroCandidatoQuatro() {
 
     const [idCandidato, setIdCandidato] = useState(0);
     const [candidato, setCandidato] = useState('');
@@ -28,7 +28,7 @@ function CadastroCandidatoDois() {
     const Frasecadastro = habilidade + '/' + expertisecandidato + '';
 
 
-    const Post2 = () => {
+    const Post4 = () => {
 
         const form = {
             nome: usuario,
@@ -78,10 +78,10 @@ function CadastroCandidatoDois() {
                             <li className="ativo">
 
                             </li>
-                            <li>
+                            <li className="ativo">
 
                             </li>
-                            <li>
+                            <li className="ativo">
 
                             </li>
                         </ul>
@@ -94,90 +94,44 @@ function CadastroCandidatoDois() {
                         <fieldset>
                             <main>
 
-                                <p>Apresentação</p>
+                                <p>Experiências Profissioanais</p>
                                 <form onSubmit={event => {
                                     event.preventDefault();
-                                    Post2();
+                                    Post4();
                                 }}>
                                     <div className="cadastroHab">
                                         <div className="cadastro">
 
-
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Título de Perfil:" placeholder="Desenvolvedor Front-End ReactJs." value={usuario} onChange={a => setUsuario(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Tamanho da Empresa:" placeholder="Desenvolvedor Front/Back-End /Fullstack" value={usuario} onChange={a => setUsuario(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Nível de Inglês:" placeholder="Escolher..." value={nomecurso} onChange={a => setNomecurso(a.target.value)} />
-                                                </div>
-
-                                            </div>
-                                            <div className="grupo">
-                                                <div className="form-group">
-                                                    <Input type="text" name="input2" label="Url Linkedin:" placeholder="https://www.linkedin.com/NomePerfil" value={cidade} onChange={a => setCidade(a.target.value)} />
-                                                </div>
-                                                <div className="form-group">
-                                                    <Input type="text" name="input2" label="Url GitHub:" placeholder="https://github.com/NomePerfil" value={cidade} onChange={a => setCidade(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Foco de Carreira:" placeholder="Desenvolvedor Front/Back-End /Fullstack" value={usuario} onChange={a => setUsuario(a.target.value)} />
                                                 </div>
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Descrição:" placeholder="Ex: 000.000.000.00" value={telefone} onChange={a => setTelefone(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Pretenção Salarial:" placeholder="https://www.linkedin.com/NomePerfil" value={cidade} onChange={a => setCidade(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Currículo:" placeholder="Cidade" value={cidade} onChange={a => setCidade(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Tipo de Contrato:" placeholder="https://github.com/NomePerfil" value={cidade} onChange={a => setCidade(a.target.value)} />
+                                                </div>
+                                            </div>
+                                            <div className="grupo">
+                                                <div className="form-group">
+                                                    <Input type="date" name="input2" label="Aceitar Trabalho Remoto??" placeholder="Ex: 000.000.000.00" value={telefone} onChange={a => setTelefone(a.target.value)} />
+                                                </div>
+                                                <div className="form-group">
+                                                    <Input type="date" name="input2" label="Você possui deficiência física?" placeholder="Cidade" value={cidade} onChange={a => setCidade(a.target.value)} />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <p>Habilidades</p>
-
-                                    <div className="cadastro">
-                                        <div className="form">
-
-                                            <p>Informe suas habilidades (mínimo 3) e indique  qual experiência você possui em cada uma</p>
-
-                                            <div className="select">
-                                                <div className="grupo">
-                                                    <div className="habilidades">
-                                                        <Select name="hab" value={habilidade} onChange={a => setHabilidade(a.target.value)} />
-                                                    </div>
-
-                                                    <div className="nivel">
-                                                        <SelectLvl name="hab" value={expertisecandidato} onChange={a => setExpertisecandidato(a.target.value)} />
-                                                    </div>
-                                                </div>
-                                                <div className="grupo">
-                                                    <div className="habilidades">
-                                                        <Select name="hab" value={habilidade} onChange={a => setHabilidade(a.target.value)} />
-                                                    </div>
-
-                                                    <div className="nivel">
-                                                        <SelectLvl name="hab" value={expertisecandidato} onChange={a => setExpertisecandidato(a.target.value)} />
-                                                    </div>
-                                                </div>
-                                                <div className="grupo">
-                                                    <div className="habilidades">
-                                                        <Select name="hab" value={habilidade} onChange={a => setHabilidade(a.target.value)} />
-                                                    </div>
-
-                                                    <div className="nivel">
-                                                        <SelectLvl name="hab" value={expertisecandidato} onChange={a => setExpertisecandidato(a.target.value)} />
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div className="btn-proximo-hab">
-                                                <Button onClick="" name="btn1" value="Adicionar Habilidades" />
-                                            </div>
-
-                                        </div>
-
-                                    </div>
                                     <div className="btn-proximo">
-                                        <Link to="/cadastroAluno"> <Button onClick="" name="btn2" value="Voltar" /> </Link>
-                                        <Button onClick="" name="btn1" value="Próximo" />
+                                        <Link to="/cadastroAluno3"> <Button onClick="" name="btn2" value="Voltar" /> </Link>
+                                        <Button onClick="" name="btn1" value="SALVAR" />
                                     </div>
                                 </form>
                             </main>
@@ -189,4 +143,4 @@ function CadastroCandidatoDois() {
         </div>
     )
 }
-export default CadastroCandidatoDois;
+export default CadastroCandidatoQuatro;

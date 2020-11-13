@@ -22,30 +22,6 @@ function LoginCandidato() {
       senha: senha
 
     }
-    history.push('/cadastroAluno')
-    localStorage.setItem('email-cadastro', email)
-    localStorage.setItem('senha-cadastro', senha)
-    localStorage.setItem('dataNascimento-cadastro', dataNascimento)
-    localStorage.setItem('telefone-cadastro', telefone)
-
-    // fetch('http://localhost:5001/api​/Login', {
-    //   method: 'POST',
-    //   body: JSON.stringify(logarCom),
-    //   headers: {
-    //     'content-type': 'application/json'
-    //   }
-    // })
-    //   .then(response => response.json())
-    //   .then(dados => {
-    //     if (dados.token != undefined) {
-    //       localStorage.setItem('tokengovagas', dados.token)
-    //       history.push('/');
-    //     } else {
-    //       alert("Algo de errado não está certo")
-    //     }
-    //   })
-    //   .catch(error => console.error(error))
-
     fetch('https://localhost:5001/api/Login', {
             method: 'POST',
             body: JSON.stringify(logarCom),
@@ -61,10 +37,24 @@ function LoginCandidato() {
                     history.push('/');
                 }
                 else {
-                    alert('Senha ou Email invalidos');
+                    alert('Senha e/ou Email invalidos');
                 }
             })
             .catch(error => console.error(error));
+    }
+  const cadastrar = () => {
+    const cadastrarCom = {
+      email: email,
+      senha: senha,
+      dataNascimento: dataNascimento,
+      telefone: telefone
+
+    }
+    localStorage.setItem('email-cadastro', email)
+    localStorage.setItem('senha-cadastro', senha)
+    localStorage.setItem('dataNascimento-cadastro', dataNascimento)
+    localStorage.setItem('telefone-cadastro', telefone)
+    history.push('/cadastroAluno')
     }
 
   return (
@@ -160,9 +150,10 @@ function LoginCandidato() {
 
 
             <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-              <form>
-
-
+            <form onSubmit={event => {
+                event.preventDefault()
+                cadastrar()
+              }}>
                 <div className="login-login">
                   <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" >
                     <div className="login-inputs">
@@ -182,7 +173,7 @@ function LoginCandidato() {
                       <tr />
                     </div>
                     <div className="btn-criarconta">
-                      <Link to="/cadastroAluno"> <Button onClick="" name="btn1" value="Criar Conta" /> </Link>
+                      <Button onClick="" name="btn1" value="Criar Conta" />
                     </div>
                     <div className="login-inputs">
                       <tr className="tr-empresa" />
@@ -195,12 +186,6 @@ function LoginCandidato() {
               </form>
             </div>
           </div>
-
-
-
-
-
-
         </div>
       </div>
       <Footer />
