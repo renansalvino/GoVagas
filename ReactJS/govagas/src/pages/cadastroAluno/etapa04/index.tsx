@@ -12,6 +12,7 @@ import SelectLvl from '../../../components/selectLvl';
 
 function CadastroCandidatoQuatro() {
 
+    const [idTipoUsuario, setIdTipoUsuario] = useState(3);
     const [idCandidato, setIdCandidato] = useState(0);
     const [candidato, setCandidato] = useState('');
     const [tamanhoempresa, setTamanhoempresa] = useState('');
@@ -33,6 +34,7 @@ function CadastroCandidatoQuatro() {
             //1
             sexo: localStorage.getItem('sexo-cadastro'),
             cpf: localStorage.getItem('cpf-cadastro'),
+            cidade: localStorage.getItem('cidade-cadastro'),
             numMatricula: localStorage.getItem('nummatricula-cadastro'),
             dataMatricula: localStorage.getItem('datamatricula-cadastro'),
             nomeCurso: localStorage.getItem('nomecurso-cadastro'),
@@ -50,6 +52,7 @@ function CadastroCandidatoQuatro() {
             curriculo: localStorage.getItem('curriculo-cadastro'),
             habilidade: localStorage.getItem('habilidade-cadastro'),
             //3
+            experienciapro: localStorage.getItem('experienciapro-cadastro'),
             nomeEmpresa: localStorage.getItem('nomeempresa-cadastro'),
             perfilEmpresa: localStorage.getItem('perfilempresa-cadastro'),
             cargoEmpresa: localStorage.getItem('cargoempresa-cadastro'),
@@ -58,7 +61,7 @@ function CadastroCandidatoQuatro() {
             //4
             tamanhoEmpresa: tamanhoempresa,
             focoCarreira: fococarreira,
-            pretencaoSalarial: pretencaosalarial,
+            pretencaoSalarial: parseFloat(pretencaosalarial),
             tipoContrato: tipocontrato,
             trabalhoRemoto: trabalhoremoto === 'true' ? true : false,
             deficienciaFisica: deficienciafisica === 'true' ? true : false,
@@ -68,7 +71,10 @@ function CadastroCandidatoQuatro() {
                 email: localStorage.getItem('email-cadastro'),
                 senha: localStorage.getItem('senha-cadastro'),
                 dataNascimento: localStorage.getItem('dataNascimento-cadastro'),
-                telefone: localStorage.getItem('telefone-cadastro')
+                telefone: localStorage.getItem('telefone-cadastro'),
+                // idTipoUsuarioNavigation: {
+                //     idTipoUsuario: idTipoUsuario
+                //   }
             }
         }
         console.log(form)
@@ -79,7 +85,6 @@ function CadastroCandidatoQuatro() {
                 'Content-Type': 'application/json',
             }
         })
-            .then(response => response.json())
             .then(() => {
                 alert('Candidato cadastrado');
             })

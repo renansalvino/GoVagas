@@ -16,6 +16,7 @@ function CadastroCandidatoTres() {
 
     const [idCandidato, setIdCandidato] = useState(0);
     const [candidato, setCandidato] = useState('');
+    const [experienciapro, setExperienciapro] = useState('Sim')
     const [nomeempresa, setNomeempresa] = useState('')
     const [perfilempresa, setPerfilempresa] = useState('')
     const [cargoempresa, setCargoempresa] = useState('')
@@ -28,16 +29,35 @@ function CadastroCandidatoTres() {
 
     
 
+    // var element: HTMLInputElement = document.getElementById('gridCheck'); 
+    // var isChecked = element.checked;
 
+    // if (element.checked){
+            
+    // }
     const Post3 = () => {
 
         const form = {
+            experienciaPro: experienciapro, // === 'checked' ? "Sim" : "Não"
             nomeEmpresa: nomeempresa,
             perfilEmpresa: perfilempresa,
             cargoEmpresa: cargoempresa,
             dataInicio: datainicio,
             dataTermino: datatermino
         }
+        
+
+        // const checkboxPro = document.querySelector('input[value={nomeempresa}]');
+        // checkboxPro?.addEventListener(change, () => {
+        //     if (checkboxPro.) {
+                
+        //     }
+        // })
+
+        
+        
+        
+        localStorage.setItem('experienciapro-cadastro', experienciapro)
         localStorage.setItem('nomeempresa-cadastro', nomeempresa)
         localStorage.setItem('perfilempresa-cadastro', perfilempresa)
         localStorage.setItem('cargoempresa-cadastro', cargoempresa)
@@ -93,7 +113,7 @@ function CadastroCandidatoTres() {
                     <div className="cadastro-form">
                         <fieldset>
                             <main>
-
+                                
                                 <p>Experiências Profissioanais</p>
                                 <form onSubmit={event => {
                                     event.preventDefault();
@@ -103,7 +123,7 @@ function CadastroCandidatoTres() {
                                         <div className="cadastro">
 
                                             <div className="form-check">
-                                                <input className="form-check-input" type="checkbox" id="gridCheck" />
+                                                <input className="form-check-input" type="checkbox" id="gridCheck" value="Sim" checked onChange={a => setExperienciapro(a.target.value)}/>
                                                     <label className="form-check-label" htmlFor="gridCheck">
                                                         Não tenho experiência profissional
                                                     </label>

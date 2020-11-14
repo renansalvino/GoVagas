@@ -51,6 +51,7 @@ function CadastroCandidatoUm() {
         localStorage.setItem('nome-cadastro', nome)
         localStorage.setItem('sexo-cadastro', sexo)
         localStorage.setItem('cpf-cadastro', cpf)
+        localStorage.setItem('cidade-cadastro', cidade)
         localStorage.setItem('nummatricula-cadastro', nummatricula)
         localStorage.setItem('datamatricula-cadastro', datamatricula)
         localStorage.setItem('nomecurso-cadastro', nomecurso)
