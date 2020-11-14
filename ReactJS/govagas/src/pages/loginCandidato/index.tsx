@@ -161,7 +161,7 @@ function LoginCandidato() {
                       <tr />
                     </div>
                     <div className="login-inputs">
-                      <Input label="" type="text" name="input22" placeholder="Data Nascimento" minLength={8} maxLength={100} value={dataNascimento} onChange={a => setDataNascimento(a.target.value)} />
+                      <Input label="" type="date" name="input22" placeholder="Data Nascimento" minLength={8} maxLength={100} value={dataNascimento} onChange={a => setDataNascimento(a.target.value)} />
                       <tr />
                     </div>
                     <div className="login-inputs">

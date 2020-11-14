@@ -14,10 +14,12 @@ function CadastroCandidatoQuatro() {
 
     const [idCandidato, setIdCandidato] = useState(0);
     const [candidato, setCandidato] = useState('');
-    const [nomecurso, setNomecurso] = useState('')
-    const [cidade, setCidade] = useState('')
-    const [habilidade, setHabilidade] = useState('');
-    const [expertisecandidato, setExpertisecandidato] = useState('');
+    const [tamanhoempresa, setTamanhoempresa] = useState('');
+    const [fococarreira, setFococarreira] = useState('');
+    const [pretencaosalarial, setPretencaosalarial] = useState('');
+    const [tipocontrato, setTipocontrato] = useState('');
+    const [trabalhoremoto, setTrabalhoremoto] = useState('');
+    const [deficienciafisica, setDeficienciafisica] = useState('');
     const [candidatos, setCandidatos] = useState([]);
 
     const [idUsuario, setIdUsuario] = useState(0)
@@ -25,25 +27,51 @@ function CadastroCandidatoQuatro() {
     const [telefone, setTelefone] = useState('')
     const [usuarios, setUsuarios] = useState([])
 
-    const Frasecadastro = habilidade + '/' + expertisecandidato + '';
-
-
     const Post4 = () => {
 
         const form = {
-            nome: usuario,
-            telefone: telefone,
-            nomeCurso: nomecurso,
-            cidade: cidade,
-            habilidade: Frasecadastro,
-
-
+            //1
+            sexo: localStorage.getItem('sexo-cadastro'),
+            cpf: localStorage.getItem('cpf-cadastro'),
+            numMatricula: localStorage.getItem('nummatricula-cadastro'),
+            dataMatricula: localStorage.getItem('datamatricula-cadastro'),
+            nomeCurso: localStorage.getItem('nomecurso-cadastro'),
+            tipoCurso: localStorage.getItem('tipocurso-cadastro'),
+            nivelCurso: localStorage.getItem('nivelcurso-cadastro'),
+            turma: localStorage.getItem('turma-cadastro'),
+            turno: localStorage.getItem('turno-cadastro'),
+            termo: localStorage.getItem('termo-cadastro'),
+            //2
+            tituloPerfil: localStorage.getItem('tituloperfil-cadastro'),
+            nivelIngles: localStorage.getItem('nivelingles-cadastro'),
+            urlLinkedin: localStorage.getItem('urllinkedin-cadastro'),
+            urlGithub: localStorage.getItem('urlgithub-cadastro'),
+            descricao: localStorage.getItem('descricao-cadastro'),
+            curriculo: localStorage.getItem('curriculo-cadastro'),
+            habilidade: localStorage.getItem('habilidade-cadastro'),
+            //3
+            nomeEmpresa: localStorage.getItem('nomeempresa-cadastro'),
+            perfilEmpresa: localStorage.getItem('perfilempresa-cadastro'),
+            cargoEmpresa: localStorage.getItem('cargoempresa-cadastro'),
+            dataInicio: localStorage.getItem('datainicio-cadastro'),
+            dataTermino: localStorage.getItem('datatermino-cadastro'),
+            //4
+            tamanhoEmpresa: tamanhoempresa,
+            focoCarreira: fococarreira,
+            pretencaoSalarial: pretencaosalarial,
+            tipoContrato: tipocontrato,
+            trabalhoRemoto: trabalhoremoto === 'true' ? true : false,
+            deficienciaFisica: deficienciafisica === 'true' ? true : false,
+            //estrangeiro
+            idUsuarioNavigation: {
+                nome: localStorage.getItem('nome-cadastro'),
+                email: localStorage.getItem('email-cadastro'),
+                senha: localStorage.getItem('senha-cadastro'),
+                dataNascimento: localStorage.getItem('dataNascimento-cadastro'),
+                telefone: localStorage.getItem('telefone-cadastro')
+            }
         }
-        // localStorage.setItem('email-cadastro', email)
-        // localStorage.setItem('senha-cadastro', senha)
-        // localStorage.setItem('dataNascimento-cadastro', dataNascimento)
-        // localStorage.setItem('telefone-cadastro', telefone)
-        // history.push('/cadastroAluno')
+        console.log(form)
         fetch('https://localhost:5001/api/Candidato', {
             method: 'POST',
             body: JSON.stringify(form),
@@ -51,13 +79,11 @@ function CadastroCandidatoQuatro() {
                 'Content-Type': 'application/json',
             }
         })
+            .then(response => response.json())
             .then(() => {
                 alert('Candidato cadastrado');
-                setHabilidade('');
-                setExpertisecandidato('');
             })
             .catch(err => console.error(err));
-
     }
 
 
@@ -104,26 +130,36 @@ function CadastroCandidatoQuatro() {
 
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Tamanho da Empresa:" placeholder="Desenvolvedor Front/Back-End /Fullstack" value={usuario} onChange={a => setUsuario(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Tamanho da Empresa:" placeholder="Desenvolvedor Front/Back-End /Fullstack" value={tamanhoempresa} onChange={a => setTamanhoempresa(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Foco de Carreira:" placeholder="Desenvolvedor Front/Back-End /Fullstack" value={usuario} onChange={a => setUsuario(a.target.value)} />
-                                                </div>
-                                            </div>
-                                            <div className="grupo">
-                                                <div className="form-group">
-                                                    <Input type="text" name="input2" label="Pretenção Salarial:" placeholder="https://www.linkedin.com/NomePerfil" value={cidade} onChange={a => setCidade(a.target.value)} />
-                                                </div>
-                                                <div className="form-group">
-                                                    <Input type="text" name="input2" label="Tipo de Contrato:" placeholder="https://github.com/NomePerfil" value={cidade} onChange={a => setCidade(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Foco de Carreira:" placeholder="Desenvolvedor Front/Back-End /Fullstack" value={fococarreira} onChange={a => setFococarreira(a.target.value)} />
                                                 </div>
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="date" name="input2" label="Aceitar Trabalho Remoto??" placeholder="Ex: 000.000.000.00" value={telefone} onChange={a => setTelefone(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Pretenção Salarial:" placeholder="https://www.linkedin.com/NomePerfil" value={pretencaosalarial} onChange={a => setPretencaosalarial(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="date" name="input2" label="Você possui deficiência física?" placeholder="Cidade" value={cidade} onChange={a => setCidade(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Tipo de Contrato:" placeholder="https://github.com/NomePerfil" value={tipocontrato} onChange={a => setTipocontrato(a.target.value)} />
+                                                </div>
+                                            </div>
+                                            <div className="grupo">
+                                                <div className="form-group">
+                                                    <label htmlFor="">Aceitar Trabalho Remoto?</label>
+                                                    <select id="input2" placeholder="Ex: 000.000.000.00" value={trabalhoremoto} onChange={a => setTrabalhoremoto(a.target.value)}>
+                                                        <option>Seleciona sua opção:</option>
+                                                        <option value="true">Sim</option>
+                                                        <option value="false">Não</option>
+                                                    </select>
+                                                </div>
+                                                <div className="form-group">
+                                                    <label htmlFor="">Você possui deficiência física?</label>
+                                                    <select id="input2" placeholder="Cidade" value={deficienciafisica} onChange={a => setDeficienciafisica(a.target.value)}>
+                                                        <option>Seleciona sua opção:</option>
+                                                        <option value="true">Sim</option>
+                                                        <option value="false">Não</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>

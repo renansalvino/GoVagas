@@ -51,6 +51,7 @@ function CadastroCandidatoDois() {
         localStorage.setItem('urllinkedin-cadastro', urllinkedin)
         localStorage.setItem('urlgithub-cadastro', urlgithub)
         localStorage.setItem('descricao-cadastro', descricao)
+        localStorage.setItem('curriculo-cadastro', curriculo)
         localStorage.setItem('habilidade-cadastro', Frasecadastro)
         history.push('/cadastroAluno3')
 

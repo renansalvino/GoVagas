@@ -27,6 +27,7 @@ function CadastroCandidatoUm() {
     const [candidatos, setCandidatos] = useState([]);
 
     const [idUsuario, setIdUsuario] = useState(0)
+    const [nome, setNome] = useState('')
     const [usuario, setUsuario] = useState('')
     const [usuarios, setUsuarios] = useState([])
 
@@ -34,7 +35,7 @@ function CadastroCandidatoUm() {
 
     const Post = () => {
         const form = {
-            nome: usuario,
+            nome: nome,
             sexo: sexo,
             cpf: cpf,
             cidade: cidade,
@@ -47,7 +48,7 @@ function CadastroCandidatoUm() {
             turno: turno,
             termo: termo
         }
-        localStorage.setItem('nome-cadastro', usuario)
+        localStorage.setItem('nome-cadastro', nome)
         localStorage.setItem('sexo-cadastro', sexo)
         localStorage.setItem('cpf-cadastro', cpf)
         localStorage.setItem('nummatricula-cadastro', nummatricula)
@@ -124,7 +125,7 @@ function CadastroCandidatoUm() {
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Nome completo:" placeholder="Nome Completo" value={usuario} onChange={a => setUsuario(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Nome completo:" placeholder="Nome Completo" value={nome} onChange={a => setNome(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="">Sexo:</label>

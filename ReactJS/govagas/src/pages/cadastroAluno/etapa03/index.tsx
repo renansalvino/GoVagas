@@ -41,6 +41,7 @@ function CadastroCandidatoTres() {
         localStorage.setItem('nomeempresa-cadastro', nomeempresa)
         localStorage.setItem('perfilempresa-cadastro', perfilempresa)
         localStorage.setItem('cargoempresa-cadastro', cargoempresa)
+        localStorage.setItem('datainicio-cadastro', datainicio)
         localStorage.setItem('datatermino-cadastro', datatermino)
         history.push('/cadastroAluno4')
         // fetch('https://localhost:5001/api/Candidato', {
