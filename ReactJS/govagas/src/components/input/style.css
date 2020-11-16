@@ -48,6 +48,18 @@
     border: 1px solid #868686;
 }
 
+#input5 {
+    display: flex;
+    Width: 340px;
+    max-width: 710px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px 0px 200px 10px;
+    box-sizing: content-box;
+    border-radius: 7px;
+    border: 1px solid #868686;
+}
+
 #pesquisa {
     display: flex;
     Width: 600px;

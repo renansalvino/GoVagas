@@ -123,7 +123,7 @@ function CadastroCandidatoTres() {
                                         <div className="cadastro">
 
                                             <div className="form-check">
-                                                <input className="form-check-input" type="checkbox" id="gridCheck" value="Sim" checked onChange={a => setExperienciapro(a.target.value)}/>
+                                                <input className="form-check-input" type="checkbox" id="gridCheck" value="Sim" onChange={a => setExperienciapro(a.target.value)}/>
                                                     <label className="form-check-label" htmlFor="gridCheck">
                                                         Não tenho experiência profissional
                                                     </label>

@@ -5,6 +5,7 @@ import Footer from '../../components/footer/index';
 import Header from '../../components/header/index';
 import Button from '../../components/button/index';
 import Input from '../../components/input/index';
+import ImgJoia from '../../assets/images/empresa/joia.png';
 import ImgBahia from '../../assets/images/empresa/bahiano.jpeg';
 import ImgSnoopy from '../../assets/images/snoopy.jpeg';
 import ImgNao from '../../assets/images/nao.jpeg';
@@ -76,7 +77,7 @@ function LoginCandidato() {
               </ol>
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img src={ImgBahia} className="d-block w-200" alt="..." />
+                  <img src={ImgJoia} className="d-block w-200" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>Tecnico em Análise e Desenvolvimento de Sistemas</h5>
                     <p>“O SENAI de Informática  me proporcionou grandes aprendizados e com isso consegui uma vaga na empresa AVANAD uma empresa global de serviços profissionais que fornece consultoria e serviços de TI
@@ -84,7 +85,7 @@ function LoginCandidato() {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img src={ImgSnoopy} className="d-block w-200" alt="..." />
+                  <img src={ImgJoia} className="d-block w-200" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>Tecnico em Análise e Desenvolvimento de Sistemas</h5>
                     <p>“O SENAI de Informática  me proporcionou grandes aprendizados e com isso consegui uma vaga na empresa AVANAD uma empresa global de serviços profissionais que fornece consultoria e serviços de TI focados
@@ -92,7 +93,7 @@ function LoginCandidato() {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img src={ImgNao} className="d-block w-200" alt="..." />
+                  <img src={ImgJoia} className="d-block w-200" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>Tecnico em Análise e Desenvolvimento de Sistemas</h5>
                     <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>

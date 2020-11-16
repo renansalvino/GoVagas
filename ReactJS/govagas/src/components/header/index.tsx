@@ -45,7 +45,7 @@ function Header() {
                 return (  
                     <ul className="menuNav">
                     <li><Link className="link" to="/filme">DASHBOARD</Link></li>
-                    <li><Link className="link" to="/">PUBLICAR VAGA</Link></li>
+                    <li><Link className="link" to="/publicarvaga">PUBLICAR VAGA</Link></li>
                     <li><Link to="" className="Link" onClick={event => {
                         event.preventDefault();
                         Logout();
@@ -56,7 +56,7 @@ function Header() {
             if(parseJwt().Role === "1") {
                 return (  
                     <ul className="menuNav">
-                    <li><Link className="link" to="/filme">DASHBOARD</Link></li>
+                    <li><Link className="link" to="/dashadm">DASHBOARD</Link></li>
                     <li><Link className="link" to="/">PERFIL</Link></li>
                     <li><Link to="" className="Link" onClick={event => {
                         event.preventDefault();

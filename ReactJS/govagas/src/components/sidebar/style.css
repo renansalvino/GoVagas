@@ -5,9 +5,10 @@
 
 .dashboard {
     width: 300px;
-    height: 800px;
+    height: auto;
     margin-top: 6px;
     padding-top: 1px;
+    /* padding-bottom: 10px; */
     border-radius: 7px;
     background-color: white;
     box-shadow: 0px 2px 2px 2px rgba(156, 155, 155, 0.53);

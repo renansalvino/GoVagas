@@ -105,7 +105,14 @@ function CadastroCandidatoDois() {
                                                     <Input type="text" name="input2" label="Título de Perfil:" placeholder="Desenvolvedor Front-End ReactJs." value={tituloperfil} onChange={a => setTituloperfil(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Nível de Inglês:" placeholder="Escolher..." value={nivelingles} onChange={a => setNivelingles(a.target.value)} />
+                                                    <label htmlFor="">Nível de Inglês:</label>
+                                                    <select id="input2" placeholder="Escolher..." value={nivelingles} onChange={a => setNivelingles(a.target.value)}>
+                                                    <option>Escolher:</option>
+                                                        <option>Básico</option>
+                                                        <option>Intermediário</option>
+                                                        <option>Avançado</option>
+                                                        <option>Avançado</option>
+                                                    </select>
                                                 </div>
 
                                             </div>
@@ -166,7 +173,7 @@ function CadastroCandidatoDois() {
 
                                             </div>
                                             <div className="btn-proximo-hab">
-                                                <button name="btn1" >ADICIONAR HABILIDADES</button>
+                                                <button id="btn1" >ADICIONAR HABILIDADES</button>
                                             </div>
 
                                         </div>

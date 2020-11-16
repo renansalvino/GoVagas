@@ -15,6 +15,11 @@ import cadastrocandidato02 from './pages/cadastroAluno/etapa02';
 import cadastroEmpresa02 from './pages/cadastroEmpresa/etapa02';
 import LoginCandidato from './pages/loginCandidato/index';
 import LoginEmpresa from './pages/loginEmpresa';
+import PublicarVaga from "./pages/empresa/publi_vaga/index";
+import PublicarVagaDois from './pages/empresa/publi_vaga2/index';
+import PublicarVagaTres from './pages/empresa/publi_vaga3/index';
+import infoestagio from './pages/empresa/info_estagio/index';
+
 // 	import Login from ‘./pages/Login’;
 
 function Routers() {
@@ -35,6 +40,10 @@ function Routers() {
 			<Route path='/cadastroEmpresa2' component={cadastroEmpresa02}/>
 			<Route path='/loginCandidato' component={LoginCandidato}/>
 			<Route path='/loginEmpresa' component={LoginEmpresa}/>
+			<Route path="/publicarvaga" component={PublicarVaga}/>
+			<Route path="/publicarvagadois"component={PublicarVagaDois}/>
+			<Route path="/publicarvagatres"component={PublicarVagaTres}/>
+			<Route path="/infoestagio" component={infoestagio}/>
 		</BrowserRouter>
 	);
 }

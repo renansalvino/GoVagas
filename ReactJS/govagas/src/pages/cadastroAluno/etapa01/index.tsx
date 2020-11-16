@@ -126,11 +126,11 @@ function CadastroCandidatoUm() {
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Nome completo:" placeholder="Nome Completo" value={nome} onChange={a => setNome(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Nome completo:" placeholder="Nome Completo do Aluno" required value={nome} onChange={a => setNome(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="">Sexo:</label>
-                                                    <select id="input2" placeholder="Selecionar:" value={sexo} onChange={a => setSexo(a.target.value)}>
+                                                    <select id="input2" placeholder="Selecionar:" required value={sexo} onChange={a => setSexo(a.target.value)}>
                                                         <option>Escolher:</option>
                                                         <option>Masculino</option>
                                                         <option>Feminino</option>
@@ -140,41 +140,41 @@ function CadastroCandidatoUm() {
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="number" name="input2" label="CPF:" placeholder="000.000.000.00" maxLength={11} value={cpf} onChange={a => setCpf(a.target.value)} />
+                                                    <Input type="number" name="input2" label="CPF:" required placeholder="000.000.000.00"  maxLength={11} value={cpf} onChange={a => setCpf(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Endereço:" placeholder="Rua Alameda Barão de Limeira n75, SP" value={cidade} onChange={a => setCidade(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Endereço:" required placeholder="Rua Alameda Barão de Limeira n75, SP" value={cidade} onChange={a => setCidade(a.target.value)} />
                                                 </div>
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="number" name="input2" label="Número da Matricula:" placeholder="15123405" value={nummatricula} onChange={a => setNummatricula(a.target.value)} />
+                                                    <Input type="number" name="input2" label="Número da Matricula:" required placeholder="15123405" value={nummatricula} onChange={a => setNummatricula(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="date" name="input2" label="Data da Matrícula:" placeholder="Cidade" value={datamatricula} onChange={a => setDatamatricula(a.target.value)} />
+                                                    <Input type="date" name="input2" label="Data da Matrícula:" required placeholder="Cidade" value={datamatricula} onChange={a => setDatamatricula(a.target.value)} />
                                                 </div>
                                             </div>
                                             <div className="grupo">
 
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Nome do Curso:" placeholder="Técnico de Redes de Computadores" value={nomecurso} onChange={a => setNomecurso(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Nome do Curso:" required placeholder="Técnico de Redes de Computadores" value={nomecurso} onChange={a => setNomecurso(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Tipo do Curso:" placeholder="Aprendizagem Industrial" value={tipocurso} onChange={a => setTipocurso(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Tipo do Curso:" required placeholder="Aprendizagem Industrial" value={tipocurso} onChange={a => setTipocurso(a.target.value)} />
                                                 </div>
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Nível do Curso:" placeholder="Aprendizagem" value={nivelcurso} onChange={a => setNivelcurso(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Nível do Curso:" required placeholder="Aprendizagem" value={nivelcurso} onChange={a => setNivelcurso(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Turma:" placeholder="TECREDE-MT4" value={turma} onChange={a => setTurma(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Turma:" required placeholder="TECREDE-MT4" value={turma} onChange={a => setTurma(a.target.value)} />
                                                 </div>
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
                                                     <label htmlFor="">Turno:</label>
-                                                    <select id="input2" placeholder="Manhã" value={turno} onChange={a => setTurno(a.target.value)}>
+                                                    <select id="input2" required placeholder="Manhã" value={turno} onChange={a => setTurno(a.target.value)}>
                                                         <option>Escolher:</option>
                                                         <option>Manhã</option>
                                                         <option>Tarde</option>
