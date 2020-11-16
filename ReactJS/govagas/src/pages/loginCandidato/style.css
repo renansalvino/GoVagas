@@ -1,4 +1,10 @@
-.loginCandidato h1 {
+.loginCandidato {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 100px;
+}
+
+.loginH1{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +34,7 @@
 }
 
 .loginCandidato .h1-empresa1 {
-    margin-top: 110px;
+    padding: 25px;
     font-weight: 300;
     font-size: 25px;
     line-height: 25px;
@@ -46,7 +52,7 @@
     background: #FFFFFF;
     box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.18);
     border-radius: 7px;
-    margin-left: 750px;
+    /* margin-left: 750px; */
     margin-top: 35px;
     margin-bottom: 50px;
 }
@@ -58,6 +64,14 @@
     border: 1px solid #868686;
 }
 
+
+.loginCandidato .login-inputs1 input {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    width: 430px;
+}
+
 .login .login-inputs {
     padding: 25px;
 }
@@ -65,6 +79,20 @@
 .login-inputs p {
     padding-left: 250px;
     padding-top: 25px;
+}
+.login .login-inputs1 {
+    padding: 10px 70px 10px 25px;
+}
+
+.login-inputs1 p {
+    padding-left: 250px;
+    padding-top: 25px;
+}
+
+.btn-criarconta1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 
@@ -75,8 +103,6 @@
 }
 
 .tr-empresa {
-    width: 480px;
-    left: 750px;
     top: 690px;
 }
 
