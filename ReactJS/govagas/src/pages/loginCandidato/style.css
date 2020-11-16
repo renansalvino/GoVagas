@@ -131,10 +131,33 @@
     padding-bottom: 300px;
 }
 
+/* .carousel-item img{
+    border-radius: 70px;
+} */
+
+.carousel-indicators{
+    margin: 0px 20px;
+}
+
+.carousel-indicators li{
+    outline-style: groove;
+    margin: 0px 10px;
+    /* transition: opacity .18s ease; */
+}
+
 .carousel-indicators .active {
     opacity: 1;
     background-color: black;
+    padding: 3px 3px 3px 3px;
 }
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    background-color: #DB324A;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+
 
 /* .login li {
     background-color: #DB324A;
@@ -153,7 +176,7 @@ a :hover {
 }
 
 .nav-tabs .nav-link {
-    /* border: 1px solid transparent; */
+    border: 0px solid transparent;
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
 }

@@ -14,7 +14,7 @@ import cadastroEmpresa01 from './pages/cadastroEmpresa/etapa01';
 import cadastrocandidato02 from './pages/cadastroAluno/etapa02';
 import cadastroEmpresa02 from './pages/cadastroEmpresa/etapa02';
 import LoginCandidato from './pages/loginCandidato/index';
-import loginEmpresa from './pages/loginEmpresa';
+import LoginEmpresa from './pages/loginEmpresa';
 // 	import Login from ‘./pages/Login’;
 
 function Routers() {
@@ -34,7 +34,7 @@ function Routers() {
 			<Route path='/cadastroAluno2' component={cadastrocandidato02}/>
 			<Route path='/cadastroEmpresa2' component={cadastroEmpresa02}/>
 			<Route path='/loginCandidato' component={LoginCandidato}/>
-			<Route path='/loginEmpresa' component={loginEmpresa}/>
+			<Route path='/loginEmpresa' component={LoginEmpresa}/>
 		</BrowserRouter>
 	);
 }

@@ -5,7 +5,9 @@ import Footer from '../../components/footer/index';
 import Header from '../../components/header/index';
 import Button from '../../components/button/index';
 import Input from '../../components/input/index';
-import ImgBahia from '../../assets/images/empresa/joia.png';
+import ImgBahia from '../../assets/images/empresa/bahiano.jpeg';
+import ImgSnoopy from '../../assets/images/snoopy.jpeg';
+import ImgNao from '../../assets/images/nao.jpeg';
 function LoginCandidato() {
 
   let history = useHistory();
@@ -82,7 +84,7 @@ function LoginCandidato() {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img src={ImgBahia} className="d-block w-200" alt="..." />
+                  <img src={ImgSnoopy} className="d-block w-200" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>Tecnico em Análise e Desenvolvimento de Sistemas</h5>
                     <p>“O SENAI de Informática  me proporcionou grandes aprendizados e com isso consegui uma vaga na empresa AVANAD uma empresa global de serviços profissionais que fornece consultoria e serviços de TI focados
@@ -90,7 +92,7 @@ function LoginCandidato() {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img src={ImgBahia} className="d-block w-200" alt="..." />
+                  <img src={ImgNao} className="d-block w-200" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>Tecnico em Análise e Desenvolvimento de Sistemas</h5>
                     <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -98,11 +100,11 @@ function LoginCandidato() {
                 </div>
               </div>
               <a className="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span> {/* setinha aqui */}
                 <span className="sr-only">Previous</span>
               </a>
               <a className="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="carousel-control-next-icon" aria-hidden="true"></span> {/* aqui tabém :) */}
                 <span className="sr-only">Next</span>
               </a>
             </div>
@@ -141,7 +143,7 @@ function LoginCandidato() {
                       </div>
                       <div className="login-inputs">
                         <tr className="tr-empresa" />
-                        <h1 className="h1-empresa1">Eu sou uma empresa</h1>
+                        <Link to="/loginEmpresa"><h1 className="h1-empresa1">Eu sou uma empresa</h1></Link>
                       </div>
                     </div>
                   </div>
@@ -181,7 +183,7 @@ function LoginCandidato() {
                       </div>
                       <div className="login-inputs">
                         <tr className="tr-empresa" />
-                        <h1 className="h1-empresa2">Eu sou uma empresa</h1>
+                        <Link to="/loginEmpresa"><h1 className="h1-empresa2">Eu sou uma empresa</h1></Link>
                       </div>
                     </div>
                   </div>
