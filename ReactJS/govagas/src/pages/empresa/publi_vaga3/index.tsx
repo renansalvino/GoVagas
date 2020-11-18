@@ -26,7 +26,7 @@ function PubliVagaTres() {
 
     return (
         <div>
-            {/* 
+            
             <Header />
             <div className="areaDash05">
 
@@ -246,7 +246,7 @@ function PubliVagaTres() {
                     </section>
                 </div>
             </div>
-            <Footer /> */}
+            <Footer />
         </div>
     )
 }

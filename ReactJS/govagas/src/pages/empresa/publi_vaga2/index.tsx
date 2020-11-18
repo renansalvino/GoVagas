@@ -34,7 +34,7 @@ function PubliVagaDois() {
 
     const Cadastrar2 = () => {
 
-        // let ganchocorno = useHistory();
+        let ctx = useHistory();
 
 
 
@@ -57,6 +57,13 @@ function PubliVagaDois() {
             DescAtivFuncoes: localStorage.getItem('Descrição das atividades e funções'),
             idEmpresa: idEmpresa
         }
+        localStorage.setItem('Tipo de Contrato', tipoContrato)
+        localStorage.setItem('Expertise Vaga', expertiseVaga)
+        localStorage.setItem('Trabalhar Remoto', trabalhoRemoto)
+        localStorage.setItem('Nivel de experiência', outraCidade)
+        localStorage.setItem('Valor Salário', valorSalario)
+        localStorage.setItem('Oferta Extra', ofertaExtra)
+        ctx.push('/PublicarVagaDois')
         console.log(form2)
 
         fetch('https://localhost:5001/api/Vaga',
