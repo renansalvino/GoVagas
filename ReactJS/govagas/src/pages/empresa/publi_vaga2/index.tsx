@@ -12,6 +12,8 @@ import { parseJwt } from '../../../auth';
 
 function PubliVagaDois() {
 
+    let ctx = useHistory();
+    
     const [idVaga, setIdVaga] = useState(0)
     const [idUsuario, setIdUsuario] = useState()
     const [vaga, setVaga] = useState('')
@@ -34,10 +36,6 @@ function PubliVagaDois() {
 
     const Cadastrar2 = () => {
 
-        let ctx = useHistory();
-
-
-
 
         const form2 = {
             TipoContrato: tipoContrato === 'true' ? true : false,//
@@ -46,59 +44,17 @@ function PubliVagaDois() {
             OutraCidade: outraCidade === 'true' ? true : false,//
             ValorSalario: parseFloat(valorSalario),//
             OfertaExtra: ofertaExtra,
-            TituloVaga: localStorage.getItem('Titulo da Vaga'),
-            PerfilDev: localStorage.getItem('Perfil do desenvolvedor'),
-            DiasContrato: localStorage.getItem('Dias de contrato'),
-            NivelExp: localStorage.getItem('Nivel de experiência'),
-            HabNecessaria: localStorage.getItem('HabNec'),
-            LocalVaga: localStorage.getItem('Local da Vaga'),
-            ReqVaga: localStorage.getItem('Requerimento da vaga'),
-            TempoExp: localStorage.getItem('Tempo de Experiência'),
-            DescAtivFuncoes: localStorage.getItem('Descrição das atividades e funções'),
             idEmpresa: idEmpresa
         }
         localStorage.setItem('Tipo de Contrato', tipoContrato)
         localStorage.setItem('Expertise Vaga', expertiseVaga)
         localStorage.setItem('Trabalhar Remoto', trabalhoRemoto)
-        localStorage.setItem('Nivel de experiência', outraCidade)
+        localStorage.setItem('Outra Cidade', outraCidade)
         localStorage.setItem('Valor Salário', valorSalario)
         localStorage.setItem('Oferta Extra', ofertaExtra)
-        ctx.push('/PublicarVagaDois')
-        console.log(form2)
+        ctx.push('/PublicarVagaTres')
+        // console.log(form2)
 
-        fetch('https://localhost:5001/api/Vaga',
-            {
-                method: 'POST',
-                body: JSON.stringify(form2),
-                headers: {
-                    'Content-Type': 'application/json',
-                }
-            })
-            .then(response => response.json())
-            .then(() => {
-                alert('Vaga cadastrada');
-                setIdVaga(0);
-                setVaga('');
-                setTipoContrato('');
-                setExpertiseVaga('');
-                setTrabalhoRemoto('');
-                setOutraCidade('');
-                setValorSalario('');
-                setOfertaExtra('');
-                setTituloVaga('');
-                setPerfilDev('');
-                setDiasContrato('');
-                setNivelExp('');
-                setHabNecessaria('')
-                setLocalVaga('');
-                setReqVaga('');
-                setTempoExp('');
-                setDescAtivFuncoes('');
-                setIdEmrpesa(1);
-                // ganchocorno.push('/publicarvagatres')
-            })
-
-            .catch(err => console.error(err));
     }
 
     return (
