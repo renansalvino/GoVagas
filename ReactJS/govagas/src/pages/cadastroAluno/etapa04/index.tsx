@@ -1,32 +1,25 @@
 import React from 'react';
 import './style.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../../../components/footer/index';
 import Header from '../../../components/header/index'
 import Button from '../../../components/button/index';
 import Input from '../../../components/input/index';
 import '../../../components/barraProgresso/style.css';
-import Select from '../../../components/selectHab';
-import SelectLvl from '../../../components/selectLvl';
+// import Select from '../../../components/selectHab';
+// import SelectLvl from '../../../components/selectLvl';
 
 function CadastroCandidatoQuatro() {
 
-    const [idTipoUsuario, setIdTipoUsuario] = useState(3);
-    const [idCandidato, setIdCandidato] = useState(0);
-    const [candidato, setCandidato] = useState('');
+    // const [idTipoUsuario, setIdTipoUsuario] = useState(3);
     const [tamanhoempresa, setTamanhoempresa] = useState('');
     const [fococarreira, setFococarreira] = useState('');
     const [pretencaosalarial, setPretencaosalarial] = useState('');
     const [tipocontrato, setTipocontrato] = useState('');
     const [trabalhoremoto, setTrabalhoremoto] = useState('');
     const [deficienciafisica, setDeficienciafisica] = useState('');
-    const [candidatos, setCandidatos] = useState([]);
 
-    const [idUsuario, setIdUsuario] = useState(0)
-    const [usuario, setUsuario] = useState('')
-    const [telefone, setTelefone] = useState('')
-    const [usuarios, setUsuarios] = useState([])
 
     const Post4 = () => {
 
@@ -73,7 +66,7 @@ function CadastroCandidatoQuatro() {
                 dataNascimento: localStorage.getItem('dataNascimento-cadastro'),
                 telefone: localStorage.getItem('telefone-cadastro'),
                 // idTipoUsuarioNavigation: {
-                //     idTipoUsuario: idTipoUsuario
+                //     idTipoUsuario: idTipoUsuario == 3
                 //   }
             }
         }

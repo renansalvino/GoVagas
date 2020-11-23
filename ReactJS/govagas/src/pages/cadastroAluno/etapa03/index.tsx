@@ -1,31 +1,41 @@
 import React from 'react';
 import './style.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import Footer from '../../../components/footer/index';
 import Header from '../../../components/header/index'
 import Button from '../../../components/button/index';
 import Input from '../../../components/input/index';
 import '../../../components/barraProgresso/style.css';
-import Select from '../../../components/selectHab';
-import SelectLvl from '../../../components/selectLvl';
+// import Select from '../../../components/selectHab';
+// import SelectLvl from '../../../components/selectLvl';
+
+
+function myFunction() {
+    // Get the checkbox
+    var checkBox = document.getElementById("myCheck");
+    // Get the output text
+    var text = document.getElementById("text");
+  
+    // If the checkbox is checked, display the output text
+    // if ((checkBox as HTMLInputElement).checked){
+    //   text.style.display = "block";
+    // } else {
+    //   text.style.display = "none";
+    // }
+  }
 
 function CadastroCandidatoTres() {
 
     let history = useHistory();
 
-    const [idCandidato, setIdCandidato] = useState(0);
-    const [candidato, setCandidato] = useState('');
-    const [experienciapro, setExperienciapro] = useState('Sim')
+    const [experienciapro, setExperienciapro] = useState('Não')
     const [nomeempresa, setNomeempresa] = useState('')
     const [perfilempresa, setPerfilempresa] = useState('')
     const [cargoempresa, setCargoempresa] = useState('')
     const [datainicio, setDatainicio] = useState('')
     const [datatermino, setDatatermino] = useState('')
-    const [candidatos, setCandidatos] = useState([]);
 
-    const [idUsuario, setIdUsuario] = useState(0)
-    const [usuarios, setUsuarios] = useState([])
 
     
 
@@ -35,10 +45,12 @@ function CadastroCandidatoTres() {
     // if (element.checked){
             
     // }
+
+    
     const Post3 = () => {
 
         const form = {
-            experienciaPro: experienciapro, // === 'checked' ? "Sim" : "Não"
+            experienciaPro: experienciapro, //=== "Sim" ? "Não" : "Sim" ,
             nomeEmpresa: nomeempresa,
             perfilEmpresa: perfilempresa,
             cargoEmpresa: cargoempresa,
@@ -123,7 +135,7 @@ function CadastroCandidatoTres() {
                                         <div className="cadastro">
 
                                             <div className="form-check">
-                                                <input className="form-check-input" type="checkbox" id="gridCheck" value="Sim" onChange={a => setExperienciapro(a.target.value)}/>
+                                                <input className="form-check-input" type="checkbox" value="Sim" id="gridCheck" onChange={a => setExperienciapro(a.target.value)}/>
                                                     <label className="form-check-label" htmlFor="gridCheck">
                                                         Não tenho experiência profissional
                                                     </label>

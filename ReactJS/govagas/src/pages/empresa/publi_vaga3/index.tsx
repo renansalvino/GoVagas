@@ -21,34 +21,34 @@ import imgpiggybank from '../../../assets/images/candidato/piggy-bank.svg'
 import imgrestaurant from '../../../assets/images/candidato/restaurant.svg'
 import imgshoppingcart from '../../../assets/images/candidato/shopping-cart.svg'
 import imgtrain from '../../../assets/images/candidato/train.svg'
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 function PubliVagaTres() {
 
-    const [idVaga, setIdVaga] = useState(0)
-    const [idUsuario, setIdUsuario] = useState()
-    const [vaga, setVaga] = useState('')
-    const [tipoContrato, setTipoContrato] = useState('')
-    const [expertiseVaga, setExpertiseVaga] = useState('')
-    const [trabalhoRemoto, setTrabalhoRemoto] = useState('')
-    const [outraCidade, setOutraCidade] = useState('')
-    const [valorSalario, setValorSalario] = useState('')
-    const [ofertaExtra, setOfertaExtra] = useState('')
-    const [tituloVaga, setTituloVaga] = useState('')
-    const [perfilDev, setPerfilDev] = useState('')
-    const [diasContrato, setDiasContrato] = useState('')
-    const [nivelExp, setNivelExp] = useState('')
-    const [habNecessaria, setHabNecessaria] = useState('')
-    const [localVaga, setLocalVaga] = useState('')
-    const [reqVaga, setReqVaga] = useState('')
-    const [tempoExp, setTempoExp] = useState('')
-    const [descAtivFuncoes, setDescAtivFuncoes] = useState('')
+    // const [idVaga, setIdVaga] = useState(0)
+    // const [idUsuario, setIdUsuario] = useState()
+    // const [vaga, setVaga] = useState('')
+    // const [tipoContrato, setTipoContrato] = useState('')
+    // const [expertiseVaga, setExpertiseVaga] = useState('')
+    // const [trabalhoRemoto, setTrabalhoRemoto] = useState('')
+    // const [outraCidade, setOutraCidade] = useState('')
+    // const [valorSalario, setValorSalario] = useState('')
+    // const [ofertaExtra, setOfertaExtra] = useState('')
+    // const [tituloVaga, setTituloVaga] = useState('')
+    // const [perfilDev, setPerfilDev] = useState('')
+    // const [diasContrato, setDiasContrato] = useState('')
+    // const [nivelExp, setNivelExp] = useState('')
+    // const [habNecessaria, setHabNecessaria] = useState('')
+    // const [localVaga, setLocalVaga] = useState('')
+    // const [reqVaga, setReqVaga] = useState('')
+    // const [tempoExp, setTempoExp] = useState('')
+    // const [descAtivFuncoes, setDescAtivFuncoes] = useState('')
     const [idEmpresa, setIdEmrpesa] = useState(1) //(parseJwt().jti)//
 
     const Cadastrar3 = () => {
 
 
-        let ctx = useHistory();
+        // let ctx = useHistory();
 
         const form3 = {
             //etapa1
@@ -84,23 +84,23 @@ function PubliVagaTres() {
             .then(response => response.json())
             .then(() => {
                 alert('Vaga cadastrada');
-                setIdVaga(0);
-                setVaga('');
-                setTipoContrato('');
-                setExpertiseVaga('');
-                setTrabalhoRemoto('');
-                setOutraCidade('');
-                setValorSalario('');
-                setOfertaExtra('');
-                setTituloVaga('');
-                setPerfilDev('');
-                setDiasContrato('');
-                setNivelExp('');
-                setHabNecessaria('')
-                setLocalVaga('');
-                setReqVaga('');
-                setTempoExp('');
-                setDescAtivFuncoes('');
+                // setIdVaga(0);
+                // setVaga('');
+                // setTipoContrato('');
+                // setExpertiseVaga('');
+                // setTrabalhoRemoto('');
+                // setOutraCidade('');
+                // setValorSalario('');
+                // setOfertaExtra('');
+                // setTituloVaga('');
+                // setPerfilDev('');
+                // setDiasContrato('');
+                // setNivelExp('');
+                // setHabNecessaria('')
+                // setLocalVaga('');
+                // setReqVaga('');
+                // setTempoExp('');
+                // setDescAtivFuncoes('');
                 setIdEmrpesa(1);
                 // ganchocorno.push('/publicarvagatres')
             })
@@ -387,7 +387,7 @@ function PubliVagaTres() {
 
                                             <div className="item02">
                                                 <img src={imglocation} alt="officeblock" title="officeblock" width="30px" height="30px" />
-                                                <p>{localStorage.getItem('Outra Cidade') === 'true' ? 'Home oficce (remoto)' : 'Presencial'}</p>
+                                                <p>{localStorage.getItem('Outra Cidade') === 'true' ? 'Home office (remoto)' : 'Presencial'}</p>
                                             </div>
 
                                             <div className="item02">

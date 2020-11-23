@@ -2,7 +2,6 @@
 import React, { useState } from 'react'; import './style.css';
 import { useHistory } from 'react-router-dom';
 import Header from '../../../components/header/index'
-import { Link } from 'react-router-dom';
 import Footer from '../../../components/footer/index';
 import Input from '../../../components/input/index';
 import Button from '../../../components/button/index';
@@ -14,8 +13,6 @@ function PubliVaga() {
     let ctx = useHistory();
 
 
-    const [idVaga, setIdVaga] = useState(0)
-    const [vaga, setVaga] = useState('')
     //Váriaveis
     const [tituloVaga, setTituloVaga] = useState('')
     const [perfilDev, setPerfilDev] = useState('')

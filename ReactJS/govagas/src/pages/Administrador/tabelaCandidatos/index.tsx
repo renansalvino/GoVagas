@@ -3,16 +3,12 @@ import './style.css'
 import Sidebar from '../../../components/sidebar/index';
 import Footer from '../../../components/footer/index';
 import Header from '../../../components/header/index'
-import Button from '../../../components/button/index';
 import Input from '../../../components/input/index';
-import Select from '../../../components/selectHab/index';
 import imgIcone from '../../../assets/images/palm-tree.svg'
 import { useState, useEffect } from 'react';
 
 function TabelaCandidatos() {
 
-    const [idInscricao, setIdInscricao] = useState(0);
-    const [inscricao, setInscricao] = useState('');
     const [inscricaos, setInscricaos] = useState([]);
 
     const ListarTodosContratados = () => {

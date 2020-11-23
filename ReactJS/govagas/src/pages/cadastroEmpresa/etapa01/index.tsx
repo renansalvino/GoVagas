@@ -8,21 +8,19 @@ import Input from '../../../components/input/index';
 import '../../../components/barraProgresso/style.css';
 function CadastroEmpresa() {
     
-    const [idEmpresa, setIdEmpresa] = useState(0);
-    const [empresa, setEmpresa] = useState('');
-    const [cargoempresa, setCargoempresa] = useState('')
-    const [areaempresa, setAreaempresa] = useState('')
-    const [cnpj, setCnpj] = useState('')
-    const [tamanhoempresa, setTamanhoempresa] = useState('');
-    const [sobreempresa, setSobreempresa] = useState('');
-    const [urlvideo, seturlVideo] = useState('');
-    const [encontrousite, setEncontrousite] = useState('');
-    const [candidatos, setCandidatos] = useState([]);
+    // const [idEmpresa, setIdEmpresa] = useState(0);
+    // const [empresa, setEmpresa] = useState('');
+    // const [cargoempresa, setCargoempresa] = useState('')
+    // const [areaempresa, setAreaempresa] = useState('')
+    // const [cnpj, setCnpj] = useState('')
+    // const [tamanhoempresa, setTamanhoempresa] = useState('');
+    // const [sobreempresa, setSobreempresa] = useState('');
+    // const [urlvideo, seturlVideo] = useState('');
+    // const [encontrousite, setEncontrousite] = useState('');
+    // const [candidatos, setCandidatos] = useState([]);
 
-    const [idUsuario, setIdUsuario] = useState(0)
     const [usuario, setUsuario] = useState('')
     const [telefone, setTelefone] = useState('')
-    const [usuarios, setUsuarios] = useState([])
 
     const Post = () => {
 
@@ -48,7 +46,7 @@ function CadastroEmpresa() {
         })
             .then(() => {
                 alert('Próxima etapa');
-                setIdUsuario(0);
+                // setIdUsuario(0);
                 // setIdCandidato(0);
                 // setUsuario('');
                 // setTelefone('');

@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, SelectHTMLAttributes } from 'react';
+import React, { InputHTMLAttributes } from 'react';
 import './style.css';
 interface SelectProps extends InputHTMLAttributes<HTMLInputElement> {
     name: any;

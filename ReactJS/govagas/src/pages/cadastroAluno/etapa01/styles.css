@@ -40,11 +40,11 @@
     color: #333333;
     margin-bottom: 20px;
 }
-
+/* 
 .etapa01candidato .BarraProgresso {
     display: flex;
     justify-content: center;
-}
+} */
 
 .etapa01candidato .cadastro Label {
     font-family: Roboto;
@@ -85,14 +85,14 @@
     align-items: center;
 }
 
-.etapa01candidato .foto {
+/* .etapa01candidato .foto {
     height: 150px;
     width: 150px;
     border-radius: 100%;
     background-color: #DB324A;
     margin-bottom: 40px;
     margin-top: 15px;
-}
+} */
 
 .etapa01candidato .btn-proximo {
     display: flex;
@@ -102,9 +102,9 @@
     margin-bottom: 50px;
 }
 
-#foto:hover {
+/* #foto:hover {
     background-color: #e4415a;
-}
+} */
 
 .texto {
     opacity: 0;

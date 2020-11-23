@@ -19,6 +19,7 @@ import PublicarVaga from "./pages/empresa/publi_vaga/index";
 import PublicarVagaDois from './pages/empresa/publi_vaga2/index';
 import PublicarVagaTres from './pages/empresa/publi_vaga3/index';
 import infoestagio from './pages/empresa/info_estagio/index';
+import Upload from './pages/teste/teste';
 
 // 	import Login from ‘./pages/Login’;
 
@@ -44,6 +45,7 @@ function Routers() {
 			<Route path="/publicarvagadois"component={PublicarVagaDois}/>
 			<Route path="/publicarvagatres"component={PublicarVagaTres}/>
 			<Route path="/infoestagio" component={infoestagio}/>
+			<Route path="/teste" component={Upload}/>
 		</BrowserRouter>
 	);
 }

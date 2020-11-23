@@ -1,18 +1,31 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './styles.css';
 import Footer from '../../../components/footer/index';
 import Header from '../../../components/header/index'
 import Button from '../../../components/button/index';
 import Input from '../../../components/input/index';
+import Teste from '../../teste/teste';
 import '../../../components/barraProgresso/style.css';
 
-function CadastroCandidatoUm() {
+// function readURL(input:any) {
+//     if (input.files && input.files[0]) {
+//         var reader = new FileReader();
+
+//         reader.onload = function (e: any) {
+//             (document.getElementById('blah') as HTMLImageElement).src = e.target.result
+//         };
+
+//         reader.readAsDataURL(input.files[0]);
+//     }
+// }
+
+
+function CadastroCandidatoUm(this: any) { //<-//
 
     let history = useHistory();
 
-    const [idCandidato, setIdCandidato] = useState(0);
     const [sexo, setSexo] = useState('')
     const [cpf, setCpf] = useState('')
     const [cidade, setCidade] = useState('')
@@ -24,14 +37,8 @@ function CadastroCandidatoUm() {
     const [turma, setTurma] = useState('')
     const [turno, setTurno] = useState('')
     const [termo, setTermo] = useState('')
-    const [candidatos, setCandidatos] = useState([]);
 
-    const [idUsuario, setIdUsuario] = useState(0)
     const [nome, setNome] = useState('')
-    const [usuario, setUsuario] = useState('')
-    const [usuarios, setUsuarios] = useState([])
-
-
 
     const Post = () => {
         const form = {
@@ -119,9 +126,38 @@ function CadastroCandidatoUm() {
                                         <div className="cadastro">
                                             <div className="grupofoto">
                                                 <div id="foto" className="foto">
-                                                    <div className="imagem">
-                                                        <div className="texto"><Input className="input_anexar" name="btn-anexar" type='file' label="" ></Input></div>
-                                                    </div>
+                                                    {/* <div className="imagem">
+                                                        <div className="texto"> */}
+                                                            {/* {
+                                                                class Upload extends React.Component<{}, { file: any }> {
+                                                                    constructor(props:any){
+                                                                      super(props)
+                                                                      this.state = {
+                                                                        file: null
+                                                                      }
+                                                                      this.handleChange = this.handleChange.bind(this)
+                                                                    }
+                                                                    handleChange(event:any) {
+                                                                      this.setState({
+                                                                        file: URL.createObjectURL(event.target.files[0])
+                                                                      })
+                                                                    }
+                                                                    render() {
+                                                                      return (
+                                                                        <div>
+                                                                          <input type="file" onChange={this.handleChange}/>
+                                                                          <img src={this.state.file}/>
+                                                                        </div>
+                                                                      );
+                                                                    }
+                                                                  } 
+                                                            } */}
+                                                            {Teste}
+                                                            <Teste></Teste>
+                                                            {/* <input className="input_anexar" id="imgInp" name="imgInp"  onChange={readURL} type='file'></input>
+                                                            <img id="blah" src="#" alt="your image" /> */}
+                                                        {/* </div>
+                                                    </div> */}
                                                 </div>
                                             </div>
                                             <div className="grupo">
@@ -138,9 +174,10 @@ function CadastroCandidatoUm() {
                                                 </div>
 
                                             </div>
+
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="number" name="input2" label="CPF:" required placeholder="000.000.000.00"  maxLength={11} value={cpf} onChange={a => setCpf(a.target.value)} />
+                                                    <Input type="number" name="input2" label="CPF:" required placeholder="000.000.000.00" maxLength={11} value={cpf} onChange={a => setCpf(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
                                                     <Input type="text" name="input2" label="Endereço:" required placeholder="Rua Alameda Barão de Limeira n75, SP" value={cidade} onChange={a => setCidade(a.target.value)} />
@@ -193,10 +230,12 @@ function CadastroCandidatoUm() {
                                                 </div>
                                             </div>
 
+
                                         </div>
-                                        <div className="btn-proximo">
-                                            <Button onClick="" name="btn1" value="Próximo" />
-                                        </div>
+                                            <div className="btn-proximo">
+                                                <Button onClick="" name="btn1" value="Próximo" />
+                                            </div>
+
                                     </form>
                                 </main>
                             </fieldset>

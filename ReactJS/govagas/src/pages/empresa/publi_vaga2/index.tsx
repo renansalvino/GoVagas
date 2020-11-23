@@ -6,7 +6,7 @@ import Input from '../../../components/input/index';
 import Sidebar from '../../../components/sidebar/index';
 import Button from '../../../components/button/index';
 import { useHistory } from 'react-router-dom';
-import { parseJwt } from '../../../auth';
+// import { parseJwt } from '../../../auth';
 
 
 
@@ -14,24 +14,22 @@ function PubliVagaDois() {
 
     let ctx = useHistory();
     
-    const [idVaga, setIdVaga] = useState(0)
-    const [idUsuario, setIdUsuario] = useState()
-    const [vaga, setVaga] = useState('')
+
     const [tipoContrato, setTipoContrato] = useState('')
     const [expertiseVaga, setExpertiseVaga] = useState('')
     const [trabalhoRemoto, setTrabalhoRemoto] = useState('')
     const [outraCidade, setOutraCidade] = useState('')
     const [valorSalario, setValorSalario] = useState('')
     const [ofertaExtra, setOfertaExtra] = useState('')
-    const [tituloVaga, setTituloVaga] = useState('')
-    const [perfilDev, setPerfilDev] = useState('')
-    const [diasContrato, setDiasContrato] = useState('')
-    const [nivelExp, setNivelExp] = useState('')
-    const [habNecessaria, setHabNecessaria] = useState('')
-    const [localVaga, setLocalVaga] = useState('')
-    const [reqVaga, setReqVaga] = useState('')
-    const [tempoExp, setTempoExp] = useState('')
-    const [descAtivFuncoes, setDescAtivFuncoes] = useState('')
+    // const [tituloVaga, setTituloVaga] = useState('')
+    // const [perfilDev, setPerfilDev] = useState('')
+    // const [diasContrato, setDiasContrato] = useState('')
+    // const [nivelExp, setNivelExp] = useState('')
+    // const [habNecessaria, setHabNecessaria] = useState('')
+    // const [localVaga, setLocalVaga] = useState('')
+    // const [reqVaga, setReqVaga] = useState('')
+    // const [tempoExp, setTempoExp] = useState('')
+    // const [descAtivFuncoes, setDescAtivFuncoes] = useState('')
     const [idEmpresa, setIdEmrpesa] = useState(1) //(parseJwt().jti)//
 
     const Cadastrar2 = () => {

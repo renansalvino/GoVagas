@@ -6,9 +6,9 @@ import Header from '../../components/header/index';
 import Button from '../../components/button/index';
 import Input from '../../components/input/index';
 import ImgJoia from '../../assets/images/empresa/joia.png';
-import ImgBahia from '../../assets/images/empresa/bahiano.jpeg';
-import ImgSnoopy from '../../assets/images/snoopy.jpeg';
-import ImgNao from '../../assets/images/nao.jpeg';
+// import ImgBahia from '../../assets/images/empresa/bahiano.jpeg';
+// import ImgSnoopy from '../../assets/images/snoopy.jpeg';
+// import ImgNao from '../../assets/images/nao.jpeg';
 function LoginCandidato() {
 
   let history = useHistory();
@@ -34,7 +34,7 @@ function LoginCandidato() {
     })
       .then(response => response.json())
       .then(dados => {
-        if (dados.token != undefined) {
+        if (dados.token !== undefined) {
           localStorage.setItem('tokengovagas', dados.token)
 
           history.push('/');

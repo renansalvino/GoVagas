@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 import Button from '../../components/button/index'
-import imgUsuario from '../../assets/images/flauta.jpg'
+// import imgUsuario from '../../assets/images/flauta.jpg'
 import imgIconePalmeira from '../../assets/images/palm-tree.svg'
 import imgIconePalmeira2 from '../../assets/images/palm-tree 1.svg'
 import imgIconePerfil from '../../assets/images/user.svg'

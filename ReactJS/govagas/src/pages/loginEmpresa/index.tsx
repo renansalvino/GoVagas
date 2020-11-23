@@ -33,7 +33,7 @@ function LoginEmpresa() {
     })
       .then(response => response.json())
       .then(dados => {
-        if (dados.token != undefined) {
+        if (dados.token !== undefined) {
           localStorage.setItem('tokengovagas', dados.token)
 
           history.push('/');

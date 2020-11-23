@@ -2,12 +2,11 @@ import React from 'react';
 import './style.css';
 import '../../../assets/styles/global.css';
 import imgIcone from '../../../assets/images/palm-tree.svg'
-import imgSnoopy from '../../assets/images/snoopy.png'
+// import imgSnoopy from '../../assets/images/snoopy.png'
 import Sidebar from '../../../components/sidebar/index';
 import Footer from '../../../components/footer/index';
 import Header from '../../../components/header/index'
 import { useEffect, useState } from 'react';
-import { MessageChannel } from 'worker_threads';
 
 
 
@@ -15,7 +14,6 @@ import { MessageChannel } from 'worker_threads';
 
 function DashAdm() {
 
-    const [idInscricao, setIdInscricao] = useState(0);
     const [inscricao, setInscricao] = useState('');
     const [inscricaos, setInscricaos] = useState([]);
 

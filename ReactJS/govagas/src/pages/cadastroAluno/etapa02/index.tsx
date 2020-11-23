@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import Footer from '../../../components/footer/index';
 import Header from '../../../components/header/index'
@@ -14,9 +14,6 @@ function CadastroCandidatoDois() {
 
     let history = useHistory();
 
-    const [idCandidato, setIdCandidato] = useState(0);
-    const [candidato, setCandidato] = useState('');
-    const [candidatos, setCandidatos] = useState([])
     const [tituloperfil, setTituloperfil] = useState('');
     const [nivelingles, setNivelingles] = useState('');
     const [urllinkedin, setUrllinkedin] = useState('');
@@ -26,11 +23,9 @@ function CadastroCandidatoDois() {
     const [habilidade, setHabilidade] = useState('');
     const [expertisecandidato, setExpertisecandidato] = useState('');
 
-    const [idUsuario, setIdUsuario] = useState(0)
-    const [usuarios, setUsuarios] = useState([])
 
-    const Nomehab = habilidade;
-    const Nomeex = expertisecandidato;
+    // const Nomehab = habilidade;
+    // const Nomeex = expertisecandidato;
     // const Frasecadastro = Nomehab + '/' + Nomeex + '';
     const Frasecadastro = habilidade + '/' + expertisecandidato + '';
 

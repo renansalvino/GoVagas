@@ -1,0 +1,30 @@
+.imgStyle img{
+    border-style: none;
+    outline: none;
+    background-color:green ;
+}
+
+.imagem {
+    width: 100px;
+    height: 200px;
+}
+.texto {
+    margin-top: -40px;
+}
+
+
+.imagem img {
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    background-color: #DB324A;
+    /* background-image: url("snoopy.png");
+    background-repeat: no-repeat; */
+    margin-bottom: 40px;
+    margin-top: 15px;
+}
+
+
+.imagem .img:hover {
+    background-color: #e4415a;
+}
