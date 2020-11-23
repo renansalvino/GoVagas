@@ -54,7 +54,7 @@ function CadastroCandidatoQuatro() {
             //4
             tamanhoEmpresa: tamanhoempresa,
             focoCarreira: fococarreira,
-            pretencaoSalarial: parseFloat(pretencaosalarial),
+            pretensaoSalario: parseFloat(pretencaosalarial),
             tipoContrato: tipocontrato,
             trabalhoRemoto: trabalhoremoto === 'true' ? true : false,
             deficienciaFisica: deficienciafisica === 'true' ? true : false,
@@ -78,10 +78,10 @@ function CadastroCandidatoQuatro() {
                 'Content-Type': 'application/json',
             }
         })
-            .then(() => {
-                alert('Candidato cadastrado');
-            })
-            .catch(err => console.error(err));
+        .then(() => {
+            alert('Candidato cadastrado');
+        })
+        .catch(err => console.error(err));
     }
 
 

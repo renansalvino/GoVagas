@@ -11,25 +11,25 @@ import '../../../components/barraProgresso/style.css';
 // import SelectLvl from '../../../components/selectLvl';
 
 
-function myFunction() {
+function naoConsigoVerNada() {
     // Get the checkbox
-    var checkBox = document.getElementById("myCheck");
+    var caixinha = document.getElementById("myCheck");
     // Get the output text
-    var text = document.getElementById("text");
+    var divzao = document.getElementById("wow");
   
     // If the checkbox is checked, display the output text
-    // if ((checkBox as HTMLInputElement).checked){
-    //   text.style.display = "block";
-    // } else {
-    //   text.style.display = "none";
-    // }
+    if ((caixinha as HTMLInputElement).checked){
+        divzao!.style.display = "none";
+    } else {
+        divzao!.style.display = "block";
+    }
   }
 
 function CadastroCandidatoTres() {
 
     let history = useHistory();
 
-    const [experienciapro, setExperienciapro] = useState('Não')
+    const [experienciapro, setExperienciapro] = useState('Sim')
     const [nomeempresa, setNomeempresa] = useState('')
     const [perfilempresa, setPerfilempresa] = useState('')
     const [cargoempresa, setCargoempresa] = useState('')
@@ -135,13 +135,15 @@ function CadastroCandidatoTres() {
                                         <div className="cadastro">
 
                                             <div className="form-check">
-                                                <input className="form-check-input" type="checkbox" value="Sim" id="gridCheck" onChange={a => setExperienciapro(a.target.value)}/>
+                                                <input className="form-check-input" type="checkbox" value="Não" id="myCheck" onClick={naoConsigoVerNada} onChange={a => setExperienciapro(a.target.value)}/>
                                                     <label className="form-check-label" htmlFor="gridCheck">
                                                         Não tenho experiência profissional
                                                     </label>
                                             </div>
 
+                                            <div id="wow">
 
+                                            
                                             <div className="grupo">
                                                 <div className="form-group">
                                                     <Input type="text" name="input1" label="Nome da Empresa:" placeholder="Desenvolvedor Front/Back-End /Fullstack" value={nomeempresa} onChange={a => setNomeempresa(a.target.value)} />
@@ -149,19 +151,20 @@ function CadastroCandidatoTres() {
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Perfil da Empresa:" placeholder="https://www.linkedin.com/NomePerfil" value={perfilempresa} onChange={a => setPerfilempresa(a.target.value)} />
+                                                    <Input type="text" name="input2" id="input2" label="Perfil da Empresa:" placeholder="https://www.linkedin.com/NomePerfil" value={perfilempresa} onChange={a => setPerfilempresa(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Seu cargo nesta Empresa:" placeholder="https://github.com/NomePerfil" value={cargoempresa} onChange={a => setCargoempresa(a.target.value)} />
+                                                    <Input type="text" name="input2" id="input2" label="Seu cargo nesta Empresa:" placeholder="https://github.com/NomePerfil" value={cargoempresa} onChange={a => setCargoempresa(a.target.value)} />
                                                 </div>
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="date" name="input2" label="Data de Início:" placeholder="Ex: 000.000.000.00" value={datainicio} onChange={a => setDatainicio(a.target.value)} />
+                                                    <Input type="date" name="input2" id="input2" label="Data de Início:" placeholder="Ex: 000.000.000.00" value={datainicio} onChange={a => setDatainicio(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="date" name="input2" label="Data de Término:" placeholder="Cidade" value={datatermino} onChange={a => setDatatermino(a.target.value)} />
+                                                    <Input type="date" name="input2" id="input2" label="Data de Término:" placeholder="Cidade" value={datatermino} onChange={a => setDatatermino(a.target.value)} />
                                                 </div>
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
