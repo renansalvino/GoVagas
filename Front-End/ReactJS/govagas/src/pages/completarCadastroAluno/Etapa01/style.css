@@ -32,7 +32,6 @@
     height: 41px;
     left: 349px;
     top: 320px;
-    font-family: Roboto;
     font-style: normal;
     font-weight: 300;
     font-size: 25px;
@@ -41,9 +40,10 @@
     margin-bottom: 20px;
 }
 
-.descricao {
+.descricao-etapa01 {
     Width: 352px;
     Height: 80px;
+    margin-left: 20px;
 }
 
 .etapa01 .BarraProgresso {
@@ -52,7 +52,6 @@
 }
 
 .etapa01 .cadastro Label {
-    font-family: Roboto;
     font-style: normal;
     font-weight: 300;
     font-size: 20px;
@@ -199,4 +198,58 @@
     color: white;
     text-shadow: 0 1px 0;
     text-align: center;
+}
+
+#arquivo {
+    display: none;
+}
+#label-for-type {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 17px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #DB324A;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 7px;
+    margin-left: 125px;
+    margin-top:25px;
+}
+
+#label-to-label{
+    margin-right: 10px;
+    line-height: 25px;
+}
+
+#titulo-perfil-etapa01{
+    display: flex;
+    Width: 340px;
+    Height: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    box-sizing: content-box;
+    border-radius: 7px;
+    border: 1px solid #868686;
+}
+
+#titulo-perfil-etapa01-label-to-label{
+    margin-top: -10px;
+}
+
+#input-for-english{
+    display: flex;
+    Width: 340px;
+    Height: 45px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    padding-left: 10px;
+    box-sizing: content-box;
+    border-radius: 7px;
+    border: 1px solid #868686;
 }

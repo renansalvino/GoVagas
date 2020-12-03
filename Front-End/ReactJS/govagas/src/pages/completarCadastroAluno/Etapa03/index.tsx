@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import Header from '../../../components/header/index'
 import Button from '../../../components/button/index';
 import Input from '../../../components/input/index';
+import '../../../assets/styles/global.css'
+
 function completarcadastro_03() {
     return (
         <div className="etapa03">
@@ -69,7 +71,7 @@ function completarcadastro_03() {
                                                 </div>
                                                 <div className="form-group-select">
                                                     <label htmlFor="tipocontrato">Tipo contrato:</label>
-                                                    <select className="input" name="tipocontrato" >
+                                                    <select id="input2" name="tipocontrato" >
                                                         <option>Estagio</option>
                                                         <option>Jovem Aprendiz</option>
                                                     </select>
@@ -81,7 +83,6 @@ function completarcadastro_03() {
                                                     <input className="form-check-input-sobre" type="checkbox" id="gridCheck" />
                                                     <label className="form-check-label" htmlFor="gridCheck">
                                                         Você aceita trabalhar remotamente?</label>
-
                                                 </div>
                                                 <div className="form-check-completar">
                                                     <input className="form-check-input-sobre" type="checkbox" id="gridCheck" />
@@ -96,7 +97,7 @@ function completarcadastro_03() {
                                     </div>
                                     <div className="btn-proximo">
                                     <Link to="/completarCadastroAluno2"> <Button onClick="" value="Voltar" name="btn2"/></Link>
-                                        <Button onClick="" name="btn1" value="Salvar" />
+                                        <Button onClick="" name="btn1" value="Salvar"/>
                                     </div>
                                 </form>
                             </main>

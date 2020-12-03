@@ -4,7 +4,7 @@ import Home from './pages/home/index';
 import Admin from './pages/empresa/Admin/index';
 import PublicarVaga from "./pages/empresa/publi_vaga/index";
 import PublicarVagaDois from './pages/empresa/publi_vaga2/index';
-import PublicarVagaTres from './pages/empresa/publi_vaga3/index';
+import PublicarVagatres from './pages/empresa/publi_vaga3/index';
 import infoestagio from './pages/empresa/info_estagio/index';
 import completarcadastro_01 from './pages/completarCadastroAluno/Etapa01';
 import completarcadastro_02 from './pages/completarCadastroAluno/Etapa02';
@@ -26,7 +26,7 @@ function Routers() {
 			<Route path='/Admin' component={Admin} />
 			<Route path="/publicarvaga" component={PublicarVaga} />
 			<Route path="/publicarvagadois" component={PublicarVagaDois} />
-			<Route path="/publicarvagatres" component={PublicarVagaTres} />
+			<Route path="/publicarvagatres" component={PublicarVagatres} />
 			<Route path="/infoestagio" component={infoestagio} />
 			<Route path='/completarCadastroAluno' component={completarcadastro_01} />
 			<Route path='/completarCadastroAlunodois' component={completarcadastro_02} />

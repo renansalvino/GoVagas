@@ -31,7 +31,6 @@ function completarcadastro_02() {
                 </div>
 
                 <div>
-
                     <div className="cadastro-form">
                         <fieldset>
                             <main>
@@ -45,7 +44,7 @@ function completarcadastro_02() {
                                                 <label className="form-check-label" htmlFor="gridCheck">
                                                     Não tenho experiência profissional</label></div>
 
-
+                                            <hr />
                                             <div className="grupoespecial">
                                                 <div className="form-group">
                                                     <Input type="text" name="input" label="Nome da empresa:" placeholder="Nome" />
@@ -75,8 +74,8 @@ function completarcadastro_02() {
 
                                     </div>
                                     <div className="btn-proximo">
-                                    <Link to="/completarCadastroAluno"> <Button onClick="" value="Voltar" name="btn2"/></Link>
-                                        <Link to="/completarCadastroAluno3"> <Button onClick="" name="btn1" value="Próximo"/></Link>
+                                        <Link to="/completarCadastroAluno"> <Button onClick="" value="Voltar" name="btn2" /></Link>
+                                        <Link to="/completarCadastroAluno3"> <Button onClick="" name="btn1" value="Próximo" /></Link>
                                     </div>
                                 </form>
                             </main>

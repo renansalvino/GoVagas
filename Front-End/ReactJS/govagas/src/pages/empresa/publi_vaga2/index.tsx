@@ -11,6 +11,9 @@ import { parseJwt } from '../../../auth';
 
 
 function PubliVagaDois() {
+
+    let ctx = useHistory();
+
     const [idVaga, setIdVaga] = useState(0)
     const [idUsuario, setIdUsuario] = useState()
     const [vaga, setVaga] = useState('')
@@ -31,7 +34,7 @@ function PubliVagaDois() {
     const [descAtivFuncoes, setDescAtivFuncoes] = useState('')
     const [idEmpresa, setIdEmrpesa] = useState(1)
 
-    const Cadastrar2 = () => {        
+    const Cadastrar2 = () => {    
 
         const form2 = {
             TipoContrato: tipoContrato === 'true'? true : false,//
@@ -49,9 +52,11 @@ function PubliVagaDois() {
             ReqVaga: localStorage.getItem('Requerimento da vaga'),
             TempoExp: localStorage.getItem('Tempo de Experiência'),
             DescAtivFuncoes: localStorage.getItem('Descrição das atividades e funções'),
-            idEmpresa: idEmpresa
+            idEmpresa: idEmpresa,
         }
+       
         console.log(form2)
+
 
         fetch('https://localhost:5001/api/Vaga',
             {
@@ -84,6 +89,7 @@ function PubliVagaDois() {
                 setIdEmrpesa(1);
             })
             .catch(err => console.error(err));
+            
     }
     
     return (

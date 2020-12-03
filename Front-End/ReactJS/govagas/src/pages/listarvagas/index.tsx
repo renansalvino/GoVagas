@@ -10,7 +10,7 @@ import Sidebar from '../../components/sidebar';
 // import imgbadge from '../../assets/images/candidato/badge.svg'
 import imgmoney from '../../assets/images/candidato/money.svg'
 import imglocation from '../../assets/images/candidato/location.svg'
-import imgcasestudy from '../../assets/images/candidato/case-study.svg'
+import imgcasestudy from '../../assets/images/candidato/casestudy.svg'
 import imgnotes from '../../assets/images/candidato/notes.svg'
 import imgdiploma from '../../assets/images/candidato/diploma.svg'
 import imgofficeblock from '../../assets/images/candidato/office-block.svg'
@@ -18,7 +18,7 @@ import imgofficeblock from '../../assets/images/candidato/office-block.svg'
 
 import { Link, useHistory } from 'react-router-dom';
 
-const david: CSSProperties = {
+const cssStyle: CSSProperties = {
     width: '1324px',
     marginTop: '20px',
 }
@@ -193,7 +193,7 @@ function Listarvagas() {
                                 })
                             }
 
-                            <div style={david}>
+                            <div style={cssStyle}>
 
                             </div>
                         </div>

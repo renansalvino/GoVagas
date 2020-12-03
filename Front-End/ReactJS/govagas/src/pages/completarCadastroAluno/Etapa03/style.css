@@ -51,7 +51,8 @@
 .etapa03 .check {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 .etapa03 .form-check {
     display: block;
@@ -83,7 +84,7 @@
 .etapa03 .form-group-select{
     display: flex;
     flex-direction: column;
-    margin-top: 10px;  
+      
 }
 .etapa03 .form-group-select label {
     margin-top: -10px;
@@ -91,7 +92,7 @@
 }
 .etapa03 .check-completar{
     padding-left: 20px;
-    padding-top: 10px;
+    padding-top: -10px;
 }
 .etapa03 .form-check-completar{
     padding: 20px;

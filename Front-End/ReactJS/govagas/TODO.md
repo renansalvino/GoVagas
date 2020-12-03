@@ -5,16 +5,20 @@ Project Description
 ### Todo
 
 - [ ] Colocar limie de carácteres nos inputs  
+- [ ] arrumar pagina candidatar  
+- [ ] Barra de progresso da página de perfil  
+- [ ] Alinhar todos os h1  
+- [ ] Filtro dde pesquisa na pagina de infoestagio  
 
 ### In Progress
 
-- [ ] Pages: Publicar vagas (part 3)  
 - [ ] Pages: Informações de estágio  
-- [ ] Task: Trocar imagens do figma por ícones  
 
 ### Done ✓
 
 - [x] Pages: Publicar vagas🚀  
-- [x] Pages: Terminar admin empresa  
-- [x] Pages: Publicar vagas (part 2)  
+- [x] Arrumar css de completar aluno  
+- [x] Pages: Publicar vagas (part 3)  
+- [x] Arrumar página Listar vagas  
+- [x] Task: Trocar imagens do figma por ícones  
 

@@ -1,7 +1,10 @@
 import React from 'react';
 import './style.css';
 import imgUsuario from '../../assets/images/empresa/NomeEmpresa.png'
-import imgIcone from '../../assets/images/empresa/sidebar-img-1.png'
+import Imgsettnings from '../../assets/images/candidato/settings.svg';
+import Imgchecklist from '../../assets/images/candidato/checklist.svg';
+import Imgdashboard from '../../assets/images/candidato/dashboard.svg';
+import Imgcasestudy from '../../assets/images/candidato/casestudy.svg';
 
 function Sidebar() {
     return (
@@ -27,32 +30,31 @@ function Sidebar() {
 
                 <div className="containerRotas">
 
-                    <div className="rotas">
+                    <div className="rotas"> 
                         <div className="rota">
                             <div className="icon">
-                                <img src={imgIcone} alt="" />
+                                <img src={Imgdashboard} alt="" />
                             </div>
-                            <li>Rota 1</li>
+                            <li>DashBoard</li>
                         </div>
                         <div className="rota">
                             <div className="icon">
-                                <img src={imgIcone} alt="" />
+                                <img src={Imgchecklist} alt="" />
                             </div>
-                            <li>Rota 2</li>
+                            <li>Candidaturas</li>
                         </div>
                         <div className="rota">
                             <div className="icon">
-                                <img src={imgIcone} alt="" />
+                                <img src={Imgcasestudy} alt="" />
                             </div>
-                            <li>Rota 3</li>
+                            <li>Ver Vagas</li>
                         </div>
                         <div className="rota">
                             <div className="icon">
-                                <img src={imgIcone} alt="" />
+                                <img src={Imgsettnings} alt="" />
                             </div>
-                            <li>Rota 4</li>
+                            <li>Configurações</li>
                         </div>
-
                     </div>
 
                 </div>

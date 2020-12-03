@@ -1,33 +1,144 @@
-.areaDash05 {
+.areaListarVagas {
   display: flex;
-  justify-content: center;
 }
 
-.box-centro4 {
+.boxContentListarVagas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+.ContentListarVagas {
   display: flex;
   align-items: center;
   flex-direction: column;
+
   text-align: center;
   margin-left: 75px;
   margin-top: 5 0px;
 }
 
-.box-centro4 h1 {
+.boxContentListarVagas h1 {
   margin-top: 40px;
 }
 
-.options-box05 {
-  /* display: flex; */
+/* Box1 (START) */
+.retanguloBrancoListar {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  /* width: auto;
+  height: 300px;
+  background: #ffffff;
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.18);
+  border-radius: 7px;
+  margin-top: 50px; */
+}
+
+.Cartao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.Cartao h6 {
+  margin-top: 25px;
+}
+
+/* .Cartao :hover{
+  border-style: none;
+} */
+
+.Button-Visualizar{
   width: auto;
-  /* MODAFICADO DE 300 P/ AUTO */
   height: auto;
   background: #ffffff;
   box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.18);
   border-radius: 7px;
   margin-top: 50px;
+  border-style: none;
+  display: flex;
+
 }
 
+.infoVaga {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-style: none;
+}
+
+/* textoinfo */
+
+.vagaInfo {
+  display: flex;
+  justify-content: space-evenly;
+  width: 800px;
+  line-height: 30px;
+  margin-top: 35px;
+}
+
+.linhaListarVaga {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.linhaListarVaga p {
+  margin-bottom: 0px;
+  margin-left: 15px;
+}
+
+.colunaEsquerdaListar {
+  display: flex;
+  flex-direction: column;
+}
+
+.colunaDireitaListar {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoHab {
+  display: flex;
+  width: 280px;
+  height: 90px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.infoHab p {
+  background-color: #db324a;
+  border-radius: 7px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 1px;
+  margin-right: 10px;
+}
+
+/* cod david */
+.tagListarVagas {
+  flex-grow: 1;
+}
+
+
+
+
+
+
+
+/* ________________________ */
 .options-box1 h2 {
+  /* margin-left: 20px; */
+  /* height: 37px; */
   margin-top: 13px;
   margin-bottom: 15px;
 }
@@ -38,25 +149,31 @@
   font-size: unset;
   color: #a4a4a3;
 }
-
 /* Box1 (END) */
 
 /* Box2 (START) */
-
 .options-box2 {
   display: flex;
-  width: auto;
-  height: auto;
-  background: #ffffff;
+  width: 195px;
+  height: 116px;
+  background: #151320;
   box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.18);
   border-radius: 7px;
+
   margin-top: 50px;
+
   flex-direction: column;
   margin-right: 50px;
 }
 
+/* junta as box */
+/* #options-2 {
+      display: flex;
+  } */
+
 .row-perfil {
   padding: 1px 60px;
+
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -74,11 +191,13 @@
   border-top: 2px solid #000000;
   width: 320px;
   margin-top: 10px;
+
   display: flex;
 }
 
 .row-info2 {
   padding: 1px 60px;
+
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -95,11 +214,11 @@
   border-top: 2px solid #000000;
   width: 320px;
   margin-top: 10px;
+
   display: flex;
 }
 
 /* LINHA HR */
-
 .row-sobre {
   padding: 1px 60px;
   display: -ms-flexbox;
@@ -119,9 +238,10 @@
   display: flex;
 }
 
-.logo {
+.logoListarVaga  {
   display: flex;
   align-items: center;
+  margin: 0px 25px 0 25px;
 }
 
 .sobre {
@@ -140,181 +260,87 @@
 
 .options-box2 p {
   text-align: center;
+
   margin-top: 30px;
   margin-left: 5px;
 }
 
-.flex-text {
+/* .flex-text {
   display: flex;
   flex-direction: column;
-}
+} */
 
-.options-box2 .see .link {
+/* .options-box2 .see .link {
   display: flex;
   justify-content: center;
-}
-
+} */
 /* Box2 (END) */
 
-.options-box3 {
+/* .options-box3 {
   display: flex;
-  width: auto;
-  height: auto;
+  width: 195px;
+  height: 116px;
   background: #ffffff;
   box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.18);
   border-radius: 7px;
-  margin-top: 50px;
-  flex-direction: column;
-}
 
-.options-box3 p {
+  margin-top: 50px;
+
+  flex-direction: column;
+} */
+
+/* .options-box3 p {
   margin-top: 30px;
   margin-left: 5px;
-}
+} */
 
-/* Tamaho das divs das informações */
 
-.textdis1 {
-  width: 641px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
-.textdis1 h6 {
-  margin-top: 25px;
-}
 
-.textdis2 {
-  width: 805px;
-  height: 195px;
+
+/* .h44 {
   display: flex;
   justify-content: center;
+
   align-items: center;
 }
 
-.text05 {
+
+ */
+
+
+/* .textinf p {
   display: flex;
-  align-items: center;
-  align-items: center;
-}
+} */
 
-.text05 .bre01 {
-  margin-right: 20px;
-}
 
-.text05 .bre02 {
-  margin-left: 50px;
-}
 
-.text05 #Avanade {
-  margin-right: 50px;
-}
 
-.text05 img {
-  margin-right: 5px;
-}
 
-.h44 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* definiar o tamanha */
+/* .item-wide {
+    flex-grow: 3;
+  } */
 
-.texthab2 {
-  display: flex;
-  width: auto;
-  height: auto;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-.texthab2 p {
-  background-color: #db324a;
-  border-radius: 7px;
-  color: white;
-  display: flex;
-  justify-content: center;
-  padding: 1px;
-  margin-right: 10px;
-}
-
-/* textoinfo */
-
-.options-box06 {
-  width: auto;
-  height: auto;
-  background: #ffffff;
-  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.18);
-  border-radius: 7px;
-  margin-top: 50px;
-}
-
-.textinf5 {
-  display: flex;
-  justify-content: space-evenly;
-  line-height: 30px;
-  margin-top: 35px;
-  margin-left: 50px;
-  width: auto;
-  height: auto;
-}
-
-.textinf5 p {
-  text-align: start;
-  padding: 10px;
-}
-
-.bre01 {
-  display: flex;
-  flex-direction: column;
-}
-
-.bre02 {
-  display: flex;
-  flex-direction: column;
-}
-
-.item {
-  flex-grow: 1;
-}
-
-.break {
+/* .break {
   flex-basis: 100%;
   height: 0;
 }
-
 .break-column {
   flex-basis: 100%;
   width: 0;
-}
+} */
 
 /* item login */
 
-.item02 {
-  display: flex;
-  margin-bottom: 15px;
-}
 
-.item02 p {
-  margin-bottom: 0px;
-  margin-left: 15px;
-}
-
-.break {
+/* .break {
   flex-basis: 100%;
   height: 0;
 }
-
 .break-column {
   flex-basis: 100%;
   width: 0;
-}
+} */
 
-.options-box07{
-  width: auto;
-  height: auto;
-}
+

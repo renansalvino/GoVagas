@@ -9,7 +9,7 @@ import Sidebar from '../../components/sidebar';
 import imgAVA from '../../assets/images/candidato/AVA.svg'
 import imgmoney from '../../assets/images/candidato/money.svg'
 import imgtranslation from '../../assets/images/candidato/translation.svg'
-import imgcasestudy from '../../assets/images/candidato/case-study.svg'
+import imgcasestudy from '../../assets/images/candidato/casestudy.svg'
 import imgnotes from '../../assets/images/candidato/notes.svg'
 import imgdiploma from '../../assets/images/candidato/diploma.svg'
 import imgofficeblock from '../../assets/images/candidato/office-block.svg'

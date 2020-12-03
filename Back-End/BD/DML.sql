@@ -1,6 +1,6 @@
 USE GoVagas
 GO
-
+use GoVagas
 -- Popular TIPO USUARIO --
 
 INSERT INTO TipoUsuario (TituloTipoUsuario) 
@@ -93,4 +93,3 @@ VALUES ('10/06/2020', 1,1), ('06/02/2020', 2,2), ('30/09/2020', 3,3);
 GO
 
 
-SELECT*From Candidato

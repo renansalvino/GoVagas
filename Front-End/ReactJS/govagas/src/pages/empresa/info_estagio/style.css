@@ -180,3 +180,27 @@
     margin-left: 150px;
   
 }
+
+.estagio-options_estagio{
+    display: flex;
+    width: 195px;
+    height: 116px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.18);
+    border-radius: 20px;
+    margin-left: 750px;
+    margin-top: 50px;
+}
+
+#align-input-fliter{
+    margin-top: -8px
+}
+
+#align-date-avaliacao{
+    display: flex;
+}
+
+#date-avaliacao-forlabel{
+    display: flex;
+    
+}

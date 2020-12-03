@@ -40,12 +40,13 @@ function completarcadastro_01() {
                                         <form>
                                             <div className="grupoespecial">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Título do Perfil:" placeholder="Backend / Frontend  / Fullstack" />
+                                                    <label id="titulo-perfil-etapa01-label-to-label" htmlFor="titulo-perfil-etapa01">Titulo pefil:</label>
+                                                    <input type="text" id="titulo-perfil-etapa01" placeholder="Backend / Frontend  / Fullstack" />
                                                 </div>
 
                                                 <div className="nivelingles">
                                                     <label htmlFor="Ingles">Nivel de Inglês:</label>
-                                                    <select className="input" name="Ingles" >
+                                                    <select id="input-for-english" name="Ingles">
                                                         <option selected>Escolher...</option>
                                                         <option>Básico</option>
                                                         <option>Intermediário</option>
@@ -65,29 +66,30 @@ function completarcadastro_01() {
                                             <div className="grupo">
                                                 <div className="form-group">
                                                     <label className="Label">Sobre voce:</label><br />
-                                                    <textarea className="descricao" ></textarea>
+                                                    <textarea className="descricao-etapa01"></textarea>
                                                 </div>
                                                 <div className="">
-                                                    <Input className="input_anexar" name="btn-anexar" type='file' label="Escolher Ficheiro:" >
-                                                    </Input>
+                                                    <label id="label-to-label">Selecione um anexo para seu currículo:</label>
+                                                    <label id="label-for-type" htmlFor="arquivo">Enviar arquivo</label>
+                                                    <input type="file" name="arquivo" id="arquivo"/>
                                                 </div>
-                                            </div>
+                                                </div>
 
                                         </form>
 
                                     </div>
-                                    <div className="btn-proximo">
-                                    <Link to="/completarCadastroAluno2"> <Button onClick="" name="btn1" value="Próximo" /> </Link>
-                                       
-                                    </div>
+                                        <div className="btn-proximo">
+                                            <Link to="/completarCadastroAluno2"> <Button onClick="" name="btn1" value="Próximo" /> </Link>
+
+                                        </div>
                                 </form>
                             </main>
                         </fieldset>
                     </div>
+                    </div>
                 </div>
+                <Footer />
             </div>
-            <Footer />
-        </div>
     )
 }
 export default completarcadastro_01;

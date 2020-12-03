@@ -1,249 +1,194 @@
-import React from 'react';
+import React, { useState, useEffect, CSSProperties } from 'react';
+// import React from 'react';
 import './style.css';
 import '../../../assets/styles/global.css'
 
 import Header from '../../../components/header/index';
 import Footer from '../../../components/footer/index';
 
+import Sidebar from '../../../components/sidebar';
+// import imgbadge from '../../assets/images/candidato/badge.svg'
 import imgmoney from '../../../assets/images/candidato/money.svg'
-import imgtranslation from '../../../assets/images/candidato/translation.svg'
-import imgcasestudy from '../../../assets/images/candidato/case-study.svg'
+import imglocation from '../../../assets/images/candidato/location.svg'
+import imgcasestudy from '../../../assets/images/candidato/casestudy.svg'
 import imgnotes from '../../../assets/images/candidato/notes.svg'
 import imgdiploma from '../../../assets/images/candidato/diploma.svg'
-import imglocation from '../../../assets/images/candidato/location.svg'
-import imgAVA from '../../../assets/images/candidato/AVA.svg'
-// Benefícios
-import imgdentalcheckup from '../../../assets/images/candidato/dental-checkup.svg'
-import imgdumbbell from '../../../assets/images/candidato/dumbbell.svg'
-import imgheart from '../../../assets/images/candidato/heart.svg'
-import imgpharmacy from '../../../assets/images/candidato/pharmacy.svg'
-import imgpiggybank from '../../../assets/images/candidato/piggy-bank.svg'
-import imgrestaurant from '../../../assets/images/candidato/restaurant.svg'
-import imgshoppingcart from '../../../assets/images/candidato/shopping-cart.svg'
-import imgtrain from '../../../assets/images/candidato/train.svg'
+import imgofficeblock from '../../../assets/images/candidato/office-block.svg'
 
-function PubliVagaTres() {
+
+import { useHistory } from 'react-router-dom';
+
+const cssStyle: CSSProperties = {
+    width: '1324px',
+    marginTop: '20px',
+}
+
+function PublicarVagatres() {
+    // API
+    const [vagas, setVagas] = useState([])
+    const [vaga, setVaga] = useState('');
+    const [idVaga, setIdVaga] = useState(0);
+
+    const history = useHistory();
+
+    useEffect(() => {
+        ListarVagas();
+    }, []);
+
+
+    const ListarVagas = () => {
+        fetch('http://localhost:5001/api/Vaga', {
+            method: 'GET',
+            headers: {
+
+                authorization: 'Bearer ' + localStorage.getItem('tokengovagas')
+            }
+        })
+            .then(response => response.json())
+            .then(dados => {
+                setVagas(dados);
+                console.log(vagas)
+            })
+            .catch(err => console.error(err));
+    }
+
+
+
+    const visualizarVaga = (id: number) => {
+
+        fetch('http://localhost:5001/api/Vaga/' + id, {
+            method: 'GET',
+            headers: {
+                authorization: 'Bearer ' + localStorage.getItem('tokengovagas')
+            }
+        })
+            .then(resp => resp.json())
+            .then(dados => {
+                setIdVaga(dados.idVaga);
+                console.log(id);
+                // localStorage.setItem( 'IdVaga', String(idVaga))
+                history.push(`/visualizarvaga?id=${id}`)
+            })
+            .catch(err => console.error(err));
+    }
+
+
+    // const [inscricaos, setinscricaos] = useState([]); 
+    // const [titulovaga, setTituloVaga] = useState('')
+    // const [perfildev, setPerfilDev] = useState('')
+    // const [habnecessaria, setHabNecessaria] = useState('')
+    // const [localvaga, setLocalVaga] = useState('')
+    // const [tipocontrato, setTipoContrato] = useState('')
+    // const [expertisevaga, setExpertiseVaga] = useState('')
+    // const [valorsalario, setValorSalario] = useState('')
+
+    // const Listarvagas = () => {
+    //     fetch("https://localhost:5001/api/Listarvagas", {
+    //         method: 'GET',
+
+    //     })
+    //         .then(response => response.json())
+    //         .then(dados => {
+    //             setVaga(dados);
+    //         })
+    //         .catch(err => console.error(err));
+    // }
+
+    // useEffect(() => {
+    //     ListarTodasVagas();
+    // }, []);
+
 
     return (
         <div>
             <Header />
-            <div className="areaDash05">
+            <div className="areaListarVagas">
+                <Sidebar />
+                <div className="ContentListarVagas">
+                    <section className="boxContentListarVagas">
 
-                <div className="centro-box">
-                    <section className="box-centro4">
+                        <h1>Vagas</h1>
 
-                        {/* <h1>Vagas</h1> */}
-
-                        <div className="options-box05">
-                            <div className="textdis1">
-                                <h6>Programador CSharp</h6>
-
-                                <div className="text05">
-
-                                    <div className="textinf2">
-
-                                    </div>
-
-                                </div>
-
-                                <div className="texthab2">
-
-                                    <div className="item"><p>C#</p></div>
-                                    <div className="item"><p>Java</p></div>
-                                    <div className="item"><p>SQL</p></div>
-                                    <div className="item"><p>PHP</p></div>
-                                    <div className="item"><p>HTML</p></div>
-
-                                </div>
-
-                            </div>
-                        </div>
+                        <div className="retanguloBrancoListar">
+                            {
+                                vagas.map((item: any) => {
+                                    return <div className='CardVagas'>
+                                        <button className="Button-Visualizar" onClick={() => visualizarVaga(item.idVaga)}>
 
 
+                                            <div className="Cartao">
+                                                <h6>{item.perfilDev}</h6>
 
 
-                        <div className="options-box05">
-                            <div className="textdis2">
+                                                <div className="infoVaga">
 
-                                <div className="text05">
+                                                    <div className="vagaInfo">
 
+                                                        <div className="logoListarVaga">
+                                                            {/* <img src={imgbadge} alt="Ava" title="LogoEmpresa" width="70px" height="70px" /> */}
+                                                        </div>
 
-                                    {/* logo */}
-                                    <div className="logo">
-                                        <img src={imgAVA} alt="Ava" title="Ava" width="auto" height="60px" id="Avanade" />
-                                    </div>
+                                                        <div className="colunaEsquerdaListar">
 
+                                                            <div className="linhaListarVaga">
+                                                                <img src={imgofficeblock} alt="officeblock" title="officeblock" width="30px" height="30px" />
+                                                                <p>Em busca do primeiro emprego</p>
+                                                            </div>
 
+                                                            <div className="linhaListarVaga">
+                                                                <img src={imgmoney} alt="Money" title="Money" width="30px" height="30px" />
+                                                                <p>R${item.valorSalario}</p>
+                                                            </div>
 
-                                    <div className="bre01">
+                                                            <div className="linhaListarVaga">
+                                                                <img src={imglocation} alt="Translation" title="Translation" width="30px" height="30px" />
+                                                                <p>{item.localVaga}</p>
+                                                            </div>
 
-                                        <div className="item02">
-                                            <img src={imglocation} alt="officeblock" title="officeblock" width="30px" height="30px" />
-                                            <p>Home oficce (remoto)</p>
-                                        </div>
-
-                                        <div className="item02">
-                                            <img src={imgmoney} alt="Money" title="Money" width="30px" height="30px" />
-                                            <p>R$ 6969,69</p>
-                                        </div>
-
-                                        <div className="item02">
-                                            <img src={imgtranslation} alt="Translation" title="Translation" width="30px" height="30px" />
-                                            <p>Ingles</p>
-                                        </div>
-
-                                    </div>
+                                                        </div>
 
 
-                                    <div className="bre02">
-
-                                        <div className="item02">
-                                            <img src={imgcasestudy} alt="Casestudy" title="Casestudy" width="25px" height="25px" />
-                                            <p>Full Stack</p>
-                                        </div>
-
-                                        <div className="item02">
-                                            <img src={imgnotes} alt="Notes" title="Notes" width="25px" height="25px" />
-                                            <p>Contratação CLT</p>
-                                        </div>
-
-                                        <div className="item02">
-                                            <img src={imgdiploma} alt="Diploma" title="Diploma" width="25px" height="25px" />
-                                            <p>Desenvolvimento de   Sistema</p>
-                                        </div>
 
 
-                                    </div>
-                                </div>
+                                                        <div className="colunaDireitaListar">
 
-                            </div>
-                        </div>
+                                                            <div className="linhaListarVaga">
+                                                                <img src={imgcasestudy} alt="Casestudy" title="Casestudy" width="25px" height="25px" />
+                                                                <p>{item.tituloVaga}</p>
+                                                            </div>
 
+                                                            <div className="linhaListarVaga">
+                                                                <img src={imgnotes} alt="Notes" title="Notes" width="25px" height="25px" />
+                                                                <p>{item.tipoContrato}</p>
+                                                            </div>
 
-                        {/* PARTE III */}
+                                                            <div className="linhaListarVaga">
+                                                                <img src={imgdiploma} alt="Diploma" title="Diploma" width="25px" height="25px" />
+                                                                <p>{item.ReqVaga}</p>
+                                                            </div>
 
-                        <div className="options-box06">
-                            <div className="textdis">
+                                                        </div>
 
-                                <div className="text05">
-                                    <div className="textinf5">
-                                        <p>
-                                            A Avanade foi fundada como uma joint-venture entre a Microsoft Corporation
-                                            e a Accenture LLP. As nossas soluções são construídas com base em uma
-                                            incomparável combinação de insight, inovação e conhecimento técnico, apoiados
-                                            por ferramentas, metodologias e práticas comprovadas.
-                                        </p>
-                                    </div>
-                                </div>
+                                                    </div>
 
-                            </div>
-                        </div>
+                                                </div>
 
 
-                        {/* PARTE IV */}
-                        <div className="options-box07">
-                            <div className="textdis">
-                                <div className="text05">
-                                    <div className="textinf6">
-                                        <p id="Desc">
-                                            - Definir a equipe e suas atividades;<br></br>
-                                            - Balizar a arquitetura da solução (Front, Back, BD);<br></br>
-                                            - Configurar ambientes de desenvolvimento (SandBox);<br></br>
-                                            - Fazer automatização build e deploy (CI & CD);<br></br>
-                                            - Avaliar o uso de bibliotecas e componentes;<br></br>
-                                            - Comunicar-se com a área gerencial da Radix e do cliente;<br></br>
-                                            - Ser Auto-gerenciável;<br></br>
-                                            - Aplicar treinamentos para a equipe.<br></br>
-                                            - Inglês intermediário / Fluente<br />
-                                        </p>
-                                    </div>
-                                </div>
+                                                <div className="infoHab">
 
-                            </div>
-                        </div>
+                                                    <div className="tagListarVagas"><p>{item.habNecessaria}</p></div>
+
+                                                </div>
 
 
-                        {/* PARTE V */}
-                        <div className="options-box05">
-                            <div className="textdis">
-                                <div className="text05">
-                                    <div className="textinf5">
-                                        <p>
-                                            - Experiência com base de dados orientada a grafo (CosmosDB com api Gremlin);<br></br>
-                                            - Arquitetura de soluções no ambiente Azure;<br></br>
-                                            - Experiência com ReactJS;<br></br>
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        {/* PARTE VI */}
-                        <div className="options-box05">
-                            <div className="textdis">
-
-                                <div className="text05">
-
-                                    <div className="textinf2">
-
-                                        {/* logo */}
-                                        {/* <div className="logo">
-                                            <img src={imgAVA} alt="Ava" title="Ava" width="auto" height="60px" />
-                                        </div>*/}
-
-                                        <div className="bre01">
-
-                                            <div className="item02">
-                                                <img src={imgdentalcheckup} alt="officeblock" title="officeblock" width="30px" height="30px" />
-                                                <p>Assistência odontológica</p>
                                             </div>
+                                            {/* </Link> */}
 
-                                            <div className="item02">
-                                                <img src={imgdumbbell} alt="Money" title="Money" width="30px" height="30px" />
-                                                <p>Auxílio academia</p>
-                                            </div>
-
-                                            <div className="item02">
-                                                <img src={imgheart} alt="Translation" title="Translation" width="30px" height="30px" />
-                                                <p>Seguro de vida</p>
-                                            </div>
-
-                                            <div className="item02">
-                                                <img src={imgshoppingcart} alt="Translation" title="Translation" width="30px" height="30px" />
-                                                <p>Vale-alimentação</p>
-                                            </div>
-
-                                        </div>
-
-
-                                        <div className="bre02">
-
-                                            <div className="item02">
-                                                <img src={imgpharmacy} alt="Casestudy" title="Casestudy" width="25px" height="25px" />
-                                                <p>Assistência médica</p>
-                                            </div>
-
-                                            <div className="item02">
-                                                <img src={imgpiggybank} alt="Notes" title="Notes" width="25px" height="25px" />
-                                                <p>Previdência privada</p>
-                                            </div>
-
-                                            <div className="item02">
-                                                <img src={imgrestaurant} alt="Diploma" title="Diploma" width="25px" height="25px" />
-                                                <p>Vale-refeição</p>
-                                            </div>
-
-                                            <div className="item02">
-                                                <img src={imgtrain} alt="Diploma" title="Diploma" width="25px" height="25px" />
-                                                <p>Vale-transporte</p>
-                                            </div>
-
-                                        </div>
-
+                                        </button>
                                     </div>
-                                </div>
-
+                                })
+                            }
+                            <div style={cssStyle}>
                             </div>
                         </div>
                     </section>
@@ -253,4 +198,4 @@ function PubliVagaTres() {
         </div>
     )
 }
-export default PubliVagaTres;
+export default PublicarVagatres;

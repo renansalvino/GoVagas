@@ -11,7 +11,7 @@ import Button from '../../components/button/index';
 // import imgAVA from '../../assets/images/candidato/AVA.svg'
 import imgmoney from '../../assets/images/candidato/money.svg'
 import imgtranslation from '../../assets/images/candidato/translation.svg'
-import imgcasestudy from '../../assets/images/candidato/case-study.svg'
+import imgcasestudy from '../../assets/images/candidato/casestudy.svg'
 import imgnotes from '../../assets/images/candidato/notes.svg'
 import imgdiploma from '../../assets/images/candidato/diploma.svg'
 import imglocation from '../../assets/images/candidato/location.svg'
@@ -52,7 +52,6 @@ function Visualizarvaga({ match }: any) {
             idCandidato: idCandidato,
             idVaga: idVaga
         };
-
         fetch("https://localhost:5001/api/Inscricao", {
             method: 'POST',
             body: JSON.stringify(form),
@@ -64,11 +63,9 @@ function Visualizarvaga({ match }: any) {
         })
             .then(() => {
                 alert('Inscricao cadastrado');
-
             })
             .catch(err => console.error(err));
     }
-
 
     return (
         <div>
