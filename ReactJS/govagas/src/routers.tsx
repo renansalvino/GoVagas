@@ -3,22 +3,27 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './pages/home/index'
 import DashAdm from './pages/Administrador/dashAdm/index'
 import TabelaCandidatos from './pages/Administrador/tabelaCandidatos/index'
-import CadastroCandidatoUm from './pages/cadastroAluno/etapa01';
-import CadastroCandidatoDois from './pages/cadastroAluno/etapa02';
-import CadastroCandidatoTres from './pages/cadastroAluno/etapa03';
-import CadastroCandidatoQuatro from './pages/cadastroAluno/etapa04';
-import completarcadastro_01 from './pages/completarCadastroAluno/Etapa01';
-import completarcadastro_02 from './pages/completarCadastroAluno/Etapa02';
-import completarcadastro_03 from './pages/completarCadastroAluno/Etapa03';
-import cadastroEmpresa01 from './pages/cadastroEmpresa/etapa01';
-import cadastrocandidato02 from './pages/cadastroAluno/etapa02';
-import cadastroEmpresa02 from './pages/cadastroEmpresa/etapa02';
-import LoginCandidato from './pages/loginCandidato/index';
-import LoginEmpresa from './pages/loginEmpresa';
+import CadastroCandidatoUm from './pages/cadastroLogin/cadastroAluno/etapa01';
+import CadastroCandidatoDois from './pages/cadastroLogin/cadastroAluno/etapa02';
+import CadastroCandidatoTres from './pages/cadastroLogin/cadastroAluno/etapa03';
+import CadastroCandidatoQuatro from './pages/cadastroLogin/cadastroAluno/etapa04';
+import completarcadastro_01 from './pages/cadastroLogin/completarCadastroAluno/Etapa01';
+import completarcadastro_02 from './pages/cadastroLogin/completarCadastroAluno/Etapa02';
+import completarcadastro_03 from './pages/cadastroLogin/completarCadastroAluno/Etapa03';
+import cadastroEmpresa01 from './pages/cadastroLogin/cadastroEmpresa/etapa01';
+import cadastrocandidato02 from './pages/cadastroLogin/cadastroAluno/etapa02';
+import cadastroEmpresa02 from './pages/cadastroLogin/cadastroEmpresa/etapa02';
+import LoginCandidato from './pages/cadastroLogin/loginCandidato/index';
+import LoginEmpresa from './pages/cadastroLogin/loginEmpresa';
 import PublicarVaga from "./pages/empresa/publi_vaga/index";
 import PublicarVagaDois from './pages/empresa/publi_vaga2/index';
 import PublicarVagaTres from './pages/empresa/publi_vaga3/index';
 import infoestagio from './pages/empresa/info_estagio/index';
+import Perfil from './pages/candidato/perfil/index';
+import Dashboard from './pages/candidato/dashboard/index';
+import Candidatar from './pages/candidato/candidatar/index';
+import Listarvagas from './pages/candidato/listarvagas/index';
+import Visualizarvaga from './pages/candidato/visualizarvaga/index';
 import Upload from './pages/teste/teste';
 
 // 	import Login from ‘./pages/Login’;
@@ -45,6 +50,11 @@ function Routers() {
 			<Route path="/publicarvagadois"component={PublicarVagaDois}/>
 			<Route path="/publicarvagatres"component={PublicarVagaTres}/>
 			<Route path="/infoestagio" component={infoestagio}/>
+			<Route path='/perfil' component={Perfil}/>
+			<Route path='/dashboard' component={Dashboard}/>
+			<Route path='/candidatar' component={Candidatar}/>
+			<Route path='/listarvagas' component={Listarvagas}/>
+			<Route path='/visualizarvaga' component={Visualizarvaga}/>
 			<Route path="/teste" component={Upload}/>
 		</BrowserRouter>
 	);

@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "InovaMobile",
+    "slug": "InovaMobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/images/senaiInova.png",
+    "splash": {
+      "image": "./src/assets/images/InovaSplash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#df2f2f"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/images/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "build": {
+        "babel": {
+          "include": ["react-router-native"]
+        }
+      }
+    }
+  }
+}
