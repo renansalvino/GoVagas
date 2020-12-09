@@ -10,9 +10,9 @@ import CadastroCandidatoQuatro from './pages/cadastroLogin/cadastroAluno/etapa04
 import completarcadastro_01 from './pages/cadastroLogin/completarCadastroAluno/Etapa01';
 import completarcadastro_02 from './pages/cadastroLogin/completarCadastroAluno/Etapa02';
 import completarcadastro_03 from './pages/cadastroLogin/completarCadastroAluno/Etapa03';
-import cadastroEmpresa01 from './pages/cadastroLogin/cadastroEmpresa/etapa01';
+import CadastroEmpresa from './pages/cadastroLogin/cadastroEmpresa/etapa01';
 import cadastrocandidato02 from './pages/cadastroLogin/cadastroAluno/etapa02';
-import cadastroEmpresa02 from './pages/cadastroLogin/cadastroEmpresa/etapa02';
+import CadastroEmpresaDois from './pages/cadastroLogin/cadastroEmpresa/etapa02';
 import LoginCandidato from './pages/cadastroLogin/loginCandidato/index';
 import LoginEmpresa from './pages/cadastroLogin/loginEmpresa';
 import PublicarVaga from "./pages/empresa/publi_vaga/index";
@@ -41,9 +41,9 @@ function Routers() {
 			<Route path='/completarCadastroAluno' component={completarcadastro_01}/>
 			<Route path='/completarCadastroAluno2' component={completarcadastro_02}/>
 			<Route path='/completarCadastroAluno3' component={completarcadastro_03}/>
-			<Route path='/cadastroEmpresa' component={cadastroEmpresa01}/>
+			<Route path='/cadastroEmpresa' component={CadastroEmpresa}/>
 			<Route path='/cadastroAluno2' component={cadastrocandidato02}/>
-			<Route path='/cadastroEmpresa2' component={cadastroEmpresa02}/>
+			<Route path='/cadastroEmpresa2' component={CadastroEmpresaDois}/>
 			<Route path='/loginCandidato' component={LoginCandidato}/>
 			<Route path='/loginEmpresa' component={LoginEmpresa}/>
 			<Route path="/publicarvaga" component={PublicarVaga}/>

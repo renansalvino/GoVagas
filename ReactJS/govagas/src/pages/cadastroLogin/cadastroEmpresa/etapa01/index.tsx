@@ -1,13 +1,14 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import '../etapa01/style.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Footer from '../../../../components/footer/index';
 import Header from '../../../../components/header/index'
 import Button from '../../../../components/button/index';
 import Input from '../../../../components/input/index';
+import Teste from '../../../teste/teste';
 import '../../../../components/barraProgresso/style.css';
 function CadastroEmpresa() {
-    
+
     // const [idEmpresa, setIdEmpresa] = useState(0);
     // const [empresa, setEmpresa] = useState('');
     // const [cargoempresa, setCargoempresa] = useState('')
@@ -19,42 +20,32 @@ function CadastroEmpresa() {
     // const [encontrousite, setEncontrousite] = useState('');
     // const [candidatos, setCandidatos] = useState([]);
 
-    const [usuario, setUsuario] = useState('')
-    const [telefone, setTelefone] = useState('')
+    let history = useHistory()
+
+    const [anexarLogo, setAnexarLogo] = useState('')
+    const [nomeEmpresa, setNomeEmpresa] = useState('')
+    const [ramoEmpresa, setRamoEmpresa] = useState('')
+    const [descricao, setDescricao] = useState('')
+    const [localizacaoEmpresa, setLocalizacaoEmpresa] = useState('')
+    const [webSite, setWebSite] = useState('')
 
     const Post = () => {
 
         const form = {
-            nome: usuario,
-            cargoEmpresa: usuario,
-            areaEmpresa: usuario,
-            telefone: telefone,
-            empresa: usuario,
-            webSite: usuario,
-            cnpj: usuario,
-            // nomeCurso: nomecurso,
-            // cidade: cidade,
-            // habilidade: habilidade,
-            // expertiseCandidato: expertisecandidato
+            anexarLogo: anexarLogo,
+            nomeEmpresa: nomeEmpresa,
+            ramoEmpresa: ramoEmpresa,
+            descricaoEmpresa: descricao,
+            localizacaoEmpresa: localizacaoEmpresa,
+            webSite: webSite
         }
-        fetch('https://localhost:5001/api/Candidato', {
-            method: 'POST',
-            body: JSON.stringify(form),
-            headers: {
-                'Content-Type': 'application/json',
-              }
-        })
-            .then(() => {
-                alert('Próxima etapa');
-                // setIdUsuario(0);
-                // setIdCandidato(0);
-                // setUsuario('');
-                // setTelefone('');
-                // setCidade('');
-                // setNomecurso('');
-                
-            })
-            .catch(err => console.error(err));
+        localStorage.setItem('logo-cadastro', anexarLogo)
+        localStorage.setItem('nome-cadastro', nomeEmpresa)
+        localStorage.setItem('ramo-cadastro', ramoEmpresa)
+        localStorage.setItem('descricao-cadastro', descricao)
+        localStorage.setItem('local-cadastro', localizacaoEmpresa)
+        localStorage.setItem('site-cadastro', webSite)
+        history.push('/cadastroEmpresa2')
 
     }
 
@@ -84,32 +75,47 @@ function CadastroEmpresa() {
                     <div className="cadastro-form">
                         <fieldset>
                             <main>
-                                <form>
-                                    <p>Sobre</p>
+                                <p>Sobre a Empresa</p>
+                                <form onSubmit={event => {
+                                    event.preventDefault();
+                                    Post();
+                                }}>
                                     <div className="cadastro">
-                                        <form>
-                                            <div className="grupo">
-                                                <div className="form-group">
-                                                    <Input type="text" name="input2" label="Seu nome:" placeholder="Nome Completo" />
-                                                </div>
-                                                <div className="form-group">
-                                                    <Input type="text" name="input2" label="Cargo na empresa:" placeholder="Cargo" />
-                                                </div>
+                                        <div className="grupofoto">
+                                            <div id="foto" className="foto">
+                                                {Teste}
+                                                <Teste></Teste>
                                             </div>
-                                            <div className="grupo">
-                                                <div className="form-group">
-                                                    <Input type="text" name="input2" label="Área em que atua:" placeholder="Area" />
-                                                </div>
-                                                <div className="form-group">
-                                                    <Input type="text" name="input2" label="Telefone:" placeholder="Numero do telefone" />
-                                                </div>
+                                        </div>
+                                        <div className="grupo">
+                                            <div className="form-group">
+                                                <Input type="text" name="input2" label="Nome Empresa:" required placeholder="Nome da Empresa LTDA" maxLength={11} value={nomeEmpresa} onChange={a => setNomeEmpresa(a.target.value)} />
                                             </div>
-                                        </form>
+                                            <div className="form-group">
+                                                <Input type="text" name="input2" label="Ramo da Empresa:" required placeholder="Sociedade Empresária Limitada" value={ramoEmpresa} onChange={a => setRamoEmpresa(a.target.value)} />
+                                            </div>
+                                        </div>
+                                        <div className="grupo">
+                                            <div className="form-group">
+                                                <Input type="text" name="input2" label="Website:" required placeholder="http://www.NomeDoSite.com.br" value={webSite} onChange={a => setWebSite(a.target.value)} />
+                                            </div>
+                                            <div className="form-group">
+                                                <Input type="text" name="input2" label="Local da Empresa:" required placeholder="Rua General Brandão de Limeira, n75 - SP" value={localizacaoEmpresa} onChange={a => setLocalizacaoEmpresa(a.target.value)} />
+                                            </div>
+                                        </div>
+                                        <div className="grupo">
+                                            <div className="form-group">
+                                                <label className="Label">Sobre a Empresa:</label><br />
+                                                <textarea id="input44" placeholder="Sobre o nosso propósito, valores, princípios e boas práticas são o resultado de mais de seis anos de experimentação e melhorias contínuas em todos os aspectos profissionais e pessoais." value={descricao} onChange={a => setDescricao(a.target.value)}></textarea>
+                                            </div>
+                                        </div>
+
 
                                     </div>
                                     <div className="btn-proximo">
-                                    <Link to="/cadastroEmpresa2"> <Button onClick="" name="btn1" value="Próximo" /> </Link>
+                                        <Button onClick="" name="btn1" value="Próximo" />
                                     </div>
+
                                 </form>
                             </main>
                         </fieldset>

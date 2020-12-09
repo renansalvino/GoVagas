@@ -1,13 +1,26 @@
 .etapa1empresa .cadastro {
     width: 755px;  
-    height: 400px;   
+    /* height: 400px;    */
     background: #FFFFFF;  
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);  
     border-radius: 7px;  
-    padding-top: 65px;   
+    padding-top: 20px;
+   
 }
 
 .etapa1empresa .cadastro-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.etapa1empresa .grupo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.etapa1empresa .grupofoto {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,10 +56,10 @@
     margin-bottom: 20px;
 }
 
-.etapa1empresa .BarraProgresso {
+/* .etapa1empresa .BarraProgresso {
     display: flex;
     justify-content: center;
-}
+} */
 
 .etapa1empresa .cadastro Label {
     font-family: Roboto;
@@ -75,12 +88,6 @@
     box-sizing: border-box;
 }
 
-.etapa1empresa .grupo {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
 
 .etapa1empresa .btn-proximo {
     display: flex;
@@ -89,8 +96,8 @@
     padding-top: 35px;
     margin-bottom: 20px;
 }
-.etapa1empresa .cadastro input{
+/* .etapa1empresa .cadastro input{
    margin-top: 80px;
-}
+} */
 
 

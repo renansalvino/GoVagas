@@ -5,10 +5,14 @@
 }
 
 .imagem {
-    width: 100px;
-    height: 200px;
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    background-color: #DB324A;
+    margin-bottom: 40px;
+    margin-top: 15px;
 }
-.texto {
+.imagem .texto {
     margin-top: -40px;
 }
 
@@ -17,11 +21,10 @@
     height: 150px;
     width: 150px;
     border-radius: 100%;
-    background-color: #DB324A;
     /* background-image: url("snoopy.png");
     background-repeat: no-repeat; */
-    margin-bottom: 40px;
-    margin-top: 15px;
+    /* margin-bottom: 40px; */
+    /* margin-top: 15px; */
 }
 
 

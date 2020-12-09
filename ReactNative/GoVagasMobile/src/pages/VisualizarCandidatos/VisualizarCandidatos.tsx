@@ -5,19 +5,21 @@ import styles from './style';
 
 
 
-export default function VisualizarCandidatos({  navigation = useNavigation() }) {
+export default function VisualizarCandidatos({  }) {
+
+  const navigation = useNavigation()
 
   return (
     <ScrollView>
       <View style={styles.container}>
-        <View style={styles.header}>
+        {/* <View style={styles.header}>
           <Image
             style={styles.img_logo}
             source={require('../../assets/images/logoGO.png')} />
           <Image
             style={styles.img_menu}
             source={require('../../assets/images/Botao_Menu.png')} />
-        </View>
+        </View> */}
         <Text style={styles.text_Vagas}>Candidatos Cadastrados</Text>
         <View style={styles.main_Visualizar_Vaga1}>
           <View style={styles.Box_Vaga1}>

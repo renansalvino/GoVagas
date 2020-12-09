@@ -8,6 +8,7 @@
     "splash": {
       "image": "./src/assets/images/Logo_SENAI_BRANCO_NEGATIVO.png",
       "resizeMode": "contain",
+      "width": "50%",
       "backgroundColor": "#DB324A"
     },
     "updates": {

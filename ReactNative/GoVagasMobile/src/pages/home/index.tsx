@@ -6,12 +6,14 @@ import parseJwt from '../../services/tokenDecoder';
 import Menu from '../../components/hamburguerzinho';
 
 
-export default function Home({ navigation = useNavigation() }) {
+export default function Home({ }) {
 
     const [idInscricao, setIdInscricao] = useState(0);
     const [inscricao, setInscricao] = useState('');
 
     const [inscricaos, setInscricaos] = useState([]);
+
+    const navigation = useNavigation()
 
     React.useEffect(() => {
         GetTokenUser().then(id => {
@@ -28,7 +30,7 @@ export default function Home({ navigation = useNavigation() }) {
     // }, []);
 
     // const listar = () => {
-    //     fetch('https://localhost:5001/api/Vaga', {
+    //     fetch('http://192.168.15.99:5000/api/Vaga', {
     //         method: 'GET',
     //         headers: {
     //             authorization: 'Bearer ' + AsyncStorage.getItem('tokengovagas')
@@ -45,7 +47,7 @@ export default function Home({ navigation = useNavigation() }) {
 
     // const visualizarVaga = (id: number) => {
 
-    //     fetch('https://localhost:5001/api/Vaga/' + id, {
+    //     fetch('http://192.168.15.99:5000/api/Vaga/' + id, {
     //         method: 'GET',
     //         headers: {
     //             authorization: 'Bearer ' + AsyncStorage.getItem('tokengovagas')
@@ -63,8 +65,8 @@ export default function Home({ navigation = useNavigation() }) {
     // }
     const visualizarVagaPorId = (id: number) => {
 
-        // fetch('https://localhost:5001/api/Vaga/Vaga/' + id, {
-        fetch('https://localhost:5001/api/Inscricao/Candidato/' + id, {
+        // fetch('http://192.168.15.99:5000/api/Vaga/Vaga/' + id, {
+        fetch('http://192.168.15.99:5000/api/Inscricao/Candidato/' + id, {
             method: 'GET',
             headers: {
                 authorization: 'Bearer ' + AsyncStorage.getItem('tokengovagas')
@@ -87,7 +89,8 @@ export default function Home({ navigation = useNavigation() }) {
                     alignItems: 'center',
                 }}>
                     <Text style={{
-                        fontSize: 30, marginTop: 30, marginLeft:115 ,marginBottom: 30,}}>Candidaturas</Text>
+                        fontSize: 30, marginTop: 30, marginLeft: 115, marginBottom: 30,
+                    }}>Candidaturas</Text>
                 </View>
 
                 {
@@ -104,7 +107,7 @@ export default function Home({ navigation = useNavigation() }) {
                                 <View style={{
                                     flex: 1, alignItems: 'center'
                                 }}>
-                                    <Text style={{ marginVertical: 1, fontSize: 30, fontWeight: 'bold' }}>Avanade</Text>
+                                    <Text style={{ marginVertical: 1, fontSize: 25, fontWeight: 'bold', textAlign: 'center' }}>{item.idVagaNavigation.idEmpresaNavigation.nomeEmpresa}</Text>
                                     <Text style={{ marginVertical: 10, fontSize: 20, }}> {item.idVagaNavigation.tituloVaga} </Text>
 
                                 </View>
@@ -125,8 +128,11 @@ export default function Home({ navigation = useNavigation() }) {
                                         {/* <Text style={styles.title}>Descrição</Text> */}
 
                                         {/* <Text style={{ marginVertical: 10}}>{item.idVagaNavigation.idCandidatoNavigation.focoCarreira}</Text> */}
-                                        <Text style={{ marginVertical: 10, marginTop: 20 }}>Full Stack</Text>
-                                        <Text style={{ marginVertical: 10 }}>Estágio</Text>
+                                <Text style={{ marginVertical: 10, marginTop: 20 }}>Tempo Exp: {item.idVagaNavigation.tempoExp}</Text>
+                                        <Text style={{ marginVertical: 10 }}>{
+                                            !item.idVagaNavigation.tipoContrato && 'Estágio' ||
+                                            item.idVagaNavigation.tipoContrato && 'Jovem Aprendiz'}
+                                        </Text>
                                         <Text style={{ marginVertical: 10 }}>{item.idVagaNavigation.habNecessaria}</Text>
                                     </View>
 
@@ -143,12 +149,15 @@ export default function Home({ navigation = useNavigation() }) {
                                             flexDirection: 'row',
                                         }}> */}
                                         {/* <Image style={{ width: 20, height: 20, borderRadius: 1000 }} source={require('../../assets/images/SpectroVagas1.png')} /> */}
-                                        <Text style={{ marginVertical: 10, marginTop: 20 }}>R$ 5000,00</Text>
+                                        <Text style={{ marginVertical: 10, marginTop: 20 }}>{item.idVagaNavigation.valorSalario &&
+                                            'R$' + item.idVagaNavigation.valorSalario || "Valor à Negociar"}</Text>
                                         {/* </View> */}
 
 
-                                        <Text style={{ marginVertical: 10 }}>Júnior</Text>
-                                        <Text style={{ marginVertical: 10 }}>Trabalho Presencial</Text>
+                                        <Text style={{ marginVertical: 10 }}>{item.idVagaNavigation.expertiseVaga} </Text>
+                                        <Text style={{ marginVertical: 10 }}>{
+                                            !item.idVagaNavigation.trabalhoRemoto && 'Trabalho Presencial' ||
+                                            item.idVagaNavigation.trabalhoRemoto && 'Trabalho Remoto'}</Text>
 
                                     </View>
                                 </View>

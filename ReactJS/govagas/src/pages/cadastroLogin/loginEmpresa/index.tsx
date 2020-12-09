@@ -14,7 +14,7 @@ function LoginEmpresa() {
 
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [dataNascimento, setDataNascimento] = useState('');
+  const [cnpj, setCnpj] = useState('');
   const [telefone, setTelefone] = useState('');
 
 
@@ -48,13 +48,13 @@ function LoginEmpresa() {
     const cadastrarCom = {
       email: email,
       senha: senha,
-      dataNascimento: dataNascimento,
+      cnpj: cnpj,
       telefone: telefone
 
     }
     localStorage.setItem('email-cadastro', email)
     localStorage.setItem('senha-cadastro', senha)
-    localStorage.setItem('dataNascimento-cadastro', dataNascimento)
+    localStorage.setItem('cnpj-cadastro', cnpj)
     localStorage.setItem('telefone-cadastro', telefone)
     history.push('/cadastroEmpresa')
   }
@@ -114,10 +114,10 @@ function LoginEmpresa() {
           <div className="login">
             <ul className="nav nav-tabs" id="myTab" role="tablist">
               <li className="nav-item">
-                <a className="nav-link" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Login</a>
+                <a className="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Login</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Cadastrar-se</a>
+                <a className="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Cadastrar-se</a>
               </li>
             </ul>
             <div className="tab-content" id="nav-tabContent">
@@ -171,7 +171,7 @@ function LoginEmpresa() {
                         <tr />
                       </div>
                       <div className="login-inputs1">
-                        <Input label="" type="text" name="input22" placeholder="CNPJ" minLength={8} maxLength={100} value={dataNascimento} onChange={a => setDataNascimento(a.target.value)} />
+                        <Input label="" type="text" name="input22" placeholder="CNPJ" minLength={8} maxLength={100} value={cnpj} onChange={a => setCnpj(a.target.value)} />
                         <tr />
                       </div>
                       <div className="login-inputs1">

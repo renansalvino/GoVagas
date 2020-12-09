@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../etapa02/style.css';
 import { Link } from 'react-router-dom';
 import Footer from '../../../../components/footer/index';
@@ -7,8 +7,70 @@ import Button from '../../../../components/button/index';
 import Input from '../../../../components/input/index';
 import '../../../../components/barraProgresso/style.css';
 function CadastroEmpresaDois() {
-
     
+    const [anexarLogo, setAnexarLogo] = useState('')
+    const [cargoArea, setCargoArea] = useState('')
+    const [nomeEmpresa, setNomeEmpresa] = useState('')
+    const [ramoEmpresa, setRamoEmpresa] = useState('')
+    const [descricao, setDescricao] = useState('')
+    const [localizacaoEmpresa, setLocalizacaoEmpresa] = useState('')
+    const [nome, setNome] = useState('')
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const [cnpj, setCnpj] = useState('');
+    const [telefone, setTelefone] = useState('');
+    const [dataNascimento, setDataNascimento] = useState('')
+    const [webSite, setWebSite] = useState('')
+    const [encontrouSenai, setEncontrouSenai] = useState('')
+
+    const Post = () => {
+
+        const form = {
+            // anexarLogo: localStorage.getItem('logo-cadastro'),
+            nomeEmpresa: localStorage.getItem('nome-cadastro'),
+            ramoEmpresa: localStorage.getItem('ramo-cadastro'),
+            webSite: localStorage.getItem('site-cadastro'),
+            localizacaoEmpresa: localStorage.getItem('local-cadastro'),
+            descricaoEmpresa: localStorage.getItem('descricao-cadastro'),
+            cnpj: localStorage.getItem('cnpj-cadastro'),
+            cargoArea: cargoArea,
+            encontrouSenai: encontrouSenai,
+            idUsuarioNavigation: {
+                nome: nome,
+                dataNascimento: dataNascimento,
+                email: localStorage.getItem('email-cadastro'),
+                senha: localStorage.getItem('senha-cadastro'),
+                telefone: localStorage.getItem('telefone-cadastro'),
+            }
+        }
+        console.log(form)
+        fetch('https://localhost:5001/api/Empresa', {
+            method: 'POST',
+            body: JSON.stringify(form),
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+            .then(() => {
+                alert('Empresa Cadastrada com Sucesso!');
+                // setIdUsuario(0);
+                // setIdCandidato(0);
+                setAnexarLogo('')
+                setNomeEmpresa('')
+                setRamoEmpresa ('')
+                setDescricao ('')
+                setLocalizacaoEmpresa('')
+                setNome('')
+                setEmail('')
+                setSenha('')
+                setCnpj('')
+                setTelefone('')
+                setCargoArea ('')
+                setWebSite('')
+            })
+            .catch(err => console.error(err));
+
+    }
 
 
     return (
@@ -37,7 +99,46 @@ function CadastroEmpresaDois() {
                     <div className="cadastro-form">
                         <fieldset>
                             <main>
-                                <form>
+                                <p>Sobre a Empresa</p>
+                                <form onSubmit={event => {
+                                    event.preventDefault();
+                                    Post();
+                                }}>
+                                    <div className="cadastro">
+                                        <div className="grupo">
+                                            <div className="form-group">
+                                                <Input type="text" name="input2" label="Nome completo:" placeholder="Nome do Responsável pela Conta" required value={nome} onChange={a => setNome(a.target.value)} />
+                                            </div>
+                                            <div className="form-group">
+                                                <Input label="Data Nascimento" type="date" name="input2" placeholder="Data Nascimento" minLength={8} maxLength={100} value={dataNascimento} onChange={a => setDataNascimento(a.target.value)} />
+                                            </div>
+
+                                        </div>
+
+                                        <div className="grupo">
+                                            <div className="form-group">
+                                                <Input type="text" name="input2" label="Cargo do Responsável:" required placeholder="Gestor de Recursos Humanos" value={cargoArea} onChange={a => setCargoArea(a.target.value)} />
+                                            </div>
+                                            <div className="form-group">
+                                                    <label htmlFor="">Como conheceu o Senai?</label>
+                                                    <select id="input2" placeholder="Selecionar:" required value={encontrouSenai} onChange={a => setEncontrouSenai(a.target.value)}>
+                                                        <option>Escolher:</option>
+                                                        <option>Panfletos</option>
+                                                        <option>Televisão</option>
+                                                        <option>Anúncios da Internet</option>
+                                                        <option>Redes Sociais</option>
+                                                        <option>Rádio</option>
+                                                        <option>Recomendação de Alguém</option>
+                                                    </select>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <div className="btn-proximo">
+                                        <Button onClick="" name="btn1" value="Próximo" />
+                                    </div>
+
+                                </form>
+                                {/* <form>
                                     <p>Sobre</p>
                                     <div className="cadastro">
                                         <form>
@@ -105,7 +206,7 @@ function CadastroEmpresaDois() {
                                         </div>
 
                                     </div>
-                                </form>
+                                </form> */}
                             </main>
                         </fieldset>
                     </div>

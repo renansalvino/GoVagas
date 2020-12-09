@@ -8,10 +8,13 @@ import Menu from '../../components/hamburguerzinho';
 
 const Stack = createStackNavigator();
 
-export default function VisualizarVaga5({ navigation = useNavigation() }) {
+export default function VisualizarVaga5({  }) {
+
+  const navigation = useNavigation()
+
   return (
     <ScrollView>
-      <Menu navigation={navigation} />
+      {/* <Menu navigation={navigation} /> */}
 
       <View style={styles.container}>
         {/* <View style={styles.header}>

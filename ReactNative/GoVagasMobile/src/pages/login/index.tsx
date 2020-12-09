@@ -20,6 +20,7 @@ export default function Login() {
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
+    
 
     // const Redirect = () => {
     //     const token = AsyncStorage.getItem('tokengovagas')
@@ -52,7 +53,7 @@ export default function Login() {
         SignIn(form);
     };
 
-    // fetch('https://localhost:5001/api/Login', {
+    // fetch('http://192.168.15.99:5000/api/Login', {
     //     method: 'POST',
     //     body: JSON.stringify(form),
     //     headers: {

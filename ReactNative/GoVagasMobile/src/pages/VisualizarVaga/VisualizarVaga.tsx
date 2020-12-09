@@ -11,12 +11,16 @@ import Menu from '../../components/hamburguerzinho';
 
 const Stack = createStackNavigator();
 
-export default function VisualizarVaga({ navigation = useNavigation() }) {
+export default function VisualizarVaga({ }) {
+
+
 
   const [idInscricao, setIdInscricao] = useState(0);
-  const [inscricao, setInscricao] = useState('');
+  const [vaga, setVagas] = useState('');
 
-  const [inscricaos, setInscricaos] = useState([]);
+  const [vagas, setInscricaos] = useState([]);
+
+  const navigation = useNavigation()
 
   React.useEffect(() => {
     GetTokenUser().then(id => {
@@ -31,7 +35,7 @@ export default function VisualizarVaga({ navigation = useNavigation() }) {
 
   const visualizarInscricoesPorId = (id: number) => {
 
-    fetch('https://localhost:5001/api/Inscricao/Candidato/' + id, {
+    fetch('http://192.168.15.99:5000/api/Vaga/Vaga/' + id, {
       method: 'GET',
       headers: {
         authorization: 'Bearer ' + AsyncStorage.getItem('tokengovagas')
@@ -40,39 +44,20 @@ export default function VisualizarVaga({ navigation = useNavigation() }) {
       .then(resp => resp.json())
       .then(dados => {
         setInscricaos(dados);
-        console.log(inscricaos);
+        console.log(vagas);
       })
       .catch(err => console.error(err));
   }
 
   return (
     <ScrollView>
-      <Menu navigation={navigation} />
       <View style={styles.container}>
-        {/* <View style={styles.header}>
-          <Image
-            style={styles.img_logo}
-            source={require('../../assets/images/logoGO.png')} />
-          <Image
-            style={styles.img_menu}
-            source={require('../../assets/images/Botao_Menu.png')} />
-        </View> */}
         <Text style={styles.text_Vagas}>Vagas publicadas</Text>
         <View style={styles.main_Visualizar_Vaga1}>
 
-        <Text style={{ backgroundColor: '#EEEEEE' }}>
-            {/* <View style={{
-              flex: 1,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
-              <Text style={{
-                fontSize: 30, marginTop: 30, marginLeft: 115, marginBottom: 30,
-              }}>Candidaturas</Text>
-            </View> */}
-
+          <Text style={{ backgroundColor: '#EEEEEE' }}>
             {
-              inscricaos.map((item: any) => {
+              vagas.map((item: any) => {
                 return (
                   <View style={{
                     marginHorizontal: 50,
@@ -85,8 +70,8 @@ export default function VisualizarVaga({ navigation = useNavigation() }) {
                     <View style={{
                       flex: 1, alignItems: 'center'
                     }}>
-                      <Text style={{ marginVertical: 1, fontSize: 30, fontWeight: 'bold' }}>Avanade</Text>
-                      <Text style={{ marginVertical: 10, fontSize: 20, }}> {item.idVagaNavigation.tituloVaga} </Text>
+                      <Text style={{ marginVertical: 1, fontSize: 30, fontWeight: 'bold', textAlign: 'center' }}>{item.idEmpresaNavigation.nomeEmpresa}</Text>
+                      <Text style={{ marginVertical: 10, fontSize: 20, }}> {item.tituloVaga} </Text>
 
                     </View>
                     <View style={{
@@ -101,14 +86,12 @@ export default function VisualizarVaga({ navigation = useNavigation() }) {
                         justifyContent: 'space-between'
 
                       }}>
-                        {/* <View style={{
-                                    }}></View> */}
-                        {/* <Text style={styles.title}>Descrição</Text> */}
-
-                        {/* <Text style={{ marginVertical: 10}}>{item.idVagaNavigation.idCandidatoNavigation.focoCarreira}</Text> */}
-                        <Text style={{ marginVertical: 10, marginTop: 20 }}>Full Stack</Text>
-                        <Text style={{ marginVertical: 10 }}>Estágio</Text>
-                        <Text style={{ marginVertical: 10 }}>{item.idVagaNavigation.habNecessaria}</Text>
+                        <Text style={{ marginVertical: 10, marginTop: 20 }}>Tempo Exp: {item.tempoExp}</Text>
+                        <Text style={{ marginVertical: 10 }}>{
+                          !item.tipoContrato && 'Estágio' ||
+                          item.tipoContrato && 'Jovem Aprendiz'}
+                        </Text>
+                        <Text style={{ marginVertical: 10 }}>{item.habNecessaria}</Text>
                       </View>
 
                       <View style={{
@@ -117,19 +100,13 @@ export default function VisualizarVaga({ navigation = useNavigation() }) {
                         flexDirection: 'column',
                         justifyContent: 'space-between'
                       }}>
-                        {/* <Text style={{ marginVertical: 10}}>{item.idVagaNavigation.descAtivFuncoes}</Text> */}
-                        {/* <Text style={styles.title}>Requisitos</Text> */}
-                        {/* <View style={{
-                                            flex: 1,
-                                            flexDirection: 'row',
-                                        }}> */}
-                        {/* <Image style={{ width: 20, height: 20, borderRadius: 1000 }} source={require('../../assets/images/SpectroVagas1.png')} /> */}
-                        <Text style={{ marginVertical: 10, marginTop: 20 }}>R$ 5000,00</Text>
-                        {/* </View> */}
+                        <Text style={{ marginVertical: 10, marginTop: 20 }}>{item.valorSalario &&
+                          'R$' + item.valorSalario || "Valor à Negociar"}</Text>
 
-
-                        <Text style={{ marginVertical: 10 }}>Júnior</Text>
-                        <Text style={{ marginVertical: 10 }}>Trabalho Presencial</Text>
+                        <Text style={{ marginVertical: 10 }}>{item.expertiseVaga} </Text>
+                        <Text style={{ marginVertical: 10 }}>{
+                          !item.trabalhoRemoto && 'Trabalho Presencial' ||
+                          item.trabalhoRemoto && 'Trabalho Remoto'}</Text>
 
                       </View>
                     </View>
@@ -139,7 +116,7 @@ export default function VisualizarVaga({ navigation = useNavigation() }) {
                 );
               })}
           </Text>
-          <View style={{
+          {/* <View style={{
             marginHorizontal: 50,
             marginVertical: 30,
             backgroundColor: 'white',
@@ -166,11 +143,6 @@ export default function VisualizarVaga({ navigation = useNavigation() }) {
                 justifyContent: 'space-between'
 
               }}>
-                {/* <View style={{
-                                    }}></View> */}
-                {/* <Text style={styles.title}>Descrição</Text> */}
-
-                {/* <Text style={{ marginVertical: 10}}>{item.idVagaNavigation.idCandidatoNavigation.focoCarreira}</Text> */}
                 <Text style={{ marginVertical: 10, marginTop: 20 }}>Full Stack</Text>
                 <Text style={{ marginVertical: 10 }}>Estágio</Text>
                 <Text style={{ marginVertical: 10 }}>Python, C#, Javascript</Text>
@@ -182,17 +154,7 @@ export default function VisualizarVaga({ navigation = useNavigation() }) {
                 flexDirection: 'column',
                 justifyContent: 'space-between'
               }}>
-                {/* <Text style={{ marginVertical: 10}}>{item.idVagaNavigation.descAtivFuncoes}</Text> */}
-                {/* <Text style={styles.title}>Requisitos</Text> */}
-                {/* <View style={{
-                                            flex: 1,
-                                            flexDirection: 'row',
-                                        }}> */}
-                {/* <Image style={{ width: 20, height: 20, borderRadius: 1000 }} source={require('../../assets/images/SpectroVagas1.png')} /> */}
                 <Text style={{ marginVertical: 10, marginTop: 20 }}>R$ 5000,00</Text>
-                {/* </View> */}
-
-
                 <Text style={{ marginVertical: 10 }}>Júnior</Text>
                 <Text style={{ marginVertical: 10 }}>Trabalho Remoto</Text>
 
@@ -236,7 +198,7 @@ export default function VisualizarVaga({ navigation = useNavigation() }) {
               source={require('../../assets/images/SpectroVagas1.png')}
             />
             <Text style={styles.text_box3}> -Programador CSharp{"\n"} -Pleno {"\n"}-R$ 3.000,00</Text>
-          </View>
+          </View> */}
           <Button
             color="#DB324A"
             title="Visualizar Candidatos"

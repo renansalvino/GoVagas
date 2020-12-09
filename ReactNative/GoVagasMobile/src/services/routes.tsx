@@ -10,14 +10,19 @@ import VisualizarVaga3 from '../pages/VisualizarVaga/VisualizarVaga3';
 import VisualizarVaga4 from '../pages/VisualizarVaga/VisualizarVaga4';
 import VisualizarVaga5 from '../pages/VisualizarVaga/VisualizarVaga5';
 import AuthContext from '../context/auth';
+import { Entypo } from '@expo/vector-icons';
 import RedirecionarTeste from '../pages/redirecionarTeste';
 // import HomeEmpresa from '../pages/homeEmpresa';
 import { ActivityIndicator, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 function Routes() {
   const Stack = createStackNavigator();
   const Drawer = createDrawerNavigator();
+
+
 
   const { logged, IsAdmin, isLoading, tokenDecoded, IsComum } = useContext(AuthContext);
 
@@ -47,21 +52,6 @@ function Routes() {
     return (
       <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen
-          name="Home Empresa"
-          component={Home}
-        />
-        <Drawer.Screen
-          name="Sair"
-          component={Login}
-        />
-      </Drawer.Navigator>
-    );
-  }
-
-  const CandidatoMenu = () => {
-    return (
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen
           name="Home"
           component={Home}
         />
@@ -72,16 +62,40 @@ function Routes() {
       </Drawer.Navigator>
     );
   }
-  const Empresa = () => {
+
+  const EmpresaMenu = () => {
+    return (
+      <Drawer.Navigator initialRouteName="VisualizarVaga">
+        <Drawer.Screen
+          name="Vagas Publicadas"
+          component={VagasEmprega}
+        />
+        <Drawer.Screen
+          name="Sair"
+          component={Login}
+        />
+      </Drawer.Navigator>
+    );
+  }
+  const VagasEmprega = () => {
+    
+    const options={
+      headerStyle: { backgroundColor: '#DB324A' }, headerTintColor: '#fff',
+      headerLeft: ({navigation }: any) => (
+        <TouchableOpacity onPress={() => navigation.openDrawer()}>
+          <Entypo name="menu" style={{ marginLeft: 25 }} size={46} color='white' />
+        </TouchableOpacity>
+      )
+    }
     return (
       <Stack.Navigator>
-      <Stack.Screen name="VizualizarVaga" component={VisualizarVaga} /> 
-    <Stack.Screen name="VisualizarVaga2" component={VisualizarVaga2} /> 
-    <Stack.Screen name="VisualizarVaga3" component={VisualizarVaga3} /> 
-    <Stack.Screen name="VisualizarVaga4" component={VisualizarVaga4} /> 
-    <Stack.Screen name="VisualizarVaga5" component={VisualizarVaga5} /> 
-    <Stack.Screen name="VisualizarCandidatos" component={VisualizarCandidatos} />
-    </Stack.Navigator>
+        <Stack.Screen name="VizualizarVaga" component={VisualizarVaga} options={options}/>
+        <Stack.Screen name="VisualizarVaga2" component={VisualizarVaga2} options={options}/>
+        <Stack.Screen name="VisualizarVaga3" component={VisualizarVaga3} options={options}/>
+        <Stack.Screen name="VisualizarVaga4" component={VisualizarVaga4} options={options}/>
+        <Stack.Screen name="VisualizarVaga5" component={VisualizarVaga5} options={options}/>
+        <Stack.Screen name="VisualizarCandidatos" component={VisualizarCandidatos} options={options}/>
+      </Stack.Navigator>
     );
   }
 
@@ -98,7 +112,7 @@ function Routes() {
 
         (<Stack.Screen
           name="Empresa"
-          component={Empresa}
+          component={EmpresaMenu}
           options={{
             headerShown: false
           }}

@@ -5,7 +5,7 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator, StackNavigationProp } from '@react-navigation/stack';
 // import ImgSenaiGoVagas from '../../assets/images/senaiGoVagas.png';
 import { Input } from 'react-native-elements';
-import Cadastro from '../cadastro/index';
+// import Cadastro from '../cadastro/index';
 import Menu from '../../components/hamburguerzinho/index';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
