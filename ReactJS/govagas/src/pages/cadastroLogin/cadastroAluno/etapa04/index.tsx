@@ -13,10 +13,8 @@ import '../../../../components/barraProgresso/style.css';
 function CadastroCandidatoQuatro() {
 
     // const [idTipoUsuario, setIdTipoUsuario] = useState(3);
-    const [tamanhoempresa, setTamanhoempresa] = useState('');
     const [fococarreira, setFococarreira] = useState('');
     const [pretencaosalarial, setPretencaosalarial] = useState('');
-    const [tipocontrato, setTipocontrato] = useState('');
     const [trabalhoremoto, setTrabalhoremoto] = useState('');
     const [deficienciafisica, setDeficienciafisica] = useState('');
 
@@ -51,11 +49,11 @@ function CadastroCandidatoQuatro() {
             cargoEmpresa: localStorage.getItem('cargoempresa-cadastro'),
             dataInicio: localStorage.getItem('datainicio-cadastro'),
             dataTermino: localStorage.getItem('datatermino-cadastro'),
+            tamanhoEmpresa: localStorage.getItem('tamanhoempresa-cadastro'),
+            tipoContrato: localStorage.getItem('tipocontrato-cadastro'),
             //4
-            tamanhoEmpresa: tamanhoempresa,
             focoCarreira: fococarreira,
             pretensaoSalario: parseFloat(pretencaosalarial),
-            tipoContrato: tipocontrato,
             trabalhoRemoto: trabalhoremoto === 'true' ? true : false,
             deficienciaFisica: deficienciafisica === 'true' ? true : false,
             //estrangeiro
@@ -78,10 +76,10 @@ function CadastroCandidatoQuatro() {
                 'Content-Type': 'application/json',
             }
         })
-        .then(() => {
-            alert('Candidato cadastrado');
-        })
-        .catch(err => console.error(err));
+            .then(() => {
+                alert('Candidato cadastrado');
+            })
+            .catch(err => console.error(err));
     }
 
 
@@ -128,18 +126,10 @@ function CadastroCandidatoQuatro() {
 
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Tamanho da Empresa:" placeholder="Desenvolvedor Front/Back-End /Fullstack" value={tamanhoempresa} onChange={a => setTamanhoempresa(a.target.value)} />
+                                                    <Input type="number" name="input2" label="Pretenção Salarial:" placeholder="5000" value={pretencaosalarial} onChange={a => setPretencaosalarial(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Foco de Carreira:" placeholder="Desenvolvedor Front/Back-End /Fullstack" value={fococarreira} onChange={a => setFococarreira(a.target.value)} />
-                                                </div>
-                                            </div>
-                                            <div className="grupo">
-                                                <div className="form-group">
-                                                    <Input type="text" name="input2" label="Pretenção Salarial:" placeholder="https://www.linkedin.com/NomePerfil" value={pretencaosalarial} onChange={a => setPretencaosalarial(a.target.value)} />
-                                                </div>
-                                                <div className="form-group">
-                                                    <Input type="text" name="input2" label="Tipo de Contrato:" placeholder="https://github.com/NomePerfil" value={tipocontrato} onChange={a => setTipocontrato(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Foco de Carreira:" placeholder="Gestor de RH" value={fococarreira} onChange={a => setFococarreira(a.target.value)} />
                                                 </div>
                                             </div>
                                             <div className="grupo">

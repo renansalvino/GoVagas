@@ -36,3 +36,8 @@
     margin-top: 10px;
     margin-bottom: -5px;
 }
+
+.tabelaAdm button {
+    border: none;
+    border-style: none;
+}

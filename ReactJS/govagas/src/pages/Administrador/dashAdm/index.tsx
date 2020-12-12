@@ -14,12 +14,15 @@ import { useEffect, useState } from 'react';
 
 function DashAdm() {
 
-    const [inscricao, setInscricao] = useState('');
+    const [empresas, setEmpresas] = useState([]);
+    const [candidatos, setCandidatos] = useState([]);
     const [inscricaos, setInscricaos] = useState([]);
 
 
     useEffect(() => {
         ListarCandidatosContratados();
+        ListarCandidatos();
+        ListarEmpresa();
     }, []);
 
     const ListarCandidatosContratados = () => {
@@ -31,7 +34,33 @@ function DashAdm() {
             .then(response => response.json())
             .then(dados => {
                 setInscricaos(dados);
-                console.log('Seus dados ' + inscricao)
+                console.log('Seus dados ' + dados)
+            })
+            .catch(err => console.error(err))
+    }
+
+    const ListarCandidatos = () => {
+
+        fetch("https://localhost:5001/api/Candidato", {
+            // authorization: 'Bearer ' + localStorage.getItem('token-tal')
+            method: 'GET'
+        })
+            .then(response => response.json())
+            .then(dados => {
+                setCandidatos(dados);
+            })
+            .catch(err => console.error(err))
+    }
+
+    const ListarEmpresa = () => {
+
+        fetch("https://localhost:5001/api/Empresa", {
+            // authorization: 'Bearer ' + localStorage.getItem('token-tal')
+            method: 'GET'
+        })
+            .then(response => response.json())
+            .then(dados => {
+                setEmpresas(dados);
             })
             .catch(err => console.error(err))
     }
@@ -59,7 +88,7 @@ function DashAdm() {
                         <div className="dado">
                             <img src={imgIcone} alt="" />
                             <div className="flexDadoTxt">
-                                <h1>25</h1>
+                                <h1>{empresas.length}</h1>
                                 <p>Novas Empresas</p>
                             </div>
                         </div>
@@ -67,7 +96,7 @@ function DashAdm() {
                         <div className="dado">
                             <img src={imgIcone} alt="" />
                             <div className="flexDadoTxt">
-                                <h1>144</h1>
+                                <h1>{candidatos.length}</h1>
                                 <p>Novos Alunos</p>
                             </div>
                         </div>
@@ -75,7 +104,7 @@ function DashAdm() {
                         <div className="dado">
                             <img src={imgIcone} alt="" />
                             <div className="flexDadoTxt">
-                                <h1>13</h1>
+                                <h1>{inscricaos.length}</h1>
                                 <p>Situações Pendentes</p>
                             </div>
                         </div>
@@ -116,13 +145,13 @@ function DashAdm() {
                             <tbody>
                                 {
 
-                                    inscricaos.map((atributo: any) => {
+                                    inscricaos.map((inscricao: any) => {
                                         return (
-                                            <tr key={atributo.idInscricao}>
-                                                <td>{atributo.idCandidatoNavigation.idUsuarioNavigation.nome}</td>
-                                                <td>{atributo.idCandidatoNavigation.tituloPerfil} {}</td>
-                                                <td>{atributo.idVagaNavigation.idEmpresaNavigation.nomeEmpresa}</td>
-                                                <td>{atributo.idVagaNavigation.tipoContrato}</td>
+                                            <tr key={inscricao.idInscricao}>
+                                                <td>{inscricao.idCandidatoNavigation.idUsuarioNavigation.nome}</td>
+                                                <td>{inscricao.idCandidatoNavigation.tituloPerfil} { }</td>
+                                                <td>{inscricao.idVagaNavigation.idEmpresaNavigation.nomeEmpresa}</td>
+                                                <td>{inscricao.idVagaNavigation.tipoContrato}</td>
                                                 <td>Pendente</td>
                                             </tr>
                                         )

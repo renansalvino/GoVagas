@@ -86,6 +86,10 @@
     align-items: center;
 }
 
+#tiutloEndereco {
+    margin-top: 50px;
+}
+
 /* .etapa01candidato .foto {
     height: 150px;
     width: 150px;

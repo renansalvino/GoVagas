@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './pages/home/index'
 import DashAdm from './pages/Administrador/dashAdm/index'
 import TabelaCandidatos from './pages/Administrador/tabelaCandidatos/index'
+import Documentacao from './pages/Administrador/documentacao/index'
 import CadastroCandidatoUm from './pages/cadastroLogin/cadastroAluno/etapa01';
 import CadastroCandidatoDois from './pages/cadastroLogin/cadastroAluno/etapa02';
 import CadastroCandidatoTres from './pages/cadastroLogin/cadastroAluno/etapa03';
@@ -34,6 +35,7 @@ function Routers() {
 			<Route path='/' exact component={Home}/>
 			<Route path='/dashadm' exact component={DashAdm}/>
 			<Route path='/tabelacandidatos' exact component={TabelaCandidatos}/>
+			<Route path='/documentacao' exact component={Documentacao}/>
 			<Route path='/cadastroAluno' component={CadastroCandidatoUm}/>
 			<Route path='/cadastroAluno2' component={CadastroCandidatoDois}/>
 			<Route path='/cadastroAluno3' component={CadastroCandidatoTres}/>
@@ -54,7 +56,8 @@ function Routers() {
 			<Route path='/dashboard' component={Dashboard}/>
 			<Route path='/candidatar' component={Candidatar}/>
 			<Route path='/listarvagas' component={Listarvagas}/>
-			<Route path='/visualizarvaga' component={Visualizarvaga}/>
+			{/* <Route path='/visualizarvaga' component={Visualizarvaga}/> */}
+			<Route path='/visualizarvaga/:id' component={Visualizarvaga}/>
 			<Route path="/teste" component={Upload}/>
 		</BrowserRouter>
 	);

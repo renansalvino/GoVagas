@@ -18,9 +18,9 @@ import imgofficeblock from '../../../assets/images/candidato/office-block.svg'
 
 import { Link, useHistory } from 'react-router-dom';
 
-const david : CSSProperties={
-    width:'1324px',
-    marginTop:'20px',
+const david: CSSProperties = {
+    width: '1324px',
+    marginTop: '20px',
 }
 
 function Listarvagas() {
@@ -37,7 +37,7 @@ function Listarvagas() {
 
 
     const ListarVagas = () => {
-        fetch('http://localhost:5000/api/Vaga', {
+        fetch('https://localhost:5001/api/Vaga', {
             method: 'GET',
             headers: {
 
@@ -53,24 +53,6 @@ function Listarvagas() {
     }
 
 
-
-    const visualizarVaga = (id: number) => {
-
-        fetch('http://localhost:5000/api/Vaga/' + id, {
-            method: 'GET',
-            headers: {
-                authorization: 'Bearer ' + localStorage.getItem('token-govagas')
-            }
-        })
-            .then(resp => resp.json())
-            .then(dados => {
-                setIdVaga(dados.idVaga);
-                console.log(id);
-                // localStorage.setItem( 'IdVaga', String(idVaga))
-                history.push(`/visualizarvaga?id=${id}`)
-            })
-            .catch(err => console.error(err));
-    }
 
 
     // const [inscricaos, setinscricaos] = useState([]); 
@@ -113,7 +95,7 @@ function Listarvagas() {
                             {
                                 vagas.map((item: any) => {
                                     return <div className='CardVagas'>
-                                        <button className= "Button-Visualizar"onClick={() => visualizarVaga(item.idVaga)}>
+                                        <button className="Button-Visualizar" onClick={() => history.push(`visualizarvaga/${item.idVaga}`)}>
 
 
                                             <div className="Cartao">
@@ -193,9 +175,9 @@ function Listarvagas() {
                                 })
                             }
 
-            <div style={david}>
+                            <div style={david}>
 
-            </div>
+                            </div>
                         </div>
 
 

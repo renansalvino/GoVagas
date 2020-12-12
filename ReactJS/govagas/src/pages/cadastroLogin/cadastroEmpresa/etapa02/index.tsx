@@ -99,7 +99,7 @@ function CadastroEmpresaDois() {
                     <div className="cadastro-form">
                         <fieldset>
                             <main>
-                                <p>Sobre a Empresa</p>
+                                <p>Sobre o Resposável</p>
                                 <form onSubmit={event => {
                                     event.preventDefault();
                                     Post();
@@ -123,10 +123,11 @@ function CadastroEmpresaDois() {
                                                     <label htmlFor="">Como conheceu o Senai?</label>
                                                     <select id="input2" placeholder="Selecionar:" required value={encontrouSenai} onChange={a => setEncontrouSenai(a.target.value)}>
                                                         <option>Escolher:</option>
-                                                        <option>Panfletos</option>
-                                                        <option>Televisão</option>
                                                         <option>Anúncios da Internet</option>
+                                                        <option>Televisão</option>
                                                         <option>Redes Sociais</option>
+                                                        <option>Parceria</option>
+                                                        <option>Panfletos</option>
                                                         <option>Rádio</option>
                                                         <option>Recomendação de Alguém</option>
                                                     </select>

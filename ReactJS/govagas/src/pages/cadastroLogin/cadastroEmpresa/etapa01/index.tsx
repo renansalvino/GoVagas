@@ -89,7 +89,7 @@ function CadastroEmpresa() {
                                         </div>
                                         <div className="grupo">
                                             <div className="form-group">
-                                                <Input type="text" name="input2" label="Nome Empresa:" required placeholder="Nome da Empresa LTDA" maxLength={11} value={nomeEmpresa} onChange={a => setNomeEmpresa(a.target.value)} />
+                                                <Input type="text" name="input2" label="Nome Empresa:" required placeholder="Nome da Empresa LTDA" value={nomeEmpresa} onChange={a => setNomeEmpresa(a.target.value)} />
                                             </div>
                                             <div className="form-group">
                                                 <Input type="text" name="input2" label="Ramo da Empresa:" required placeholder="Sociedade Empresária Limitada" value={ramoEmpresa} onChange={a => setRamoEmpresa(a.target.value)} />

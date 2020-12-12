@@ -97,19 +97,8 @@ function CadastroCandidatoDois() {
 
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Título de Perfil:" placeholder="Desenvolvedor Front-End ReactJs." value={tituloperfil} onChange={a => setTituloperfil(a.target.value)} />
+                                                    <Input type="text" name="input1" label="Título de Perfil:" placeholder="Desenvolvedor Front-End ReactJs." value={tituloperfil} onChange={a => setTituloperfil(a.target.value)} />
                                                 </div>
-                                                <div className="form-group">
-                                                    <label htmlFor="">Nível de Inglês:</label>
-                                                    <select id="input2" placeholder="Escolher..." value={nivelingles} onChange={a => setNivelingles(a.target.value)}>
-                                                    <option>Escolher:</option>
-                                                        <option>Básico</option>
-                                                        <option>Intermediário</option>
-                                                        <option>Avançado</option>
-                                                        <option>Avançado</option>
-                                                    </select>
-                                                </div>
-
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
@@ -120,13 +109,26 @@ function CadastroCandidatoDois() {
                                                 </div>
                                             </div>
                                             <div className="grupo">
-                                                <div className="form-group">
-                                                    <Input type="text" name="input2" label="Descrição:" placeholder="Ex: 000.000.000.00" value={descricao} onChange={a => setDescricao(a.target.value)} />
+                                            <div className="form-group">
+                                                    <label htmlFor="">Nível de Inglês:</label>
+                                                    <select id="input2" placeholder="Escolher..." value={nivelingles} onChange={a => setNivelingles(a.target.value)}>
+                                                    <option>Escolher:</option>
+                                                        <option>Básico</option>
+                                                        <option>Intermediário</option>
+                                                        <option>Avançado</option>
+                                                        <option>Avançado</option>
+                                                    </select>
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Currículo:" placeholder="Cidade" value={curriculo} onChange={a => setCurriculo(a.target.value)} />
+                                                    <Input type="file" name="input2" label="Currículo:" placeholder="Cidade" value={curriculo} onChange={a => setCurriculo(a.target.value)} />
                                                 </div>
                                             </div>
+                                            <div className="grupo">
+                                            <div className="form-group">
+                                                <label className="Label">Descrição do Candidato:</label><br />
+                                                <textarea id="input44" placeholder="Sobre o nosso propósito, valores, princípios e boas práticas são o resultado de mais de seis anos de experimentação e melhorias contínuas em todos os aspectos profissionais e pessoais." value={descricao} onChange={a => setDescricao(a.target.value)}></textarea>
+                                            </div>
+                                        </div>
                                         </div>
                                     </div>
 

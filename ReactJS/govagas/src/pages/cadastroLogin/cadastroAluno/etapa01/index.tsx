@@ -28,7 +28,14 @@ function CadastroCandidatoUm(this: any) { //<-//
 
     const [sexo, setSexo] = useState('')
     const [cpf, setCpf] = useState('')
-    const [cidade, setCidade] = useState('')
+    const [rua, setRua] = useState('')
+    const [bairro, setBairro] = useState('')
+    const [numero, setNumero] = useState('')
+    const [complemento, setComplemento] = useState('')
+    const [municipio, setMunicipio] = useState('')
+    const [estado, setEstado] = useState('')
+    const [cep, setCep] = useState('')
+    // const [cidade, setCidade] = useState('')
     const [nummatricula, setNummatricula] = useState('')
     const [datamatricula, setDatamatricula] = useState('')
     const [nomecurso, setNomecurso] = useState('')
@@ -37,15 +44,16 @@ function CadastroCandidatoUm(this: any) { //<-//
     const [turma, setTurma] = useState('')
     const [turno, setTurno] = useState('')
     const [termo, setTermo] = useState('')
-
     const [nome, setNome] = useState('')
+
+    const FraseEndereco = rua + ', n°' + numero + ' - ' + bairro + ', ' + municipio + ' - ' + estado + ', ' + cep + '';
 
     const Post = () => {
         const form = {
             nome: nome,
             sexo: sexo,
             cpf: cpf,
-            cidade: cidade,
+            cidade: FraseEndereco,
             numMatricula: nummatricula,
             dataMatricula: datamatricula,
             nomeCurso: nomecurso,
@@ -58,7 +66,7 @@ function CadastroCandidatoUm(this: any) { //<-//
         localStorage.setItem('nome-cadastro', nome)
         localStorage.setItem('sexo-cadastro', sexo)
         localStorage.setItem('cpf-cadastro', cpf)
-        localStorage.setItem('cidade-cadastro', cidade)
+        localStorage.setItem('cidade-cadastro', FraseEndereco)
         localStorage.setItem('nummatricula-cadastro', nummatricula)
         localStorage.setItem('datamatricula-cadastro', datamatricula)
         localStorage.setItem('nomecurso-cadastro', nomecurso)
@@ -128,7 +136,7 @@ function CadastroCandidatoUm(this: any) { //<-//
                                                 <div id="foto" className="foto">
                                                     {/* <div className="imagem">
                                                         <div className="texto"> */}
-                                                            {/* {
+                                                    {/* {
                                                                 class Upload extends React.Component<{}, { file: any }> {
                                                                     constructor(props:any){
                                                                       super(props)
@@ -152,11 +160,11 @@ function CadastroCandidatoUm(this: any) { //<-//
                                                                     }
                                                                   } 
                                                             } */}
-                                                            {Teste}
-                                                            <Teste></Teste>
-                                                            {/* <input className="input_anexar" id="imgInp" name="imgInp"  onChange={readURL} type='file'></input>
+                                                    {Teste}
+                                                    <Teste></Teste>
+                                                    {/* <input className="input_anexar" id="imgInp" name="imgInp"  onChange={readURL} type='file'></input>
                                                             <img id="blah" src="#" alt="your image" /> */}
-                                                        {/* </div>
+                                                    {/* </div>
                                                     </div> */}
                                                 </div>
                                             </div>
@@ -177,10 +185,10 @@ function CadastroCandidatoUm(this: any) { //<-//
 
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="number" name="input2" label="CPF:" required placeholder="000.000.000.00" maxLength={11} value={cpf} onChange={a => setCpf(a.target.value)} />
+                                                    <Input type="number" name="input2" label="CPF:" required placeholder="___.___.___.__" maxLength={11} value={cpf} onChange={a => setCpf(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Endereço:" required placeholder="Rua Alameda Barão de Limeira n75, SP" value={cidade} onChange={a => setCidade(a.target.value)} />
+                                                    <Input type="text" name="input2" label="CEP:" required placeholder="03122-015" value={cep} onChange={a => setCep(a.target.value)} />
                                                 </div>
                                             </div>
                                             <div className="grupo">
@@ -232,9 +240,68 @@ function CadastroCandidatoUm(this: any) { //<-//
 
 
                                         </div>
-                                            <div className="btn-proximo">
-                                                <Button onClick="" name="btn1" value="Próximo" />
+
+                                        <p id="tiutloEndereco">Endereço</p>
+
+                                        <div className="cadastro">
+                                            <div className="grupo">
+                                                <div className="form-group">
+                                                    <Input type="text" name="input2" label="Nome da Rua:" required placeholder="Rua Alameda Barão de Limeira" value={rua} onChange={a => setRua(a.target.value)} />
+                                                </div>
+                                                <div className="form-group">
+                                                    <Input type="text" name="input2" label="Número:" required placeholder="75" value={numero} onChange={a => setNumero(a.target.value)} />
+                                                </div>
                                             </div>
+                                            <div className="grupo">
+                                                <div className="form-group">
+                                                    <Input type="text" name="input2" label="Complemento" required placeholder="Apto 1" value={complemento} onChange={a => setComplemento(a.target.value)} />
+                                                </div>
+                                                <div className="form-group">
+                                                    <Input type="text" name="input2" label="Bairro:" required placeholder="Santa Cecília" value={bairro} onChange={a => setBairro(a.target.value)} />
+                                                </div>
+                                            </div>
+                                            <div className="grupo">
+                                                <div className="form-group">
+                                                    <Input type="text" name="input2" label="Município:" required placeholder="São Paulo" value={municipio} onChange={a => setMunicipio(a.target.value)} />
+                                                </div>
+                                                <div className="form-group">
+                                                    <label htmlFor="">Estado:</label>
+                                                    <select id="input2" placeholder="1o Termo" value={estado} onChange={a => setEstado(a.target.value)}>
+                                                        <option>Escolher:</option>
+                                                        <option value="AC">Acre</option>
+                                                        <option value="AL">Alagoas</option>
+                                                        <option value="AP">Amapá</option>
+                                                        <option value="AM">Amazonas</option>
+                                                        <option value="BA">Bahia</option>
+                                                        <option value="CE">Ceará</option>
+                                                        <option value="DF">Distrito Federal</option>
+                                                        <option value="ES">Espírito Santo</option>
+                                                        <option value="GO">Goiás</option>
+                                                        <option value="MA">Maranhão</option>
+                                                        <option value="MT">Mato Grosso</option>
+                                                        <option value="MS">Mato Grosso do Sul</option>
+                                                        <option value="MG">Minas Gerais</option>
+                                                        <option value="PA">Pará</option>
+                                                        <option value="PB">Paraíba </option>
+                                                        <option value="PR">Paraná</option>
+                                                        <option value="PE">Pernambuco</option>
+                                                        <option value="PI">Piauí</option>
+                                                        <option value="RJ">Rio de Janeiro</option>
+                                                        <option value="RN">Rio Grande do Norte</option>
+                                                        <option value="RS">Rio Grande do Sul</option>
+                                                        <option value="RO">Rondônia</option>
+                                                        <option value="SC">Santa Catarina</option>
+                                                        <option value="SP">São Paulo</option>
+                                                        <option value="SE">Sergipe</option>
+                                                        <option value="TO">Tocantins</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="btn-proximo">
+                                            <Button onClick="" name="btn1" value="Próximo" />
+                                        </div>
 
                                     </form>
                                 </main>
