@@ -161,7 +161,7 @@ function CadastroCandidatoTres() {
                                                 </div>
                                                 <div className="grupo">
                                                     <div className="form-group"> 
-                                                    <label htmlFor="">Tipo de Contrato</label>
+                                                    <label htmlFor="">Porte da Empresa</label>
                                                         <select id="input2" placeholder="" value={tamanhoempresa} onChange={a => setTamanhoempresa(a.target.value)}>
                                                             <option>Seleciona sua opção:</option>
                                                             <option>Startup</option>

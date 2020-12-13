@@ -4,6 +4,7 @@ import '../../../assets/styles/global.css'
 
 import Header from '../../../components/header/index';
 import Footer from '../../../components/footer/index';
+import Button from '../../../components/button/index';
 
 import imgmoney from '../../../assets/images/candidato/money.svg'
 import imgtranslation from '../../../assets/images/candidato/translation.svg'
@@ -21,6 +22,7 @@ import imgpiggybank from '../../../assets/images/candidato/piggy-bank.svg'
 import imgrestaurant from '../../../assets/images/candidato/restaurant.svg'
 import imgshoppingcart from '../../../assets/images/candidato/shopping-cart.svg'
 import imgtrain from '../../../assets/images/candidato/train.svg'
+import { Link } from 'react-router-dom';
 // import { useHistory } from 'react-router-dom';
 
 function PubliVagaTres() {
@@ -552,6 +554,11 @@ function PubliVagaTres() {
                                 </div>
                             </div>
                         </section>
+
+                        <div className="btn-proximo">
+                            <Link to="/cadastroAluno3"> <Button onClick="" name="btn2" value="Voltar" /> </Link>
+                            <Button onClick="" name="btn1" value="SALVAR" />
+                        </div>
                     </form>
                 </div>
             </div>

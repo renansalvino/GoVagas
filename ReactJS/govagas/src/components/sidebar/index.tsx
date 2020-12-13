@@ -7,6 +7,7 @@ import imgIconePalmeira2 from '../../assets/images/palm-tree 1.svg'
 import imgIconePerfil from '../../assets/images/user.svg'
 import imgIconePerfil2 from '../../assets/images/user 1.svg'
 import imgSnoopy from '../../assets/images/snoopy.png'
+import { Link } from 'react-router-dom';
 
 function Sidebar() {
     return (
@@ -23,7 +24,7 @@ function Sidebar() {
                         <p id="funcaoUsuario">Função Usuario</p>
                     </div>
 
-                    <Button onClick="" name="btn1" value="Editar meu perfil" />    
+                    <Button onClick="" name="btn1" value="Editar meu perfil" />
 
                 </div>
 
@@ -34,17 +35,19 @@ function Sidebar() {
                 <div className="containerRotas">
 
                     <div className="rotas">
-                        <div className="rota">
-                            <div className="icon">
-                                <img src={imgIconePalmeira} alt="" />
+                        <Link to="/dashAdm">
+                            <div className="rota">
+                                <div className="icon">
+                                    <img src={imgIconePalmeira} alt="" />
+                                </div>
+                                <li>Dashboard</li>
                             </div>
-                            <li>Rota 1</li>
-                        </div>
+                        </Link>
                         <div className="rota">
                             <div className="icon">
                                 <img src={imgIconePerfil} alt="" />
                             </div>
-                            <li>Rota 2</li>
+                            <Link to="/tabelacandidatos"><li>Tabela Candidatos</li></Link>
                         </div>
                         <div className="rota">
                             <div className="icon">

@@ -94,15 +94,22 @@
   margin-bottom: 0px;
   margin-left: 15px;
 }
+/* .linhaListarVaga #nomeEmpresa {
+  max-width: 350px;
+} */
 
 .colunaEsquerdaListar {
   display: flex;
   flex-direction: column;
+  margin-right: 20px;
 }
 
 .colunaDireitaListar {
   display: flex;
   flex-direction: column;
+  margin-right: 5px;
+  width: 250px;
+
 }
 
 .infoHab {

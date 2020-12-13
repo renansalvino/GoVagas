@@ -17,6 +17,7 @@ function CadastroCandidatoQuatro() {
     const [pretencaosalarial, setPretencaosalarial] = useState('');
     const [trabalhoremoto, setTrabalhoremoto] = useState('');
     const [deficienciafisica, setDeficienciafisica] = useState('');
+    const [idTipoUsuario, setIdTipoUsuario] = useState(3);
 
 
     const Post4 = () => {
@@ -64,7 +65,7 @@ function CadastroCandidatoQuatro() {
                 dataNascimento: localStorage.getItem('dataNascimento-cadastro'),
                 telefone: localStorage.getItem('telefone-cadastro'),
                 // idTipoUsuarioNavigation: {
-                //     idTipoUsuario: idTipoUsuario == 3
+                //     idTipoUsuario: idTipoUsuario
                 //   }
             }
         }

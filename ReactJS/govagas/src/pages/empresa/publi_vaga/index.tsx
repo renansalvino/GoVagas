@@ -84,16 +84,16 @@ function PubliVaga() {
                             Cadastrar();
                         }}>
                             <div className="form-vaga">
-                                <Input type="text" name="input1" label="Titulo da Vaga" value={tituloVaga} onChange={a => setTituloVaga(a.target.value)} />
-                                <Input type="name" name="input1" label="Perfil do desenvolvedor" placeholder="Programador Phyton" value={perfilDev} onChange={a => setPerfilDev(a.target.value)} />
+                                <Input type="text" name="input1" label="Titulo da Vaga" value={perfilDev} onChange={a => setPerfilDev(a.target.value)} />
+                                <Input type="name" name="input1" label="Perfil do desenvolvedor" placeholder="Programador Phyton" value={tituloVaga} onChange={a => setTituloVaga(a.target.value)} />
                                 <div className="align-input">
                                     <div className="align-input2">
                                         <label htmlFor="nivelExp">Nivel de Experiência</label>
                                         <select name="nivelExp" className="default" value={nivelExp} onChange={a => setNivelExp(a.target.value)}>
                                             <option>Seleciona sua opção:</option>
-                                            <option>Junior</option>
-                                            <option>Pleno</option>
-                                            <option>Sênior</option>
+                                            <option>Baixo</option>
+                                            <option>Médio</option>
+                                            <option>Alto</option>
                                         </select>
                                     </div>
                                         <Input type="number" name="inputpersonalizado" label="Dias de contrato" placeholder="366 dias" value={diasContrato} onChange={a => setDiasContrato(a.target.value)} />

@@ -20,7 +20,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 const david: CSSProperties = {
     width: '1324px',
-    marginTop: '20px',
+    marginTop: '80px',
 }
 
 function Listarvagas() {
@@ -41,7 +41,7 @@ function Listarvagas() {
             method: 'GET',
             headers: {
 
-                authorization: 'Bearer ' + localStorage.getItem('token-govagas')
+                authorization: 'Bearer ' + localStorage.getItem('tokengovagas')
             }
         })
             .then(response => response.json())
@@ -114,12 +114,13 @@ function Listarvagas() {
 
                                                             <div className="linhaListarVaga">
                                                                 <img src={imgofficeblock} alt="officeblock" title="officeblock" width="30px" height="30px" />
-                                                                <p>Em busca do primeiro emprego</p>
+                                                                <p id="nomeEmpresa">{item.idEmpresaNavigation.nomeEmpresa} </p>
                                                             </div>
 
                                                             <div className="linhaListarVaga">
                                                                 <img src={imgmoney} alt="Money" title="Money" width="30px" height="30px" />
-                                                                <p>R${item.valorSalario}</p>
+                                                                <p>{item.valorSalario && 'R$' + item.valorSalario
+                                                                    || !item.valorSalario && ' Valor à Negociar'}</p>
                                                             </div>
 
                                                             <div className="linhaListarVaga">
@@ -136,17 +137,18 @@ function Listarvagas() {
 
                                                             <div className="linhaListarVaga">
                                                                 <img src={imgcasestudy} alt="Casestudy" title="Casestudy" width="25px" height="25px" />
-                                                                <p>Full Stack</p>
+                                                                <p>{item.tempoExp} de Experiência</p>
                                                             </div>
 
                                                             <div className="linhaListarVaga">
                                                                 <img src={imgnotes} alt="Notes" title="Notes" width="25px" height="25px" />
-                                                                <p>{item.tipoContrato}</p>
+                                                                <p>{item.tipoContrato && 'Jovem Aprendiz'
+                                                                    || !item.tipoContrato && 'Estágio'}</p>
                                                             </div>
 
                                                             <div className="linhaListarVaga">
                                                                 <img src={imgdiploma} alt="Diploma" title="Diploma" width="25px" height="25px" />
-                                                                <p>Desenvolvimento de Sistema</p>
+                                                                <p>{item.tituloVaga}</p>
                                                             </div>
 
                                                         </div>
@@ -158,15 +160,13 @@ function Listarvagas() {
 
                                                 <div className="infoHab">
 
-                                                    <div className="tagListarVagas"><p>{item.habNecessaria}</p></div>
-                                                    {/* <div className="item"><p>Java</p></div>
-                                                    <div className="item"><p>SQL</p></div>
-                                                    <div className="item"><p>PHP</p></div>
-                                                    <div className="item"><p>HTML</p></div> */}
+                                                    {item.habNecessaria.split(',').map((habilidade: string) => {
+                                                        return (
+                                                            <div className="item"><p>{habilidade}</p></div>
+                                                        )
+                                                    })}
 
                                                 </div>
-
-
                                             </div>
                                             {/* </Link> */}
 

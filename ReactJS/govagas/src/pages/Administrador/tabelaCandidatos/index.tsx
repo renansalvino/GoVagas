@@ -38,7 +38,7 @@ function TabelaCandidatos() {
             .then(response => response.json())
             .then(dados => {
                 setInscricaos(dados);
-                setInscricaoFiltrada(dados);
+                // setInscricaoFiltrada(dados);
             })
             .catch(err => console.error(err))
     }
@@ -49,17 +49,16 @@ function TabelaCandidatos() {
     
     const visualizarInfo = (id: number) => {
 
-        fetch('http://localhost:5000/api/Inscricao/' + id, {
+        fetch('https://localhost:5001/api/Inscricao/' + id, {
             method: 'GET',
             headers: {
-                authorization: 'Bearer ' + localStorage.getItem('token-govagas')
+                authorization: 'Bearer ' + localStorage.getItem('tokengovagas')
             }
         })
             .then(resp => resp.json())
             .then(dados => {
                 setIdInscricao(dados.idInscricao);
                 console.log(id);
-                history.push(`/documentacao?id=${id}`)
             })
             .catch(err => console.error(err));
     }
@@ -114,7 +113,7 @@ function TabelaCandidatos() {
 
                             <tbody>
                                 {
-                                    inscricaoFiltrada.map((atributo: any) => {
+                                    inscricaos.map((atributo: any) => {
                                         return (
                                             <tr key={atributo.idInscricao}>
                                                 <td>{atributo.idCandidatoNavigation.idUsuarioNavigation.nome}</td>
@@ -129,7 +128,7 @@ function TabelaCandidatos() {
 
                                                 <td>{atributo.idVagaNavigation.tipoContrato && 'Jovem Aprendiz' ||
                                                 !atributo.idVagaNavigation.tipoContrato && 'Estágio'}</td>
-                                                <td><button onClick={() => visualizarInfo(atributo.idInscricao)}>Ver Mais</button></td>
+                                                <td><button onClick={() => history.push(`documentacao/${atributo.idInscricao}`)}>Ver Mais</button></td>
                                             </tr>
                                         )
                                     })

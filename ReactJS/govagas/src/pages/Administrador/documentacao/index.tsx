@@ -13,7 +13,8 @@ function Documentacao({ match }: any) {
     let history = useHistory();
 
     const [idInscricao, setIdInscricao] = useState(0);
-    const [inscricaos, setInscricaos] = useState([]);
+    // const [inscricaos, setInscricaos] = useState([]);
+    const [inscricao, setInscricao] = useState<any>()
 
 
     const {
@@ -22,7 +23,24 @@ function Documentacao({ match }: any) {
 
     useEffect(() => {
         setIdInscricao(id)
+        visualizarCandidatura(id)
     }, []);
+
+    const visualizarCandidatura = (id: number) => {
+
+        return fetch('https://localhost:5001/api/Inscricao/' + id, {
+            method: 'GET',
+            headers: {
+                authorization: 'Bearer ' + localStorage.getItem('token-govagas')
+            }
+        })
+            .then(resp => resp.json())
+            .then(data => {
+                console.log(data);
+                setInscricao(data);
+            })
+            .catch(err => console.error(err));
+    }
 
     return (
         <div>
@@ -60,14 +78,13 @@ function Documentacao({ match }: any) {
 
                     </div>
 
-                    {
+                    {/* {
                     // key={atributo.idInscricao}
                         inscricaos.map((atributo: any) => {
                             return <div>
                                     <h2>Informações da Empresa:</h2>
                                     <div className="dadot">
                                         <Input label="Nome da Empresa" name="input1" placeholder="Nome de Empresa LTDA" readOnly>{atributo.idVagaNavigation.idEmpresaNavigation.nomeEmpresa}</Input>
-                                        {/* <Input label="Nome Fantasia" name="input1" placeholder="Nome de Empresa Fantasia LTDA" readOnly>{atributo.idVagaNavigation.idEmpresaNavigation.nomeEmpresa}</Input> */}
                                         <Input label="Endereço" name="input1" placeholder="Rua Dr. Alberto de Oliveira, n75 - São Paulo - Brasil" readOnly>{atributo.idVagaNavigation.localVaga}</Input>
                                         <Input label="Requerimento da Vaga" name="input1" placeholder="Analise de Dev de Sistema / Estudante" readOnly>{atributo.idVagaNavigation.idEmpresaNavigation.nomeEmpresa}</Input>
                                         <div className="flexMetade">
@@ -128,11 +145,11 @@ function Documentacao({ match }: any) {
                                 </div>
                             
                         })
-                    }
+                    } */}
 
                     <h2>Informações da Empresa:</h2>
                     <div className="dadot">
-                        <Input label="Nome da Empresa" name="input1" placeholder="Nome de Empresa LTDA" readOnly />
+                        <Input label="Nome da Empresa" name="input1" placeholder="Nome de Empresa LTDA" readOnly >{inscricao?.idVagaNavigation.idEmpresaNavigation.nomeEmpresa}</Input>
                         <Input label="Nome Fantasia" name="input1" placeholder="Nome de Empresa Fantasia LTDA" readOnly />
                         <Input label="Endereço" name="input1" placeholder="Rua Dr. Alberto de Oliveira, n75 - São Paulo - Brasil" readOnly />
                         <Input label="Requerimento da Vaga" name="input1" placeholder="Analise de Dev de Sistema / Estudante" readOnly />
