@@ -1,6 +1,7 @@
 ﻿using GoVagas.Contexts;
 using GoVagas.Domains;
 using GoVagas.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,20 @@ namespace GoVagas.Repositories
 
         public Inscricao BuscarPorId(int id)
         {
-            return ctx.Inscricao.FirstOrDefault(ca => ca.IdInscricao == id);
+            return ctx.Inscricao.Include(c => c.IdVagaNavigation)
+                .ThenInclude(c => c.IdEmpresaNavigation)
+                .Include(c => c.IdCandidatoNavigation)
+                .ThenInclude(c => c.IdUsuarioNavigation)
+                .FirstOrDefault(ca => ca.IdInscricao == id);
+        }
+
+        public List<Inscricao> ListarPorIdCandidato(int id)
+        {
+            return ctx.Inscricao.Include(c => c.IdVagaNavigation)
+                .ThenInclude(c => c.IdEmpresaNavigation)
+                .Include(c => c.IdCandidatoNavigation)
+                .Where(c => c.IdCandidatoNavigation.IdCandidato == id)
+                .ToList();
         }
 
 
@@ -41,6 +55,15 @@ namespace GoVagas.Repositories
             ctx.Inscricao.Remove(InscricaoBuscado);
             ctx.SaveChanges();
         }
+
+        //public List<Inscricao> ListarTodos()
+        //{
+        //    return ctx.Inscricao.Include(c => c.IdVagaNavigation)
+        //        .ThenInclude(c => c.IdEmpresaNavigation)
+        //        .Include(c => c.IdCandidatoNavigation)
+        //        .ThenInclude(c => c.IdUsuarioNavigation)
+        //        .ToList();
+        //}
 
         public List<Inscricao> ListarTodos()
         {

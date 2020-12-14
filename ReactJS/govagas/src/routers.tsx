@@ -24,6 +24,7 @@ import Perfil from './pages/candidato/perfil/index';
 import Dashboard from './pages/candidato/dashboard/index';
 import Candidatar from './pages/candidato/candidatar/index';
 import Listarvagas from './pages/candidato/listarvagas/index';
+import Listarvagasporid from './pages/candidato/listarvagaid/index';
 import Visualizarvaga from './pages/candidato/visualizarvaga/index';
 import Upload from './pages/teste/teste';
 
@@ -35,7 +36,7 @@ function Routers() {
 			<Route path='/' exact component={Home}/>
 			<Route path='/dashadm' exact component={DashAdm}/>
 			<Route path='/tabelacandidatos' exact component={TabelaCandidatos}/>
-			<Route path='/documentacao' exact component={Documentacao}/>
+			<Route path='/documentacao/:id' exact component={Documentacao}/>
 			<Route path='/cadastroAluno' component={CadastroCandidatoUm}/>
 			<Route path='/cadastroAluno2' component={CadastroCandidatoDois}/>
 			<Route path='/cadastroAluno3' component={CadastroCandidatoTres}/>
@@ -55,7 +56,8 @@ function Routers() {
 			<Route path='/perfil' component={Perfil}/>
 			<Route path='/dashboard' component={Dashboard}/>
 			<Route path='/candidatar' component={Candidatar}/>
-			<Route path='/listarvagas' component={Listarvagas}/>
+			<Route path='/vagas' component={Listarvagas}/>
+			<Route path='/inscricoes' component={Listarvagasporid}/>
 			{/* <Route path='/visualizarvaga' component={Visualizarvaga}/> */}
 			<Route path='/visualizarvaga/:id' component={Visualizarvaga}/>
 			<Route path="/teste" component={Upload}/>

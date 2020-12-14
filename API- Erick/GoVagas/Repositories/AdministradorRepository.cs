@@ -1,6 +1,7 @@
 ﻿using GoVagas.Contexts;
 using GoVagas.Domains;
 using GoVagas.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,8 @@ namespace GoVagas.Repositories
 
         public Administrador BuscarPorId(int id)
         {
-            return ctx.Administrador.FirstOrDefault(ca => ca.IdAdministrador == id);
+            return ctx.Administrador.Include(u => u.IdUsuarioNavigation)
+                .FirstOrDefault(ca => ca.IdAdministrador == id);
         }
 
         public void Cadastrar(Administrador novoAdministrador)

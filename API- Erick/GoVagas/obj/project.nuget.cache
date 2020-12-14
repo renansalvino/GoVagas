@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Q9++eNAvrLvHsWUluwKmklIbv81tPSd488e3CpQ6f+ruLaQuz/AnyeWv6TO5WF4gyLYq9aSL8xMJyv69wls/DA==",
+  "dgSpecHash": "Wf2Uxp3OpI70pmi/LsSCliIYTFFTwOuoyP4fL+Bgb/vyZxglAnf0xb1rhcfqhrN9IqLlEwHVvFAnz1gr4C9cVA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Senaisp\\Downloads\\API\\GoVagas\\GoVagas.csproj",
+  "projectFilePath": "C:\\Users\\Senaisp\\Downloads\\API- Erick\\GoVagas\\GoVagas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Senaisp\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.8\\microsoft.aspnetcore.authentication.jwtbearer.3.1.8.nupkg.sha512",
     "C:\\Users\\Senaisp\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.8\\microsoft.aspnetcore.jsonpatch.3.1.8.nupkg.sha512",

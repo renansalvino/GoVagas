@@ -41,6 +41,22 @@ namespace GoVagas.Controllers
         {
             return StatusCode(200, _InscricaoRepository.BuscarPorId(id));
         }
+
+
+        [HttpGet("Candidato/{id}")]
+        public IActionResult ListarPorIdCandidato(int id)
+        {
+            try
+            {
+                return Ok(_InscricaoRepository.ListarPorIdCandidato(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+
+
         /// <summary>
         /// Cadastra um novo Inscricao
         /// </summary>

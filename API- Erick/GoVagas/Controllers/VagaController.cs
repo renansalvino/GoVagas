@@ -40,12 +40,26 @@ namespace GoVagas.Controllers
             {
                 return StatusCode(200, _VagaRepository.BuscarPorId(id));
             }
-            /// <summary>
-            /// Cadastra um novo Vaga
-            /// </summary>
-            /// <param name="novoVaga"></param>
-            /// <returns> Status Code 201</returns>
-            [HttpPost]
+
+            [HttpGet("Empresa/{id}")]
+            public IActionResult ListarPorIdEmpresa(int id)
+            {
+                try
+                {
+                    return Ok(_VagaRepository.ListarPorIdEmpresa(id));
+                }
+                catch (Exception e)
+                {
+                    return BadRequest(e);
+                }
+            }
+
+        /// <summary>
+        /// Cadastra um novo Vaga
+        /// </summary>
+        /// <param name="novoVaga"></param>
+        /// <returns> Status Code 201</returns>
+        [HttpPost]
             public IActionResult Post(Vaga novoVaga)
             {
                 _VagaRepository.Cadastrar(novoVaga);

@@ -24,7 +24,7 @@ function Header() {
                     <ul className="menuNav">
                         <li><Link className="link" to="/">VER VAGAS</Link></li>
                         <li><Link className="link" to="/loginCandidato">LOGIN</Link></li>
-                        <li><Link to="" className="Link"><Button onClick="" name="btn1" value="CADASTRE-SE" /></Link></li>
+                        <li><Link to="" className="Link"><Button name="btn1" value="CADASTRE-SE" /></Link></li>
                     </ul>
                 </ul>
             );
@@ -33,11 +33,11 @@ function Header() {
                 return (
                     <ul className="menuNav">
                         <li><Link className="link" to="/filme">DASHBOARD</Link></li>
-                        <li><Link className="link" to="/listarvagas">VER VAGAS</Link></li>
+                        <li><Link className="link" to="/vagas">VER VAGAS</Link></li>
                         <li><Link to="" className="Link" onClick={event => {
                             event.preventDefault();
                             Logout();
-                        }}><Button onClick="" name="btn1" value="LOGOFF" /></Link></li>
+                        }}><Button name="btn1" value="LOGOFF" /></Link></li>
                     </ul>
                 );
             }
@@ -49,7 +49,7 @@ function Header() {
                         <li><Link to="" className="Link" onClick={event => {
                             event.preventDefault();
                             Logout();
-                        }}><Button onClick="" name="btn1" value="LOGOFF" /></Link></li>
+                        }}><Button name="btn1" value="LOGOFF" /></Link></li>
                     </ul>
                 );
             }
@@ -61,7 +61,7 @@ function Header() {
                         <li><Link to="" className="Link" onClick={event => {
                             event.preventDefault();
                             Logout();
-                        }}><Button onClick="" name="btn1" value="LOGOFF" /></Link></li>
+                        }}><Button name="btn1" value="LOGOFF" /></Link></li>
                     </ul>
                 );
             }

@@ -16,19 +16,19 @@ function Home() {
                 <div className="Button_Figma">
                     <div className="davi">
                         <p>Botão primário</p>
-                        <Button onClick="" name="btn1" value="Salvar" />
+                        <Button  name="btn1" value="Salvar" />
                     </div>
                     <div className="davi">
                         <p>Botão secundário</p>
-                        <Button onClick="" value="Cancelar" name="btn2" />
+                        <Button  value="Cancelar" name="btn2" />
                     </div>
                     <div className="davi">
                         <p>Terceiro botão</p>
-                        <Button onClick="" value="Sair" name="btn3" />
+                        <Button  value="Sair" name="btn3" />
                     </div>
                     <div className="Input">
                         <Input type="text" name="input1" label="Input Padrão(Ex: Localização)" placeholder="Ex: Rua Dr. Alberto de Oliveira, n75 - São Paulo - Brasil" minLength={8} maxLength={100} />
-                        <Button onClick="" name="btn1" value="Salvar" />
+                        <Button  name="btn1" value="Salvar" />
                     </div>
                     <div className="Input">
                         <Input type="email" name="input2" label="Input Peq. (Ex: Email)" placeholder="email@email.com" />

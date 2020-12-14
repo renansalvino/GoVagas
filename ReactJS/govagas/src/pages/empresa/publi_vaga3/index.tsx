@@ -358,7 +358,7 @@ function PubliVagaTres() {
 
                                     <div className="texthab2">
 
-                                        <div className="item"><p>C#</p></div>
+                                        <div className="item"><p>{localStorage.getItem('Expertise Vaga')}</p></div>
                                         <div className="item"><p>Java</p></div>
                                         <div className="item"><p>SQL</p></div>
                                         <div className="item"><p>PHP</p></div>
@@ -556,8 +556,8 @@ function PubliVagaTres() {
                         </section>
 
                         <div className="btn-proximo">
-                            <Link to="/cadastroAluno3"> <Button onClick="" name="btn2" value="Voltar" /> </Link>
-                            <Button onClick="" name="btn1" value="SALVAR" />
+                            <Link to="/cadastroAluno3"> <Button  name="btn2" value="Voltar" /> </Link>
+                            <Button  name="btn1" value="SALVAR" />
                         </div>
                     </form>
                 </div>

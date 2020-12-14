@@ -128,7 +128,7 @@ function PubliVagaDois() {
                                         <Input type="Name" name="inpustyle" label="Ofertas extras" placeholder="Ex: Cursando Análise e Desenvolvimento de Sistemas" value={ofertaExtra} onChange={a => setOfertaExtra(a.target.value)} />
                                     </div>
                                 </div>
-                                <Button name="btn1" onClick="" value="Próxima etapa" />
+                                <Button name="btn1"  value="Próxima etapa" />
                             </form>
                         </div>
                     </div>

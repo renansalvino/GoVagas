@@ -300,7 +300,7 @@ function CadastroCandidatoUm(this: any) { //<-//
                                         </div>
 
                                         <div className="btn-proximo">
-                                            <Button onClick="" name="btn1" value="Próximo" />
+                                            <Button name="btn1" value="Próximo" />
                                         </div>
 
                                     </form>

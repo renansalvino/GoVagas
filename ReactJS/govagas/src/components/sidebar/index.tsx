@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css';
 import Button from '../../components/button/index'
 // import imgUsuario from '../../assets/images/flauta.jpg'
@@ -8,8 +8,30 @@ import imgIconePerfil from '../../assets/images/user.svg'
 import imgIconePerfil2 from '../../assets/images/user 1.svg'
 import imgSnoopy from '../../assets/images/snoopy.png'
 import { Link } from 'react-router-dom';
+import { parseJwt } from '../../auth';
+
 
 function Sidebar() {
+
+    const [usuario, setUsuario] = useState<any>();
+
+    useEffect(() => {
+        if(parseJwt().Role === "1") {
+            fetch("https://localhost:5001/api/Administrador/" + parseJwt().jti, {
+                    method: 'GET'
+                })
+                    .then(response => response.json())
+                    .then(dados => {
+                        console.log(dados)
+                        console.log(dados.idUsuarioNavigation)
+                        setUsuario(dados.idUsuarioNavigation)
+                    })
+                    .catch(err => console.error(err))
+        }
+    }, []);
+
+    
+
     return (
         <div>
             <div className="dashboard">
@@ -20,11 +42,11 @@ function Sidebar() {
                     </div>
 
                     <div className="imgTxt">
-                        <p id="nomeUsuario">Nome do Colega </p>
+                        <p id="nomeUsuario">{usuario?.nome}</p>
                         <p id="funcaoUsuario">Função Usuario</p>
                     </div>
 
-                    <Button onClick="" name="btn1" value="Editar meu perfil" />
+                    <Button name="btn1" value="Editar meu perfil" />
 
                 </div>
 
@@ -49,12 +71,14 @@ function Sidebar() {
                             </div>
                             <Link to="/tabelacandidatos"><li>Tabela Candidatos</li></Link>
                         </div>
-                        <div className="rota">
-                            <div className="icon">
-                                <img src={imgIconePalmeira2} alt="" />
+                        <Link to="/inscricoes">
+                            <div className="rota">
+                                <div className="icon">
+                                    <img src={imgIconePalmeira2} alt="" />
+                                </div>
+                                <li>Rota 3</li>
                             </div>
-                            <li>Rota 3</li>
-                        </div>
+                        </Link>
                         <div className="rota">
                             <div className="icon">
                                 <img src={imgIconePerfil2} alt="" />

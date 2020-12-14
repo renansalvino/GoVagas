@@ -139,7 +139,7 @@ function LoginEmpresa() {
                         <p>Esqueceu sua senha?</p>
                       </div>
                       <div className="btn-criarconta">
-                        <Button onClick="" name="btn1" value="Login" />
+                        <Button  name="btn1" value="Login" />
                       </div>
                       <div className="login-inputs">
                         <tr className="tr-empresa" />
@@ -179,7 +179,7 @@ function LoginEmpresa() {
                         <tr />
                       </div>
                       <div className="btn-criarconta1">
-                        <Button onClick="" name="btn1" value="Criar Conta" />
+                        <Button  name="btn1" value="Criar Conta" />
                       </div>
                       <div className="login-inputs">
                         <tr className="tr-empresa" />

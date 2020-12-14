@@ -103,57 +103,22 @@ namespace GoVagas.Repositories
 
         public Vaga BuscarPorId(int id)
         {
-            return ctx.Vaga.Select(e => new Vaga()
-             {
-                 IdVaga = e.IdVaga,
-                 TituloVaga = e.TituloVaga,
-                 PerfilDev = e.PerfilDev,
-                 DiasContrato = e.DiasContrato,
-                 TempoExp = e.TempoExp,
-                 HabNecessaria = e.HabNecessaria,
-                 LocalVaga = e.LocalVaga,
-                 ReqVaga = e.ReqVaga,
-                 NivelExp = e.NivelExp,
-                 DescAtivFuncoes = e.DescAtivFuncoes,
-                 TipoContrato = e.TipoContrato,
-                 ExpertiseVaga = e.ExpertiseVaga,
-                 TrabalhoRemoto = e.TrabalhoRemoto,
-                 OutraCidade = e.OutraCidade,
-                 ValorSalario = e.ValorSalario,
-                 OfertaExtra = e.OfertaExtra,
-
-                 IdEmpresaNavigation = new Empresa()
-                 {
-                     IdEmpresa = e.IdEmpresaNavigation.IdEmpresa,
-                     AnexarLogo = e.IdEmpresaNavigation.AnexarLogo,
-                     CargoArea = e.IdEmpresaNavigation.CargoArea,
-                     WebSite = e.IdEmpresaNavigation.WebSite,
-                     NomeEmpresa = e.IdEmpresaNavigation.NomeEmpresa,
-                     Cnpj = e.IdEmpresaNavigation.Cnpj,
-                     RamoEmpresa = e.IdEmpresaNavigation.RamoEmpresa,
-                     DescricaoEmpresa = e.IdEmpresaNavigation.DescricaoEmpresa,
-                     LocalizacaoEmpresa = e.IdEmpresaNavigation.LocalizacaoEmpresa,
-                     EncontrouSenai = e.IdEmpresaNavigation.EncontrouSenai,
-
-                     IdUsuarioNavigation = new Usuario()
-                     {
-                         IdUsuario = e.IdEmpresaNavigation.IdUsuarioNavigation.IdUsuario,
-                         IdTipoUsuario = e.IdEmpresaNavigation.IdUsuarioNavigation.IdTipoUsuario,
-                         Nome = e.IdEmpresaNavigation.IdUsuarioNavigation.Nome,
-                         Email = e.IdEmpresaNavigation.IdUsuarioNavigation.Email,
-                         DataNascimento = e.IdEmpresaNavigation.IdUsuarioNavigation.DataNascimento,
-                         Senha = e.IdEmpresaNavigation.IdUsuarioNavigation.Senha,
-                         Telefone = e.IdEmpresaNavigation.IdUsuarioNavigation.Telefone,
-
-                         IdTipoUsuarioNavigation = new TipoUsuario()
-                         {
-                             IdTipoUsuario = e.IdEmpresaNavigation.IdUsuarioNavigation.IdTipoUsuarioNavigation.IdTipoUsuario,
-                             TituloTipoUsuario = e.IdEmpresaNavigation.IdUsuarioNavigation.IdTipoUsuarioNavigation.TituloTipoUsuario,
-                         }
-                     }
-                 }
-             })
+            return ctx.Vaga.Include(e => e.IdEmpresaNavigation)
+            .ThenInclude(u => u.IdUsuarioNavigation)
+            .Include(e => e.Inscricao)
                 .FirstOrDefault(ca => ca.IdVaga == id);
+        }
+
+        public List<Vaga> ListarPorIdEmpresa(int id)
+        {
+            return ctx.Vaga.Include(e => e.IdEmpresaNavigation)
+            .ThenInclude(u => u.IdUsuarioNavigation)
+
+            .Where(c => c.IdEmpresaNavigation.IdUsuarioNavigation.IdUsuario == id)
+
+            .ToList();
+
+
         }
 
         public void Cadastrar(Vaga novoVaga)

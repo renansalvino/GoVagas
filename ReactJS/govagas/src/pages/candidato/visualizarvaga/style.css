@@ -229,7 +229,7 @@
   
   .cardHab {
     display: flex;
-    width: 280px;
+    width: 350px;
     height: 90px;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -275,7 +275,7 @@
   
   /* cod david */
   .item {
-    flex-grow: 1;
+    flex-grow: 3;
   }
 
   .flexVagaTxt {

@@ -49,6 +49,8 @@ namespace GoVagas.Controllers
         [HttpPost]
         public IActionResult Post(Administrador novoAdministrador)
         {
+            novoAdministrador.IdUsuarioNavigation.IdTipoUsuario = 1;
+
             _AdministradorRepository.Cadastrar(novoAdministrador);
 
             return StatusCode(201);

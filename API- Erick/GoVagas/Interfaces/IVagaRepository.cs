@@ -10,6 +10,7 @@ namespace GoVagas.Interfaces
     {
         List<Vaga> ListarTodos();
         public Vaga BuscarPorId(int id);
+        List<Vaga> ListarPorIdEmpresa(int id);
         void Cadastrar(Vaga novoVaga);
         void Atualizar(int id, Vaga VagaAtualizado);
         void Deletar(int id);

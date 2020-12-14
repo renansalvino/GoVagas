@@ -106,7 +106,7 @@ function PubliVaga() {
                                 <Input type="name" name="input1" label="Requisitos para Vaga" placeholder="Ex: Cursando Análise e Desenvolvimento de Sistemas" value={reqVaga} onChange={a => setReqVaga(a.target.value)} />
                                 <Input type="name" name="input1" label="Tempo de experiência" placeholder="Ex: Cursando Análise e Desenvolvimento de Sistemas" value={tempoExp} onChange={a => setTempoExp(a.target.value)} />
                                 <Input type="name" name="inputpersonalizado2" label="Descrição das Atividades e Funções" placeholder="Ex: - Ser Auto-gerenciável; - Aplicar treinamentos para a equipe. - Inglês intermediário / Fluente" value={descAtivFuncoes} onChange={a => setDescAtivFuncoes(a.target.value)} />
-                                <Button name="btn1" onClick="" value="Próxima etapa" />
+                                <Button name="btn1"  value="Próxima etapa" />
                             </div>
                         </form>
                     </div>

@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { InputHTMLAttributes } from 'react';
 import './style.css';
 
-interface ButtonProps {
+interface ButtonProps extends InputHTMLAttributes<HTMLInputElement> {
     value: string;
     name: any;
-    onClick: any;
 }
 
-const Button: React.FC<ButtonProps> = ({value, name, onClick}) => {
+const Button: React.FC<ButtonProps> = ({value, name, ...rest}) => {
     return (
         <div>
-            <input id={name} type="submit" onClick={onClick} value={value}/>
+            <input id={name} type="submit" value={value} {...rest}/>
         </div>
     )
 }

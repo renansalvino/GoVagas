@@ -17,7 +17,7 @@ function CadastroCandidatoQuatro() {
     const [pretencaosalarial, setPretencaosalarial] = useState('');
     const [trabalhoremoto, setTrabalhoremoto] = useState('');
     const [deficienciafisica, setDeficienciafisica] = useState('');
-    const [idTipoUsuario, setIdTipoUsuario] = useState(3);
+    // const [idTipoUsuario, setIdTipoUsuario] = useState(3);
 
 
     const Post4 = () => {
@@ -155,8 +155,8 @@ function CadastroCandidatoQuatro() {
                                     </div>
 
                                     <div className="btn-proximo">
-                                        <Link to="/cadastroAluno3"> <Button onClick="" name="btn2" value="Voltar" /> </Link>
-                                        <Button onClick="" name="btn1" value="SALVAR" />
+                                        <Link to="/cadastroAluno3"> <Button  name="btn2" value="Voltar" /> </Link>
+                                        <Button  name="btn1" value="SALVAR" />
                                     </div>
                                 </form>
                             </main>

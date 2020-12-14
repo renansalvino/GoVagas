@@ -21,14 +21,14 @@ function TabelaCandidatos() {
     const [inscricaos, setInscricaos] = useState([]);
 
     const filtro = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setInscricaoFiltrada(inscricaos.filter((inscricao: any) => inscricao.idCandidatoNavigation.idUsuarioNavigation.nome.includes(event.target.value),
+        console.log(event.target.value)
+        setInscricaoFiltrada(inscricaos.filter((inscricao: any) => inscricao.idCandidatoNavigation.idUsuarioNavigation.nome?.includes(event.target.value),
         
         //  &&
         // inscricao.atributo.idCandidatoNavigation.tituloPerfil.contains(vagaFiltro) &&
         // inscricao.idVagaNavigation.idEmpresaNavigation.nomeEmpresa.contains(nomeEmprFiltro) &&
         // inscricao.idVagaNavigation.tipoContrato.contains(tipoContratoFiltro)
         ))
-        console.log(inscricaos.filter((inscricao: any) => inscricao.idCandidatoNavigation.idUsuarioNavigation.nome.includes(event.target.value)))
     }
 
     const ListarTodosContratados = () => {
@@ -38,7 +38,8 @@ function TabelaCandidatos() {
             .then(response => response.json())
             .then(dados => {
                 setInscricaos(dados);
-                // setInscricaoFiltrada(dados);
+                setInscricaoFiltrada(dados);
+                console.log(dados)
             })
             .catch(err => console.error(err))
     }
@@ -47,21 +48,6 @@ function TabelaCandidatos() {
         ListarTodosContratados();
     }, []);
     
-    const visualizarInfo = (id: number) => {
-
-        fetch('https://localhost:5001/api/Inscricao/' + id, {
-            method: 'GET',
-            headers: {
-                authorization: 'Bearer ' + localStorage.getItem('tokengovagas')
-            }
-        })
-            .then(resp => resp.json())
-            .then(dados => {
-                setIdInscricao(dados.idInscricao);
-                console.log(id);
-            })
-            .catch(err => console.error(err));
-    }
 
     return (
         <div>
@@ -113,7 +99,7 @@ function TabelaCandidatos() {
 
                             <tbody>
                                 {
-                                    inscricaos.map((atributo: any) => {
+                                    inscricaoFiltrada.map((atributo: any) => {
                                         return (
                                             <tr key={atributo.idInscricao}>
                                                 <td>{atributo.idCandidatoNavigation.idUsuarioNavigation.nome}</td>

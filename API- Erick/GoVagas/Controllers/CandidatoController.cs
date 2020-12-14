@@ -50,6 +50,8 @@ namespace GoVagas.Controllers
         [HttpPost]
         public IActionResult Post(Candidato novoCandidato)
         {
+            novoCandidato.IdUsuarioNavigation.IdTipoUsuario = 3;
+
             _CandidatoRepository.Cadastrar(novoCandidato);
 
             return StatusCode(201);

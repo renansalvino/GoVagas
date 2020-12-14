@@ -219,8 +219,8 @@ function CadastroCandidatoDois() {
 
                                     </div> */}
                                     <div className="btn-proximo">
-                                        <Link to="/cadastroAluno"> <Button onClick="" name="btn2" value="Voltar" /> </Link>
-                                        <Button onClick="" name="btn1" value="Próximo" />
+                                        <Link to="/cadastroAluno"> <Button name="btn2" value="Voltar" /> </Link>
+                                        <Button  name="btn1" value="Próximo" />
                                     </div>
                                 </form>
                             </main>

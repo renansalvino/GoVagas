@@ -34,7 +34,6 @@ import { useHistory } from 'react-router-dom';
 
 function Visualizarvaga({ match }: any) {
 
-
     const {
         params: { id },
     } = match;
@@ -67,6 +66,7 @@ function Visualizarvaga({ match }: any) {
             .then(data => {
                 console.log(data);
                 setVaga(data);
+                setIdVaga(id);
             })
             .catch(err => console.error(err));
     }
@@ -87,6 +87,7 @@ function Visualizarvaga({ match }: any) {
             }
         })
             .then(() => {
+                setVaga({...vaga, inscricao: [...vaga.inscricao!, form]});
                 alert('Inscricao cadastrado');
 
             })
@@ -213,7 +214,7 @@ function Visualizarvaga({ match }: any) {
                                 <div className="CardVisualizar">
                                     <div className="cardprincipal">
                                         <div className="flexVagaTxt">
-                                        <p>{vaga?.idEmpresaNavigation.descricaoEmpresa}</p>
+                                            <p>{vaga?.idEmpresaNavigation.descricaoEmpresa}</p>
                                             {/* <p>
                                                 A Avanade foi fundada como uma joint-venture entre a Microsoft Corporation
                                                 e a Accenture LLP. As nossas soluções são construídas com base em uma
@@ -238,10 +239,10 @@ function Visualizarvaga({ match }: any) {
                                         {/* <div className="textinf5"> */}
                                         <div className="flexVagaTxt">
                                             <p>{vaga?.descAtivFuncoes.split(',').map((habilidade: string) => {
-                                            return (
-                                                <div><p>- {habilidade}</p><br/></div>
-                                            )
-                                        })}</p>
+                                                return (
+                                                    <div><p>- {habilidade}</p><br /></div>
+                                                )
+                                            })}</p>
 
                                             {/* <p>
                                                 - Definir a equipe e suas atividades;<br></br>
@@ -351,14 +352,21 @@ function Visualizarvaga({ match }: any) {
 
 
 
+                        {vaga?.inscricao.find(c => c.idCandidato == parseJwt().jti) && 
+                        parseJwt().jti == "3" && (
+                            <Button name="btn2" value="Você está Candidatado!" />
+                        )}
 
-                        <form onSubmit={event => {
-                            event.preventDefault();
-                            salvar();
-                        }}>
+                        {!vaga?.inscricao.find(c => c.idCandidato == parseJwt().jti) && 
+                        parseJwt().jti == "3" && (
+                            <form onSubmit={event => {
+                                event.preventDefault();
+                                salvar();
+                            }}>
 
-                            <Button onClick={() => salvar} name="btn1" value="Cadastre-se" />
-                        </form>
+                                <Button onClick={() => salvar} name="btn1" value="Cadastre-se" />
+                            </form>
+                        )}
 
 
                     </section>

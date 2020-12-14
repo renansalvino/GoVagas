@@ -76,8 +76,8 @@ function completarcadastro_02() {
 
                                     </div>
                                     <div className="btn-proximo">
-                                    <Link to="/completarCadastroAluno"> <Button onClick="" value="Voltar" name="btn2"/></Link>
-                                        <Link to="/completarCadastroAluno3"> <Button onClick="" name="btn1" value="Próximo"/></Link>
+                                    <Link to="/completarCadastroAluno"> <Button  value="Voltar" name="btn2"/></Link>
+                                        <Link to="/completarCadastroAluno3"> <Button  name="btn1" value="Próximo"/></Link>
                                     </div>
                                 </form>
                             </main>

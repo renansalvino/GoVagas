@@ -135,7 +135,7 @@ function CadastroEmpresaDois() {
                                         </div>
                                     </div>
                                     <div className="btn-proximo">
-                                        <Button onClick="" name="btn1" value="Próximo" />
+                                        <Button  name="btn1" value="Próximo" />
                                     </div>
 
                                 </form>
@@ -202,8 +202,8 @@ function CadastroEmpresaDois() {
                                             </div>
                                         </form>
                                         <div className="btn-proximo">
-                                        <Link to="/cadastroEmpresa"><Button onClick="" value="Voltar" name="btn2" /></Link>
-                                            <Button onClick="" name="btn1" value="Salvar"/>
+                                        <Link to="/cadastroEmpresa"><Button  value="Voltar" name="btn2" /></Link>
+                                            <Button  name="btn1" value="Salvar"/>
                                         </div>
 
                                     </div>

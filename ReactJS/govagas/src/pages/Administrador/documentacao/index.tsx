@@ -16,7 +16,6 @@ function Documentacao({ match }: any) {
     // const [inscricaos, setInscricaos] = useState([]);
     const [inscricao, setInscricao] = useState<any>()
 
-
     const {
         params: { id },
     } = match;
@@ -24,6 +23,7 @@ function Documentacao({ match }: any) {
     useEffect(() => {
         setIdInscricao(id)
         visualizarCandidatura(id)
+
     }, []);
 
     const visualizarCandidatura = (id: number) => {
@@ -149,7 +149,7 @@ function Documentacao({ match }: any) {
 
                     <h2>Informações da Empresa:</h2>
                     <div className="dadot">
-                        <Input label="Nome da Empresa" name="input1" placeholder="Nome de Empresa LTDA" readOnly >{inscricao?.idVagaNavigation.idEmpresaNavigation.nomeEmpresa}</Input>
+                        <Input label="Nome da Empresa" name="input1" placeholder="Nome de Empresa LTDA" readOnly defaultValue={inscricao?.idVagaNavigation.idEmpresaNavigation.nomeEmpresa} />
                         <Input label="Nome Fantasia" name="input1" placeholder="Nome de Empresa Fantasia LTDA" readOnly />
                         <Input label="Endereço" name="input1" placeholder="Rua Dr. Alberto de Oliveira, n75 - São Paulo - Brasil" readOnly />
                         <Input label="Requerimento da Vaga" name="input1" placeholder="Analise de Dev de Sistema / Estudante" readOnly />
@@ -167,7 +167,8 @@ function Documentacao({ match }: any) {
 
                     <h2>Informações do Aluno:</h2>
                     <div className="dadot">
-                        <Input label="Nome do Aluno" name="input1" value="tal" placeholder="Nome do Aluno" readOnly></Input>
+                        <Input label="Nome do Aluno" name="input1" placeholder="Nome do Aluno" readOnly
+                            defaultValue={inscricao?.idCandidatoNavigation.idUsuarioNavigation.nome} />
                         <Input label="Endereço" name="input1" placeholder="Rua Dr. Alberto de Oliveira, n75 - São Paulo - Brasil" readOnly></Input>
                         <Input label="Cursando" name="input1" placeholder="Análise e Desenvolvimento de Sistemas" readOnly></Input>
                         <Input label="Número da Matrícula" name="input1" placeholder="000.000.0000" readOnly></Input>
