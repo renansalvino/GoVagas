@@ -23,6 +23,7 @@ import imgrestaurant from '../../../assets/images/candidato/restaurant.svg'
 import imgshoppingcart from '../../../assets/images/candidato/shopping-cart.svg'
 import imgtrain from '../../../assets/images/candidato/train.svg'
 import { Link } from 'react-router-dom';
+import { parseJwt } from '../../../auth';
 // import { useHistory } from 'react-router-dom';
 
 function PubliVagaTres() {
@@ -45,7 +46,8 @@ function PubliVagaTres() {
     // const [reqVaga, setReqVaga] = useState('')
     // const [tempoExp, setTempoExp] = useState('')
     // const [descAtivFuncoes, setDescAtivFuncoes] = useState('')
-    const [idEmpresa, setIdEmrpesa] = useState(1) //(parseJwt().jti)//
+    const [idEmpresa, setIdEmrpesa] = useState((parseJwt().jti))
+    const [vaga, setVaga] = useState<any>() 
 
     const Cadastrar3 = () => {
 
@@ -103,7 +105,7 @@ function PubliVagaTres() {
                 // setReqVaga('');
                 // setTempoExp('');
                 // setDescAtivFuncoes('');
-                setIdEmrpesa(1);
+                // setIdEmrpesa(1);
                 // ganchocorno.push('/publicarvagatres')
             })
 
@@ -346,7 +348,7 @@ function PubliVagaTres() {
 
                             <div className="options-box05">
                                 <div className="textdis1">
-                                    <h6>Programador CSharp</h6>
+                                    <h6>{localStorage.getItem('Perfil do desenvolvedor')}</h6>
 
                                     <div className="text05">
 
@@ -356,13 +358,12 @@ function PubliVagaTres() {
 
                                     </div>
 
-                                    <div className="texthab2">
-
-                                        <div className="item"><p>{localStorage.getItem('Expertise Vaga')}</p></div>
-                                        <div className="item"><p>Java</p></div>
-                                        <div className="item"><p>SQL</p></div>
-                                        <div className="item"><p>PHP</p></div>
-                                        <div className="item"><p>HTML</p></div>
+                                    <div className="texthab3">
+                                        {localStorage.getItem('HabNec')?.split(',').map((habilidade: string) => {
+                                            return (
+                                                <div className="item"><p>{habilidade}</p></div>
+                                            )
+                                        })}
 
                                     </div>
 
@@ -399,7 +400,7 @@ function PubliVagaTres() {
 
                                             <div className="item02">
                                                 <img src={imgtranslation} alt="Translation" title="Translation" width="30px" height="30px" />
-                                                <p>Ingles</p>
+                                                <p>{localStorage.getItem('Requerimento da vaga')}</p>
                                             </div>
 
                                         </div>
@@ -409,17 +410,18 @@ function PubliVagaTres() {
 
                                             <div className="item02">
                                                 <img src={imgcasestudy} alt="Casestudy" title="Casestudy" width="25px" height="25px" />
-                                                <p>Full Stack</p>
+                                                <p>{localStorage.getItem('Tempo de Experiência')}</p>
                                             </div>
 
                                             <div className="item02">
                                                 <img src={imgnotes} alt="Notes" title="Notes" width="25px" height="25px" />
-                                                <p>Contratação CLT</p>
+                                                <p>{localStorage.getItem('Tipo de Contrato') && 'Jovem Aprendiz'
+                                                    || !localStorage.getItem('Tipo de Contrato') && 'Estágio'}</p>
                                             </div>
 
                                             <div className="item02">
                                                 <img src={imgdiploma} alt="Diploma" title="Diploma" width="25px" height="25px" />
-                                                <p>Desenvolvimento de   Sistema</p>
+                                                <p>{localStorage.getItem('Titulo da Vaga')}</p>
                                             </div>
 
 
@@ -438,6 +440,7 @@ function PubliVagaTres() {
                                     <div className="text05">
                                         <div className="textinf5">
                                             <p>
+
                                                 A Avanade foi fundada como uma joint-venture entre a Microsoft Corporation
                                                 e a Accenture LLP. As nossas soluções são construídas com base em uma
                                                 incomparável combinação de insight, inovação e conhecimento técnico, apoiados
@@ -457,7 +460,13 @@ function PubliVagaTres() {
                                     <div className="text05">
                                         <div className="textinf6">
                                             <p id="Desc">
-                                                - Definir a equipe e suas atividades;<br></br>
+                                                {localStorage.getItem('Descrição das atividades e funções')?.split(',').map((habilidade: string) => {
+                                                    return (
+                                                        <div><p>- {habilidade}</p><br /></div>
+                                                    )
+                                                })}
+
+                                                {/* - Definir a equipe e suas atividades;<br></br>
                                             - Balizar a arquitetura da solução (Front, Back, BD);<br></br>
                                             - Configurar ambientes de desenvolvimento (SandBox);<br></br>
                                             - Fazer automatização build e deploy (CI & CD);<br></br>
@@ -465,7 +474,7 @@ function PubliVagaTres() {
                                             - Comunicar-se com a área gerencial da Radix e do cliente;<br></br>
                                             - Ser Auto-gerenciável;<br></br>
                                             - Aplicar treinamentos para a equipe.<br></br>
-                                            - Inglês intermediário / Fluente<br />
+                                            - Inglês intermediário / Fluente<br /> */}
                                             </p>
                                         </div>
                                     </div>
@@ -473,24 +482,7 @@ function PubliVagaTres() {
                                 </div>
                             </div>
 
-
-                            <div className="options-box05">
-                                <div className="textdis">
-                                    <div className="text05">
-                                        <div className="textinf5">
-                                            <p>
-                                                - Experiência com base de dados orientada a grafo (CosmosDB com api Gremlin);<br></br>
-                                            - Arquitetura de soluções no ambiente Azure;<br></br>
-                                            - Experiência com ReactJS;<br></br>
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-                            <div className="options-box05">
+                            <div className="options-box0">
                                 <div className="textdis">
 
                                     <div className="text05">
@@ -503,10 +495,14 @@ function PubliVagaTres() {
 
                                                 <div className="item02">
                                                     <img src={imgdentalcheckup} alt="officeblock" title="officeblock" width="30px" height="30px" />
-                                                    <p>Assistência odontológica</p>
+                                                    {localStorage.getItem('Oferta Extra')?.split(',').map((habilidade: string) => {
+                                                        return (
+                                                            <div><p>- {habilidade}</p><br /></div>
+                                                        )
+                                                    })}
                                                 </div>
 
-                                                <div className="item02">
+                                                {/* <div className="item02">
                                                     <img src={imgdumbbell} alt="Money" title="Money" width="30px" height="30px" />
                                                     <p>Auxílio academia</p>
                                                 </div>
@@ -544,7 +540,7 @@ function PubliVagaTres() {
                                                 <div className="item02">
                                                     <img src={imgtrain} alt="Diploma" title="Diploma" width="25px" height="25px" />
                                                     <p>Vale-transporte</p>
-                                                </div>
+                                                </div> */}
 
                                             </div>
 
@@ -556,8 +552,8 @@ function PubliVagaTres() {
                         </section>
 
                         <div className="btn-proximo">
-                            <Link to="/cadastroAluno3"> <Button  name="btn2" value="Voltar" /> </Link>
-                            <Button  name="btn1" value="SALVAR" />
+                            <Link to="/cadastroAluno3"> <Button name="btn2" value="Voltar" /> </Link>
+                            <Button name="btn1" value="SALVAR" />
                         </div>
                     </form>
                 </div>

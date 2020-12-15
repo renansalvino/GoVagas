@@ -36,10 +36,10 @@ function PubliVagaDois() {
 
 
         const form2 = {
-            TipoContrato: tipoContrato === 'true' ? true : false,//
+            TipoContrato: tipoContrato === "true" ? true : false,//
             ExpertiseVaga: expertiseVaga,
-            TrabalhoRemoto: trabalhoRemoto === 'true' ? true : false,//
-            OutraCidade: outraCidade === 'true' ? true : false,//
+            TrabalhoRemoto: trabalhoRemoto === "true" ? true : false,//
+            OutraCidade: outraCidade === "true" ? true : false,//
             ValorSalario: parseFloat(valorSalario),//
             OfertaExtra: ofertaExtra,
             idEmpresa: idEmpresa

@@ -29,6 +29,17 @@
   margin-top: 50px;
 }
 
+.options-box0 {
+  /* display: flex; */
+  width: 800px;
+  /* MODAFICADO DE 300 P/ AUTO */
+  height: auto;
+  background: #ffffff;
+  box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.18);
+  border-radius: 7px;
+  margin-top: 50px;
+}
+
 .options-box1 h2 {
   margin-top: 13px;
   margin-bottom: 15px;
@@ -231,16 +242,16 @@
   align-items: center;
 }
 
-.texthab2 {
+.texthab3 {
   display: flex;
-  width: 280px;
+  width: 450px;
   height: 90px;
   justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 20px;
 }
 
-.texthab2 p {
+.texthab3 p {
   background-color: #db324a;
   border-radius: 7px;
   color: white;

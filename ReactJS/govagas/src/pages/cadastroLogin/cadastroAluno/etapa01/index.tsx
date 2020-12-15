@@ -46,7 +46,7 @@ function CadastroCandidatoUm(this: any) { //<-//
     const [termo, setTermo] = useState('')
     const [nome, setNome] = useState('')
 
-    const FraseEndereco = rua + ', n°' + numero + ' - ' + bairro + ', ' + municipio + ' - ' + estado + ', ' + cep + '';
+    const FraseEndereco = rua + ', n°' + numero + ' - ' + bairro + ', ' + municipio + ' - ' + estado + ', ' + cep + ' ' + complemento + '';
 
     const Post = () => {
         const form = {

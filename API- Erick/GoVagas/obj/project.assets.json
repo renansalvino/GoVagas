@@ -5600,11 +5600,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Senaisp\\Downloads\\API- Erick\\GoVagas\\GoVagas.csproj",
+      "projectUniqueName": "C:\\Users\\Senaisp\\Documents\\Backupe\\backup-govagas-candidato\\backup-vagasProj\\API- Erick\\GoVagas\\GoVagas.csproj",
       "projectName": "GoVagas",
-      "projectPath": "C:\\Users\\Senaisp\\Downloads\\API- Erick\\GoVagas\\GoVagas.csproj",
+      "projectPath": "C:\\Users\\Senaisp\\Documents\\Backupe\\backup-govagas-candidato\\backup-vagasProj\\API- Erick\\GoVagas\\GoVagas.csproj",
       "packagesPath": "C:\\Users\\Senaisp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Senaisp\\Downloads\\API- Erick\\GoVagas\\obj\\",
+      "outputPath": "C:\\Users\\Senaisp\\Documents\\Backupe\\backup-govagas-candidato\\backup-vagasProj\\API- Erick\\GoVagas\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Senaisp\\AppData\\Roaming\\NuGet\\NuGet.Config",

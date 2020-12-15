@@ -7,12 +7,15 @@ import Sidebar from '../../../components/sidebar/index';
 import Footer from '../../../components/footer/index';
 import Header from '../../../components/header/index'
 import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 
 
 
 
 function DashAdm() {
+
+    let history = useHistory();
 
     const [empresas, setEmpresas] = useState([]);
     const [candidatos, setCandidatos] = useState([]);
@@ -138,7 +141,7 @@ function DashAdm() {
                                     <th>Vaga Candidatada</th>
                                     <th>Nome Empresa</th>
                                     <th>Tipo de Contrato</th>
-                                    <th>Situação Atual</th>
+                                    <th>Documentação</th>
                                 </tr>
                             </thead>
 
@@ -152,7 +155,8 @@ function DashAdm() {
                                                 <td>{inscricao.idCandidatoNavigation.tituloPerfil} { }</td>
                                                 <td>{inscricao.idVagaNavigation.idEmpresaNavigation.nomeEmpresa}</td>
                                                 <td>{inscricao.idVagaNavigation.tipoContrato}</td>
-                                                <td>Pendente</td>
+                                                <td></td>
+                                                {/* <td><button onClick={() => history.push(`documentacao/${inscricaos.idInscricao}`)}>Ver Mais</button></td> */}
                                             </tr>
                                         )
                                     })

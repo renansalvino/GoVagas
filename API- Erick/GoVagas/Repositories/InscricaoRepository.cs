@@ -25,6 +25,7 @@ namespace GoVagas.Repositories
         {
             return ctx.Inscricao.Include(c => c.IdVagaNavigation)
                 .ThenInclude(c => c.IdEmpresaNavigation)
+                .ThenInclude(c => c.IdUsuarioNavigation)
                 .Include(c => c.IdCandidatoNavigation)
                 .ThenInclude(c => c.IdUsuarioNavigation)
                 .FirstOrDefault(ca => ca.IdInscricao == id);

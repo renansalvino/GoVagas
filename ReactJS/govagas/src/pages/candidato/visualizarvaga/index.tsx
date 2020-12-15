@@ -44,7 +44,6 @@ function Visualizarvaga({ match }: any) {
     const [idVaga, setIdVaga] = useState(0);
     const [vaga, setVaga] = useState<any>()
 
-
     const history = useHistory();
 
     useEffect(() => {
@@ -87,7 +86,7 @@ function Visualizarvaga({ match }: any) {
             }
         })
             .then(() => {
-                setVaga({...vaga, inscricao: [...vaga.inscricao!, form]});
+                setVaga({ ...vaga, inscricao: [...vaga.inscricao!, form] });
                 alert('Inscricao cadastrado');
 
             })
@@ -105,7 +104,7 @@ function Visualizarvaga({ match }: any) {
 
                         {/* <h1>Vagas</h1> */}
                         <div>
-                            <div className="retanguloBrancoVisualizar">
+                            <div className="retanguloBrancoVisualizar0">
                                 <div className="CardVisualizar">
                                     <h6>{vaga?.perfilDev}</h6>
 
@@ -145,7 +144,8 @@ function Visualizarvaga({ match }: any) {
                         </div>
                          */}
                             <div className="retanguloBrancoVisualizar">
-                                <div className="CardVisualizar">
+                                <hr />
+                                <div className="CardVisualizar0">
 
                                     <div className="cardprincipal">
 
@@ -155,8 +155,6 @@ function Visualizarvaga({ match }: any) {
                                             <div className="logo">
                                                 <img src={imgAVA} alt="Ava" title="Ava" width="auto" height="60px" />
                                             </div>
-
-
 
                                             <div className="bre01">
 
@@ -179,7 +177,7 @@ function Visualizarvaga({ match }: any) {
                                             </div>
 
 
-                                            <div className="bre02">
+                                            <div className="bre01">
 
                                                 <div className="item02">
                                                     <img src={imgcasestudy} alt="Casestudy" title="Casestudy" width="25px" height="25px" />
@@ -196,19 +194,21 @@ function Visualizarvaga({ match }: any) {
                                                     <img src={imgdiploma} alt="Diploma" title="Diploma" width="25px" height="25px" />
                                                     <p>{vaga?.tituloVaga}</p>
                                                 </div>
-
                                             </div>
 
                                         </div>
                                     </div>
 
                                 </div>
+                                <hr />
+
                             </div>
 
 
                             {/* PARTE III */}
-                            <div className="descricao">
-                                <p>Descrição da empresa: {vaga?.idEmpresaNavigation.nomeEmpresa}</p>
+
+                            <div className="descricao0">
+                                <p>Descrição da empresa:</p> <p id="nomeEmpresa">{vaga?.idEmpresaNavigation.nomeEmpresa}</p>
                             </div>
                             <div className="retanguloBrancoVisualizar">
                                 <div className="CardVisualizar">
@@ -226,10 +226,12 @@ function Visualizarvaga({ match }: any) {
 
                                 </div>
                             </div>
+                            <hr />
 
 
                             {/* PARTE IV */}
-                            <div className="descricao">
+                           
+                            <div className="descricao0">
                                 <p>Atividades da vaga</p>
                             </div>
                             <div className="retanguloBrancoVisualizar">
@@ -260,10 +262,11 @@ function Visualizarvaga({ match }: any) {
 
                                 </div>
                             </div>
+                            <hr />
 
 
                             {/* PARTE V */}
-                            <div className="retanguloBrancoVisualizar">
+                            {/* <div className="retanguloBrancoVisualizar">
                                 <div className="CardVisualizar">
 
                                     <div className="cardprincipal">
@@ -277,10 +280,14 @@ function Visualizarvaga({ match }: any) {
                                     </div>
 
                                 </div>
-                            </div>
+                            </div> */}
 
+                           
                             {/* PARTE VI */}
-                            <div className="retanguloBrancoVisualizar">
+                            <div className="descricao0">
+                                <p>Ofertas Extras</p>
+                            </div>
+                            <div className="retanguloBrancoVisualizar1">
                                 <div className="CardVisualizar">
 
                                     <div className="cardprincipal">
@@ -295,11 +302,18 @@ function Visualizarvaga({ match }: any) {
                                             <div className="bre01">
 
                                                 <div className="item02">
-                                                    <img src={imgdentalcheckup} alt="officeblock" title="officeblock" width="30px" height="30px" />
-                                                    <p>Assistência odontológica</p>
+                                                    <div className="flexVagaTxt">
+                                                        <p>{vaga?.ofertaExtra.split(',').map((habilidade: string) => {
+                                                            return (
+                                                                <div><p>- {habilidade}</p><br /></div>
+                                                            )
+                                                        })}</p>
+                                                    </div>
+                                                    {/* <img src={imgdentalcheckup} alt="officeblock" title="officeblock" width="30px" height="30px" /> */}
+                                                    {/* <p>Assistência odontológica</p> */}
                                                 </div>
 
-                                                <div className="item02">
+                                                {/* <div className="item02">
                                                     <img src={imgdumbbell} alt="Money" title="Money" width="30px" height="30px" />
                                                     <p>Auxílio academia</p>
                                                 </div>
@@ -324,7 +338,7 @@ function Visualizarvaga({ match }: any) {
                                                     <p>Assistência médica</p>
                                                 </div>
 
-                                                <div className="item02">
+                                                 <div className="item02">
                                                     <img src={imgpiggybank} alt="Notes" title="Notes" width="25px" height="25px" />
                                                     <p>Previdência privada</p>
                                                 </div>
@@ -337,7 +351,7 @@ function Visualizarvaga({ match }: any) {
                                                 <div className="item02">
                                                     <img src={imgtrain} alt="Diploma" title="Diploma" width="25px" height="25px" />
                                                     <p>Vale-transporte</p>
-                                                </div>
+                                                </div> */}
 
                                             </div>
 
@@ -346,27 +360,29 @@ function Visualizarvaga({ match }: any) {
 
                                 </div>
                             </div>
+                            <hr />
                         </div>
 
 
 
 
+                        <div className="botaoInscricao">
+                            {vaga?.inscricao.find(c => c.idCandidato == parseJwt().jti) &&
+                                parseJwt().Role == "3" && (
+                                    <Button name="btn2" value="Você está Candidatado!" />
+                                )}
 
-                        {vaga?.inscricao.find(c => c.idCandidato == parseJwt().jti) && 
-                        parseJwt().jti == "3" && (
-                            <Button name="btn2" value="Você está Candidatado!" />
-                        )}
+                            {!vaga?.inscricao.find(c => c.idCandidato == parseJwt().jti) &&
+                                parseJwt().Role == "3" && (
+                                    <form onSubmit={event => {
+                                        event.preventDefault();
+                                        salvar();
+                                    }}>
 
-                        {!vaga?.inscricao.find(c => c.idCandidato == parseJwt().jti) && 
-                        parseJwt().jti == "3" && (
-                            <form onSubmit={event => {
-                                event.preventDefault();
-                                salvar();
-                            }}>
-
-                                <Button onClick={() => salvar} name="btn1" value="Cadastre-se" />
-                            </form>
-                        )}
+                                        <Button onClick={() => salvar} name="btn1" value="Cadastre-se" />
+                                    </form>
+                                )}
+                        </div>
 
 
                     </section>

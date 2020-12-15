@@ -54,7 +54,7 @@ function Routers() {
 			<Route path="/publicarvagatres"component={PublicarVagaTres}/>
 			<Route path="/infoestagio" component={infoestagio}/>
 			<Route path='/perfil' component={Perfil}/>
-			<Route path='/dashboard' component={Dashboard}/>
+			<Route path='/dashboardCandidato' component={Dashboard}/>
 			<Route path='/candidatar' component={Candidatar}/>
 			<Route path='/vagas' component={Listarvagas}/>
 			<Route path='/inscricoes' component={Listarvagasporid}/>
