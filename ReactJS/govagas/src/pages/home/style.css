@@ -1,37 +1,222 @@
-.centro div {
-    display: grid;
+#title_home {
+    display: flex;
     justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+#fun_ferramenta {
+    width: 972px;
+    height: 235px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+    margin-bottom: 50px;
+    margin-left: 275px;
+    margin-top: 50px;
+    padding-left: 35px;
+    padding-top: 35px;
+    line-height: 30px;
+}
+
+#fun_ferramenta li {
+    display: grid;
+    margin-bottom: 15px;
+}
+
+#Image_Home_Senai {
+    margin-left: 375px;
+    margin-bottom: 55px;
+    margin-top: 55px
+}
+
+#info_aluno_senai {
+    width: 972px;
+    height: 387px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+    margin-bottom: 50px;
+    margin-left: 275px;
+    margin-top: 50px;
+    padding-left: 35px;
+    padding-top: 35px;
+    padding-right: 50px;
+}
+
+#info_aluno_senai li {
+    display: grid;
+    margin-bottom: 25px;
+}
+
+#info_resp_senai {
+    width: 973px;
+    height: 370px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+    margin-bottom: 50px;
+    margin-left: 275px;
+    margin-top: 50px;
+    padding-left: 35px;
+    padding-top: 35px;
+    padding-right: 50px;
+}
+
+#info_resp_senai li {
+    display: grid;
+    margin-bottom: 27px;
+    line-height: 25px;
+}
+
+.vagas_recentes {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#vaga_home {
+    width: 323px;
+    height: 517px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+}
+
+#vaga_home>p {
+    font-size: 20px;
+    color: #333333;
+    margin-left: 62.5px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    width: 198px;
+}
+
+#logo_accenture_vaga_recente {
+    margin-left: 60px;
+}
+
+#atributos_vaga_home {
+    display: flex;
+    margin-left: 7px;
+}
+
+#atributos_vaga_home p {
+    color: #868686;
+}
+
+#atributos_vaga_home {
+    margin-bottom: 5px;
+}
+
+/* Imagens das vagas mais recentes */
+
+#lingua_img_home {
+    margin-left: 9px;
+}
+
+#contrato_img_home {
+    margin-left: 13px;
+}
+
+#porte_img_home {
+    margin-left: 10px;
+}
+
+/* Paragrafos de vagas mais recentes */
+
+#paragrafo_status {
+    margin-left: 10px;
+}
+
+#paragrafo_money {
+    margin-left: 10px
+}
+
+#paragrafo_lingua {
+    margin-left: 10px;
+}
+
+#paragrafo_contrato {
+    margin-left: 20px;
+}
+
+#paragrafo_porte {
+    margin-left: 15px;
+}
+
+/*Vagas mais recentes 2*/
+#Logo_microsoft_vaga_recente {
+    margin-left: 50px;
+    margin-top: 25px;
+}
+
+/* Vagas mais recentes 3*/
+
+#Logo_BRQ_vaga_recente {
+    margin-left: 65px;
+}
+
+#btn1_home {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 17px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #DB324A;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 7px;
+    margin-left: 655px;
+    margin-bottom: 50px;
+}
+
+#paragrafo_home_empresa {
+    text-align: center;
+    font-size: 20px;
+    width: 400px;
+    margin-left: 575px;
+    margin-bottom: 50px
+}
+
+#logos_img {
+    width: 972px;
+    height: 318px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+    margin-left: 275px;
+    margin-bottom: 75px;
+}
+
+#logos_home{
+    width:939px;
+    height:292px;
+}
+
+#carouselExampleControls{
+    width: 640px;
+    height: 150px;
+    margin-left: 430px;
+    margin-bottom: 250px;
+}
+
+#mulher_perfil, #snoopy{
+    margin-left: 275px;
     margin-top: 50px;
 }
 
-.centro h1 {
-    display: flex;
-    justify-content: center;
-    font-family: 'Roboto', sans-serif;
+#snoopy {
+    width: 100px;
+    height: 100px;
 }
 
-.centro {
-    margin-top: 200px;
-}
-
-.davi {
-    margin-bottom: 20px;
-}
-
-nav {
-    font-size: 17px;
-}
-
-#nao_sei {
-    margin-left: 10px;
-    height: 10px;
-}
-
-.Input {
-    display: flex;
-    flex-direction: row;
-}
-
-.Input #btn1 {
-    margin-top: 45px;
+.carousel-item p{
+    margin-top: 20px;
+    text-align: center;
 }

@@ -11,7 +11,7 @@ namespace GoVagas.Interfaces
         List<Inscricao> ListarTodos();
         public Inscricao BuscarPorId(int id);
         List<Inscricao> ListarPorIdCandidato(int id);
-
+        List<Inscricao> ListarPorIdEmpresa(int id);
         void Cadastrar(Inscricao novoInscricao);
         void Atualizar(int id, Inscricao InscricaoAtualizado);
         void Deletar(int id);

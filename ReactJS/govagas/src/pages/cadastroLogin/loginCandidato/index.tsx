@@ -101,11 +101,13 @@ function LoginCandidato() {
                 </div>
               </div>
               <a className="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span> {/* setinha aqui */}
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span> 
+                {/* setinha aqui */}
                 <span className="sr-only">Previous</span>
               </a>
               <a className="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                <span className="carousel-control-next-icon" aria-hidden="true"></span> {/* aqui tabém :) */}
+                <span className="carousel-control-next-icon" aria-hidden="true"></span> 
+                {/* aqui tabém :) */}
                 <span className="sr-only">Next</span>
               </a>
             </div>
@@ -140,7 +142,7 @@ function LoginCandidato() {
                         <p>Esqueceu sua senha?</p>
                       </div>
                       <div className="btn-criarconta">
-                        <Button  name="btn1" value="Login" />
+                        <Button name="btn1" value="Login" />
                       </div>
                       <div className="login-inputs">
                         <tr className="tr-empresa" />
@@ -180,7 +182,7 @@ function LoginCandidato() {
                         <tr />
                       </div>
                       <div className="btn-criarconta1">
-                        <Button  name="btn1" value="Criar Conta" />
+                        <Button name="btn1" value="Criar Conta" />
                       </div>
                       <div className="login-inputs">
                         <tr className="tr-empresa" />

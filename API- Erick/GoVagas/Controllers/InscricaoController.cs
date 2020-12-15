@@ -56,6 +56,19 @@ namespace GoVagas.Controllers
             }
         }
 
+        [HttpGet("Empresa/{id}")]
+        public IActionResult ListarPorIdEmpresa(int id)
+        {
+            try
+            {
+                return Ok(_InscricaoRepository.ListarPorIdEmpresa(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
+
 
         /// <summary>
         /// Cadastra um novo Inscricao

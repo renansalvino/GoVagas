@@ -2,6 +2,7 @@
     justify-content: center;
     font-size: 30px;
     margin-top: 150px;
+    margin-left: 150px;
     display: flex;
 }
 
@@ -10,7 +11,7 @@
 }
 
 .publi-options2 .BarraProgresso {
-    margin-left: 20px;
+    margin-left: 150px;
 }
 
 
@@ -88,7 +89,8 @@
     background: #FFFFFF;
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);
     border-radius: 7px;
-    margin-left: 250px;
+    margin-left: 200px;
+    padding-bottom: 20px;
 }
 
 .align-input {
@@ -102,8 +104,17 @@
     flex-direction: column;
 }
 
-.align-input Input {
+/* .align-input Input {
     margin-left: 15px;
+} */
+
+.margemInput {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-proximo{
+    margin-left: 300px;
 }
 
 .form-sobrevaga {
@@ -113,6 +124,7 @@
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);
     border-radius: 7px;
     margin-bottom: 100px;
+    padding-top: 20px;
 }
 
 /* .form-vaga input {
@@ -125,6 +137,9 @@
     align-items: center;
 }
 
+.form-group .estado {
+    margin-left: 15px;
+}
 
 .form-vaga label {
     /* margin-left: 37.5px; */
@@ -153,18 +168,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 250px;
+    margin-left: 200px;
     
 }
 
-.form-sobrevaga input {
+/* .form-sobrevaga input {
     margin-left: 37.5px;
-}
-
+} */
+/* 
 .form-sobrevaga label {
     margin-left: 37.5px;
     margin-top: 15px;
-}
+} */
 
 /* .form-sobrevaga #btn1 {
     margin-left: 280px;

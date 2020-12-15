@@ -139,23 +139,30 @@
     margin: 0px 20px;
 }
 
-.carousel-indicators li{
+/* .carousel-indicators li{
     outline-style: groove;
     margin: 0px 10px;
-    /* transition: opacity .18s ease; */
-}
+    transition: opacity .18s ease;
+} */
 
 .carousel-indicators .active {
     opacity: 1;
     background-color: black;
-    padding: 3px 3px 3px 3px;
+  
 }
 
-.carousel-control-next-icon, .carousel-control-prev-icon {
+/* .carousel-control-next-icon, .carousel-control-prev-icon {
     background-color: #DB324A;
     width: 20px;
     height: 20px;
     border-radius: 100%;
+} */
+
+.carousel-control-next-icon {
+    background-image: url("../../../assets/images/setae.webp");
+}
+.carousel-control-prev-icon {
+    background-image: url("../../../assets/images/setaa.webp");
 }
 
 

@@ -27,7 +27,7 @@ import imgrestaurant from '../../../assets/images/candidato/restaurant.svg'
 import imgshoppingcart from '../../../assets/images/candidato/shopping-cart.svg'
 import imgtrain from '../../../assets/images/candidato/train.svg'
 import { parseJwt } from '../../../auth'
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 // import { Link } from 'react-router-dom';
 
@@ -93,6 +93,48 @@ function Visualizarvaga({ match }: any) {
             .catch(err => console.error(err));
     }
 
+    const Menu = () => {
+        const token = localStorage.getItem('tokengovagas');
+
+        if (token === undefined || token === null) {
+            return (
+                <ul className="menuNav">
+                    <ul className="menuNav">
+                        <li><Link className="link" to="/">VER VAGAS</Link></li>
+                        <li><Link className="link" to="/loginCandidato">LOGIN</Link></li>
+                        <li><Link to="" className="Link"><Button name="btn1" value="CADASTRE-SE" /></Link></li>
+                    </ul>
+                </ul>
+            );
+        } else {
+            if (parseJwt().Role === "3") {
+                return (
+                    <ul className="menuNav">
+                        <li><Link className="link" to="/filme">DASHBOARD</Link></li>
+                        <li><Link className="link" to="/vagas">VER VAGAS</Link></li>
+                    </ul>
+                );
+            }
+            if (parseJwt().Role === "2") {
+                return (
+                    <ul className="menuNav">
+                        <li><Link className="link" to="/filme">DASHBOARD</Link></li>
+                        <li><Link className="link" to="/publicarvaga">PUBLICAR VAGA</Link></li>
+                    </ul>
+                );
+            }
+            if (parseJwt().Role === "1") {
+                return (
+                    <ul className="menuNav">
+                        <li><Link className="link" to="/dashadm">DASHBOARD</Link></li>
+                        <li><Link className="link" to="/">PERFIL</Link></li>
+                    </ul>
+                );
+            }
+
+
+        }
+    }
 
     return (
         <div>
@@ -230,7 +272,7 @@ function Visualizarvaga({ match }: any) {
 
 
                             {/* PARTE IV */}
-                           
+
                             <div className="descricao0">
                                 <p>Atividades da vaga</p>
                             </div>
@@ -282,7 +324,7 @@ function Visualizarvaga({ match }: any) {
                                 </div>
                             </div> */}
 
-                           
+
                             {/* PARTE VI */}
                             <div className="descricao0">
                                 <p>Ofertas Extras</p>
@@ -363,8 +405,8 @@ function Visualizarvaga({ match }: any) {
                             <hr />
                         </div>
 
-
-
+                        
+                        
 
                         <div className="botaoInscricao">
                             {vaga?.inscricao.find(c => c.idCandidato == parseJwt().jti) &&
@@ -381,6 +423,11 @@ function Visualizarvaga({ match }: any) {
 
                                         <Button onClick={() => salvar} name="btn1" value="Cadastre-se" />
                                     </form>
+                                )}
+
+                            {vaga?.inscricao.find(c => c.idEmpresa == parseJwt().jti) &&
+                                parseJwt().Role == "2" && (
+                                    <Button name="btn2" value="Você está Candidatado!" />
                                 )}
                         </div>
 

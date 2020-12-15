@@ -24,7 +24,7 @@ function Header() {
                     <ul className="menuNav">
                         <li><Link className="link" to="/">VER VAGAS</Link></li>
                         <li><Link className="link" to="/loginCandidato">LOGIN</Link></li>
-                        <li><Link to="" className="Link"><Button name="btn1" value="CADASTRE-SE" /></Link></li>
+                        <li><Link to="/loginCandidato" className="Link"><Button name="btn1" value="CADASTRE-SE" /></Link></li>
                     </ul>
                 </ul>
             );
@@ -32,7 +32,7 @@ function Header() {
             if (parseJwt().Role === "3") {
                 return (
                     <ul className="menuNav">
-                        <li><Link className="link" to="/filme">DASHBOARD</Link></li>
+                        <li><Link className="link" to="/dashboardCandidato">DASHBOARD</Link></li>
                         <li><Link className="link" to="/vagas">VER VAGAS</Link></li>
                         <li><Link to="" className="Link" onClick={event => {
                             event.preventDefault();
@@ -44,7 +44,7 @@ function Header() {
             if (parseJwt().Role === "2") {
                 return (
                     <ul className="menuNav">
-                        <li><Link className="link" to="/filme">DASHBOARD</Link></li>
+                        <li><Link className="link" to="/dashAdm">DASHBOARD</Link></li>
                         <li><Link className="link" to="/publicarvaga">PUBLICAR VAGA</Link></li>
                         <li><Link to="" className="Link" onClick={event => {
                             event.preventDefault();

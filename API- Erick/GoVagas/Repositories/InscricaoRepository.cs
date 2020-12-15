@@ -40,6 +40,14 @@ namespace GoVagas.Repositories
                 .ToList();
         }
 
+        public List<Inscricao> ListarPorIdEmpresa(int id)
+        {
+            return ctx.Inscricao.Include(c => c.IdVagaNavigation)
+                .ThenInclude(c => c.IdEmpresaNavigation)
+                .Include(c => c.IdCandidatoNavigation)
+                .Where(c => c.IdVagaNavigation.IdEmpresaNavigation.IdEmpresa == id)
+                .ToList();
+        }
 
         public void Cadastrar(Inscricao novoInscricao)
         {

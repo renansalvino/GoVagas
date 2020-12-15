@@ -43,20 +43,34 @@ function Listarvagasporid() {
 
 
     const visualizarVagaPorId = (id: number) => {
-
-        fetch('https://localhost:5001/api/Inscricao/Candidato/' + id, {
-            method: 'GET',
-            headers: {
-                authorization: 'Bearer ' + localStorage.getItem('token-govagas')
-            }
-        })
-            .then(resp => resp.json())
-            .then(dados => {
-                setInscricaos(dados);
-                console.log(dados);
+        if (parseJwt().Role === "3") {
+            fetch('https://localhost:5001/api/Inscricao/Candidato/' + id, {
+                method: 'GET',
+                headers: {
+                    authorization: 'Bearer ' + localStorage.getItem('token-govagas')
+                }
             })
-            .catch(err => console.error(err));
-    }
+                .then(resp => resp.json())
+                .then(dados => {
+                    setInscricaos(dados);
+                    console.log(dados);
+                })
+                .catch(err => console.error(err));
+        } else if (parseJwt().Role === "2") {
+            fetch('https://localhost:5001/api/Inscricao/Empresa/' + id, {
+                method: 'GET',
+                headers: {
+                    authorization: 'Bearer ' + localStorage.getItem('token-govagas')
+                }
+            })
+                .then(resp => resp.json())
+                .then(dados => {
+                    setInscricaos(dados);
+                    console.log(dados);
+                })
+                .catch(err => console.error(err));
+        }
+    } 
 
 
     // const [inscricaos, setinscricaos] = useState([]); 

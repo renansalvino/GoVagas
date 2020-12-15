@@ -111,17 +111,17 @@ function CadastroCandidatoDois() {
                                             <div className="grupo">
                                             <div className="form-group">
                                                     <label htmlFor="">Nível de Inglês:</label>
-                                                    <select id="input2" placeholder="Escolher..." value={nivelingles} onChange={a => setNivelingles(a.target.value)}>
+                                                    <select id="input1" placeholder="Escolher..." value={nivelingles} onChange={a => setNivelingles(a.target.value)}>
                                                     <option>Escolher:</option>
                                                         <option>Básico</option>
                                                         <option>Intermediário</option>
                                                         <option>Avançado</option>
-                                                        <option>Avançado</option>
+                                                        <option>Gringo</option>
                                                     </select>
                                                 </div>
-                                                <div className="form-group">
+                                                {/* <div className="form-group">
                                                     <Input type="file" name="input2" label="Currículo:" placeholder="Cidade" value={curriculo} onChange={a => setCurriculo(a.target.value)} />
-                                                </div>
+                                                </div> */}
                                             </div>
                                             <div className="grupo">
                                             <div className="form-group">
@@ -142,14 +142,14 @@ function CadastroCandidatoDois() {
                                             <div className="select">
                                                 <div className="grupo">
                                                     <div className="habilidades">
-                                                        <Input name="input2" label="Habilidades:" placeholder="CosmoDB" value={habilidade} onChange={a => setHabilidade(a.target.value)} />
+                                                        <Input name="input1" label="Habilidades:" placeholder="CosmoDB" value={habilidade} onChange={a => setHabilidade(a.target.value)} />
                                                     </div>
 
-                                                    <div className="nivel">
+                                                    {/* <div className="nivel">
                                                         <Input name="input2" label="Nível:"placeholder="Júnior" value={expertisecandidato} onChange={a => setExpertisecandidato(a.target.value)} />
-                                                    </div>
+                                                    </div> */}
                                                 </div>
-                                                <div className="grupo">
+                                                {/* <div className="grupo">
                                                     <div className="habilidades">
                                                         <Select name="hab" value={habilidade} onChange={a => setHabilidade(a.target.value)} />
                                                     </div>
@@ -166,12 +166,12 @@ function CadastroCandidatoDois() {
                                                     <div className="nivel">
                                                         <SelectLvl name="hab" value={expertisecandidato} onChange={a => setExpertisecandidato(a.target.value)} />
                                                     </div>
-                                                </div>
+                                                </div> */}
 
                                             </div>
-                                            <div className="btn-proximo-hab">
+                                            {/* <div className="btn-proximo-hab">
                                                 <button id="btn1" >ADICIONAR HABILIDADES</button>
-                                            </div>
+                                            </div> */}
 
                                         </div>
 
