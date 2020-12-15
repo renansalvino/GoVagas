@@ -15,14 +15,12 @@ import imgdiploma from '../../assets/images/candidato/diploma.svg'
 import imgofficeblock from '../../assets/images/candidato/office-block.svg'
 
 
-// import { Link } from 'react-router-dom';
 
 
 function Candidatar() {
 
-
     return (
-        <div>
+        <div id="principal">
             <Header />
             {/* todo em linhas */}
             <div className="areaDash">
@@ -40,10 +38,7 @@ function Candidatar() {
 
                                 {/* icones */}
 
-
                                 <div className="text03">
-
-
 
                                     <div className="textinf3">
 
@@ -68,12 +63,7 @@ function Candidatar() {
                                                 <img src={imgtranslation} alt="Translation" title="Translation" width="30px" height="30px" />
                                                 <p>Ingles</p>
                                             </div>
-
                                         </div>
-
-
-
-
                                         <div className="bre02">
 
                                             <div className="item02">
@@ -94,43 +84,24 @@ function Candidatar() {
                                         </div>
 
                                         {/* TAG */}
-
                                         <div className="status">
-                                    <p>Candidatura enviada </p>
-                                </div>
+                                            <p>Candidatura enviada </p>
+                                        </div>
 
                                     </div>
-
-
-
-                                        
                                 </div>
-
-
-
-
 
                                 <div className="texthab2">
 
-
                                     <div className="item"><p>C#</p></div>
                                     <div className="item"><p>Java</p></div>
-                                    {/* <div className="item-wide"><p>Java</p></div> */}
                                     <div className="item"><p>SQL</p></div>
-                                    {/* <div className="break"></div> */}
-                                    {/* <!-- break --> */}
                                     <div className="item"><p>PHP</p></div>
                                     <div className="item"><p>HTML</p></div>
 
                                 </div>
-                               
-
                             </div>
                         </div>
-
-
-
-
                     </section>
                 </div>
             </div>

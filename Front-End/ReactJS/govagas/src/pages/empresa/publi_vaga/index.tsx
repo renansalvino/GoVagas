@@ -93,7 +93,7 @@ function PubliVaga() {
                                         <option>Alto</option>
                                     </select>
                                     <div id="align-input_style">
-                                    <Input type="date" name="input2" id="input_maneiro"  label="Dias de contrato" placeholder="366 dias" value={diasContrato} onChange={a => setDiasContrato(a.target.value)} />
+                                    <Input type="number" name="input2" id="input_maneiro"  label="Dias de contrato" placeholder="366 dias" value={diasContrato} onChange={a => setDiasContrato(a.target.value)} />
                                     </div>
                                 </div>
                             </div>
@@ -101,10 +101,10 @@ function PubliVaga() {
                             <div className="form-sobrevaga">
                                 <Input type="name" name="input" label="Habilidades necessárias" placeholder="Ex: Front-End, GIT, C# ..." value={habNecessaria} onChange={a => setHabNecessaria(a.target.value)} />
                                 <Input type="name" name="input" label="Local da vaga" placeholder="Ex: Rua Dr. Alberto de Oliveira, n75 - São Paulo - Brasil" value={localVaga} onChange={a => setLocalVaga(a.target.value)} />
-                                <Input type="name" name="input" label="Requisitos para Vaga" placeholder="Ex: Cursando Análise e Desenvolvimento de Sistemas" value={reqVaga} onChange={a => setReqVaga(a.target.value)} />
+                                <Input type="name" name="input" label="Formação" placeholder="Ex: Cursando Análise e Desenvolvimento de Sistemas" value={reqVaga} onChange={a => setReqVaga(a.target.value)} />
                                 <Input type="name" name="input" label="Tempo de experiência" placeholder="Ex: Cursando Análise e Desenvolvimento de Sistemas" value={tempoExp} onChange={a => setTempoExp(a.target.value)} />
                                 <Input type="name" name="inputpersonalizado2" label="Descrição das Atividades e Funções" placeholder="Ex: - Ser Auto-gerenciável; - Aplicar treinamentos para a equipe. - Inglês intermediário / Fluente" value={descAtivFuncoes} onChange={a => setDescAtivFuncoes(a.target.value)} />
-                                <Button name="btn1" onClick="" value="Próxima etapa" />
+                                <Button name="btn1" onClick="" value="Próxima etapa"/>
                             </div>
                         </form>
                     </div>

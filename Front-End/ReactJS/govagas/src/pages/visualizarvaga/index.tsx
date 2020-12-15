@@ -25,7 +25,7 @@ import imgpiggybank from '../../assets/images/candidato/piggy-bank.svg'
 import imgrestaurant from '../../assets/images/candidato/restaurant.svg'
 import imgshoppingcart from '../../assets/images/candidato/shopping-cart.svg'
 import imgtrain from '../../assets/images/candidato/train.svg'
-import {parseJwt} from '../../auth'
+import { parseJwt } from '../../auth'
 
 // import { Link } from 'react-router-dom';
 
@@ -46,7 +46,7 @@ function Visualizarvaga({ match }: any) {
         setVaga(id)
     }, []);
 
-    
+
     const salvar = () => {
         const form = {
             idCandidato: idCandidato,
@@ -66,7 +66,6 @@ function Visualizarvaga({ match }: any) {
             })
             .catch(err => console.error(err));
     }
-
     return (
         <div>
             <Header />
@@ -85,12 +84,12 @@ function Visualizarvaga({ match }: any) {
 
                                     <div className="textinf2"> */}
 
-                                        {/* logo */}
-                                        {/* <div className="logo">
+                                {/* logo */}
+                                {/* <div className="logo">
                                             <img src={imgAVA} alt="Ava" title="Ava" width="auto" height="60px" />
                                         </div> */}
 
-                                    {/* </div>
+                                {/* </div>
 
                                 </div> */}
 
@@ -110,8 +109,6 @@ function Visualizarvaga({ match }: any) {
 
                             </div>
                         </div>
-
-
 
 
                         {/* PARTE II */}
@@ -180,9 +177,9 @@ function Visualizarvaga({ match }: any) {
 
 
                         {/* PARTE III */}
-                                <div className="descricao">
-                                <p>Descrição da empresa</p>
-                                </div>
+                        <div className="descricao">
+                            <p>Descrição da empresa</p>
+                        </div>
                         <div className="retanguloBrancoVisualizar">
                             <div className="CardVisualizar">
                                 <div className="cardprincipal">
@@ -313,11 +310,8 @@ function Visualizarvaga({ match }: any) {
                             event.preventDefault();
                             salvar();
                         }}>
-
                             <Button onClick={() => salvar} name="btn1" value="Cadastre-se" />
                         </form>
-
-
                     </section>
                 </div>
             </div>

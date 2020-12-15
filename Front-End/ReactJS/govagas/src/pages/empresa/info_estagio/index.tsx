@@ -6,30 +6,7 @@ import Input from '../../../components/input/index';
 import Sidebar from '../../../components/sidebar/index';
 import Imgalerta from '../../../assets/images/empresa/alerta.svg';
 
-
-
 function InfoEstagio() {
-
-
-    // function filtrarVagas  () {
-    //         $("#forms-estagio0 Input").keyup(function () {
-    //             var index = $(this).parent().index();
-    //             var nth = "#forms-estagio0 (" + (index + 1).toString() + ")";
-    //             var valor = $(this).val().toUpperCase();
-    //             $("#forms-estagio0 label").show();
-    //             $(nth).each(function () {
-    //                 if ($(this).text().toUpperCase().indexOf(valor) < 0) {
-    //                     $(this).parent().hide();
-    //                 }
-    //             });
-    //         });
-
-    //         $("#tabela input").blur(function () {
-    //             $(this).val("");
-    //         });
-    //     ;
-    // }
-
     return (
         <div className="principal">
             <Header />

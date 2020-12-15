@@ -11,6 +11,7 @@ import { useState, useEffect } from 'react';
 
 function TabelaCandidatos() {
 
+
     const [idInscricao, setIdInscricao] = useState(0);
     const [inscricao, setInscricao] = useState('');
     const [inscricaos, setInscricaos] = useState([]);
@@ -99,7 +100,7 @@ function TabelaCandidatos() {
                                             <Input label="Telefone" name="input2" placeholder="(00) 0000-0000" readOnly></Input>
                                         </div>
                                         <div className="flexMetade">
-                                            <Input label="CPF" name="input2" placeholder="000.000.000-00" readOnly></Input>
+                                            <Input label="CPF" placeholder="000.000.000-00" name="input2" readOnly ></Input>
                                             <Input label="Pretenção Salarial" name="input2" placeholder="0000.00$" readOnly></Input>
                                         </div>
 
@@ -217,7 +218,7 @@ function TabelaCandidatos() {
                                         return (
                                             <tr key={atributo.idInscricao}>
                                                 <td>{atributo.idCandidatoNavigation.idUsuarioNavigation.nome}</td>
-                                                <td>{atributo.idCandidatoNavigation.tituloPerfil} {}</td>
+                                                <td>{atributo.idCandidatoNavigation.tituloPerfil} { }</td>
                                                 <td>{atributo.idVagaNavigation.idEmpresaNavigation.nomeEmpresa}</td>
 
                                                 {/* if({atributo.idVagaNavigation.tipoContrato} == 0) {

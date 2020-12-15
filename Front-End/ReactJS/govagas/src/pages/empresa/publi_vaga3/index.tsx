@@ -2,10 +2,8 @@ import React, { useState, useEffect, CSSProperties } from 'react';
 // import React from 'react';
 import './style.css';
 import '../../../assets/styles/global.css'
-
 import Header from '../../../components/header/index';
 import Footer from '../../../components/footer/index';
-
 import Sidebar from '../../../components/sidebar';
 // import imgbadge from '../../assets/images/candidato/badge.svg'
 import imgmoney from '../../../assets/images/candidato/money.svg'
@@ -16,7 +14,8 @@ import imgdiploma from '../../../assets/images/candidato/diploma.svg'
 import imgofficeblock from '../../../assets/images/candidato/office-block.svg'
 
 
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import Button from '../../../components/button';
 
 const cssStyle: CSSProperties = {
     width: '1324px',
@@ -69,10 +68,10 @@ function PublicarVagatres() {
                 // localStorage.setItem( 'IdVaga', String(idVaga))
                 history.push(`/visualizarvaga?id=${id}`)
             })
-            .catch(err => console.error(err));
+            .catch(err => console.error(window.alert("Usuário não logado")));
     }
 
-
+    
     // const [inscricaos, setinscricaos] = useState([]); 
     // const [titulovaga, setTituloVaga] = useState('')
     // const [perfildev, setPerfilDev] = useState('')
@@ -115,75 +114,52 @@ function PublicarVagatres() {
                                     return <div className='CardVagas'>
                                         <button className="Button-Visualizar" onClick={() => visualizarVaga(item.idVaga)}>
 
-
                                             <div className="Cartao">
-                                                <h6>{item.perfilDev}</h6>
 
+                                                <h6>{item.perfilDev}</h6>
 
                                                 <div className="infoVaga">
 
                                                     <div className="vagaInfo">
-
                                                         <div className="logoListarVaga">
                                                             {/* <img src={imgbadge} alt="Ava" title="LogoEmpresa" width="70px" height="70px" /> */}
                                                         </div>
-
                                                         <div className="colunaEsquerdaListar">
-
                                                             <div className="linhaListarVaga">
                                                                 <img src={imgofficeblock} alt="officeblock" title="officeblock" width="30px" height="30px" />
                                                                 <p>Em busca do primeiro emprego</p>
                                                             </div>
-
                                                             <div className="linhaListarVaga">
                                                                 <img src={imgmoney} alt="Money" title="Money" width="30px" height="30px" />
                                                                 <p>R${item.valorSalario}</p>
                                                             </div>
-
                                                             <div className="linhaListarVaga">
                                                                 <img src={imglocation} alt="Translation" title="Translation" width="30px" height="30px" />
                                                                 <p>{item.localVaga}</p>
                                                             </div>
-
                                                         </div>
 
-
-
-
                                                         <div className="colunaDireitaListar">
-
                                                             <div className="linhaListarVaga">
                                                                 <img src={imgcasestudy} alt="Casestudy" title="Casestudy" width="25px" height="25px" />
                                                                 <p>{item.tituloVaga}</p>
                                                             </div>
-
                                                             <div className="linhaListarVaga">
                                                                 <img src={imgnotes} alt="Notes" title="Notes" width="25px" height="25px" />
                                                                 <p>{item.tipoContrato}</p>
                                                             </div>
-
                                                             <div className="linhaListarVaga">
                                                                 <img src={imgdiploma} alt="Diploma" title="Diploma" width="25px" height="25px" />
                                                                 <p>{item.ReqVaga}</p>
                                                             </div>
-
                                                         </div>
-
                                                     </div>
-
                                                 </div>
-
-
                                                 <div className="infoHab">
-
                                                     <div className="tagListarVagas"><p>{item.habNecessaria}</p></div>
-
                                                 </div>
-
-
                                             </div>
-                                            {/* </Link> */}
-
+                                            <Link to="/visualizarvaga">  <Button name="btn1" onClick="" value="visualizar Vaga" /></Link>
                                         </button>
                                     </div>
                                 })

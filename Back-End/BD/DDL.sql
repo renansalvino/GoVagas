@@ -155,4 +155,4 @@ IdInscricao				INT PRIMARY KEY IDENTITY
 ,IdVaga					INT FOREIGN KEY REFERENCES Vaga (IdVaga)
 );
 
-select * from Vaga
+select * from Usuario

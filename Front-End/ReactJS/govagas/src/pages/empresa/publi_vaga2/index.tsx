@@ -5,7 +5,7 @@ import Footer from '../../../components/footer/index';
 import Input from '../../../components/input/index';
 import Sidebar from '../../../components/sidebar/index';
 import Button from '../../../components/button/index';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { parseJwt } from '../../../auth';
 
 
@@ -34,13 +34,13 @@ function PubliVagaDois() {
     const [descAtivFuncoes, setDescAtivFuncoes] = useState('')
     const [idEmpresa, setIdEmrpesa] = useState(1)
 
-    const Cadastrar2 = () => {    
+    const Cadastrar2 = () => {
 
         const form2 = {
-            TipoContrato: tipoContrato === 'true'? true : false,//
+            TipoContrato: tipoContrato === 'true' ? true : false,//
             ExpertiseVaga: expertiseVaga,
-            TrabalhoRemoto: trabalhoRemoto === 'true'? true : false,//
-            OutraCidade: outraCidade === 'true'? true : false,//
+            TrabalhoRemoto: trabalhoRemoto === 'true' ? true : false,//
+            OutraCidade: outraCidade === 'true' ? true : false,//
             ValorSalario: parseFloat(valorSalario),//
             OfertaExtra: ofertaExtra,
             TituloVaga: localStorage.getItem('Titulo da Vaga'),
@@ -54,7 +54,7 @@ function PubliVagaDois() {
             DescAtivFuncoes: localStorage.getItem('Descrição das atividades e funções'),
             idEmpresa: idEmpresa,
         }
-       
+
         console.log(form2)
 
 
@@ -89,9 +89,7 @@ function PubliVagaDois() {
                 setIdEmrpesa(1);
             })
             .catch(err => console.error(err));
-            
     }
-    
     return (
         <div className="pricnipal">
             <Header />
@@ -135,7 +133,7 @@ function PubliVagaDois() {
                                         <div id="alignSelect">
                                             <label htmlFor="expertisevaga">Expertise vaga</label>
                                             <select name="expertisevaga" id="style-input" placeholder="Selecione seu nivel de experiência" value={expertiseVaga} onChange={a => setExpertiseVaga(a.target.value)}>
-                                            <option>Seleciona sua opção:</option>
+                                                <option>Seleciona sua opção:</option>
                                                 <option>Júnior</option>
                                                 <option>Pleno</option>
                                                 <option>Sênior</option>
@@ -146,7 +144,7 @@ function PubliVagaDois() {
                                         <div id="alignSelect_2">
                                             <label htmlFor="trabremoto">Trabalhar remoto?</label>
                                             <select name="trabremoto" id="style-input" placeholder="Selecione seu nível de experiência" value={trabalhoRemoto} onChange={a => setTrabalhoRemoto(a.target.value)}>
-                                            <option>Seleciona sua opção:</option>
+                                                <option>Seleciona sua opção:</option>
                                                 <option value="true">Sim</option>
                                                 <option value="false">Não</option>
                                             </select>
@@ -154,16 +152,16 @@ function PubliVagaDois() {
                                         <div id="alignSelect">
                                             <label htmlFor="candoutracid">Candidatos de outra cidade?</label>
                                             <select name="candoutracid" id="style-input" placeholder="Aceitaria trabalhar em outra cidade" value={outraCidade} onChange={a => setOutraCidade(a.target.value)}>
-                                            <option>Seleciona sua opção:</option>
+                                                <option>Seleciona sua opção:</option>
                                                 <option value="true">Sim</option>
                                                 <option value="false">Não</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <Input type="money" name="input" label="Valor Salarial" placeholder="Ex: Front-End, GIT, C# ..." value={valorSalario} onChange={a => setValorSalario(a.target.value)} />
+                                    <Input type="money" name="input" label="Valor Salarial (Em R$)" placeholder="Ex: Front-End, GIT, C# ..." value={valorSalario} onChange={a => setValorSalario(a.target.value)} />
                                     <Input type="Name" name="inpustyle" label="Ofertas extras" placeholder="Ex: Cursando Análise e Desenvolvimento de Sistemas" value={ofertaExtra} onChange={a => setOfertaExtra(a.target.value)} />
                                 </div>
-                                <Button name="btn1" onClick="" value="Próxima etapa" />
+                                <Link to="/visualizarvaga"><Button name="btn1" onClick="" value="Próxima etapa" /></Link>
                             </form>
                         </div>
                     </div>

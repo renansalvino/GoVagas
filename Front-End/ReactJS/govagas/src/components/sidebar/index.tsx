@@ -5,6 +5,8 @@ import Imgsettnings from '../../assets/images/candidato/settings.svg';
 import Imgchecklist from '../../assets/images/candidato/checklist.svg';
 import Imgdashboard from '../../assets/images/candidato/dashboard.svg';
 import Imgcasestudy from '../../assets/images/candidato/casestudy.svg';
+import { Link } from 'react-router-dom';
+import Button from '../button';
 
 function Sidebar() {
     return (
@@ -30,21 +32,21 @@ function Sidebar() {
 
                 <div className="containerRotas">
 
-                    <div className="rotas"> 
+                    <div className="rotas">
                         <div className="rota">
                             <div className="icon">
                                 <img src={Imgdashboard} alt="" />
                             </div>
-                            <li>DashBoard</li>
+                            <Link to="/perfil/index.tsx"> <li>DashBoard</li> </Link>
                         </div>
                         <div className="rota">
                             <div className="icon">
                                 <img src={Imgchecklist} alt="" />
                             </div>
-                            <li>Candidaturas</li>
+                            <Link to="/candidatar/index.tsx"><li>Candidaturas</li></Link>
                         </div>
                         <div className="rota">
-                            <div className="icon">
+                            <div className="icon">\
                                 <img src={Imgcasestudy} alt="" />
                             </div>
                             <li>Ver Vagas</li>
