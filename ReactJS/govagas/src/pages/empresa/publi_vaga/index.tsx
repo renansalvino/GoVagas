@@ -42,7 +42,7 @@ function PubliVaga() {
             DiasContrato: diasContrato,
             NivelExp: nivelExp,
             HabNecessaria: habNecessaria,
-            LocalVaga: localVaga,
+            LocalVaga: FraseEndereco,
             ReqVaga: reqVaga,
             TempoExp: tempoExp,
             DescAtivFuncoes: descAtivFuncoes
@@ -53,7 +53,7 @@ function PubliVaga() {
         localStorage.setItem('Dias de contrato', diasContrato)
         localStorage.setItem('Nivel de experiência', nivelExp)
         localStorage.setItem('HabNec', habNecessaria)
-        localStorage.setItem('Local da Vaga', localVaga)
+        localStorage.setItem('Local da Vaga', FraseEndereco)
         localStorage.setItem('Requerimento da vaga', reqVaga)
         localStorage.setItem('Tempo de Experiência', tempoExp)
         localStorage.setItem('Descrição das atividades e funções', descAtivFuncoes)

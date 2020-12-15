@@ -114,7 +114,7 @@
 
 .infoHab {
   display: flex;
-  width: 280px;
+  width: 400px;
   height: 90px;
   justify-content: space-evenly;
   flex-wrap: wrap;

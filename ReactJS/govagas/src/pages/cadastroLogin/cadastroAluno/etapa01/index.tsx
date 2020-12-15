@@ -254,7 +254,7 @@ function CadastroCandidatoUm(this: any) { //<-//
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Complemento" required placeholder="Apto 1" value={complemento} onChange={a => setComplemento(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Complemento" placeholder="Apto 1" value={complemento} onChange={a => setComplemento(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
                                                     <Input type="text" name="input2" label="Bairro:" required placeholder="Santa Cecília" value={bairro} onChange={a => setBairro(a.target.value)} />

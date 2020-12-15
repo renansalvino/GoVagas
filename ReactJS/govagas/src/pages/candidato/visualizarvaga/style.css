@@ -260,7 +260,7 @@
   
   .cardHab {
     display: flex;
-    width: 350px;
+    width: 400px;
     height: 90px;
     justify-content: space-evenly;
     flex-wrap: wrap;

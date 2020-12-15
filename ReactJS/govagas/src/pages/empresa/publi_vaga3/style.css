@@ -340,3 +340,11 @@
   flex-basis: 100%;
   width: 0;
 }
+
+.areaVisualizarVaga .btn-proximo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
