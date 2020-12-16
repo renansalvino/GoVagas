@@ -94,7 +94,7 @@ function CadastroEmpresa() {
                                         <div className="grupofoto">
                                             <div id="foto" className="foto">
                                                 {Teste}
-                                                <Teste></Teste>
+                                                {/* <Teste></Teste> */}
                                             </div>
                                         </div>
                                         <div className="grupo">

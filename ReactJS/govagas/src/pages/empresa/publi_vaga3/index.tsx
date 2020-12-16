@@ -22,12 +22,13 @@ import imgpiggybank from '../../../assets/images/candidato/piggy-bank.svg'
 import imgrestaurant from '../../../assets/images/candidato/restaurant.svg'
 import imgshoppingcart from '../../../assets/images/candidato/shopping-cart.svg'
 import imgtrain from '../../../assets/images/candidato/train.svg'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { parseJwt } from '../../../auth';
 // import { useHistory } from 'react-router-dom';
 
 function PubliVagaTres() {
 
+    let history = useHistory();
 
     const [idEmpresa, setIdEmrpesa] = useState((parseJwt().jti))
     const [empresa, setEmpresa] = useState<any>()
@@ -90,6 +91,7 @@ function PubliVagaTres() {
             .then(response => response.json())
             .then(() => {
                 alert('Vaga cadastrada');
+                history.push('/dashEmpresa');
                 // setIdVaga(0);
                 // setVaga('');
                 // setTipoContrato('');
@@ -393,7 +395,7 @@ function PubliVagaTres() {
 
                             <div className="btn-proximo">
                                 <Link to="/PublicarVaga2"> <Button name="btn2" value="Voltar" /> </Link>
-                                <Button name="btn1" value="SALVAR" />
+                                <Button name="btn1" value="publicar vaga" />
                             </div>
 
                         </form>

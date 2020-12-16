@@ -150,7 +150,7 @@ function Sidebar() {
                                             <div className="icon">
                                                 <img src={Imgchecklist} alt="" />
                                             </div>
-                                            <li>Candidaturas</li>
+                                            <li>Vagas Publicadas</li>
                                         </div>
                                     </Link>
                                     <Link to="/vagas">

@@ -5,7 +5,7 @@ import Footer from '../../../components/footer/index';
 import Input from '../../../components/input/index';
 import Sidebar from '../../../components/sidebar/index';
 import Button from '../../../components/button/index';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 // import { parseJwt } from '../../../auth';
 
 
@@ -13,7 +13,7 @@ import { useHistory } from 'react-router-dom';
 function PubliVagaDois() {
 
     let ctx = useHistory();
-    
+
 
     const [tipoContrato, setTipoContrato] = useState('')
     const [expertiseVaga, setExpertiseVaga] = useState('')
@@ -80,11 +80,11 @@ function PubliVagaDois() {
                                 </form>
                             </div>
                         </div>
-                        <div id="forms2">
-                            <form onSubmit={event => {
-                                event.preventDefault();
-                                Cadastrar2();
-                            }}>
+                        <form onSubmit={event => {
+                            event.preventDefault();
+                            Cadastrar2();
+                        }}>
+                            <div id="forms2">
                                 <div className="alignPrincipal">
                                     <div className="alignSelect">
                                         <div id="alignSelect">
@@ -128,9 +128,12 @@ function PubliVagaDois() {
                                         <Input type="Name" name="inpustyle" label="Ofertas extras" placeholder="Ex: Cursando Análise e Desenvolvimento de Sistemas" value={ofertaExtra} onChange={a => setOfertaExtra(a.target.value)} />
                                     </div>
                                 </div>
-                                <Button name="btn1"  value="Próxima etapa" />
-                            </form>
-                        </div>
+                            </div>
+                            <div className="btn-proximoo">
+                                <Link to="/publicarvaga"> <Button name="btn2" value="Voltar" /> </Link>
+                                <Button name="btn1" value="Próxima Etapa" />
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

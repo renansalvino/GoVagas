@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Footer from '../../../../components/footer/index';
 import Header from '../../../../components/header/index'
 import Button from '../../../../components/button/index';
@@ -21,6 +21,8 @@ function CadastroCandidatoQuatro() {
 
 
     const Post4 = () => {
+
+        let history = useHistory();
 
         const form = {
             //1
@@ -79,6 +81,7 @@ function CadastroCandidatoQuatro() {
         })
             .then(() => {
                 alert('Candidato cadastrado');
+                history.push('/loginCandidato');
             })
             .catch(err => console.error(err));
     }

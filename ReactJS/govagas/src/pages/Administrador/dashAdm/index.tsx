@@ -6,6 +6,7 @@ import imgIcone from '../../../assets/images/palm-tree.svg'
 import Sidebar from '../../../components/sidebar/index';
 import Footer from '../../../components/footer/index';
 import Header from '../../../components/header/index'
+import Grafico from '../../empresa/Admin/app';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
@@ -117,17 +118,17 @@ function DashAdm() {
 
                     <div className="graficos">
 
-                        <div className="grafico">
-                            <h2>Gráfico1</h2>
+                        <div className="graficoGrande">
+                            <Grafico />
                         </div>
 
-                        <div className="grafico">
+                        {/* <div className="grafico">
                             <h2>Gráfico2</h2>
                         </div>
 
                         <div className="grafico">
                             <h2>Gráfico3</h2>
-                        </div>
+                        </div> */}
 
                     </div>
 

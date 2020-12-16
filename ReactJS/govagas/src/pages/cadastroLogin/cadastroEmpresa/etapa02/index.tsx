@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../etapa02/style.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Footer from '../../../../components/footer/index';
 import Header from '../../../../components/header/index'
 import Button from '../../../../components/button/index';
@@ -24,6 +24,8 @@ function CadastroEmpresaDois() {
     const [encontrouSenai, setEncontrouSenai] = useState('')
 
     const Post = () => {
+
+        let history = useHistory();
 
         const form = {
             // anexarLogo: localStorage.getItem('logo-cadastro'),
@@ -53,6 +55,7 @@ function CadastroEmpresaDois() {
         })
             .then(() => {
                 alert('Empresa Cadastrada com Sucesso!');
+                history.push('/loginEmpresa');
                 // setIdUsuario(0);
                 // setIdCandidato(0);
                 setAnexarLogo('')

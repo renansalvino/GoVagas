@@ -142,7 +142,7 @@ function CadastroCandidatoDois() {
                                             <div className="select">
                                                 <div className="grupo">
                                                     <div className="habilidades">
-                                                        <Input name="input1" label="Habilidades:" placeholder="CosmoDB" value={habilidade} onChange={a => setHabilidade(a.target.value)} />
+                                                        <Input name="input44" label="Habilidades:" placeholder="CosmoDB, .NET Core, Entity Framework" value={habilidade} onChange={a => setHabilidade(a.target.value)} />
                                                     </div>
 
                                                     {/* <div className="nivel">

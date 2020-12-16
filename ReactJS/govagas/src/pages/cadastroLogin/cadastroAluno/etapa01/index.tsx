@@ -161,7 +161,7 @@ function CadastroCandidatoUm(this: any) { //<-//
                                                                   } 
                                                             } */}
                                                     {Teste}
-                                                    <Teste></Teste>
+                                                    {/* <Teste></Teste> */}
                                                     {/* <input className="input_anexar" id="imgInp" name="imgInp"  onChange={readURL} type='file'></input>
                                                             <img id="blah" src="#" alt="your image" /> */}
                                                     {/* </div>
