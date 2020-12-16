@@ -136,7 +136,7 @@ function DashEmpresa() {
 
 
                     <div className="flexTable">
-                        <table className="tabelaAdm">
+                        {/* <table className="tabelaAdm">
                             <thead>
                                 <tr>
                                     <th>Nome do Candidato</th>
@@ -146,7 +146,7 @@ function DashEmpresa() {
                                     <th>Documentação</th>
                                 </tr>
                             </thead>
-
+                            
                             <tbody>
                                 {
 
@@ -158,7 +158,6 @@ function DashEmpresa() {
                                                 <td>{inscricao?.idVagaNavigation.idEmpresaNavigation.nomeEmpresa}</td>
                                                 <td>{inscricao?.idVagaNavigation.tipoContrato}</td>
                                                 <td></td>
-                                                {/* <td><button onClick={() => history.push(`documentacao/${inscricaos.idInscricao}`)}>Ver Mais</button></td> */}
                                             </tr>
                                         )
                                     })
@@ -186,7 +185,7 @@ function DashEmpresa() {
                                 </tr>
                             </tbody>
 
-                        </table>
+                        </table> */}
                     </div>
                 </div>
             </div>

@@ -8,7 +8,7 @@ import Footer from '../../../components/footer/index';
 import Header from '../../../components/header/index'
 import Grafico from '../../empresa/Admin/app';
 import { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 
 
@@ -145,9 +145,8 @@ function DashAdm() {
                                     <th>Documentação</th>
                                 </tr>
                             </thead>
-
                             <tbody>
-                                {
+                                {/* {
 
                                     inscricaos.map((inscricao: any) => {
                                         return (
@@ -157,35 +156,54 @@ function DashAdm() {
                                                 <td>{inscricao.idVagaNavigation.idEmpresaNavigation.nomeEmpresa}</td>
                                                 <td>{inscricao.idVagaNavigation.tipoContrato}</td>
                                                 <td></td>
-                                                {/* <td><button onClick={() => history.push(`documentacao/${inscricaos.idInscricao}`)}>Ver Mais</button></td> */}
                                             </tr>
                                         )
                                     })
-                                }
+                                } */}
                                 <tr>
                                     <td>Gabriela Oliveira Possuui</td>
                                     <td>Desenvovedor(a) Front-End React Native/Js</td>
                                     <td>Oxfurd</td>
                                     <td>CLT</td>
-                                    <td>Aprovado</td>
-                                </tr>
-                                <tr>
-                                    <td>Erique Henrique A Paz do Conde</td>
-                                    <td>Desenvovedor(a) Back-End React Native/Js</td>
-                                    <td>Avanade</td>
-                                    <td>Jovem Aprendiz</td>
-                                    <td>Pendente</td>
+                                    <td><Link to="/tabelaCandidatos">
+                                        Ver Tabela
+                                    </Link></td>
+
                                 </tr>
                                 <tr>
                                     <td>Davi Alencarrr Arves Feitosa</td>
                                     <td>Desenvovedor(a) "Full-Stack" React Native/Js</td>
                                     <td>Seu Zé LTDA</td>
                                     <td>Estágio</td>
-                                    <td>Pendente</td>
+                                    <td><Link to="/tabelaCandidatos">
+                                        Ver Tabela
+                                    </Link></td>
+
+                                </tr>
+                                <tr>
+                                    <td>Renan Martino Salvins</td>
+                                    <td>Desenvovedor(a) Xamarin Mobile</td>
+                                    <td>Unicamp</td>
+                                    <td>Estágio</td>
+                                    <td><Link to="/tabelaCandidatos">
+                                        Ver Tabela
+                                    </Link></td>
+
+                                </tr>
+                                <tr>
+                                    <td>Erique Henrique A Paz do Conde</td>
+                                    <td>Desenvovedor(a) Back-End React Native/Js</td>
+                                    <td>Avanade</td>
+                                    <td>Jovem Aprendiz</td>
+                                    <td><Link to="/tabelaCandidatos">
+                                        Ver Tabela
+                                    </Link></td>
+
                                 </tr>
                             </tbody>
 
                         </table>
+
                     </div>
                 </div>
             </div>
