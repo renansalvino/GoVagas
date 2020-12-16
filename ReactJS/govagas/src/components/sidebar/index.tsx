@@ -19,6 +19,7 @@ import { parseJwt } from '../../auth';
 function Sidebar() {
 
     const [usuario, setUsuario] = useState<any>();
+    const [nomeEmpresa, setNomeEmpresa] = useState<any>();
 
     useEffect(() => {
         if (parseJwt().Role === "1") {
@@ -30,6 +31,27 @@ function Sidebar() {
                     console.log(dados)
                     console.log(dados.idUsuarioNavigation)
                     setUsuario(dados.idUsuarioNavigation)
+                })
+                .catch(err => console.error(err))
+        } else if (parseJwt().Role === "2") {
+            fetch("https://localhost:5001/api/Empresa/" + parseJwt().jti, {
+                method: 'GET'
+            })
+                .then(response => response.json())
+                .then(dados => {
+                    console.log(dados)
+                    setNomeEmpresa(dados)
+                })
+                .catch(err => console.error(err))
+        } else if (parseJwt().Role === "3") {
+            fetch("https://localhost:5001/api/Candidato/" + parseJwt().jti, {
+                method: 'GET'
+            })
+                .then(response => response.json())
+                .then(dados => {
+                    console.log(dados)
+                    console.log(dados)
+                    setUsuario(dados)
                 })
                 .catch(err => console.error(err))
         }
@@ -60,8 +82,8 @@ function Sidebar() {
                                 </div>
 
                                 <div className="imgTxt">
-                                    <p id="nomeUsuario">{usuario?.nome}</p>
-                                    <p id="funcaoUsuario">Função Usuario</p>
+                                    <p id="nomeUsuario">{usuario?.idUsuarioNavigation.nome}</p>
+                                    <p id="funcaoUsuario">{usuario?.tituloPerfil}</p>
                                 </div>
 
                                 <Button name="btn1" value="Editar meu perfil" />
@@ -124,11 +146,13 @@ function Sidebar() {
                                 </div>
 
                                 <div className="imgTxt">
-                                    <p id="nomeUsuario">Nome do Colega </p>
-                                    <p id="funcaoUsuario">Função Usuario</p>
+                                    <p id="nomeUsuario">{nomeEmpresa?.nomeEmpresa}</p>
+                                    <p id="funcaoUsuario">{nomeEmpresa?.ramoEmpresa}</p>
                                 </div>
 
+                                <Button name="btn1" value="Editar meu perfil" />
                             </div>
+
 
                             <div className="tituloFlex">
                                 <h4>PRINCIPAL</h4>
@@ -173,66 +197,6 @@ function Sidebar() {
                         </div>
                     </div >
                 )
-                // return (
-                //     <div>
-                //         <div className="dashboard">
-
-                //             <div className="containerImg">
-                //                 <div className="img">
-                //                     <img src={imgSnoopy} alt="" />
-                //                 </div>
-
-                //                 <div className="imgTxt">
-                //                     <p id="nomeUsuario">EMPRESASS</p>
-                //                     <p id="funcaoUsuario">Função Usuario</p>
-                //                 </div>
-
-                //                 <Button name="btn1" value="Editar meu perfil" />
-
-                //             </div>
-
-                //             <div className="tituloFlex">
-                //                 <h4>PRINCIPAL</h4>
-                //             </div>
-
-                //             <div className="containerRotas">
-
-                //                 <div className="rotas">
-                //                     <Link to="/dashAdm">
-                //                         <div className="rota">
-                //                             <div className="icon">
-                //                                 <img src={imgIconePalmeira} alt="" />
-                //                             </div>
-                //                             <li>Dashboard</li>
-                //                         </div>
-                //                     </Link>
-                //                     <div className="rota">
-                //                         <div className="icon">
-                //                             <img src={imgIconePerfil} alt="" />
-                //                         </div>
-                //                         <Link to="/tabelacandidatos"><li>Tabela Candidatos</li></Link>
-                //                     </div>
-                //                     <Link to="/inscricoes">
-                //                         <div className="rota">
-                //                             <div className="icon">
-                //                                 <img src={imgIconePalmeira2} alt="" />
-                //                             </div>
-                //                             <li>Rota 3</li>
-                //                         </div>
-                //                     </Link>
-                //                     <div className="rota">
-                //                         <div className="icon">
-                //                             <img src={imgIconePerfil2} alt="" />
-                //                         </div>
-                //                         <li>Rota 4</li>
-                //                     </div>
-
-                //                 </div>
-
-                //             </div>
-                //         </div>
-                //     </div>
-                // );
             }
             if (parseJwt().Role === "1") {
                 return (
@@ -246,7 +210,7 @@ function Sidebar() {
 
                                 <div className="imgTxt">
                                     <p id="nomeUsuario">{usuario?.nome}</p>
-                                    <p id="funcaoUsuario">Função Usuario</p>
+                                    <p id="funcaoUsuario">Administrador</p>
                                 </div>
 
                                 <Button name="btn1" value="Editar meu perfil" />

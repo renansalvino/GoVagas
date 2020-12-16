@@ -87,7 +87,8 @@ namespace GoVagas.Repositories
 
         public Empresa BuscarPorId(int id)
         {
-            return ctx.Empresa.FirstOrDefault(ca => ca.IdEmpresa == id);
+            return ctx.Empresa.Include(u => u.IdUsuarioNavigation)
+                .FirstOrDefault(ca => ca.IdEmpresa == id);
         }
 
         public void Cadastrar(Empresa novoEmpresa)

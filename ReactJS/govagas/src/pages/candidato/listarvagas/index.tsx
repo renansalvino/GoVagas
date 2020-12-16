@@ -17,6 +17,7 @@ import imgofficeblock from '../../../assets/images/candidato/office-block.svg'
 
 
 import { Link, useHistory } from 'react-router-dom';
+import Input from '../../../components/input';
 
 const david: CSSProperties = {
     width: '1324px',
@@ -28,7 +29,7 @@ function Listarvagas() {
     const [vagas, setVagas] = useState([])
     const [vaga, setVaga] = useState('');
     const [idVaga, setIdVaga] = useState(0);
-
+    const [vagaFiltrada, setVagaFiltrada] = useState([]);
     const history = useHistory();
 
     useEffect(() => {
@@ -47,12 +48,22 @@ function Listarvagas() {
             .then(response => response.json())
             .then(dados => {
                 setVagas(dados);
+                setVagaFiltrada(dados);
                 console.log(vagas)
             })
             .catch(err => console.error(err));
     }
 
+    const filtro = (event: React.ChangeEvent<HTMLInputElement>) => {
+        console.log(event.target.value)
+        setVagaFiltrada(vagas.filter((vaga: any) => vaga.perfilDev?.includes(event.target.value),
 
+            //  &&
+            // inscricao.atributo.idCandidatoNavigation.tituloPerfil.contains(vagaFiltro) &&
+            // inscricao.idVagaNavigation.idEmpresaNavigation.nomeEmpresa.contains(nomeEmprFiltro) &&
+            // inscricao.idVagaNavigation.tipoContrato.contains(tipoContratoFiltro)
+        ))
+    }
 
 
     // const [inscricaos, setinscricaos] = useState([]); 
@@ -91,9 +102,22 @@ function Listarvagas() {
 
                         <h1>Vagas</h1>
 
+                        <div className="areaPesquisa">
+
+                            <div className="pesquisaTC">
+                                <Input type="text" name="pesquisa" label="" placeholder="Pesquise aqui" maxLength={100} onChange={filtro} />
+                            </div>
+
+                            <div className="filtroTC">
+                                <Input type="date" name="input3" label="" placeholder="20/12/1980" />
+                            </div>
+
+
+
+                        </div>
                         <div className="retanguloBrancoListar">
                             {
-                                vagas.map((item: any) => {
+                                vagaFiltrada.map((item: any) => {
                                     return <div className='CardVagas'>
                                         <button className="Button-Visualizar" onClick={() => history.push(`visualizarvaga/${item.idVaga}`)}>
 
