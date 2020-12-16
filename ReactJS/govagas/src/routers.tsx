@@ -2,7 +2,9 @@ import React from 'react'
 import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './pages/home/index'
 import DashAdm from './pages/Administrador/dashAdm/index'
+import DashEmpresa from './pages/empresa/dashEmpresa';
 import TabelaCandidatos from './pages/Administrador/tabelaCandidatos/index'
+import CandidaturasVaga from './pages/empresa/Admin/candidaturasVaga';
 import Documentacao from './pages/Administrador/documentacao/index'
 import CadastroCandidatoUm from './pages/cadastroLogin/cadastroAluno/etapa01';
 import CadastroCandidatoDois from './pages/cadastroLogin/cadastroAluno/etapa02';
@@ -24,7 +26,8 @@ import Perfil from './pages/candidato/perfil/index';
 import Dashboard from './pages/candidato/dashboard/index';
 import Candidatar from './pages/candidato/candidatar/index';
 import Listarvagas from './pages/candidato/listarvagas/index';
-import Listarvagasporid from './pages/candidato/listarvagaid/index';
+import Listarvagasporid from './pages/empresa/listarvagaid/index';
+import Listarcandidaturaporid from './pages/candidato/listarcandidaturaid/index';
 import Visualizarvaga from './pages/candidato/visualizarvaga/index';
 import Upload from './pages/teste/teste';
 
@@ -35,7 +38,9 @@ function Routers() {
 		<BrowserRouter>
 			<Route path='/' exact component={Home}/>
 			<Route path='/dashadm' exact component={DashAdm}/>
+			<Route path='/dashEmpresa' exact component={DashEmpresa}/>
 			<Route path='/tabelacandidatos' exact component={TabelaCandidatos}/>
+			<Route path='/candidaturasvaga/:id' exact component={CandidaturasVaga}/>
 			<Route path='/documentacao/:id' exact component={Documentacao}/>
 			<Route path='/cadastroAluno' component={CadastroCandidatoUm}/>
 			<Route path='/cadastroAluno2' component={CadastroCandidatoDois}/>
@@ -57,7 +62,8 @@ function Routers() {
 			<Route path='/dashboardCandidato' component={Dashboard}/>
 			<Route path='/candidatar' component={Candidatar}/>
 			<Route path='/vagas' component={Listarvagas}/>
-			<Route path='/inscricoes' component={Listarvagasporid}/>
+			<Route path='/inscricoes' component={Listarcandidaturaporid}/>
+			<Route path='/vagaspublicadas' component={Listarvagasporid}/>
 			{/* <Route path='/visualizarvaga' component={Visualizarvaga}/> */}
 			<Route path='/visualizarvaga/:id' component={Visualizarvaga}/>
 			<Route path="/teste" component={Upload}/>

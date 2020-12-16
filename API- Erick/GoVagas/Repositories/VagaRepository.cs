@@ -114,7 +114,7 @@ namespace GoVagas.Repositories
             return ctx.Vaga.Include(e => e.IdEmpresaNavigation)
             .ThenInclude(u => u.IdUsuarioNavigation)
 
-            .Where(c => c.IdEmpresaNavigation.IdUsuarioNavigation.IdUsuario == id)
+            .Where(c => c.IdEmpresa == id)
 
             .ToList();
 

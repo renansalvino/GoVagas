@@ -1,16 +1,45 @@
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Text, Image, View, ScrollView, Button } from 'react-native';
+import Menu from '../../components/hamburguerzinho';
 import styles from './style';
 
 
 
-export default function VisualizarCandidatos({  }) {
+export default function VisualizarCandidatos({ match }: any) {
+
+  const {
+    params: { id },
+  } = match;
+  console.log(id)
+
+  const [tipoContratoFiltro, setTipoContratoFiltro] = useState('');
+  const [inscricaoFiltrada, setInscricaoFiltrada] = useState([]);
+  const [inscricaos, setInscricaos] = useState([]);
+
+  const ListarTodosContratados = () => {
+    fetch("https://localhost:5001/api/Inscricao/Vaga/" + id, {
+      method: 'GET'
+    })
+      .then(response => response.json())
+      .then(dados => {
+        setInscricaos(dados);
+        setInscricaoFiltrada(dados);
+        console.log(dados)
+      })
+      .catch(err => console.error(err))
+  }
+
+  useEffect(() => {
+    ListarTodosContratados();
+  }, []);
 
   const navigation = useNavigation()
 
   return (
     <ScrollView>
+      <Menu navigation={navigation} />
+
       <View style={styles.container}>
         {/* <View style={styles.header}>
           <Image

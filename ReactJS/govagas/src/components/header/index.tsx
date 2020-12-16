@@ -15,6 +15,10 @@ function Header() {
         history.push('/');
     }
 
+    const Cadastrese = () => {
+        alert('Faça login para Visualizar Vagas!')
+    }
+
     const Menu = () => {
         const token = localStorage.getItem('tokengovagas');
 
@@ -22,7 +26,7 @@ function Header() {
             return (
                 <ul className="menuNav">
                     <ul className="menuNav">
-                        <li><Link className="link" to="/">VER VAGAS</Link></li>
+                        <button id="btn0" onClick={Cadastrese}><li>VER VAGAS</li></button>
                         <li><Link className="link" to="/loginCandidato">LOGIN</Link></li>
                         <li><Link to="/loginCandidato" className="Link"><Button name="btn1" value="CADASTRE-SE" /></Link></li>
                     </ul>
@@ -57,7 +61,7 @@ function Header() {
                 return (
                     <ul className="menuNav">
                         <li><Link className="link" to="/dashadm">DASHBOARD</Link></li>
-                        <li><Link className="link" to="/">PERFIL</Link></li>
+                        <li><Link className="link" to="/tabelaCandidatos">TABELAS</Link></li>
                         <li><Link to="" className="Link" onClick={event => {
                             event.preventDefault();
                             Logout();

@@ -1,5 +1,12 @@
 /* TODO botão primário*/
 
+#btn0 {
+    list-style: none;
+    outline: none;
+    border-style: none;
+    background-color: #fff;
+}
+
 #btn1 {
     display: inline-block;
     padding: 10px 15px;

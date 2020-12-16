@@ -405,8 +405,8 @@ function Visualizarvaga({ match }: any) {
                             <hr />
                         </div>
 
-                        
-                        
+
+
 
                         <div className="botaoInscricao">
                             {vaga?.inscricao.find(c => c.idCandidato == parseJwt().jti) &&
@@ -429,6 +429,12 @@ function Visualizarvaga({ match }: any) {
                                 parseJwt().Role == "2" && (
                                     <Button name="btn2" value="Você está Candidatado!" />
                                 )}
+
+                            {parseJwt().Role == "2" && parseJwt().jti == vaga?.idEmpresa && (<Button name="btn2"
+                                onClick={() => history.push("/candidaturasvaga/" + id)} value="Visualizar Candidaturas" />)}
+
+                            {parseJwt().Role == "2" && parseJwt().jti != vaga?.idEmpresa && (<Button name="btn2"
+                                onClick={() => history.push("/vagas")} value="Voltar" />)}
                         </div>
 
 

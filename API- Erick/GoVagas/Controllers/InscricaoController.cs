@@ -55,7 +55,7 @@ namespace GoVagas.Controllers
                 return BadRequest(e);
             }
         }
-
+  
         [HttpGet("Empresa/{id}")]
         public IActionResult ListarPorIdEmpresa(int id)
         {
@@ -69,6 +69,18 @@ namespace GoVagas.Controllers
             }
         }
 
+        [HttpGet("Vaga/{id}")]
+        public IActionResult ListarPorIdVaga(int id)
+        {
+            try
+            {
+                return Ok(_InscricaoRepository.ListarPorIdVaga(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+        }
 
         /// <summary>
         /// Cadastra um novo Inscricao

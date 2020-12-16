@@ -47,7 +47,7 @@ const vagaTitulo = () => {
     }
 }
 
-function Listarvagasporid() {
+function Listarcandidaturaporid() {
 
     // API
     const [vagas, setVagas] = useState([])
@@ -55,7 +55,7 @@ function Listarvagasporid() {
     const [idVaga, setIdVaga] = useState(0);
     const [idInscricao, setIdInscricao] = useState(0);
     const [inscricao, setInscricao] = useState('');
-    const [inscricaoFiltrada, setInscricaoFiltrada] = useState([]);
+    const [vagaFiltrada, setVagaFiltrada] = useState([]);
     const [inscricaos, setInscricaos] = useState([]);
 
     const history = useHistory();
@@ -68,8 +68,7 @@ function Listarvagasporid() {
 
 
     const visualizarVagaPorId = (id: number) => {
-        if (parseJwt().Role === "3") {
-            fetch('https://localhost:5001/api/Inscricao/Candidato/' + id, {
+        fetch('https://localhost:5001/api/Inscricao/Candidato/' + id, {
                 method: 'GET',
                 headers: {
                     authorization: 'Bearer ' + localStorage.getItem('token-govagas')
@@ -78,30 +77,17 @@ function Listarvagasporid() {
                 .then(resp => resp.json())
                 .then(dados => {
                     setInscricaos(dados);
-                    setInscricaoFiltrada(dados);
+                    setVagaFiltrada(dados);
                     console.log(dados);
                 })
                 .catch(err => console.error(err));
-        } else if (parseJwt().Role === "2") {
-            fetch('https://localhost:5001/api/Inscricao/Empresa/' + id, {
-                method: 'GET',
-                headers: {
-                    authorization: 'Bearer ' + localStorage.getItem('token-govagas')
-                }
-            })
-                .then(resp => resp.json())
-                .then(dados => {
-                    setInscricaos(dados);
-                    setInscricaoFiltrada(dados);
-                    console.log(dados);
-                })
-                .catch(err => console.error(err));
-        }
+            
     }
+    
 
     const filtro = (event: React.ChangeEvent<HTMLInputElement>) => {
         console.log(event.target.value)
-        setInscricaoFiltrada(inscricaos.filter((inscricao: any) => inscricao.idVagaNavigation.perfilDev?.includes(event.target.value),
+        setVagaFiltrada(inscricaos.filter((inscricao: any) => inscricao.idVagaNavigation.perfilDev?.includes(event.target.value),
 
             //  &&
             // inscricao.atributo.idCandidatoNavigation.tituloPerfil.contains(vagaFiltro) &&
@@ -137,7 +123,7 @@ function Listarvagasporid() {
 
                         <div className="retanguloBrancoListar">
                             {
-                                inscricaoFiltrada.map((item: any) => {
+                                vagaFiltrada.map((item: any) => {
                                     return <div className='CardVagas'>
                                         <button className="Button-Visualizar" onClick={() => history.push(`visualizarvaga/${item.idVaga}`)}>
 
@@ -237,4 +223,4 @@ function Listarvagasporid() {
         </div>
     )
 }
-export default Listarvagasporid;
+export default Listarcandidaturaporid;

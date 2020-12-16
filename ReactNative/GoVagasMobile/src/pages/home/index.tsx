@@ -4,6 +4,7 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import parseJwt from '../../services/tokenDecoder';
 import Menu from '../../components/hamburguerzinho';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 export default function Home({ }) {
@@ -80,7 +81,7 @@ export default function Home({ }) {
             .catch(err => console.error(err));
     }
     return (
-        <View>
+        <ScrollView>
             <Menu navigation={navigation} />
             <Text style={{ backgroundColor: '#EEEEEE' }}>
                 <View style={{
@@ -96,7 +97,7 @@ export default function Home({ }) {
                 {
                     inscricaos.map((item: any) => {
                         return (
-                            <View style={{
+                            <View key={item.idInscricao} style={{
                                 marginHorizontal: 50,
                                 marginVertical: 30,
                                 backgroundColor: 'white',
@@ -168,7 +169,7 @@ export default function Home({ }) {
                     })}
             </Text>
 
-        </View>
+        </ScrollView>
     );
 }
 
