@@ -24,7 +24,6 @@ import imgshoppingcart from '../../../assets/images/candidato/shopping-cart.svg'
 import imgtrain from '../../../assets/images/candidato/train.svg'
 import { Link, useHistory } from 'react-router-dom';
 import { parseJwt } from '../../../auth';
-// import { useHistory } from 'react-router-dom';
 
 function PubliVagaTres() {
 
@@ -49,7 +48,6 @@ function PubliVagaTres() {
             .then(data => {
                 console.log(data);
                 setEmpresa(data);
-                // setIdEmrpesa(id);
             })
             .catch(err => console.error(err));
     }
@@ -59,11 +57,11 @@ function PubliVagaTres() {
 
         const form3 = {
             //etapa1
-            TipoContrato: localStorage.getItem('Tipo de Contrato'),//
+            TipoContrato: localStorage.getItem('Tipo de Contrato'),
             ExpertiseVaga: localStorage.getItem('Expertise Vaga'),
-            TrabalhoRemoto: localStorage.getItem('Trabalhar Remoto'),//
-            OutraCidade: localStorage.getItem('Outra Cidade'),//
-            ValorSalario: localStorage.getItem('Valor Salário'),//
+            TrabalhoRemoto: localStorage.getItem('Trabalhar Remoto'),
+            OutraCidade: localStorage.getItem('Outra Cidade'),
+            ValorSalario: localStorage.getItem('Valor Salário'),
             OfertaExtra: localStorage.getItem('Oferta Extra'),
             //etapa2
             TituloVaga: localStorage.getItem('Titulo da Vaga'),
@@ -92,25 +90,6 @@ function PubliVagaTres() {
             .then(() => {
                 alert('Vaga cadastrada');
                 history.push('/dashEmpresa');
-                // setIdVaga(0);
-                // setVaga('');
-                // setTipoContrato('');
-                // setExpertiseVaga('');
-                // setTrabalhoRemoto('');
-                // setOutraCidade('');
-                // setValorSalario('');
-                // setOfertaExtra('');
-                // setTituloVaga('');
-                // setPerfilDev('');
-                // setDiasContrato('');
-                // setNivelExp('');
-                // setHabNecessaria('')
-                // setLocalVaga('');
-                // setReqVaga('');
-                // setTempoExp('');
-                // setDescAtivFuncoes('');
-                // setIdEmrpesa(1);
-                // ganchocorno.push('/publicarvagatres')
             })
 
             .catch(err => console.error(err));
@@ -128,20 +107,11 @@ function PubliVagaTres() {
                             event.preventDefault();
                             Cadastrar3();
                         }}>
-
                             {/* <h1>Vagas</h1> */}
                             <div>
                                 <div className="retanguloBrancoVisualizar0">
                                     <div className="CardVisualizar">
                                         <h6>{localStorage.getItem('Perfil do desenvolvedor')}</h6>
-
-                                        {/* <div className="cardprincipal"><div className="textinf2"> */}
-
-                                        {/* logo */}
-                                        {/* <div className="logo">
-                                                <img src={imgAVA} alt="Ava" title="Ava" width="auto" height="60px" /></div> */}
-
-                                        {/* </div> </div> */}
                                         <div className="cardHab">
                                             {localStorage.getItem('HabNec')?.split(',').map((habilidade: string) => {
                                                 return (
@@ -149,27 +119,11 @@ function PubliVagaTres() {
                                                 )
                                             })}
 
-                                            {/* <div className="item"><p>C#</p></div>
-                                                    <div className="item"><p>Java</p></div>
-                                                    <div className="item-wide"><p>Java</p></div>
-                                                    <div className="item"><p>SQL</p></div>
-                                                    <div className="break"></div> */}
-                                            {/* <div className="item"><p>PHP</p></div>
-                                                    <div className="item"><p>HTML</p></div> */}
-
                                         </div>
 
                                     </div>
                                 </div>
-
-
-
-
                                 {/* PARTE II */}
-                                {/* <div className="titulo-empresa">
-                            <p>Avanade</p>
-                        </div>
-                         */}
                                 <div className="retanguloBrancoVisualizar">
                                     <hr />
                                     <div className="CardVisualizar0">
@@ -200,9 +154,7 @@ function PubliVagaTres() {
                                                         <img src={imgtranslation} alt="Translation" title="Translation" width="30px" height="30px" />
                                                         <p>{localStorage.getItem('Requerimento da vaga')}</p>
                                                     </div>
-
                                                 </div>
-
 
                                                 <div className="bre01">
 
@@ -233,7 +185,6 @@ function PubliVagaTres() {
 
 
                                 {/* PARTE III */}
-
                                 <div className="descricao0">
                                     <p>Descrição da empresa:</p> <p id="nomeEmpresa">{empresa?.nomeEmpresa}</p>
                                 </div>
@@ -242,12 +193,6 @@ function PubliVagaTres() {
                                         <div className="cardprincipal">
                                             <div className="flexVagaTxt">
                                                 <p>{empresa?.descricaoEmpresa}</p>
-                                                {/* <p>
-                                                A Avanade foi fundada como uma joint-venture entre a Microsoft Corporation
-                                                e a Accenture LLP. As nossas soluções são construídas com base em uma
-                                                incomparável combinação de insight, inovação e conhecimento técnico, apoiados
-                                                por ferramentas, metodologias e práticas comprovadas.
-                                        </p> */}
                                             </div>
                                         </div>
 
@@ -257,7 +202,6 @@ function PubliVagaTres() {
 
 
                                 {/* PARTE IV */}
-
                                 <div className="descricao0">
                                     <p>Atividades da vaga</p>
                                 </div>
@@ -265,7 +209,6 @@ function PubliVagaTres() {
                                     <div className="CardVisualizar">
 
                                         <div className="cardprincipal">
-                                            {/* <div className="textinf5"> */}
                                             <div className="flexVagaTxt">
                                                 <p id="Desc">
                                                     {localStorage.getItem('Descrição das atividades e funções')?.split(',').map((habilidade: string) => {
@@ -273,16 +216,6 @@ function PubliVagaTres() {
                                                             <div><p>- {habilidade}</p><br /></div>
                                                         )
                                                     })}
-
-                                                    {/* - Definir a equipe e suas atividades;<br></br>
-                                             - Balizar a arquitetura da solução (Front, Back, BD);<br></br>
-                                             - Configurar ambientes de desenvolvimento (SandBox);<br></br>
-                                             - Fazer automatização build e deploy (CI & CD);<br></br>
-                                             - Avaliar o uso de bibliotecas e componentes;<br></br>
-                                             - Comunicar-se com a área gerencial da Radix e do cliente;<br></br>
-                                             - Ser Auto-gerenciável;<br></br>
-                                             - Aplicar treinamentos para a equipe.<br></br>
-                                             - Inglês intermediário / Fluente<br /> */}
                                                 </p>
                                             </div>
                                         </div>
@@ -293,24 +226,6 @@ function PubliVagaTres() {
 
 
                                 {/* PARTE V */}
-                                {/* <div className="retanguloBrancoVisualizar">
-                                <div className="CardVisualizar">
-
-                                    <div className="cardprincipal">
-                                        <div className="flexVagaTxt">
-                                            <p>
-                                                - Experiência com base de dados orientada a grafo (CosmosDB com api Gremlin);<br></br>
-                                            - Arquitetura de soluções no ambiente Azure;<br></br>
-                                            - Experiência com ReactJS;<br></br>
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div> */}
-
-
-                                {/* PARTE VI */}
                                 <div className="descricao0">
                                     <p>Ofertas Extras</p>
                                 </div>
@@ -320,11 +235,6 @@ function PubliVagaTres() {
                                         <div className="cardprincipal">
 
                                             <div className="textinf2">
-
-                                                {/* logo */}
-                                                {/* <div className="logo">
-                                            <img src={imgAVA} alt="Ava" title="Ava" width="auto" height="60px" />
-                                        </div>*/}
 
                                                 <div className="bre01">
 
@@ -336,49 +246,7 @@ function PubliVagaTres() {
                                                                 )
                                                             })}
                                                         </div>
-                                                        {/* <img src={imgdentalcheckup} alt="officeblock" title="officeblock" width="30px" height="30px" /> */}
-                                                        {/* <p>Assistência odontológica</p> */}
                                                     </div>
-
-                                                    {/* <div className="item02">
-                                                    <img src={imgdumbbell} alt="Money" title="Money" width="30px" height="30px" />
-                                                    <p>Auxílio academia</p>
-                                                </div>
-
-                                                <div className="item02">
-                                                    <img src={imgheart} alt="Translation" title="Translation" width="30px" height="30px" />
-                                                    <p>Seguro de vida</p>
-                                                </div>
-
-                                                <div className="item02">
-                                                    <img src={imgshoppingcart} alt="Translation" title="Translation" width="30px" height="30px" />
-                                                    <p>Vale-alimentação</p>
-                                                </div>
-
-                                            </div>
-
-
-                                            <div className="bre02">
-
-                                                <div className="item02">
-                                                    <img src={imgpharmacy} alt="Casestudy" title="Casestudy" width="25px" height="25px" />
-                                                    <p>Assistência médica</p>
-                                                </div>
-
-                                                 <div className="item02">
-                                                    <img src={imgpiggybank} alt="Notes" title="Notes" width="25px" height="25px" />
-                                                    <p>Previdência privada</p>
-                                                </div>
-
-                                                <div className="item02">
-                                                    <img src={imgrestaurant} alt="Diploma" title="Diploma" width="25px" height="25px" />
-                                                    <p>Vale-refeição</p>
-                                                </div>
-
-                                                <div className="item02">
-                                                    <img src={imgtrain} alt="Diploma" title="Diploma" width="25px" height="25px" />
-                                                    <p>Vale-transporte</p>
-                                                </div> */}
 
                                                 </div>
 
@@ -389,15 +257,10 @@ function PubliVagaTres() {
                                 </div>
                                 <hr />
                             </div>
-
-
-
-
                             <div className="btn-proximo">
                                 <Link to="/PublicarVaga2"> <Button name="btn2" value="Voltar" /> </Link>
                                 <Button name="btn1" value="publicar vaga" />
                             </div>
-
                         </form>
                     </section>
                 </div>
@@ -405,235 +268,5 @@ function PubliVagaTres() {
             <Footer />
         </div>
     )
-        // return (
-        //     <div>
-
-        //         <Header />
-        //         <div className="areaDash05">
-
-        //             <div className="centro-box">
-
-        //< form onSubmit = { event => {
-        //                     event.preventDefault();
-        //                     Cadastrar3();
-        //                 }}>
-        //                     <section className="box-centro4">
-
-
-        //                         <div className="options-box05">
-        //                             <div className="textdis1">
-        //                                 <h6>{localStorage.getItem('Perfil do desenvolvedor')}</h6>
-
-        //                                 <div className="text05">
-
-        //                                     <div className="textinf2">
-
-        //                                     </div>
-
-        //                                 </div>
-
-        //                                 <div className="texthab3">
-        //                                     {localStorage.getItem('HabNec')?.split(',').map((habilidade: string) => {
-        //                                         return (
-        //                                             <div className="item"><p>{habilidade}</p></div>
-        //                                         )
-        //                                     })}
-
-        //                                 </div>
-
-        //                             </div>
-        //                         </div>
-
-
-
-
-        //                         <div className="options-box05">
-        //                             <div className="textdis2">
-
-        //                                 <div className="text05">
-
-
-
-        //                                     <div className="logo">
-        //                                         <img src={imgAVA} alt="Ava" title="Ava" width="auto" height="60px" id="Avanade" />
-        //                                     </div>
-
-
-
-        //                                     <div className="bre01">
-
-        //                                         <div className="item02">
-        //                                             <img src={imglocation} alt="officeblock" title="officeblock" width="30px" height="30px" />
-        //                                             <p>{localStorage.getItem('Outra Cidade') === 'true' ? 'Home office (remoto)' : 'Presencial'}</p>
-        //                                         </div>
-
-        //                                         <div className="item02">
-        //                                             <img src={imgmoney} alt="Money" title="Money" width="30px" height="30px" />
-        //                                             <p>R$ {localStorage.getItem('Valor Salário')}</p>
-        //                                         </div>
-
-        //                                         <div className="item02">
-        //                                             <img src={imgtranslation} alt="Translation" title="Translation" width="30px" height="30px" />
-        //                                             <p>{localStorage.getItem('Requerimento da vaga')}</p>
-        //                                         </div>
-
-        //                                     </div>
-
-
-        //                                     <div className="bre02">
-
-        //                                         <div className="item02">
-        //                                             <img src={imgcasestudy} alt="Casestudy" title="Casestudy" width="25px" height="25px" />
-        //                                             <p>{localStorage.getItem('Tempo de Experiência')}</p>
-        //                                         </div>
-
-        //                                         <div className="item02">
-        //                                             <img src={imgnotes} alt="Notes" title="Notes" width="25px" height="25px" />
-        //                                             <p>{localStorage.getItem('Tipo de Contrato') && 'Jovem Aprendiz'
-        //                                                 || !localStorage.getItem('Tipo de Contrato') && 'Estágio'}</p>
-        //                                         </div>
-
-        //                                         <div className="item02">
-        //                                             <img src={imgdiploma} alt="Diploma" title="Diploma" width="25px" height="25px" />
-        //                                             <p>{localStorage.getItem('Titulo da Vaga')}</p>
-        //                                         </div>
-
-
-        //                                     </div>
-        //                                 </div>
-
-        //                             </div>
-        //                         </div>
-
-
-
-
-        //                         <div className="options-box06">
-        //                             <div className="textdis">
-
-        //                                 <div className="text05">
-        //                                     <div className="textinf5">
-        //                                         <p>
-
-        //                                             A Avanade foi fundada como uma joint-venture entre a Microsoft Corporation
-        //                                             e a Accenture LLP. As nossas soluções são construídas com base em uma
-        //                                             incomparável combinação de insight, inovação e conhecimento técnico, apoiados
-        //                                             por ferramentas, metodologias e práticas comprovadas.
-        //                                     </p>
-        //                                     </div>
-        //                                 </div>
-
-        //                             </div>
-        //                         </div>
-
-
-
-        //                         <div className="options-box07">
-        //                             <div className="textdis">
-
-        //                                 <div className="text05">
-        //                                     <div className="textinf6">
-        //                                         <p id="Desc">
-        //                                             {localStorage.getItem('Descrição das atividades e funções')?.split(',').map((habilidade: string) => {
-        //                                                 return (
-        //                                                     <div><p>- {habilidade}</p><br /></div>
-        //                                                 )
-        //                                             })}
-
-        //                                             {/* - Definir a equipe e suas atividades;<br></br>
-        //                                         - Balizar a arquitetura da solução (Front, Back, BD);<br></br>
-        //                                         - Configurar ambientes de desenvolvimento (SandBox);<br></br>
-        //                                         - Fazer automatização build e deploy (CI & CD);<br></br>
-        //                                         - Avaliar o uso de bibliotecas e componentes;<br></br>
-        //                                         - Comunicar-se com a área gerencial da Radix e do cliente;<br></br>
-        //                                         - Ser Auto-gerenciável;<br></br>
-        //                                         - Aplicar treinamentos para a equipe.<br></br>
-        //                                         - Inglês intermediário / Fluente<br /> */}
-        //                                         </p>
-        //                                     </div>
-        //                                 </div>
-
-        //                             </div>
-        //                         </div>
-
-        //                         <div className="options-box0">
-        //                             <div className="textdis">
-
-        //                                 <div className="text05">
-
-        //                                     <div className="textinf2">
-
-
-
-        //                                         <div className="bre01">
-
-        //                                             <div className="item02">
-        //                                                 <img src={imgdentalcheckup} alt="officeblock" title="officeblock" width="30px" height="30px" />
-        //                                                 {localStorage.getItem('Oferta Extra')?.split(',').map((habilidade: string) => {
-        //                                                     return (
-        //                                                         <div><p>- {habilidade}</p><br /></div>
-        //                                                     )
-        //                                                 })}
-        //                                             </div>
-
-        //                                             {/* <div className="item02">
-        //                                                 <img src={imgdumbbell} alt="Money" title="Money" width="30px" height="30px" />
-        //                                                 <p>Auxílio academia</p>
-        //                                             </div>
-
-        //                                             <div className="item02">
-        //                                                 <img src={imgheart} alt="Translation" title="Translation" width="30px" height="30px" />
-        //                                                 <p>Seguro de vida</p>
-        //                                             </div>
-
-        //                                             <div className="item02">
-        //                                                 <img src={imgshoppingcart} alt="Translation" title="Translation" width="30px" height="30px" />
-        //                                                 <p>Vale-alimentação</p>
-        //                                             </div>
-
-        //                                         </div>
-
-
-        //                                         <div className="bre02">
-
-        //                                             <div className="item02">
-        //                                                 <img src={imgpharmacy} alt="Casestudy" title="Casestudy" width="25px" height="25px" />
-        //                                                 <p>Assistência médica</p>
-        //                                             </div>
-
-        //                                             <div className="item02">
-        //                                                 <img src={imgpiggybank} alt="Notes" title="Notes" width="25px" height="25px" />
-        //                                                 <p>Previdência privada</p>
-        //                                             </div>
-
-        //                                             <div className="item02">
-        //                                                 <img src={imgrestaurant} alt="Diploma" title="Diploma" width="25px" height="25px" />
-        //                                                 <p>Vale-refeição</p>
-        //                                             </div>
-
-        //                                             <div className="item02">
-        //                                                 <img src={imgtrain} alt="Diploma" title="Diploma" width="25px" height="25px" />
-        //                                                 <p>Vale-transporte</p>
-        //                                             </div> */}
-
-        //                                         </div>
-
-        //                                     </div>
-        //                                 </div>
-
-        //                             </div>
-        //                         </div>
-        //                     </section>
-
-        //                     <div className="btn-proximo">
-        //                         <Link to="/cadastroAluno3"> <Button name="btn2" value="Voltar" /> </Link>
-        //                         <Button name="btn1" value="SALVAR" />
-        //                     </div>
-        //                 </form>
-        //             </div>
-        //         </div>
-        //         <Footer />
-        //     </div>
-        // )
-    }
-    export default PubliVagaTres;
+}
+export default PubliVagaTres;

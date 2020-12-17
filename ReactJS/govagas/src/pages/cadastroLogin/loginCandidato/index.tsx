@@ -6,9 +6,12 @@ import Header from '../../../components/header/index';
 import Button from '../../../components/button/index';
 import Input from '../../../components/input/index';
 import ImgJoia from '../../../assets/images/empresa/joia.png';
-// import ImgBahia from '../../assets/images/empresa/bahiano.jpeg';
-// import ImgSnoopy from '../../assets/images/snoopy.jpeg';
-// import ImgNao from '../../assets/images/nao.jpeg';
+import ImgRenan from '../../../assets/images/Renan.jpg';
+import ImgDavi from '../../../assets/images/Davi.jpg';
+import ImgErick from '../../../assets/images/Erick.jpg';
+import ImgGabi from '../../../assets/images/Gabi.jpg'
+
+
 function LoginCandidato() {
 
   let history = useHistory();
@@ -77,7 +80,7 @@ function LoginCandidato() {
               </ol>
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img src={ImgJoia} className="d-block w-200" alt="..." />
+                  <img src={ImgErick} className="d-block w-200" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>Tecnico em Análise e Desenvolvimento de Sistemas</h5>
                     <p>“O SENAI de Informática  me proporcionou grandes aprendizados e com isso consegui uma vaga na empresa AVANAD uma empresa global de serviços profissionais que fornece consultoria e serviços de TI
@@ -85,7 +88,7 @@ function LoginCandidato() {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img src={ImgJoia} className="d-block w-200" alt="..." />
+                  <img src={ImgRenan} className="d-block w-200" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>Tecnico em Análise e Desenvolvimento de Sistemas</h5>
                     <p>“O SENAI de Informática  me proporcionou grandes aprendizados e com isso consegui uma vaga na empresa AVANAD uma empresa global de serviços profissionais que fornece consultoria e serviços de TI focados
@@ -93,10 +96,19 @@ function LoginCandidato() {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img src={ImgJoia} className="d-block w-200" alt="..." />
+                  <img src={ImgDavi} className="d-block w-200" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
-                    <h5>Tecnico em Análise e Desenvolvimento de Sistemas</h5>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                  <h5>Tecnico em Análise e Desenvolvimento de Sistemas</h5>
+                    <p>“O SENAI de Informática  me proporcionou grandes aprendizados e com isso consegui uma vaga na empresa AVANAD uma empresa global de serviços profissionais que fornece consultoria e serviços de TI
+          focados na plataforma Microsoft com inteligência artificial, análise de negócios...’’</p>
+                  </div>
+                </div>
+                <div className="carousel-item">
+                  <img src={ImgGabi} className="d-block w-200" alt="..." />
+                  <div className="carousel-caption d-none d-md-block">
+                  <h5>Tecnico em Análise e Desenvolvimento de Sistemas</h5>
+                    <p>“O SENAI de Informática  me proporcionou grandes aprendizados e com isso consegui uma vaga na empresa AVANAD uma empresa global de serviços profissionais que fornece consultoria e serviços de TI
+          focados na plataforma Microsoft com inteligência artificial, análise de negócios...’’</p>
                   </div>
                 </div>
               </div>

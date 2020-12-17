@@ -4,12 +4,6 @@ import '../../../assets/styles/global.css'
 
 import Header from '../../../components/header/index';
 import Footer from '../../../components/footer/index';
-// import imgNomeEmpresa from '../../assets/images/empresa/NomeEmpresa.png';
-// import Img1 from '../../assets/images/empresa/sidebar-img-1.png';
-// import Img2 from '../../assets/images/empresa/sidebar-img-2.png';
-// import Imgiconmais from '../../assets/images/empresa/iconmais.png';
-// import ImgJoinha from '../../assets/images/empresa/joia.png';
-// import ImgCandidatos from '../../assets/images/empresa/candidatos.png';
 import Sidebar from '../../../components/sidebar';
 import { Link } from 'react-router-dom';
 

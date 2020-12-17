@@ -21,15 +21,6 @@ function PubliVagaDois() {
     const [outraCidade, setOutraCidade] = useState('')
     const [valorSalario, setValorSalario] = useState('')
     const [ofertaExtra, setOfertaExtra] = useState('')
-    // const [tituloVaga, setTituloVaga] = useState('')
-    // const [perfilDev, setPerfilDev] = useState('')
-    // const [diasContrato, setDiasContrato] = useState('')
-    // const [nivelExp, setNivelExp] = useState('')
-    // const [habNecessaria, setHabNecessaria] = useState('')
-    // const [localVaga, setLocalVaga] = useState('')
-    // const [reqVaga, setReqVaga] = useState('')
-    // const [tempoExp, setTempoExp] = useState('')
-    // const [descAtivFuncoes, setDescAtivFuncoes] = useState('')
     const [idEmpresa, setIdEmrpesa] = useState(1) //(parseJwt().jti)//
 
     const Cadastrar2 = () => {

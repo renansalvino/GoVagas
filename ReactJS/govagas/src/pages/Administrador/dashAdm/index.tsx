@@ -122,14 +122,6 @@ function DashAdm() {
                             <Grafico />
                         </div>
 
-                        {/* <div className="grafico">
-                            <h2>Gráfico2</h2>
-                        </div>
-
-                        <div className="grafico">
-                            <h2>Gráfico3</h2>
-                        </div> */}
-
                     </div>
 
 
@@ -157,7 +149,6 @@ function DashAdm() {
                                                 <td>{inscricao.idVagaNavigation.idEmpresaNavigation.nomeEmpresa}</td>
                                                 <td>{inscricao.idVagaNavigation.tipoContrato}</td>
                                                 <td></td>
-                                                {/* <td><button onClick={() => history.push(`documentacao/${inscricaos.idInscricao}`)}>Ver Mais</button></td> */}
                                             </tr>
                                         )
                                     })

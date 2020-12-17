@@ -8,6 +8,11 @@ import Input from '../../../components/input/index';
 import ImgBahia from '../../../assets/images/empresa/bahiano.jpeg';
 import ImgSnoopy from '../../../assets/images/snoopy.jpeg';
 import ImgNao from '../../../assets/images/nao.jpeg';
+import ImgRenan from '../../../assets/images/Renan.jpg';
+import ImgDavi from '../../../assets/images/Davi.jpg';
+import ImgErick from '../../../assets/images/Erick.jpg';
+import ImgGabi from '../../../assets/images/Gabi.jpg'
+
 function LoginEmpresa() {
 
   let history = useHistory();
@@ -76,7 +81,7 @@ function LoginEmpresa() {
               </ol>
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img src={ImgBahia} className="d-block w-200" alt="..." />
+                  <img src={ImgErick} className="d-block w-200" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>Tecnico em Análise e Desenvolvimento de Sistemas</h5>
                     <p>“O SENAI de Informática  me proporcionou grandes aprendizados e com isso consegui uma vaga na empresa AVANAD uma empresa global de serviços profissionais que fornece consultoria e serviços de TI
@@ -84,7 +89,7 @@ function LoginEmpresa() {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img src={ImgSnoopy} className="d-block w-200" alt="..." />
+                  <img src={ImgRenan} className="d-block w-200" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>Tecnico em Análise e Desenvolvimento de Sistemas</h5>
                     <p>“O SENAI de Informática  me proporcionou grandes aprendizados e com isso consegui uma vaga na empresa AVANAD uma empresa global de serviços profissionais que fornece consultoria e serviços de TI focados
@@ -92,10 +97,19 @@ function LoginEmpresa() {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img src={ImgNao} className="d-block w-200" alt="..." />
+                  <img src={ImgDavi} className="d-block w-200" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
-                    <h5>Tecnico em Análise e Desenvolvimento de Sistemas</h5>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                  <h5>Tecnico em Análise e Desenvolvimento de Sistemas</h5>
+                    <p>“O SENAI de Informática  me proporcionou grandes aprendizados e com isso consegui uma vaga na empresa AVANAD uma empresa global de serviços profissionais que fornece consultoria e serviços de TI
+          focados na plataforma Microsoft com inteligência artificial, análise de negócios...’’</p>
+                  </div>
+                </div>
+                <div className="carousel-item">
+                  <img src={ImgGabi} className="d-block w-200" alt="..." />
+                  <div className="carousel-caption d-none d-md-block">
+                  <h5>Tecnico em Análise e Desenvolvimento de Sistemas</h5>
+                    <p>“O SENAI de Informática  me proporcionou grandes aprendizados e com isso consegui uma vaga na empresa AVANAD uma empresa global de serviços profissionais que fornece consultoria e serviços de TI
+          focados na plataforma Microsoft com inteligência artificial, análise de negócios...’’</p>
                   </div>
                 </div>
               </div>
@@ -139,7 +153,7 @@ function LoginEmpresa() {
                         <p>Esqueceu sua senha?</p>
                       </div>
                       <div className="btn-criarconta">
-                        <Button  name="btn1" value="Login" />
+                        <Button name="btn1" value="Login" />
                       </div>
                       <div className="login-inputs">
                         <tr className="tr-empresa" />
@@ -179,7 +193,7 @@ function LoginEmpresa() {
                         <tr />
                       </div>
                       <div className="btn-criarconta1">
-                        <Button  name="btn1" value="Criar Conta" />
+                        <Button name="btn1" value="Criar Conta" />
                       </div>
                       <div className="login-inputs">
                         <tr className="tr-empresa" />

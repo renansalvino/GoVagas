@@ -9,20 +9,8 @@ import Input from '../../../../components/input/index';
 import Teste from '../../../teste/teste';
 import '../../../../components/barraProgresso/style.css';
 
-// function readURL(input:any) {
-//     if (input.files && input.files[0]) {
-//         var reader = new FileReader();
 
-//         reader.onload = function (e: any) {
-//             (document.getElementById('blah') as HTMLImageElement).src = e.target.result
-//         };
-
-//         reader.readAsDataURL(input.files[0]);
-//     }
-// }
-
-
-function CadastroCandidatoUm(this: any) { //<-//
+function CadastroCandidatoUm() { //<-//
 
     let history = useHistory();
 
@@ -35,7 +23,6 @@ function CadastroCandidatoUm(this: any) { //<-//
     const [municipio, setMunicipio] = useState('')
     const [estado, setEstado] = useState('')
     const [cep, setCep] = useState('')
-    // const [cidade, setCidade] = useState('')
     const [nummatricula, setNummatricula] = useState('')
     const [datamatricula, setDatamatricula] = useState('')
     const [nomecurso, setNomecurso] = useState('')
@@ -76,22 +63,6 @@ function CadastroCandidatoUm(this: any) { //<-//
         localStorage.setItem('turno-cadastro', turno)
         localStorage.setItem('termo-cadastro', termo)
         history.push('/cadastroAluno2')
-        // fetch('https://localhost:5001/api/Usuario', {
-        //     method: 'POST',
-        //     body: JSON.stringify(form),
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     }
-        // })
-        //     .then(Response => Response.json())
-        //     .then(dados => {
-        //         console.log(dados)
-        //         localStorage.setItem("idUsuario", dados.id)
-        //         localStorage.removeItem("email-candidato")
-        //         localStorage.removeItem("senha-candidato")
-        //         history.push("/cadastroAluno2")
-        //     })
-        //     .catch(err => console.error(err));
 
     }
     return (
@@ -134,38 +105,6 @@ function CadastroCandidatoUm(this: any) { //<-//
                                         <div className="cadastro">
                                             <div className="grupofoto">
                                                 <div id="foto" className="foto">
-                                                    {/* <div className="imagem">
-                                                        <div className="texto"> */}
-                                                    {/* {
-                                                                class Upload extends React.Component<{}, { file: any }> {
-                                                                    constructor(props:any){
-                                                                      super(props)
-                                                                      this.state = {
-                                                                        file: null
-                                                                      }
-                                                                      this.handleChange = this.handleChange.bind(this)
-                                                                    }
-                                                                    handleChange(event:any) {
-                                                                      this.setState({
-                                                                        file: URL.createObjectURL(event.target.files[0])
-                                                                      })
-                                                                    }
-                                                                    render() {
-                                                                      return (
-                                                                        <div>
-                                                                          <input type="file" onChange={this.handleChange}/>
-                                                                          <img src={this.state.file}/>
-                                                                        </div>
-                                                                      );
-                                                                    }
-                                                                  } 
-                                                            } */}
-                                                    {Teste}
-                                                    {/* <Teste></Teste> */}
-                                                    {/* <input className="input_anexar" id="imgInp" name="imgInp"  onChange={readURL} type='file'></input>
-                                                            <img id="blah" src="#" alt="your image" /> */}
-                                                    {/* </div>
-                                                    </div> */}
                                                 </div>
                                             </div>
                                             <div className="grupo">
@@ -185,7 +124,7 @@ function CadastroCandidatoUm(this: any) { //<-//
 
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="number" name="input2" label="CPF:" required placeholder="___.___.___.__" maxLength={11} value={cpf} onChange={a => setCpf(a.target.value)} />
+                                                    <Input type="cpf" name="input2" label="CPF:" required placeholder="___.___.___.__" maxLength={11} value={cpf} onChange={a => setCpf(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
                                                     <Input type="text" name="input2" label="CEP:" required placeholder="03122-015" value={cep} onChange={a => setCep(a.target.value)} />
@@ -202,15 +141,26 @@ function CadastroCandidatoUm(this: any) { //<-//
                                             <div className="grupo">
 
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Nome do Curso:" required placeholder="Técnico de Redes de Computadores" value={nomecurso} onChange={a => setNomecurso(a.target.value)} />
+                                                    <Input type="text" name="input2" label="Nome do Curso:" required placeholder="Redes de Computadores" value={nomecurso} onChange={a => setNomecurso(a.target.value)} />
                                                 </div>
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Tipo do Curso:" required placeholder="Aprendizagem Industrial" value={tipocurso} onChange={a => setTipocurso(a.target.value)} />
+                                                    <label htmlFor="">Tipo do curso: </label>
+                                                    <select id="input2" required placeholder="Aprendizagem Industrial" value={tipocurso} onChange={a => setTipocurso(a.target.value)}>
+                                                    <option>Selecione a opção</option>
+                                                    <option>Curso Técnico</option>
+                                                    <option>Curso de Aprendizagem Industrial (CAI) </option>
+                                                    <option>Curso Livre</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div className="grupo">
                                                 <div className="form-group">
-                                                    <Input type="text" name="input2" label="Nível do Curso:" required placeholder="Aprendizagem" value={nivelcurso} onChange={a => setNivelcurso(a.target.value)} />
+                                                    <label htmlFor="">Nível do Curso:</label>
+                                                    <select id="input2" required placeholder="Aprendizagem" value={nivelcurso} onChange={a => setNivelcurso(a.target.value)} >
+                                                        <option>Selecione a opção</option>
+                                                        <option>Técnico</option>
+                                                        <option>Aprendizagem Industrial (CAI)</option>
+                                                    </select>
                                                 </div>
                                                 <div className="form-group">
                                                     <Input type="text" name="input2" label="Turma:" required placeholder="TECREDE-MT4" value={turma} onChange={a => setTurma(a.target.value)} />
@@ -230,10 +180,9 @@ function CadastroCandidatoUm(this: any) { //<-//
                                                     <label htmlFor="">Termo:</label>
                                                     <select id="input2" placeholder="1o Termo" value={termo} onChange={a => setTermo(a.target.value)}>
                                                         <option>Escolher:</option>
-                                                        <option value="1">1o Termo</option>
-                                                        <option value="2">2o Termo</option>
-                                                        <option value="3">3o Termo</option>
-                                                        <option value="4">4o Termo</option>
+                                                        <option value="1">1° Termo</option>
+                                                        <option value="2">2° Termo</option>
+                                                        <option value="3">3° Termo</option>
                                                     </select>
                                                 </div>
                                             </div>

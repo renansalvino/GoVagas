@@ -27,6 +27,7 @@ import Listarvagas from './pages/candidato/listarvagas/index';
 import Listarvagasporid from './pages/candidato/listarvagaid/index';
 import Visualizarvaga from './pages/candidato/visualizarvaga/index';
 import Upload from './pages/teste/teste';
+import VisualizarCandidato from './pages/VisualizarCandidatos/index';
 
 // 	import Login from ‘./pages/Login’;
 
@@ -58,9 +59,9 @@ function Routers() {
 			<Route path='/candidatar' component={Candidatar}/>
 			<Route path='/vagas' component={Listarvagas}/>
 			<Route path='/inscricoes' component={Listarvagasporid}/>
-			{/* <Route path='/visualizarvaga' component={Visualizarvaga}/> */}
 			<Route path='/visualizarvaga/:id' component={Visualizarvaga}/>
 			<Route path="/teste" component={Upload}/>
+			<Route path="/visualizarCandidatos" component={VisualizarCandidato}/>
 		</BrowserRouter>
 	);
 }

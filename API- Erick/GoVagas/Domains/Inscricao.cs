@@ -12,5 +12,6 @@ namespace GoVagas.Domains
 
         public virtual Candidato IdCandidatoNavigation { get; set; }
         public virtual Vaga IdVagaNavigation { get; set; }
+
     }
 }

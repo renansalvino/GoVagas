@@ -40,6 +40,7 @@ namespace GoVagas.Repositories
                 .ToList();
         }
 
+
         public List<Inscricao> ListarPorIdEmpresa(int id)
         {
             return ctx.Inscricao.Include(c => c.IdVagaNavigation)

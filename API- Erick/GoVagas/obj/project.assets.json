@@ -5595,20 +5595,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Senaisp\\.nuget\\packages\\": {}
+    "C:\\Users\\Renan\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Senaisp\\Documents\\Backupe\\backup-govagas-candidato\\backup-vagasProj\\API- Erick\\GoVagas\\GoVagas.csproj",
+      "projectUniqueName": "C:\\Users\\Renan\\Desktop\\Projeto com todas as partes\\backup-vagasProj\\API- Erick\\GoVagas\\GoVagas.csproj",
       "projectName": "GoVagas",
-      "projectPath": "C:\\Users\\Senaisp\\Documents\\Backupe\\backup-govagas-candidato\\backup-vagasProj\\API- Erick\\GoVagas\\GoVagas.csproj",
-      "packagesPath": "C:\\Users\\Senaisp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Senaisp\\Documents\\Backupe\\backup-govagas-candidato\\backup-vagasProj\\API- Erick\\GoVagas\\obj\\",
+      "projectPath": "C:\\Users\\Renan\\Desktop\\Projeto com todas as partes\\backup-vagasProj\\API- Erick\\GoVagas\\GoVagas.csproj",
+      "packagesPath": "C:\\Users\\Renan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Renan\\Desktop\\Projeto com todas as partes\\backup-vagasProj\\API- Erick\\GoVagas\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Senaisp\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Renan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5619,7 +5624,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -5631,7 +5635,6 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
@@ -5696,7 +5699,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
