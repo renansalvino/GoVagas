@@ -17,6 +17,7 @@ import imgofficeblock from '../../../assets/images/candidato/office-block.svg'
 
 
 import { Link, useHistory } from 'react-router-dom';
+import { parseJwt } from '../../../auth';
 import Input from '../../../components/input';
 
 const david: CSSProperties = {
@@ -24,73 +25,76 @@ const david: CSSProperties = {
     marginTop: '80px',
 }
 
-function Listarvagas() {
+const vagaTitulo = () => {
+    if (parseJwt().Role === 3) {
+        return (
+            <div>
+                <h1>Vagas Candidatadas</h1>
+            </div>
+        )
+    } else if (parseJwt().Role === 2) {
+        return (
+            <div>
+                <h1>Vagas Candidatadas</h1>
+            </div>
+        )
+    } else if (parseJwt().Role === 1) {
+        return (
+            <div>
+                <h1>O quê está fazendo aqui??</h1>
+            </div>
+        )
+    }
+}
+
+function Listarvagasporid() {
+
+    
+
     // API
-    const [vagas, setVagas] = useState([])
     const [vaga, setVaga] = useState('');
     const [idVaga, setIdVaga] = useState(0);
+    const [idInscricao, setIdInscricao] = useState(0);
+    const [inscricao, setInscricao] = useState('');
     const [vagaFiltrada, setVagaFiltrada] = useState([]);
+    const [vagas, setVagas] = useState([]);
+
     const history = useHistory();
 
     useEffect(() => {
-        ListarVagas();
+        visualizarVagaPublicada(parseJwt().jti);
+        vagaTitulo();
     }, []);
 
 
-    const ListarVagas = () => {
-        fetch('https://localhost:5001/api/Vaga', {
-            method: 'GET',
-            headers: {
 
-                authorization: 'Bearer ' + localStorage.getItem('tokengovagas')
-            }
-        })
-            .then(response => response.json())
-            .then(dados => {
-                setVagas(dados);
-                setVagaFiltrada(dados);
-                console.log(vagas)
+    const visualizarVagaPublicada = (id: number) => {
+        fetch('https://localhost:5001/api/Vaga/Empresa/' + id, {
+                method: 'GET',
+                headers: {
+                    authorization: 'Bearer ' + localStorage.getItem('token-govagas')
+                }
             })
-            .catch(err => console.error(err));
-    }
+                .then(resp => resp.json())
+                .then(dados => {
+                    setVagas(dados);
+                    setVagaFiltrada(dados);
+                    console.log(dados);
+                    console.log(parseJwt().jti);
+                })
+                .catch(err => console.error(err));
+        }
+            
 
     const filtro = (event: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(event.target.value)
         setVagaFiltrada(vagas.filter((vaga: any) => vaga.perfilDev?.includes(event.target.value),
 
             //  &&
             // inscricao.atributo.idCandidatoNavigation.tituloPerfil.contains(vagaFiltro) &&
-            // inscricao.idVagaNavigation.idEmpresaNavigation.nomeEmpresa.contains(nomeEmprFiltro) &&
-            // inscricao.idVagaNavigation.tipoContrato.contains(tipoContratoFiltro)
+            // inscricao.idEmpresaNavigation.nomeEmpresa.contains(nomeEmprFiltro) &&
+            // inscricao.tipoContrato.contains(tipoContratoFiltro)
         ))
     }
-
-
-    // const [inscricaos, setinscricaos] = useState([]); 
-    // const [titulovaga, setTituloVaga] = useState('')
-    // const [perfildev, setPerfilDev] = useState('')
-    // const [habnecessaria, setHabNecessaria] = useState('')
-    // const [localvaga, setLocalVaga] = useState('')
-    // const [tipocontrato, setTipoContrato] = useState('')
-    // const [expertisevaga, setExpertiseVaga] = useState('')
-    // const [valorsalario, setValorSalario] = useState('')
-
-    // const Listarvagas = () => {
-    //     fetch("https://localhost:5001/api/Listarvagas", {
-    //         method: 'GET',
-
-    //     })
-    //         .then(response => response.json())
-    //         .then(dados => {
-    //             setVaga(dados);
-    //         })
-    //         .catch(err => console.error(err));
-    // }
-
-    // useEffect(() => {
-    //     ListarTodasVagas();
-    // }, []);
-
 
     return (
         <div>
@@ -99,6 +103,7 @@ function Listarvagas() {
                 <Sidebar />
                 <div className="ContentListarVagas">
                     <section className="boxContentListarVagas">
+
 
                         <h1>Vagas</h1>
 
@@ -115,6 +120,7 @@ function Listarvagas() {
 
 
                         </div>
+
                         <div className="retanguloBrancoListar">
                             {
                                 vagaFiltrada.map((item: any) => {
@@ -217,4 +223,4 @@ function Listarvagas() {
         </div>
     )
 }
-export default Listarvagas;
+export default Listarvagasporid;

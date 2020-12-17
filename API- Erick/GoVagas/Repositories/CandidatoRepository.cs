@@ -189,7 +189,8 @@ namespace GoVagas.Repositories
 
         public Candidato BuscarPorId(int id)
         {
-            return ctx.Candidato.FirstOrDefault(ca => ca.IdCandidato == id);
+            return ctx.Candidato.Include(u => u.IdUsuarioNavigation)
+                .FirstOrDefault(ca => ca.IdCandidato == id);
         }
 
         public void Cadastrar(Candidato novoCandidato)

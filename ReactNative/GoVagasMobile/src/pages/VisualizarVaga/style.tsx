@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#DEDEDE',
     flex: 1,
+    justifyContent:"center"
   },
   //Header
   header: {

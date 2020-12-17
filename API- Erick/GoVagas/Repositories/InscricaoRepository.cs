@@ -45,8 +45,21 @@ namespace GoVagas.Repositories
         {
             return ctx.Inscricao.Include(c => c.IdVagaNavigation)
                 .ThenInclude(c => c.IdEmpresaNavigation)
+                //.ThenInclude(u => u.IdUsuarioNavigation)
                 .Include(c => c.IdCandidatoNavigation)
+                .ThenInclude(u => u.IdUsuarioNavigation)
                 .Where(c => c.IdVagaNavigation.IdEmpresaNavigation.IdEmpresa == id)
+                .ToList();
+        }
+
+        public List<Inscricao> ListarPorIdVaga(int id)
+        {
+            return ctx.Inscricao.Include(c => c.IdVagaNavigation)
+                .ThenInclude(c => c.IdEmpresaNavigation)
+                //.ThenInclude(u => u.IdUsuarioNavigation)
+                .Include(c => c.IdCandidatoNavigation)
+                .ThenInclude(u => u.IdUsuarioNavigation)
+                .Where(c => c.IdVaga == id)
                 .ToList();
         }
 

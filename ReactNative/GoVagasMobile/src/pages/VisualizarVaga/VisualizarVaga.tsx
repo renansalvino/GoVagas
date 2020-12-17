@@ -35,7 +35,7 @@ export default function VisualizarVaga({ }) {
 
   const visualizarInscricoesPorId = (id: number) => {
 
-    fetch('http://192.168.15.99:5000/api/Vaga/Vaga/' + id, {
+    fetch('http://192.168.15.99:5000/api/Vaga/Empresa/' + id, {
       method: 'GET',
       headers: {
         authorization: 'Bearer ' + AsyncStorage.getItem('tokengovagas')
@@ -51,6 +51,8 @@ export default function VisualizarVaga({ }) {
 
   return (
     <ScrollView>
+      <Menu navigation={navigation} />
+
       <View style={styles.container}>
         <Text style={styles.text_Vagas}>Vagas publicadas</Text>
         <View style={styles.main_Visualizar_Vaga1}>
@@ -116,101 +118,18 @@ export default function VisualizarVaga({ }) {
                 );
               })}
           </Text>
-          {/* <View style={{
-            marginHorizontal: 50,
-            marginVertical: 30,
-            backgroundColor: 'white',
-            width: 320,
-            borderRadius: 20,
-            padding: 20,
-          }}>
-            <View style={{
-              flex: 1, alignItems: 'center'
-            }}>
-              <Text style={{ marginVertical: 1, fontSize: 30, fontWeight: 'bold' }}>Avanade</Text>
-              <Text style={{ marginVertical: 10, fontSize: 20, }}> Desenvolvedor Web</Text>
-
-            </View>
-            <View style={{
-              flex: 1,
-              marginLeft: 10,
-              flexDirection: 'row',
-              justifyContent: 'space-between'
-            }}>
-              <View style={{
-                flex: 1,
-                flexDirection: 'column',
-                justifyContent: 'space-between'
-
-              }}>
-                <Text style={{ marginVertical: 10, marginTop: 20 }}>Full Stack</Text>
-                <Text style={{ marginVertical: 10 }}>Estágio</Text>
-                <Text style={{ marginVertical: 10 }}>Python, C#, Javascript</Text>
-              </View>
-
-              <View style={{
-                flex: 1,
-                marginLeft: 20,
-                flexDirection: 'column',
-                justifyContent: 'space-between'
-              }}>
-                <Text style={{ marginVertical: 10, marginTop: 20 }}>R$ 5000,00</Text>
-                <Text style={{ marginVertical: 10 }}>Júnior</Text>
-                <Text style={{ marginVertical: 10 }}>Trabalho Remoto</Text>
-
-              </View>
-            </View>
-
-
-          </View>
           <Button
             color="#DB324A"
             title="Visualizar Candidatos"
-            onPress={() => navigation.navigate("VisualizarCandidatos")}
+            onPress={() => navigation.navigate("Visualizar Candidatos")}
           />
-          <View style={styles.Box_Vaga2}>
-            <Image
-              style={styles.Img_empresa}
-              source={require('../../assets/images/SpectroVagas1.png')}
-            />
-            <Text style={styles.text_box1}> -Programador full{"\n"} stack{"\n"} -Júnior {"\n"}-R$ 3.000,00</Text>
-          </View>
-          <Button
-            color="#DB324A"
-            title="Visualizar Candidatos"
-            onPress={() => navigation.navigate("VisualizarCandidatos")}
-          />
-          <View style={styles.Box_Vaga2}>
-            <Image
-              style={styles.Img_empresa}
-              source={require('../../assets/images/SpectroVagas1.png')}
-            />
-            <Text style={styles.text_box2}> -Programador Java{"\n"} -Sênior {"\n"}-R$ 6.000,00</Text>
-          </View>
-          <Button
-            color="#DB324A"
-            title="Visualizar Candidatos"
-            onPress={() => navigation.navigate("VisualizarCandidatos")}
-          />
-          <View style={styles.Box_Vaga3}>
-            <Image
-              style={styles.Img_empresa}
-              source={require('../../assets/images/SpectroVagas1.png')}
-            />
-            <Text style={styles.text_box3}> -Programador CSharp{"\n"} -Pleno {"\n"}-R$ 3.000,00</Text>
-          </View> */}
-          <Button
-            color="#DB324A"
-            title="Visualizar Candidatos"
-            onPress={() => navigation.navigate("VisualizarCandidatos")}
-          />
-          <View style={styles.row_numbers}>
+          {/* <View style={styles.row_numbers}>
             <Text style={styles.text_numbers} onPress={() => navigation.navigate('VisualizarVaga')}>1</Text>
             <Text style={styles.text_numbers} onPress={() => navigation.navigate('VisualizarVaga2')}>2</Text>
             <Text style={styles.text_numbers} onPress={() => navigation.navigate('VisualizarVaga3')}>3</Text>
             <Text style={styles.text_numbers} onPress={() => navigation.navigate('VisualizarVaga4')}>4</Text>
             <Text style={styles.text_numbers} onPress={() => navigation.navigate('VisualizarVaga5')}>5</Text>
-          </View>
+          </View> */}
         </View>
       </View>
     </ScrollView>

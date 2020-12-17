@@ -8,8 +8,8 @@
     flex-direction: column;
 
     text-align: center;
-    margin-left: 200px;
-    margin-top: 5 0px;
+    margin-left: 250px;
+    margin-top: 50px;
 }
 
 
@@ -44,16 +44,19 @@
 
 
 /* Box2 (START) */
-.options-box2 {
+.options-box22 {
     display: flex;
     width: 195px;
+<<<<<<< HEAD
     height: 200px;
+=======
+    height: auto;
+>>>>>>> 380a60336e04a5be56c97cc9983fdebd3155e673
     background: #FFFFFF;
     box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.18);
     border-radius: 7px;
-
+    padding-bottom: 10px;
     margin-top: 50px;
-
     flex-direction: column;
     margin-right: 50px
 }
@@ -74,7 +77,7 @@
     align-content: space-around;
 }
 
-.options-box2 p{
+.options-box22 p{
     text-align: center;
     margin-top: 30px;
     margin-left: 5px;
@@ -89,7 +92,7 @@
 }
 
 
-.options-box2 .see .link{
+.options-box22 .see .link{
     display: flex;
     justify-content: center;
 }
@@ -98,21 +101,20 @@
 
 
 
-.options-box3 {
+.options-box33 {
     display: flex;
     width: 195px;
-    height: 116px;
+    height: auto;
     background: #FFFFFF;
     box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.18);
     border-radius: 7px;
-
+    padding-bottom: 10px;
     margin-top: 50px;
-
     flex-direction: column;
 }
 
 
-.options-box3 p {
+.options-box33 p {
     margin-top: 30px;
     margin-left: 5px;
 }
@@ -136,7 +138,7 @@
 
 #bar .progress-bar {
     /* tamanho da barra %*/
-    width:30%;
+    width:100%;
     /* cor da barra */
     background-color: #DB324A;
 

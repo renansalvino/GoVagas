@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css';
 import '../../../assets/styles/global.css'
 
@@ -6,10 +6,65 @@ import Header from '../../../components/header/index';
 import Footer from '../../../components/footer/index';
 import Sidebar from '../../../components/sidebar';
 import { Link } from 'react-router-dom';
+import { parseJwt } from '../../../auth';
 
 
 function Dashboard() {
 
+    const [usuario, setUsuario] = useState<any>();
+    const [inscricaos, setInscricaos] = useState([]);
+    const [vagas, setVagas] = useState([]);
+
+    useEffect(() => {
+        fetch("https://localhost:5001/api/Candidato/" + parseJwt().jti, {
+            method: 'GET',
+            headers: {
+                authorization: 'Bearer ' + localStorage.getItem('tokengovagas')
+            }
+        })
+            .then(response => response.json())
+            .then(dados => {
+                console.log(dados)
+                console.log(dados)
+                setUsuario(dados)
+            })
+            .catch(err => console.error(err));
+        ListarInscricaos();
+        ListarVagas();
+    }, []);
+
+    const ListarInscricaos = () => {
+
+        fetch("https://localhost:5001/api/Inscricao/" + parseJwt().jti, {
+            method: 'GET',
+            headers: {
+                authorization: 'Bearer ' + localStorage.getItem('tokengovagas')
+            }
+        })
+            .then(response => response.json())
+            .then(dados => {
+                console.log(dados)
+                setInscricaos(dados)
+            })
+            .catch(err => console.error(err));
+
+    }
+
+    const ListarVagas = () => {
+
+        fetch("https://localhost:5001/api/Vaga", {
+            method: 'GET',
+            headers: {
+                authorization: 'Bearer ' + localStorage.getItem('tokengovagas')
+            }
+        })
+            .then(response => response.json())
+            .then(dados => {
+                console.log(dados)
+                setVagas(dados)
+            })
+            .catch(err => console.error(err));
+    }
 
     return (
         <div>
@@ -17,18 +72,18 @@ function Dashboard() {
             <div className="areaDash">
                 <Sidebar />
                 <div className="centro-box">
-                    <section className="box-centro">           
+                    <section className="box-centro">
 
                         <h1>Dashboard</h1>
 
                         <div className="options-box1">
                             <div className="text">
-                                <h2>Bem vindo(a), Lapis</h2>
+                                <h2>Bem vindo(a), {usuario?.idUsuarioNavigation.nome}!!</h2>
 
                                 <div id="bar">
                                     <div className="progress">
                                         <div className="progress-bar progress-bar-striped" >
-                                            80%
+                                            100%
                                     </div>
                                     </div>
                                 </div>
@@ -40,37 +95,39 @@ function Dashboard() {
                         </div>
 
 
-                        <div className="doubleBox">   
+                        <div className="doubleBox">
 
-
-                            <div className="options-box2" >
+                        <Link className="link" to="/vagas">
+                            <div className="options-box22" >
                                 <div className="flex-text">
-                                    <p>Oportunidades (2)</p>
+                                    <p>Oportunidades ({vagas?.length})</p>
 
                                     <div className="row">
                                         <hr />
                                     </div>
 
                                     <div className="see">
-                                        <Link className="link" to="/">Ver</Link>
+                                        Ver
                                     </div>
                                 </div>
                             </div>
+                            </Link>
 
-
-                            <div className="options-box3">
+                            <Link className="link" to="/inscricoes">
+                            <div className="options-box33">
                                 <div className="flex-text">
-                                    <p>Candidaturas (3)</p>
+                                    <p>Candidaturas ({inscricaos?.length})</p>
 
                                     <div className="row">
                                         <hr />
                                     </div>
 
                                     <div className="see">
-                                        <Link className="link" to="/">Ver</Link>
+                                        Ver
                                     </div>
                                 </div>
                             </div>
+                            </Link>
 
 
                         </div>

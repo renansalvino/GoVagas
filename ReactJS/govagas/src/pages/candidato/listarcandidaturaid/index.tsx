@@ -18,13 +18,36 @@ import imgofficeblock from '../../../assets/images/candidato/office-block.svg'
 
 import { Link, useHistory } from 'react-router-dom';
 import { parseJwt } from '../../../auth';
+import Input from '../../../components/input';
 
 const david: CSSProperties = {
     width: '1324px',
     marginTop: '80px',
 }
 
-function Listarvagasporid() {
+const vagaTitulo = () => {
+    if (parseJwt().Role === 3) {
+        return (
+            <div>
+                <h1>Vagas Candidatadas</h1>
+            </div>
+        )
+    } else if (parseJwt().Role === 2) {
+        return (
+            <div>
+                <h1>Vagas Candidatadas</h1>
+            </div>
+        )
+    } else if (parseJwt().Role === 1) {
+        return (
+            <div>
+                <h1>O quê está fazendo aqui??</h1>
+            </div>
+        )
+    }
+}
+
+function Listarcandidaturaporid() {
 
     // API
     const [vagas, setVagas] = useState([])
@@ -32,19 +55,20 @@ function Listarvagasporid() {
     const [idVaga, setIdVaga] = useState(0);
     const [idInscricao, setIdInscricao] = useState(0);
     const [inscricao, setInscricao] = useState('');
-
+    const [vagaFiltrada, setVagaFiltrada] = useState([]);
     const [inscricaos, setInscricaos] = useState([]);
 
     const history = useHistory();
 
     useEffect(() => {
         visualizarVagaPorId(parseJwt().jti);
+        vagaTitulo();
     }, []);
 
 
+
     const visualizarVagaPorId = (id: number) => {
-        if (parseJwt().Role === "3") {
-            fetch('https://localhost:5001/api/Inscricao/Candidato/' + id, {
+        fetch('https://localhost:5001/api/Inscricao/Candidato/' + id, {
                 method: 'GET',
                 headers: {
                     authorization: 'Bearer ' + localStorage.getItem('token-govagas')
@@ -53,51 +77,24 @@ function Listarvagasporid() {
                 .then(resp => resp.json())
                 .then(dados => {
                     setInscricaos(dados);
+                    setVagaFiltrada(dados);
                     console.log(dados);
                 })
                 .catch(err => console.error(err));
-        } else if (parseJwt().Role === "2") {
-            fetch('https://localhost:5001/api/Inscricao/Empresa/' + id, {
-                method: 'GET',
-                headers: {
-                    authorization: 'Bearer ' + localStorage.getItem('token-govagas')
-                }
-            })
-                .then(resp => resp.json())
-                .then(dados => {
-                    setInscricaos(dados);
-                    console.log(dados);
-                })
-                .catch(err => console.error(err));
-        }
-    } 
+            
+    }
+    
 
+    const filtro = (event: React.ChangeEvent<HTMLInputElement>) => {
+        console.log(event.target.value)
+        setVagaFiltrada(inscricaos.filter((inscricao: any) => inscricao.idVagaNavigation.perfilDev?.includes(event.target.value),
 
-    // const [inscricaos, setinscricaos] = useState([]); 
-    // const [titulovaga, setTituloVaga] = useState('')
-    // const [perfildev, setPerfilDev] = useState('')
-    // const [habnecessaria, setHabNecessaria] = useState('')
-    // const [localvaga, setLocalVaga] = useState('')
-    // const [tipocontrato, setTipoContrato] = useState('')
-    // const [expertisevaga, setExpertiseVaga] = useState('')
-    // const [valorsalario, setValorSalario] = useState('')
-
-    // const Listarvagas = () => {
-    //     fetch("https://localhost:5001/api/Listarvagas", {
-    //         method: 'GET',
-
-    //     })
-    //         .then(response => response.json())
-    //         .then(dados => {
-    //             setVaga(dados);
-    //         })
-    //         .catch(err => console.error(err));
-    // }
-
-    // useEffect(() => {
-    //     ListarTodasVagas();
-    // }, []);
-
+            //  &&
+            // inscricao.atributo.idCandidatoNavigation.tituloPerfil.contains(vagaFiltro) &&
+            // inscricao.idVagaNavigation.idEmpresaNavigation.nomeEmpresa.contains(nomeEmprFiltro) &&
+            // inscricao.idVagaNavigation.tipoContrato.contains(tipoContratoFiltro)
+        ))
+    }
 
     return (
         <div>
@@ -107,11 +104,26 @@ function Listarvagasporid() {
                 <div className="ContentListarVagas">
                     <section className="boxContentListarVagas">
 
+
                         <h1>Vagas</h1>
+
+                        <div className="areaPesquisa">
+
+                            <div className="pesquisaTC">
+                                <Input type="text" name="pesquisa" label="" placeholder="Pesquise aqui" maxLength={100} onChange={filtro} />
+                            </div>
+
+                            <div className="filtroTC">
+                                <Input type="date" name="input3" label="" placeholder="20/12/1980" />
+                            </div>
+
+
+
+                        </div>
 
                         <div className="retanguloBrancoListar">
                             {
-                                inscricaos.map((item: any) => {
+                                vagaFiltrada.map((item: any) => {
                                     return <div className='CardVagas'>
                                         <button className="Button-Visualizar" onClick={() => history.push(`visualizarvaga/${item.idVaga}`)}>
 
@@ -211,4 +223,4 @@ function Listarvagasporid() {
         </div>
     )
 }
-export default Listarvagasporid;
+export default Listarcandidaturaporid;

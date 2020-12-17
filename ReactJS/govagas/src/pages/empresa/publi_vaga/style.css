@@ -91,6 +91,7 @@
     border-radius: 7px;
     margin-left: 160px;
     padding-bottom: 20px;
+    margin-bottom: 70px;
 }
 
 .align-input {
@@ -125,7 +126,7 @@
     background: #FFFFFF;
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);
     border-radius: 7px;
-    margin-bottom: 100px;
+    margin-bottom: 70px;
     padding-top: 20px;
 }
 

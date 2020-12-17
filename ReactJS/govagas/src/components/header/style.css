@@ -48,3 +48,67 @@ a:hover {
 .centro-home button p {
     color: white;
 } */
+
+* BARRA */
+
+
+.dropbtn {
+    background-color:  #DB324A;
+    border: none;
+    cursor: pointer;
+    border-style: none;
+    color: white;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 17px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #DB324A;
+    border: none;
+    border-radius: 7px;
+  }
+
+  .dropdown button {
+      background-color: #DB324A;
+      border-style: none;
+      outline: none;
+      color: white;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    margin-right: 200px;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+    
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  

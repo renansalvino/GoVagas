@@ -12,13 +12,23 @@ import Imgsettnings from '../../assets/images/candidato/settings.svg';
 import Imgchecklist from '../../assets/images/candidato/checklist.svg';
 import Imgdashboard from '../../assets/images/candidato/dashboard.svg';
 import Imgcasestudy from '../../assets/images/candidato/case-study.svg';
-import { Link } from 'react-router-dom';
+import ImgLogoff from '../../assets/images/candidato/logout.svg';
+import ImgPossa from '../../assets/images/possarle.jpg';
+import { Link, useHistory } from 'react-router-dom';
 import { parseJwt } from '../../auth';
 
 
 function Sidebar() {
 
+    let history = useHistory();
+
+    const Logout = () => {
+        localStorage.removeItem('tokengovagas');
+        history.push('/');
+    }
+
     const [usuario, setUsuario] = useState<any>();
+    const [nomeEmpresa, setNomeEmpresa] = useState<any>();
 
     useEffect(() => {
         if (parseJwt().Role === "1") {
@@ -30,6 +40,27 @@ function Sidebar() {
                     console.log(dados)
                     console.log(dados.idUsuarioNavigation)
                     setUsuario(dados.idUsuarioNavigation)
+                })
+                .catch(err => console.error(err))
+        } else if (parseJwt().Role === "2") {
+            fetch("https://localhost:5001/api/Empresa/" + parseJwt().jti, {
+                method: 'GET'
+            })
+                .then(response => response.json())
+                .then(dados => {
+                    console.log(dados)
+                    setNomeEmpresa(dados)
+                })
+                .catch(err => console.error(err))
+        } else if (parseJwt().Role === "3") {
+            fetch("https://localhost:5001/api/Candidato/" + parseJwt().jti, {
+                method: 'GET'
+            })
+                .then(response => response.json())
+                .then(dados => {
+                    console.log(dados)
+                    console.log(dados)
+                    setUsuario(dados)
                 })
                 .catch(err => console.error(err))
         }
@@ -56,12 +87,12 @@ function Sidebar() {
 
                             <div className="containerImg">
                                 <div className="img">
-                                    <img src={imgSnoopy} alt="" />
+                                    <img src={imgIconePerfil} alt="" />
                                 </div>
 
                                 <div className="imgTxt">
-                                    <p id="nomeUsuario">{usuario?.nome}</p>
-                                    <p id="funcaoUsuario">Função Usuario</p>
+                                    <p id="nomeUsuario">{usuario?.idUsuarioNavigation.nome}</p>
+                                    <p id="funcaoUsuario">{usuario?.tituloPerfil}</p>
                                 </div>
 
                                 <Button name="btn1" value="Editar meu perfil" />
@@ -78,33 +109,38 @@ function Sidebar() {
                                     <Link to="/dashboardCandidato">
                                         <div className="rota">
                                             <div className="icon">
-                                                <img src={imgIconePalmeira} alt="" />
+                                                <img src={Imgdashboard} alt="" />
                                             </div>
                                             <li>Dashboard</li>
-                                        </div>
-                                    </Link>
-                                    <Link to="/vagas">
-                                        <div className="rota">
-                                            <div className="icon">
-                                                <img src={imgIconePerfil} alt="" />
-                                            </div>
-                                            <li>Ver Vagas</li>
                                         </div>
                                     </Link>
                                     <Link to="/inscricoes">
                                         <div className="rota">
                                             <div className="icon">
-                                                <img src={imgIconePalmeira2} alt="" />
+                                                <img src={Imgchecklist} alt="" />
                                             </div>
                                             <li>Candidaturas</li>
                                         </div>
                                     </Link>
-                                    <div className="rota">
-                                        <div className="icon">
-                                            <img src={imgIconePerfil2} alt="" />
+                                    <Link to="/vagas">
+                                        <div className="rota">
+                                            <div className="icon">
+                                                <img src={Imgcasestudy} alt="" />
+                                            </div>
+                                            <li>Ver Vagas</li>
                                         </div>
-                                        <li>Rota 4</li>
-                                    </div>
+                                    </Link>
+                                    <Link to="" className="Link" onClick={event => {
+                                        event.preventDefault();
+                                        Logout();
+                                    }}>
+                                        <div className="rota">
+                                            <div className="icon">
+                                                <img src={ImgLogoff} alt="" />
+                                            </div>
+                                            <li>Logoff</li>
+                                        </div>
+                                    </Link>
                                 </div>
 
                             </div>
@@ -124,11 +160,13 @@ function Sidebar() {
                                 </div>
 
                                 <div className="imgTxt">
-                                    <p id="nomeUsuario">Nome do Colega </p>
-                                    <p id="funcaoUsuario">Função Usuario</p>
+                                    <p id="nomeUsuario">{nomeEmpresa?.nomeEmpresa}</p>
+                                    <p id="funcaoUsuario">{nomeEmpresa?.ramoEmpresa}</p>
                                 </div>
 
+                                <Button name="btn1" value="Editar meu perfil" />
                             </div>
+
 
                             <div className="tituloFlex">
                                 <h4>PRINCIPAL</h4>
@@ -137,7 +175,7 @@ function Sidebar() {
                             <div className="containerRotas">
 
                                 <div className="rotas">
-                                    <Link to="/dashAdm">
+                                    <Link to="/dashEmpresa">
                                         <div className="rota">
                                             <div className="icon">
                                                 <img src={Imgdashboard} alt="" />
@@ -145,7 +183,7 @@ function Sidebar() {
                                             <li>DashBoard</li>
                                         </div>
                                     </Link>
-                                    <Link to="/inscricoes">
+                                    <Link to="/vagaspublicadas">
                                         <div className="rota">
                                             <div className="icon">
                                                 <img src={Imgchecklist} alt="" />
@@ -173,66 +211,6 @@ function Sidebar() {
                         </div>
                     </div >
                 )
-                // return (
-                //     <div>
-                //         <div className="dashboard">
-
-                //             <div className="containerImg">
-                //                 <div className="img">
-                //                     <img src={imgSnoopy} alt="" />
-                //                 </div>
-
-                //                 <div className="imgTxt">
-                //                     <p id="nomeUsuario">EMPRESASS</p>
-                //                     <p id="funcaoUsuario">Função Usuario</p>
-                //                 </div>
-
-                //                 <Button name="btn1" value="Editar meu perfil" />
-
-                //             </div>
-
-                //             <div className="tituloFlex">
-                //                 <h4>PRINCIPAL</h4>
-                //             </div>
-
-                //             <div className="containerRotas">
-
-                //                 <div className="rotas">
-                //                     <Link to="/dashAdm">
-                //                         <div className="rota">
-                //                             <div className="icon">
-                //                                 <img src={imgIconePalmeira} alt="" />
-                //                             </div>
-                //                             <li>Dashboard</li>
-                //                         </div>
-                //                     </Link>
-                //                     <div className="rota">
-                //                         <div className="icon">
-                //                             <img src={imgIconePerfil} alt="" />
-                //                         </div>
-                //                         <Link to="/tabelacandidatos"><li>Tabela Candidatos</li></Link>
-                //                     </div>
-                //                     <Link to="/inscricoes">
-                //                         <div className="rota">
-                //                             <div className="icon">
-                //                                 <img src={imgIconePalmeira2} alt="" />
-                //                             </div>
-                //                             <li>Rota 3</li>
-                //                         </div>
-                //                     </Link>
-                //                     <div className="rota">
-                //                         <div className="icon">
-                //                             <img src={imgIconePerfil2} alt="" />
-                //                         </div>
-                //                         <li>Rota 4</li>
-                //                     </div>
-
-                //                 </div>
-
-                //             </div>
-                //         </div>
-                //     </div>
-                // );
             }
             if (parseJwt().Role === "1") {
                 return (
@@ -241,12 +219,12 @@ function Sidebar() {
 
                             <div className="containerImg">
                                 <div className="img">
-                                    <img src={imgSnoopy} alt="" />
+                                    <img src={ImgPossa} alt="" />
                                 </div>
 
                                 <div className="imgTxt">
                                     <p id="nomeUsuario">{usuario?.nome}</p>
-                                    <p id="funcaoUsuario">Função Usuario</p>
+                                    <p id="funcaoUsuario">Administrador</p>
                                 </div>
 
                                 <Button name="btn1" value="Editar meu perfil" />
@@ -263,31 +241,36 @@ function Sidebar() {
                                     <Link to="/dashAdm">
                                         <div className="rota">
                                             <div className="icon">
-                                                <img src={imgIconePalmeira} alt="" />
+                                                <img src={Imgdashboard} alt="" />
                                             </div>
                                             <li>Dashboard</li>
                                         </div>
                                     </Link>
                                     <div className="rota">
                                         <div className="icon">
-                                            <img src={imgIconePerfil} alt="" />
+                                            <img src={Imgchecklist} alt="" />
                                         </div>
                                         <Link to="/tabelacandidatos"><li>Tabela Candidatos</li></Link>
                                     </div>
-                                    <Link to="/inscricoes">
-                                        <div className="rota">
-                                            <div className="icon">
-                                                <img src={imgIconePalmeira2} alt="" />
-                                            </div>
-                                            <li>Rota 3</li>
-                                        </div>
-                                    </Link>
+                                    {/* <Link to="/inscricoes"> */}
                                     <div className="rota">
                                         <div className="icon">
-                                            <img src={imgIconePerfil2} alt="" />
+                                            <img src={Imgcasestudy} alt="" />
                                         </div>
-                                        <li>Rota 4</li>
+                                        <li>Perfil</li>
                                     </div>
+                                    {/* </Link> */}
+                                    <Link to="" className="Link" onClick={event => {
+                                        event.preventDefault();
+                                        Logout();
+                                    }}>
+                                        <div className="rota">
+                                            <div className="icon">
+                                                <img src={ImgLogoff} alt="" />
+                                            </div>
+                                            <li>Logoff</li>
+                                        </div>
+                                    </Link>
 
                                 </div>
 

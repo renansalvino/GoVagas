@@ -68,7 +68,11 @@ function Routes() {
       <Drawer.Navigator initialRouteName="VisualizarVaga">
         <Drawer.Screen
           name="Vagas Publicadas"
-          component={VagasEmprega}
+          component={VisualizarVaga}
+        />
+        <Drawer.Screen
+          name="Visualizar Candidatos"
+          component={VisualizarCandidatos}
         />
         <Drawer.Screen
           name="Sair"
@@ -77,27 +81,27 @@ function Routes() {
       </Drawer.Navigator>
     );
   }
-  const VagasEmprega = () => {
+  // const VagasEmprega = () => {
     
-    const options={
-      headerStyle: { backgroundColor: '#DB324A' }, headerTintColor: '#fff',
-      headerLeft: ({navigation }: any) => (
-        <TouchableOpacity onPress={() => navigation.openDrawer()}>
-          <Entypo name="menu" style={{ marginLeft: 25 }} size={46} color='white' />
-        </TouchableOpacity>
-      )
-    }
-    return (
-      <Stack.Navigator>
-        <Stack.Screen name="VizualizarVaga" component={VisualizarVaga} options={options}/>
-        <Stack.Screen name="VisualizarVaga2" component={VisualizarVaga2} options={options}/>
-        <Stack.Screen name="VisualizarVaga3" component={VisualizarVaga3} options={options}/>
-        <Stack.Screen name="VisualizarVaga4" component={VisualizarVaga4} options={options}/>
-        <Stack.Screen name="VisualizarVaga5" component={VisualizarVaga5} options={options}/>
-        <Stack.Screen name="VisualizarCandidatos" component={VisualizarCandidatos} options={options}/>
-      </Stack.Navigator>
-    );
-  }
+  //   const options={
+  //     headerStyle: { backgroundColor: '#DB324A' }, headerTintColor: '#fff',
+  //     headerLeft: ({navigation }: any) => (
+  //       <TouchableOpacity onPress={() => navigation.openDrawer()}>
+  //         <Entypo name="menu" style={{ marginLeft: 25 }} size={46} color='white' />
+  //       </TouchableOpacity>
+  //     )
+  //   }
+  //   return (
+  //     <Stack.Navigator>
+  //       <Stack.Screen name="VizualizarVaga" component={VisualizarVaga} options={options}/>
+  //       <Stack.Screen name="VisualizarVaga2" component={VisualizarVaga2} options={options}/>
+  //       <Stack.Screen name="VisualizarVaga3" component={VisualizarVaga3} options={options}/>
+  //       <Stack.Screen name="VisualizarVaga4" component={VisualizarVaga4} options={options}/>
+  //       <Stack.Screen name="VisualizarVaga5" component={VisualizarVaga5} options={options}/>
+  //       <Stack.Screen name="VisualizarCandidatos" component={VisualizarCandidatos} options={options}/>
+  //     </Stack.Navigator>
+  //   );
+  // }
 
   return (
     <Stack.Navigator>

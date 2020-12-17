@@ -6,19 +6,20 @@ import imgIcone from '../../../assets/images/palm-tree.svg'
 import Sidebar from '../../../components/sidebar/index';
 import Footer from '../../../components/footer/index';
 import Header from '../../../components/header/index'
-import ImgJoia from '../../../assets/images/candidato/joia.svg';
-import ImgCandidato from '../../../assets/images/candidato/grupo.svg';
+import ImgJoia from '../../../assets/images/empresa/joia.png';
+import ImgCandidato from '../../../assets/images/empresa/candidatos.png';
 import ImgMaleta from '../../../assets/images/empresa/briefcase-in-a-circle.svg';
 import ImgAviso from '../../../assets/images/candidato/warning.svg';
-import Grafico from '../../empresa/Admin/app';
+import Grafico from '../Admin/app';
 import { useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { parseJwt } from '../../../auth';
 
 
 
 
 
-function DashAdm() {
+function DashEmpresa() {
 
     let history = useHistory();
 
@@ -28,12 +29,12 @@ function DashAdm() {
 
 
     useEffect(() => {
-        ListarCandidatosContratados();
+        ListarCandidatosDasVagas();
         ListarCandidatos();
         ListarEmpresa();
     }, []);
 
-    const ListarCandidatosContratados = () => {
+    const ListarCandidatosDasVagas = () => {
 
         fetch("https://localhost:5001/api/Inscricao", {
             // authorization: 'Bearer ' + localStorage.getItem('token-tal')
@@ -96,7 +97,7 @@ function DashAdm() {
                         <div className="dado">
                             <img src={ImgMaleta} alt="" />
                             <div className="flexDadoTxt">
-                                <h1>{empresas.length}</h1>
+                                <h1>{empresas?.length}</h1>
                                 <p>Novas Empresas</p>
                             </div>
                         </div>
@@ -104,7 +105,7 @@ function DashAdm() {
                         <div className="dado">
                             <img src={ImgCandidato} alt="" />
                             <div className="flexDadoTxt">
-                                <h1>{candidatos.length}</h1>
+                                <h1>{candidatos?.length}</h1>
                                 <p>Novos Alunos</p>
                             </div>
                         </div>
@@ -112,7 +113,7 @@ function DashAdm() {
                         <div className="dado">
                             <img src={ImgAviso} alt="" />
                             <div className="flexDadoTxt">
-                                <h1>{inscricaos.length}</h1>
+                                <h1>{inscricaos?.length}</h1>
                                 <p>Situações Pendentes</p>
                             </div>
                         </div>
@@ -126,12 +127,20 @@ function DashAdm() {
                             <Grafico />
                         </div>
 
+                        {/* <div className="grafico">
+                            <h2>Gráfico2</h2>
+                        </div>
+
+                        <div className="grafico">
+                            <h2>Gráfico3</h2>
+                        </div> */}
+
                     </div>
 
 
 
                     <div className="flexTable">
-                        <table className="tabelaAdm">
+                        {/* <table className="tabelaAdm">
                             <thead>
                                 <tr>
                                     <th>Nome do Candidato</th>
@@ -141,65 +150,46 @@ function DashAdm() {
                                     <th>Documentação</th>
                                 </tr>
                             </thead>
+                            
                             <tbody>
-                                {/* {
+                                {
 
-                                    inscricaos.map((inscricao: any) => {
+                                    inscricaos?.map((inscricao?: any) => {
                                         return (
-                                            <tr key={inscricao.idInscricao}>
-                                                <td>{inscricao.idCandidatoNavigation.idUsuarioNavigation.nome}</td>
-                                                <td>{inscricao.idCandidatoNavigation.tituloPerfil} { }</td>
-                                                <td>{inscricao.idVagaNavigation.idEmpresaNavigation.nomeEmpresa}</td>
-                                                <td>{inscricao.idVagaNavigation.tipoContrato}</td>
+                                            <tr key={inscricao?.idInscricao}>
+                                                <td>{inscricao?.idCandidatoNavigation.idUsuarioNavigation.nome}</td>
+                                                <td>{inscricao?.idCandidatoNavigation.tituloPerfil} { }</td>
+                                                <td>{inscricao?.idVagaNavigation.idEmpresaNavigation.nomeEmpresa}</td>
+                                                <td>{inscricao?.idVagaNavigation.tipoContrato}</td>
                                                 <td></td>
                                             </tr>
                                         )
                                     })
-                                } */}
+                                }
                                 <tr>
                                     <td>Gabriela Oliveira Possuui</td>
                                     <td>Desenvovedor(a) Front-End React Native/Js</td>
                                     <td>Oxfurd</td>
                                     <td>CLT</td>
-                                    <td><Link to="/tabelaCandidatos">
-                                        Ver Tabela
-                                    </Link></td>
-
-                                </tr>
-                                <tr>
-                                    <td>Davi Alencarrr Arves Feitosa</td>
-                                    <td>Desenvovedor(a) "Full-Stack" React Native/Js</td>
-                                    <td>Seu Zé LTDA</td>
-                                    <td>Estágio</td>
-                                    <td><Link to="/tabelaCandidatos">
-                                        Ver Tabela
-                                    </Link></td>
-
-                                </tr>
-                                <tr>
-                                    <td>Renan Martino Salvins</td>
-                                    <td>Desenvovedor(a) Xamarin Mobile</td>
-                                    <td>Unicamp</td>
-                                    <td>Estágio</td>
-                                    <td><Link to="/tabelaCandidatos">
-                                        Ver Tabela
-                                    </Link></td>
-
+                                    <td>Aprovado</td>
                                 </tr>
                                 <tr>
                                     <td>Erique Henrique A Paz do Conde</td>
                                     <td>Desenvovedor(a) Back-End React Native/Js</td>
                                     <td>Avanade</td>
                                     <td>Jovem Aprendiz</td>
-                                    <td><Link to="/tabelaCandidatos">
-                                        Ver Tabela
-                                    </Link></td>
-
+                                    <td>Pendente</td>
+                                </tr>
+                                <tr>
+                                    <td>Davi Alencarrr Arves Feitosa</td>
+                                    <td>Desenvovedor(a) "Full-Stack" React Native/Js</td>
+                                    <td>Seu Zé LTDA</td>
+                                    <td>Estágio</td>
+                                    <td>Pendente</td>
                                 </tr>
                             </tbody>
 
-                        </table>
-
+                        </table> */}
                     </div>
                 </div>
             </div>
@@ -208,4 +198,4 @@ function DashAdm() {
     )
 }
 
-export default DashAdm;
+export default DashEmpresa;
