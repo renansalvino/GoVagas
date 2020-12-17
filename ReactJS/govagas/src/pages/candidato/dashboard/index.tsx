@@ -89,7 +89,7 @@ function Dashboard() {
                                 <div id="bar">
                                     <div className="progress">
                                         <div className="progress-bar progress-bar-striped" >
-                                            80%
+                                            100%
                                     </div>
                                     </div>
                                 </div>

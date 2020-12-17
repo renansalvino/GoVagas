@@ -6,6 +6,10 @@ import imgIcone from '../../../assets/images/palm-tree.svg'
 import Sidebar from '../../../components/sidebar/index';
 import Footer from '../../../components/footer/index';
 import Header from '../../../components/header/index'
+import ImgJoia from '../../../assets/images/empresa/joia.png';
+import ImgCandidato from '../../../assets/images/empresa/candidatos.png';
+import ImgMaleta from '../../../assets/images/empresa/briefcase-in-a-circle.svg';
+import ImgAviso from '../../../assets/images/candidato/warning.svg';
 import Grafico from '../Admin/app';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
@@ -83,7 +87,7 @@ function DashEmpresa() {
                     <div className="itensDados">
 
                         <div className="dado">
-                            <img src={imgIcone} alt="" />
+                            <img src={ImgJoia} alt="" />
                             <div className="flexDadoTxt">
                                 <h1>35%</h1>
                                 <p>Meta Mensal Concluída</p>
@@ -91,7 +95,7 @@ function DashEmpresa() {
                         </div>
 
                         <div className="dado">
-                            <img src={imgIcone} alt="" />
+                            <img src={ImgMaleta} alt="" />
                             <div className="flexDadoTxt">
                                 <h1>{empresas?.length}</h1>
                                 <p>Novas Empresas</p>
@@ -99,7 +103,7 @@ function DashEmpresa() {
                         </div>
 
                         <div className="dado">
-                            <img src={imgIcone} alt="" />
+                            <img src={ImgCandidato} alt="" />
                             <div className="flexDadoTxt">
                                 <h1>{candidatos?.length}</h1>
                                 <p>Novos Alunos</p>
@@ -107,7 +111,7 @@ function DashEmpresa() {
                         </div>
 
                         <div className="dado">
-                            <img src={imgIcone} alt="" />
+                            <img src={ImgAviso} alt="" />
                             <div className="flexDadoTxt">
                                 <h1>{inscricaos?.length}</h1>
                                 <p>Situações Pendentes</p>

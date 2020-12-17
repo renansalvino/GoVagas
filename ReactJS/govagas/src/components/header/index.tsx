@@ -27,8 +27,25 @@ function Header() {
                 <ul className="menuNav">
                     <ul className="menuNav">
                         <button id="btn0" onClick={Cadastrese}><li>VER VAGAS</li></button>
-                        <li><Link className="link" to="/loginCandidato">LOGIN</Link></li>
-                        <li><Link to="/loginCandidato" className="Link"><Button name="btn1" value="CADASTRE-SE" /></Link></li>
+                        <li>
+                            {/* <Link className="link" to="/loginCandidato">LOGIN</Link> */}
+                            <div className="dropdown">
+                                <button className="dropbtn">LOGIN</button>
+                                <div className="dropdown-content">
+                                    <a href="/loginCandidato">Login como candidato</a>
+                                    <a href="/loginEmpresa">Login como empresa</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="dropdown">
+                                <button className="dropbtn">CADASTRE-SE</button>
+                                <div className="dropdown-content">
+                                    <a href="/loginCandidato">Cadastro como candidato</a>
+                                    <a href="/loginEmpresa">Cadastro como empresa</a>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </ul>
             );
@@ -48,7 +65,7 @@ function Header() {
             if (parseJwt().Role === "2") {
                 return (
                     <ul className="menuNav">
-                        <li><Link className="link" to="/dashAdm">DASHBOARD</Link></li>
+                        <li><Link className="link" to="/dashEmpresa">DASHBOARD</Link></li>
                         <li><Link className="link" to="/publicarvaga">PUBLICAR VAGA</Link></li>
                         <li><Link to="" className="Link" onClick={event => {
                             event.preventDefault();

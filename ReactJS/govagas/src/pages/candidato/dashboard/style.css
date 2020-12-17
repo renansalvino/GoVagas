@@ -148,7 +148,7 @@
 
 #bar .progress-bar {
     /* tamanho da barra %*/
-    width:30%;
+    width:100%;
     /* cor da barra */
     background-color: #DB324A;
     /* largura da barra */

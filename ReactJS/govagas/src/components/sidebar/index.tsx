@@ -12,6 +12,8 @@ import Imgsettnings from '../../assets/images/candidato/settings.svg';
 import Imgchecklist from '../../assets/images/candidato/checklist.svg';
 import Imgdashboard from '../../assets/images/candidato/dashboard.svg';
 import Imgcasestudy from '../../assets/images/candidato/case-study.svg';
+import ImgLogoff from '../../assets/images/candidato/logout.svg';
+import ImgPossa from '../../assets/images/possarle.jpg';
 import { Link, useHistory } from 'react-router-dom';
 import { parseJwt } from '../../auth';
 
@@ -85,7 +87,7 @@ function Sidebar() {
 
                             <div className="containerImg">
                                 <div className="img">
-                                    <img src={imgSnoopy} alt="" />
+                                    <img src={imgIconePerfil} alt="" />
                                 </div>
 
                                 <div className="imgTxt">
@@ -128,12 +130,17 @@ function Sidebar() {
                                             <li>Ver Vagas</li>
                                         </div>
                                     </Link>
-                                    <div className="rota">
-                                        <div className="icon">
-                                            <img src={imgIconePerfil2} alt="" />
+                                    <Link to="" className="Link" onClick={event => {
+                                        event.preventDefault();
+                                        Logout();
+                                    }}>
+                                        <div className="rota">
+                                            <div className="icon">
+                                                <img src={ImgLogoff} alt="" />
+                                            </div>
+                                            <li>Logoff</li>
                                         </div>
-                                        <li>Rota 4</li>
-                                    </div>
+                                    </Link>
                                 </div>
 
                             </div>
@@ -212,7 +219,7 @@ function Sidebar() {
 
                             <div className="containerImg">
                                 <div className="img">
-                                    <img src={imgSnoopy} alt="" />
+                                    <img src={ImgPossa} alt="" />
                                 </div>
 
                                 <div className="imgTxt">
@@ -259,7 +266,7 @@ function Sidebar() {
                                     }}>
                                         <div className="rota">
                                             <div className="icon">
-                                                <img src={Imgsettnings} alt="" />
+                                                <img src={ImgLogoff} alt="" />
                                             </div>
                                             <li>Logoff</li>
                                         </div>
