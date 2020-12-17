@@ -27,7 +27,7 @@ function App() {
             datasets: [
                 {
                     label: 'Taxa de candidaturas',
-                    data: [inscricaos.forEach],
+                    data: [15,45,71,11,29,18,30,77,41,56,40,8,12,37,14],
                     backgroundColor: [
                         '#DB324A'
                     ],

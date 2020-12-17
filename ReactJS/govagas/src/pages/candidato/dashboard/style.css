@@ -47,11 +47,8 @@
 .options-box22 {
     display: flex;
     width: 195px;
-<<<<<<< HEAD
     height: 200px;
-=======
     height: auto;
->>>>>>> 380a60336e04a5be56c97cc9983fdebd3155e673
     background: #FFFFFF;
     box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.18);
     border-radius: 7px;

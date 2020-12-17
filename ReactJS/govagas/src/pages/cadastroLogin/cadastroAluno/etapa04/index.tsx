@@ -76,7 +76,6 @@ function CadastroCandidatoQuatro() {
         })
             .then(() => {
                 alert('Candidato cadastrado');
-                // history.push('/loginCandidato');
             })
             .catch(err => console.error(err));
     }

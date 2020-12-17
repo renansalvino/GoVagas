@@ -7,8 +7,6 @@ import Header from '../../../../components/header/index'
 import Button from '../../../../components/button/index';
 import Input from '../../../../components/input/index';
 import '../../../../components/barraProgresso/style.css';
-// import Select from '../../../components/selectHab';
-// import SelectLvl from '../../../components/selectLvl';
 
 
 function naoConsigoVerNada() {
@@ -36,20 +34,10 @@ function CadastroCandidatoTres() {
     const [datatermino, setDatatermino] = useState('')
 
 
-
-
-    // var element: HTMLInputElement = document.getElementById('gridCheck'); 
-    // var isChecked = element.checked;
-
-    // if (element.checked){
-
-    // }
-
-
     const Post3 = () => {
 
         const form = {
-            experienciaPro: experienciapro, //=== "Sim" ? "Não" : "Sim" ,
+            experienciaPro: experienciapro,
             nomeEmpresa: nomeempresa,
             perfilEmpresa: perfilempresa,
             cargoEmpresa: cargoempresa,
@@ -59,17 +47,6 @@ function CadastroCandidatoTres() {
             dataTermino: datatermino
         }
 
-
-        // const checkboxPro = document.querySelector('input[value={nomeempresa}]');
-        // checkboxPro?.addEventListener(change, () => {
-        //     if (checkboxPro.) {
-
-        //     }
-        // })
-
-
-
-
         localStorage.setItem('experienciapro-cadastro', experienciapro)
         localStorage.setItem('nomeempresa-cadastro', nomeempresa)
         localStorage.setItem('perfilempresa-cadastro', perfilempresa)
@@ -78,19 +55,6 @@ function CadastroCandidatoTres() {
         localStorage.setItem('datainicio-cadastro', datainicio)
         localStorage.setItem('datatermino-cadastro', datatermino)
         history.push('/cadastroAluno4')
-        // fetch('https://localhost:5001/api/Candidato', {
-        //     method: 'POST',
-        //     body: JSON.stringify(form),
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     }
-        // })
-        //     .then(() => {
-        //         alert('Candidato cadastrado');
-        //         setHabilidade('');
-        //         setExpertisecandidato('');
-        //     })
-        //     .catch(err => console.error(err));
 
     }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
 import '../../../assets/styles/global.css'
 
@@ -14,11 +14,66 @@ import imgnotes from '../../../assets/images/candidato/notes.svg'
 import imgdiploma from '../../../assets/images/candidato/diploma.svg'
 import imgofficeblock from '../../../assets/images/candidato/office-block.svg'
 
+const [usuarios, setUsuarios] = useState([]);
+    const [dados, setDados] = useState([]);
+    const [cpf1, setCpf1] = useState('');
+    const [senha, setSenha] = useState('');
+    const [matricula, setMatricula] = useState('');
+    
+    const [nome, setNome] = useState('');
+    const [data, setData] = useState('');
+    const [sexo, setSexo] = useState('');
+    const [estado, setEstado] = useState('');
+    const [url, setUrl] = useState('');
+    const [telefone, setTelefone] = useState('');
+    const [email, setEmail] = useState('');
+    const [escola, setEscola] = useState('');
 
-// import { Link } from 'react-router-dom';
+    const [dadosSenha, setDadosSenha] = useState('');
+    const [dadosCpf, setDadosCpf] = useState('');
+    
+const Atualizar = () => {
+    //fazer um if ternario para manter o valor caso nào seja alterado
+    console.log(url)
 
+    const DadosUsuario = {
+        "nome": nome == Object.values(usuarios)[1] || nome == "" ? Object.values(usuarios)[1] : nome,
+        "dataNascimento": data == Object.values(usuarios)[2] || data == "" ? Object.values(usuarios)[2] : data,
+        "sexo": sexo == Object.values(usuarios)[3] || sexo == "" ? Object.values(usuarios)[3] : sexo,
+        "escola": escola == Object.values(usuarios)[4] || escola == "" ? Object.values(usuarios)[4] : escola,
+        "email": email == Object.values(usuarios)[5] || email == "" ? Object.values(usuarios)[5] : email,
+        "telefone": telefone == Object.values(usuarios)[6] || telefone == "" ? Object.values(usuarios)[6] : telefone,
+        "estadoCivil": estado == Object.values(usuarios)[7] || estado == "" ? Object.values(usuarios)[7] : estado,
+        "UrlCurriculo": url == Object.values(usuarios)[8] || url == "" ? Object.values(usuarios)[8] : url,
+        "nivel": Object.values(usuarios)[9] as any,
+        "tipoCurso": Object.values(usuarios)[10] as any,
+        "curso": Object.values(usuarios)[11] as any,
+        "turma": Object.values(usuarios)[12] as any,
+        "turno": Object.values(usuarios)[13] as any,
+        "termo": Object.values(usuarios)[14] as any,
+    };
 
-function Candidatar() {
+    var idUsuario = localStorage.getItem("Real-Vagas-Id-Usuario") as any;
+    var idUrl = parseInt(idUsuario);
+
+    fetch('http://localhost:5000/api/Usuarios/' + idUrl, {
+        method: 'PUT',
+        body: JSON.stringify(DadosUsuario),
+        headers: {
+            //Bearer é o token authentication, um Schema paraautenticação HTTP
+            //Ele indentifica recursos protegidos por um OAuth2
+            authorization: 'Bearer ' + localStorage.getItem('Real-Vagas-Token'),
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(() => {
+            window.location.reload();
+        })
+
+        .catch(Erro => console.error(Erro));
+}
+
+function Editar() {
     return (
         <div>
             <Header />
@@ -99,4 +154,4 @@ function Candidatar() {
         </div>
     )
 }
-export default Candidatar;
+export default Editar;

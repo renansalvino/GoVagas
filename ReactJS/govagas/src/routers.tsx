@@ -31,8 +31,8 @@ import Listarcandidaturaporid from './pages/candidato/listarcandidaturaid/index'
 import Visualizarvaga from './pages/candidato/visualizarvaga/index';
 import Upload from './pages/teste/teste';
 import VisualizarCandidato from './pages/VisualizarCandidatos/index';
+import EditarCandidatos from './pages/candidato/editar/index';
 
-// 	import Login from ‘./pages/Login’;
 
 function Routers() {
 	return (
@@ -63,16 +63,13 @@ function Routers() {
 			<Route path='/dashboardCandidato' component={Dashboard}/>
 			<Route path='/candidatar' component={Candidatar}/>
 			<Route path='/vagas' component={Listarvagas}/>
-<<<<<<< HEAD
 			<Route path='/inscricoes' component={Listarvagasporid}/>
-=======
 			<Route path='/inscricoes' component={Listarcandidaturaporid}/>
 			<Route path='/vagaspublicadas' component={Listarvagasporid}/>
-			{/* <Route path='/visualizarvaga' component={Visualizarvaga}/> */}
->>>>>>> 380a60336e04a5be56c97cc9983fdebd3155e673
 			<Route path='/visualizarvaga/:id' component={Visualizarvaga}/>
 			<Route path="/teste" component={Upload}/>
 			<Route path="/visualizarCandidatos" component={VisualizarCandidato}/>
+			<Route path="/editarCandidatos" component={EditarCandidatos}/>
 		</BrowserRouter>
 	);
 }

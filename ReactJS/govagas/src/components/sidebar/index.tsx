@@ -95,8 +95,7 @@ function Sidebar() {
                                     <p id="funcaoUsuario">{usuario?.tituloPerfil}</p>
                                 </div>
 
-                                <Button name="btn1" value="Editar meu perfil" />
-
+                                <Link to="/editarPerfil"><Button name="btn1" value="Editar meu perfil" /> </Link>
                             </div>
 
                             <div className="tituloFlex">
@@ -164,7 +163,7 @@ function Sidebar() {
                                     <p id="funcaoUsuario">{nomeEmpresa?.ramoEmpresa}</p>
                                 </div>
 
-                                <Button name="btn1" value="Editar meu perfil" />
+                                <Link to="/editarPerfil"><Button name="btn1" value="Editar meu perfil" /> </Link>
                             </div>
 
 
@@ -227,7 +226,7 @@ function Sidebar() {
                                     <p id="funcaoUsuario">Administrador</p>
                                 </div>
 
-                                <Button name="btn1" value="Editar meu perfil" />
+                                <Link to="/editarPerfil"><Button name="btn1" value="Editar meu perfil" /> </Link>
 
                             </div>
 
