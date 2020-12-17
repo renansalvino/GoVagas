@@ -1,0 +1,206 @@
+.publi-options_estagio2 {
+    margin-left: 150px;
+}
+
+.info_estagio_2 {
+    display: flex;
+}
+
+.publi-options_estagio2 {
+    margin-top: 150px;
+}
+
+.publi-options_estagio2 #publih2 {
+    margin-left: 250px;
+}
+
+.info-estagio .options-box1 {
+    margin-left: 800px
+}
+
+#alerta {
+    width: 66px;
+    height: 66px;
+    margin-left: 5px;
+    margin-top: 30px;
+}
+
+#vaga-estagio {
+    margin-top: -10px;
+}
+
+.num-3div_estagio {
+    margin-top: -25px;
+}
+
+#input-estagio {
+    display: flex;
+    Width: 580px;
+    Height: 45px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: 1px solid #868686;
+    box-sizing: border-box;
+}
+
+#align-input-estagio {
+    display: flex;
+    justify-content: space-between;
+}
+
+#align-input-estagio Input {
+    margin-right: 75px;
+}
+
+#input-personalizado-estagio {
+    Width: 260px;
+    Height: 45px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    box-sizing: content-box;
+    border-radius: 7px;
+    border: 1px solid #868686;
+    margin-left: -15px;
+}
+
+/*Css do forms*/
+
+.estagio-options_2 h2 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#inputpersonalizado2 {
+    box-sizing: content-box;
+    border-radius: 7px;
+    border: 1px solid #868686;
+}
+
+/*Primeiro forms*/
+
+/*TODO: arrumar o distancimento das labels em todos os forms*/
+
+.forms-estagio {
+    width: 755px;
+    height: 850px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+    margin-bottom: 100px;
+}
+
+.forms-estagio Input {
+    margin-left: 37.5px;
+}
+
+.forms-estagio label {
+    margin-bottom: -10px;
+}
+
+/*Fim do primeiro forms*/
+
+/*Inicio do CSS do segundo forms*/
+
+.forms-estagio2 {
+    width: 755px;
+    height: 900px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+    margin-bottom: 100px;
+}
+
+.forms-estagio2 Input, label {
+    margin-left: 37.5px;
+}
+
+/*Início do CSS do forms*/
+
+.forms-estagio3 {
+    width: 755px;
+    height: 1450px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+    margin-bottom: 100px;
+}
+
+.forms-estagio3 input {
+    margin-left: 37.5px;
+}
+
+#input-personaliazado-dates {
+    width: 180px;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: 1px solid #868686;
+    box-sizing: border-box;
+    margin-right: 30px;
+}
+
+#align-estagio-dates {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+/*CSS das avaliações*/
+
+.avaliacao-1 {
+    width: 755px;
+    height: 316px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+    margin-bottom: 100px;
+}
+
+
+#align-avaliacao1 {
+    display: flex;
+    padding-top: 50px;
+    justify-content: space-between;
+    width: 624px;
+    margin-left: 50px;
+}
+
+#align-avaliacao1 p{
+    max-width: 150px;
+}
+
+.align-checkbox label{
+    flex-direction: column;
+    padding-right: 10px;
+    margin-left: 50px;
+}
+
+.align-checkbox{
+    margin-left: 150px;
+  
+}
+
+.estagio-options_estagio{
+    display: flex;
+    width: 195px;
+    height: 116px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.18);
+    border-radius: 20px;
+    margin-left: 750px;
+    margin-top: 50px;
+}
+
+#align-input-fliter{
+    margin-top: -8px
+}
+
+#align-date-avaliacao{
+    display: flex;
+}
+
+#date-avaliacao-forlabel{
+    display: flex;
+    
+}
