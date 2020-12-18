@@ -13,7 +13,6 @@ function VisualizarCandidatos() {
         <div id="principal">
             <Header/>
             <div className="visualizarCandidatos">
-                
             </div>
         </div>
     )

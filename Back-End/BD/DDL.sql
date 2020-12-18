@@ -128,21 +128,21 @@ GO
 --Tabela de Vaga --
 CREATE TABLE Vaga (
 IdVaga					INT PRIMARY KEY IDENTITY
-,TituloVaga				VARCHAR(255)	NOT NULL /*Ok*/
-,PerfilDev				VARCHAR(255)	NOT NULL  /*Ok*/
-,DiasContrato			VARCHAR(255)	NOT NULL /*Ok*/
-,NivelExp				VARCHAR(255)	NOT NULL /*Ok*/
-,HabNecessaria			VARCHAR(255)	NOT NULL /*Ok*/
-,LocalVaga				VARCHAR(255)	 /*Ok*/
-,ReqVaga				VARCHAR(255)	NOT NULL /*Ok*/
-,TempoExp				VARCHAR(255)	NOT NULL  /*Ok*/
-,DescAtivFuncoes		TEXT			NOT NULL  /*Ok: primeira página é até aqui*/
-,TipoContrato			BIT				NOT NULL  /*Ok*/
-,ExpertiseVaga			VARCHAR(255)	 /*Ok*/
-,TrabalhoRemoto			BIT				NOT NULL /*Ok*/
-,OutraCidade			BIT				 /*Ok*/
-,ValorSalario			MONEY	 /*Ok*/
-,OfertaExtra			VARCHAR(255)	 /*Ok*/
+,TituloVaga				VARCHAR(255)	NOT NULL
+,PerfilDev				VARCHAR(255)	NOT NULL
+,DiasContrato			VARCHAR(255)	NOT NULL
+,TempoExp				VARCHAR(255)	NOT NULL
+,HabNecessaria			VARCHAR(255)	NOT NULL
+,LocalVaga				VARCHAR(255)	
+,ReqVaga				VARCHAR(255)	NOT NULL
+,NivelExp				VARCHAR(255)	NOT NULL
+,DescAtivFuncoes		TEXT			NOT NULL
+,TipoContrato			BIT				NOT NULL
+,ExpertiseVaga			VARCHAR(255)	
+,TrabalhoRemoto			BIT				NOT NULL
+,OutraCidade			BIT				
+,ValorSalario			MONEY	
+,OfertaExtra			VARCHAR(255)	
 ,IdEmpresa				INT FOREIGN KEY REFERENCES Empresa (IdEmpresa)
 );
 GO
@@ -154,5 +154,3 @@ IdInscricao				INT PRIMARY KEY IDENTITY
 ,IdCandidato			INT FOREIGN KEY REFERENCES Candidato (IdCandidato)
 ,IdVaga					INT FOREIGN KEY REFERENCES Vaga (IdVaga)
 );
-
-select * from Usuario
