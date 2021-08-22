@@ -13,6 +13,5 @@ namespace GoVagas.Interfaces
        void Cadastrar (Candidato novoCandidato);
        void Atualizar (int id,Candidato candidatoAtualizado);
        void Deletar (int id);
-
     }
 }
